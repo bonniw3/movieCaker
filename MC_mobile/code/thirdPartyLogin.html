@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>綁定手機號碼 - 電影蛋糕</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!--<link href="/Content/mobile/icomoon/style.css" rel="stylesheet" >-->
+    <!--<link href="/Content/newLogin.css?v=20161209" rel="stylesheet" />-->
+
+    <!--CHANGE BACK-->
+    <link href="css/newLogin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="login" id="login"> 
+        <!--<p><a href="www.moviecaker.com" class="under-line"><i class="fa fa-angle-left padR1x" aria-hidden="true"></i> 回首頁</a></p>-->
+        <fieldset class="toLogin maT2x maB2x padLR">
+            <div class="login-title" data-loginTitle="login">
+                <span class="simpleLogin">綁定手機號碼</span>
+            </div>
+            <div class="wrap">
+                <div class="circle-mask circle2x">
+                    <img src="img/user.jpg" alt="">
+                </div>
+                <span class="username maT5">歡影</span>
+            </div>
+            <form action="/account/" method="post">
+                <input name="__RequestVerificationToken" type="hidden" value="7NCtnH0ji_neBjsZmVTknXVjxSz-AuzT11MZNgHqjfjGkrdnVnhRtmJmgsUd1CyNtjF9zCoFYoN4f3xV-air5q1YvczPZllg5yqHPRINSIs1" />
+                <fieldset>
+                    <div class="login-content slideDown">
+                        <p class="sms-subtitle maT2x">手機號碼 <span class="textblue">0912345678</span> 已被註冊過，</p>
+                        <p class="sms-subtitle">請輸入此帳號的密碼</p>
+                        <div class="login-input">
+                        <label for="Password"><i class="fa fa-lock maLR3" aria-hidden="true"></i></label>
+                        <input data-val="true" data-val-required="密碼 欄位是必要項" id="Password" name="Password" placeholder="請輸入密碼" type="password" />
+                        <div id="eye" class="toggle_pwd"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                    </div>
+                    <span class="field-validation-valid wrong-message" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                    <p></p>
+                    <div class="other-options">
+                        <p><a class="pull-right" href="/account/forgotPassword?open=Mobile">忘記密碼 <i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;</a></p>
+                    </div> 
+                        <button class="btn" type="submit">確定</button>
+                    </div>
+                </fieldset>
+            </form>
+            <button class="btn-resend maT2x">以其他帳號登入</button>
+        </fieldset>
+        <!--<p class="prompt_signup" >已經是會員？ <a class="under-line" style="font-size:1.2em;" href="/login?returnUrl=http%3A%2F%2Ftest.moviecaker.com%2F">登入</a></p>-->
+    </div>
+
+    <!--<script src="/Scripts/jquery-1.8.3.min.js"></script>
+    <script src="/Scripts/jquery.validate.min.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.ilandy-edit.js"></script>
+    <script src="/Scripts/materialize/materialize.min.js"></script>
+    <script src="/Scripts/pages/login-index.js?v=20161207"></script>-->
+
+    <script src="http://www.moviecaker.com/Scripts/jquery-1.8.3.min.js"></script>
+    <script src="http://www.moviecaker.com/Scripts/jquery.validate.min.js"></script>
+    <script src="http://www.moviecaker.com/Scripts/jquery.validate.unobtrusive.ilandy-edit.js"></script>
+    <script src="http://www.moviecaker.com/Scripts/materialize/materialize.min.js"></script>
+    <script src="http://www.moviecaker.com/Scripts/pages/login-index.js?v=20161207"></script>
+
+    <script>
+        // show/hide password (eye)
+        document.getElementById("eye").addEventListener("click", function(e){
+            var pwd = document.getElementById("Password");
+            var eyeBtn = document.getElementById("eye");
+            if (pwd.getAttribute("type")=="password") {
+                eyeBtn.classList.add("show");
+                pwd.setAttribute("type","text");
+            } else {
+                eyeBtn.classList.remove("show");
+                pwd.setAttribute("type","password");
+            }
+        });
+    </script>
+
+</body>
+</html>

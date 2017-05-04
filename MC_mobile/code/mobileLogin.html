@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登入 - 電影蛋糕</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link href="css/newLogin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="login" id="login">
+        <p><a href="/" class="under-line"><i class="fa fa-angle-left padR1x" aria-hidden="true"></i> 回首頁</a></p>
+        <h3 class="welcome-title maT2x">歡迎來到電影蛋糕</h3>
+        <fieldset class="toLogin maT2x maB2x padLR">
+            <div class="login-title" data-logintitle="login">
+                <span class="simpleLogin" data-tab="simpleLogin">登入</span>
+            </div>
+            <div class="login-content slideDown" data-panel="simpleLogin" id="login">
+                <form action="/login" id="account-login" method="post">
+                    <input name="__RequestVerificationToken" type="hidden" value="x_1R9R1Dcq559CnwtVj8mcl_x-1cMtU_bznlYKPIPe8ZeyXLKflX2OA8Ix63t6y5QL8kPUpdOo9js2KIMR2cLyDw6GZlgBU7VdQ38b7RbO01" />            
+                    <div class="login-input">
+                        <label for="Email"><i class="fa fa-user-circle-o" aria-hidden="true"></i></label>
+                        <input data-val="true" data-val-regex="帳號 必須為電子信箱或是行動電話號碼" data-val-regex-pattern="^(([0-9]{9,15})|(\w+([-+.&#39;]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*))$" data-val-required="帳號 欄位是必要項" id="Email" name="Email" placeholder="請輸入手機號碼/電子郵箱" type="text" value="" />
+                    </div>
+                    <span class="field-validation-valid wrong-message" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                    <div class="login-input">
+                        <label for="Password"><i class="fa fa-lock maLR3" aria-hidden="true"></i></label>
+                        <input data-val="true" data-val-required="密碼 欄位是必要項" id="Password" name="Password" placeholder="請輸入密碼" type="password" />
+                        <div id="eye" class="toggle_pwd"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                    </div>
+                    <span class="field-validation-valid wrong-message" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                    <p></p>
+                    <div class="other-options">
+                        <p>
+                            <input type="checkbox" name="RememberMe" class="filled-in" id="filled-in-box" value="true" />
+                            <label for="filled-in-box">記住我？</label>
+                            <input type="hidden" value="false" name="RememberMe" />
+                            <a class="pull-right" href="/account/forgotPassword?open=Mobile">忘記密碼 <i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;</a>
+                        </p>
+                    </div>
+                    <button type="submit" class="btn">登入</button>
+                </form>
+
+                <div class="other-title" style="margin-bottom: 15px">其他帳號登入</div>
+                <div class="taCenter">
+                    <form action="/Account/ExternalLogin?returnUrl=%2Fmobile" class="ExternalLogin" method="post" name="ExternalLogin" target="_parent">
+                        <input name="__RequestVerificationToken" type="hidden" value="hqnko1p_luAhNF7rUTHQRcQZzVTMwYLLNORFTSwQHGdvYiBPcSi8JlUKtAkbqLsRKwRrFZQBu8Z6C9GnAUB-CD54spfV2fP5McAQHcPga9c1" />
+                        <button type="submit" class="btn-img btn-wechat" name="provider" value="WeChat" title="使用 微信 帳戶登入">
+                            <i class="fa fa-weixin" aria-hidden="true"></i>
+                        </button>
+                        <button type="submit" class="btn-img btn-fb" name="provider" value="Facebook" title="使用 Facebook 帳戶登入">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </button>
+                        <button type="submit" class="btn-img btn-weibo" name="provider" value="Weibo" title="使用 新浪微博 帳戶登入">
+                            <i class="fa fa-weibo" aria-hidden="true"></i>
+                        </button>
+                        <button type="submit" class="btn-img btn-qq" name="provider" value="QQ" title="使用 QQ 帳戶登入">
+                            <i class="fa fa-qq" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </fieldset>
+        <p class="prompt_signup maT2x maB2x" >還不是會員？ <a class="under-line" style="font-size:1.2em;" href="/account/register">註冊</a></p>
+    </div>
+
+    <script src="/Scripts/jquery-1.8.3.min.js"></script>
+    <script src="/Scripts/jquery.validate.min.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.ilandy-edit.js"></script>
+    <script src="/Scripts/materialize/materialize.min.js"></script>
+    <script src="/Scripts/pages/login-index.js?v=20161207"></script>
+
+    <script>
+        // show/hide password (eye)
+        document.getElementById("eye").addEventListener("click", function(e){
+            var pwd = document.getElementById("Password");
+            var eyeBtn = document.getElementById("eye");
+            if (pwd.getAttribute("type")=="password") {
+                eyeBtn.classList.add("show");
+                pwd.setAttribute("type","text");
+            } else {
+                eyeBtn.classList.remove("show");
+                pwd.setAttribute("type","password");
+            }
+        });
+    </script>
+</body>
+</html>

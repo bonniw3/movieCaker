@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>註冊 - 電影蛋糕</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link href="css/newLogin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="login" id="login"> 
+        <p><a href="mobileSignup.html" class="under-line"><i class="fa fa-angle-left padR1x" aria-hidden="true"></i> 回註冊頁</a></p>
+        <h3 class="welcome-title maT2x">歡迎加入電影蛋糕</h3>
+        <fieldset class="toLogin maT2x maB2x padLR">
+            <div class="login-title" data-loginTitle="login">
+                <span class="simpleLogin">註冊</span>
+            </div>
+            <form action="/account/confirmPhone" method="post">
+                <input name="__RequestVerificationToken" type="hidden" value="7NCtnH0ji_neBjsZmVTknXVjxSz-AuzT11MZNgHqjfjGkrdnVnhRtmJmgsUd1CyNtjF9zCoFYoN4f3xV-air5q1YvczPZllg5yqHPRINSIs1" />
+                <fieldset>
+                    <div class="login-content slideDown">
+                        <p class="sms-subtitle maT2x">我們傳送了一組驗證碼至 <span class="textblue">0912345678</span></p>
+                        <div class="login-input">
+                            <label for="PhoneNumber"><i class="fa fa-key maLR2" aria-hidden="true"></i></label>
+                            <input data-val="true" data-val-length="驗證碼欄位必須是最大長度為 15 的字串" data-val-length-max="15" data-val-regex="驗證碼不符合，請重新輸入驗證碼" data-val-regex-pattern="^([0-9]{9,15})$" data-val-remote="電話號碼已被使用" data-val-remote-additionalfields="*.UserName" data-val-remote-url="/Account/CheckUserName" data-val-required="驗證碼 欄位是必要項" id="UserName" name="UserName" placeholder="請輸入驗證碼" type="tel" value="" />
+                        </div>
+                        <span class="field-validation-valid wrong-message" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
+                        
+                        <button class="btn" type="submit">驗證</button>
+                    </div>
+                </fieldset>
+            </form>
+            <button class="btn-resend maT2x" onClick="history.go(0)">取得新驗證碼</button>
+        </fieldset>
+        <p class="prompt_signup maT2x maB2x" >已經是會員？ <a class="under-line" style="font-size:1.2em;" href="/login">登入</a></p>
+    </div>
+
+    <script src="/Scripts/jquery-1.8.3.min.js"></script>
+    <script src="/Scripts/jquery.validate.min.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.ilandy-edit.js"></script>
+    <script src="/Scripts/materialize/materialize.min.js"></script>
+    <script src="/Scripts/pages/login-index.js?v=20161207"></script>
+
+</body>
+</html>
