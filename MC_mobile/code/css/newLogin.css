@@ -816,10 +816,15 @@ body.blur-bg > div {
 
 
 
+
+
 /*---------------------- common_css --------------------------*/
 
 .textblue {
     color: #4dd0e1;
+}
+.textwhite {
+    color: #ffffff;
 }
 .taCenter {
 	text-align: center;
@@ -882,4 +887,7 @@ body.blur-bg > div {
 }
 .maT10 {
     margin-top: 10px;
+}
+.font1em {
+    font-size: 1em;
 }
