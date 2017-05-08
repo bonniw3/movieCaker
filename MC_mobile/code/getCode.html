@@ -15,14 +15,12 @@
 </head>
 <body>
     <div class="bg"></div>
-    <div class="login" id="login"> 
-        <!--<p><a href="mobileSignup.html" class="under-line"><i class="fa fa-angle-left padR1x" aria-hidden="true"></i> 回註冊頁</a></p>-->
-        <!--<h3 class="welcome-title maT2x">歡迎加入電影蛋糕</h3>-->
+    <div class="login" id="login">
         <fieldset class="toLogin maT2x maB2x padLR">
             <div class="login-title" data-loginTitle="login">
                 <span class="simpleLogin">驗證手機號碼</span>
             </div>
-            <form action="/account/confirmPhone" method="post">
+            <form action="/account/" method="post">
                 <input name="__RequestVerificationToken" type="hidden" value="7NCtnH0ji_neBjsZmVTknXVjxSz-AuzT11MZNgHqjfjGkrdnVnhRtmJmgsUd1CyNtjF9zCoFYoN4f3xV-air5q1YvczPZllg5yqHPRINSIs1" />
                 <fieldset>
                     <div class="login-content slideDown">
@@ -39,7 +37,6 @@
             </form>
             <button class="btn-resend maT2x" onClick="history.go(0)">取得新驗證碼</button>
         </fieldset>
-        <!--<p class="prompt_signup" >已經是會員？ <a class="under-line" style="font-size:1.2em;" href="/login?returnUrl=http%3A%2F%2Ftest.moviecaker.com%2F">登入</a></p>-->
     </div>
 
     <!--<script src="/Scripts/jquery-1.8.3.min.js"></script>
