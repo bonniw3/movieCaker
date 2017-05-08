@@ -863,11 +863,17 @@ span.bind-success:after {
 .padLR {
     padding: 0 10px;
 }
+.padLR2x {
+    padding: 0 20px;
+}
 .padR1x {
     padding-right: 5px;
 }
 .padR2x {
     padding-right: 10px;
+}
+.padL2x {
+    padding-left: 10px;
 }
 .lineh40 {
     line-height: 40px;
