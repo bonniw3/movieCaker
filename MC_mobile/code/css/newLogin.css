@@ -814,7 +814,7 @@ body.blur-bg > div {
     display: block;  
 }
 
-span.bind-success {
+/*span.bind-success {
     position: relative;
 }
 
@@ -826,7 +826,7 @@ span.bind-success:after {
     bottom: -15px;
     right: 44%;
     background-color: rgba(238,238,238,.5);
-}
+}*/
 
 
 
