@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>電影蛋糕</title>
+    <meta name="description" content="在电影蛋糕，你可以给看过的电影贴标签、写一篇日志或做专题。可以记录你的电影人生表达品味，结交有相同爱好的朋友。相信你可以在电影蛋糕找到好电影，好电影也会来找你。" />
+    <link rel="canonical" href="http://test.moviecaker.com/">
+    <style>
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak {
+            display: none !important;
+        }
+
+        body{
+            background-color: #272727;
+        }
+
+        .loader {
+            font-size: 15px;
+            margin: 40vh auto;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            position: relative;
+            text-indent: -9999em;
+            -webkit-animation: load4 1.3s infinite linear;
+            animation: load4 1.3s infinite linear;
+            -webkit-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+        @-webkit-keyframes load4 {
+            0%, 100% {
+                box-shadow: 0 -3em 0 0.2em #2e839f, 2em -2em 0 0em #2e839f, 3em 0 0 -1em #2e839f, 2em 2em 0 -1em #2e839f, 0 3em 0 -1em #2e839f, -2em 2em 0 -1em #2e839f, -3em 0 0 -1em #2e839f, -2em -2em 0 0 #2e839f;
+            }
+
+            12.5% {
+                box-shadow: 0 -3em 0 0 #2e839f, 2em -2em 0 0.2em #2e839f, 3em 0 0 0 #2e839f, 2em 2em 0 -1em #2e839f, 0 3em 0 -1em #2e839f, -2em 2em 0 -1em #2e839f, -3em 0 0 -1em #2e839f, -2em -2em 0 -1em #2e839f;
+            }
+
+            25% {
+                box-shadow: 0 -3em 0 -0.5em #2e839f, 2em -2em 0 0 #2e839f, 3em 0 0 0.2em #2e839f, 2em 2em 0 0 #2e839f, 0 3em 0 -1em #2e839f, -2em 2em 0 -1em #2e839f, -3em 0 0 -1em #2e839f, -2em -2em 0 -1em #2e839f;
+            }
+
+            37.5% {
+                box-shadow: 0 -3em 0 -1em #2e839f, 2em -2em 0 -1em #2e839f, 3em 0em 0 0 #2e839f, 2em 2em 0 0.2em #2e839f, 0 3em 0 0em #2e839f, -2em 2em 0 -1em #2e839f, -3em 0em 0 -1em #2e839f, -2em -2em 0 -1em #2e839f;
+            }
+
+            50% {
+                box-shadow: 0 -3em 0 -1em #2e839f, 2em -2em 0 -1em #2e839f, 3em 0 0 -1em #2e839f, 2em 2em 0 0em #2e839f, 0 3em 0 0.2em #2e839f, -2em 2em 0 0 #2e839f, -3em 0em 0 -1em #2e839f, -2em -2em 0 -1em #2e839f;
+            }
+
+            62.5% {
+                box-shadow: 0 -3em 0 -1em #2e839f, 2em -2em 0 -1em #2e839f, 3em 0 0 -1em #2e839f, 2em 2em 0 -1em #2e839f, 0 3em 0 0 #2e839f, -2em 2em 0 0.2em #2e839f, -3em 0 0 0 #2e839f, -2em -2em 0 -1em #2e839f;
+            }
+
+            75% {
+                box-shadow: 0em -3em 0 -1em #2e839f, 2em -2em 0 -1em #2e839f, 3em 0em 0 -1em #2e839f, 2em 2em 0 -1em #2e839f, 0 3em 0 -1em #2e839f, -2em 2em 0 0 #2e839f, -3em 0em 0 0.2em #2e839f, -2em -2em 0 0 #2e839f;
+            }
+
+            87.5% {
+                box-shadow: 0em -3em 0 0 #2e839f, 2em -2em 0 -1em #2e839f, 3em 0 0 -1em #2e839f, 2em 2em 0 -1em #2e839f, 0 3em 0 -1em #2e839f, -2em 2em 0 0 #2e839f, -3em 0em 0 0 #2e839f, -2em -2em 0 0.2em #2e839f;
+            }
+        }
+
+        @keyframes load4 {
+            0%, 100% {
+                box-shadow: 0 -3em 0 0.2em #2e839f, 2em -2em 0 0em #2e839f, 3em 0 0 -1em #2e839f, 2em 2em 0 -1em #2e839f, 0 3em 0 -1em #2e839f, -2em 2em 0 -1em #2e839f, -3em 0 0 -1em #2e839f, -2em -2em 0 0 #2e839f;
+            }
+
+            12.5% {
+                box-shadow: 0 -3em 0 0 #2e839f, 2em -2em 0 0.2em #2e839f, 3em 0 0 0 #2e839f, 2em 2em 0 -1em #2e839f, 0 3em 0 -1em #2e839f, -2em 2em 0 -1em #2e839f, -3em 0 0 -1em #2e839f, -2em -2em 0 -1em #2e839f;
+            }
+
+            25% {
+                box-shadow: 0 -3em 0 -0.5em #2e839f, 2em -2em 0 0 #2e839f, 3em 0 0 0.2em #2e839f, 2em 2em 0 0 #2e839f, 0 3em 0 -1em #2e839f, -2em 2em 0 -1em #2e839f, -3em 0 0 -1em #2e839f, -2em -2em 0 -1em #2e839f;
+            }
+
+            37.5% {
+                box-shadow: 0 -3em 0 -1em #2e839f, 2em -2em 0 -1em #2e839f, 3em 0em 0 0 #2e839f, 2em 2em 0 0.2em #2e839f, 0 3em 0 0em #2e839f, -2em 2em 0 -1em #2e839f, -3em 0em 0 -1em #2e839f, -2em -2em 0 -1em #2e839f;
+            }
+
+            50% {
+                box-shadow: 0 -3em 0 -1em #2e839f, 2em -2em 0 -1em #2e839f, 3em 0 0 -1em #2e839f, 2em 2em 0 0em #2e839f, 0 3em 0 0.2em #2e839f, -2em 2em 0 0 #2e839f, -3em 0em 0 -1em #2e839f, -2em -2em 0 -1em #2e839f;
+            }
+
+            62.5% {
+                box-shadow: 0 -3em 0 -1em #2e839f, 2em -2em 0 -1em #2e839f, 3em 0 0 -1em #2e839f, 2em 2em 0 -1em #2e839f, 0 3em 0 0 #2e839f, -2em 2em 0 0.2em #2e839f, -3em 0 0 0 #2e839f, -2em -2em 0 -1em #2e839f;
+            }
+
+            75% {
+                box-shadow: 0em -3em 0 -1em #2e839f, 2em -2em 0 -1em #2e839f, 3em 0em 0 -1em #2e839f, 2em 2em 0 -1em #2e839f, 0 3em 0 -1em #2e839f, -2em 2em 0 0 #2e839f, -3em 0em 0 0.2em #2e839f, -2em -2em 0 0 #2e839f;
+            }
+
+            87.5% {
+                box-shadow: 0em -3em 0 0 #2e839f, 2em -2em 0 -1em #2e839f, 3em 0 0 -1em #2e839f, 2em 2em 0 -1em #2e839f, 0 3em 0 -1em #2e839f, -2em 2em 0 0 #2e839f, -3em 0em 0 0 #2e839f, -2em -2em 0 0.2em #2e839f;
+            }
+        }
+    </style>
+</head>
+<body ng-controller="MainCtrl as main">
+    <div ng-hide="main.appReady">
+        <div class="loader">Loading...</div>
+    </div>
+    <div ng-show="main.appReady" ng-init="main.init('805159066237146','4036480982','101224571')" class="ng-cloak" ng-cloak>
+        <!--<div class="menu" ng-class="{ blur: main.screenStatus() }">
+            <div ng-show="main.isSearchMode">
+                <label class="search-wrap">
+                    <input id="search-input" class="search-content" type="text" ng-model="main.searchText" ng-bind="main.searchText" multi-search>
+                    <span class="icon-search gray-w" ng-click="main.search()"></span>
+                </label>
+                <span class="search-cancle gray-w fRight" ng-click="main.isSearchMode=false">取消</span>
+            </div>
+            <ul id="header-items" ng-show="!main.isSearchMode">
+                <li id="main-menu">
+                    <div class="cell-container">
+                        <a href="" class="menu-button fa fa-bars"></a>
+                    </div>
+                </li>
+                <li id="logo">
+                    <div class="cell-container">
+                        <h1 class="cell-container">
+                            <a class="logo" href="/mobile">
+                                <img src="/Areas/Mobile/Images/logo.png" height="25" alt="MovieCaker" />
+                            </a>
+                            <span class="gray-w">電影蛋糕</span>
+                        </h1>
+                    </div>
+                </li>
+                <li id="other-operate">
+                    <div class="cell-container">
+                            <a class="icon-key2" ng-click="main.MenuLogin()"></a>
+                        <a class="icon-search paL1x" ng-click="main.isSearchMode=true"></a>
+                    </div>
+                </li>
+            </ul>
+            <div id="search-autocomplete"></div>
+        </div>-->
+<div class="popTo" ng-class="{ blur: main.screenStatus() }" id="login" ng-show="main.showMenuLogin">
+    <div class="popwrap">
+        <div class="popclose" ng-click="main.showMenuLogin=false"><i class="icon-close"></i></div>
+        <div class="login popMenu">
+            <img src="/Images/popcorn.png" />
+            <h2 class="title">您发现了一项会员功能</h2>
+            <p>
+                在电影蛋糕，您可以给看过的电影贴标签、写日志或做专题。<br />
+                记录您的电影人生、结交相同爱好的朋友，相信您可以找到好电影，它也会来找你。
+            </p>
+            <a class="btn-f-default" href="/login?open=Mobile">立即使用</a>
+        </div>
+    </div>
+</div>
+<div class="popTo" ng-show="main.screenStatus()" style="background-color: rgba(0,0,0,.3);z-index:99999999">
+    <div class="loader">Loading...</div>
+</div>
+<div id="creat" class="popTo" ng-show="main.showMenuExtraWindows" ng-class="{ blur: main.screenStatus() }">
+    <div class="popwrap">
+        <div class="popclose" ng-click="main.showMenuExtraWindows=false"><i class="icon-close"></i></div>
+        <ul class="popMenu">
+            <li><a style="display:block" ng-click="main.showMenuReviewWindow=true">寫影誌</a></li>
+            <li><a style="display:block" href="/mobile/Topic/Create">做專題</a></li>
+        </ul>
+    </div>
+</div>
+<div id="writeCom" class="popTo" ng-show="main.showMenuReviewWindow" ng-class="{ blur: main.screenStatus() }">
+    <div class="popwrap">
+        <div class="popclose" ng-click="main.showMenuReviewWindow=false;main.showMenuExtraWindows=false"><i class="icon-close"></i></div>
+        <fieldset class="fieldset">
+            <div class="formInput">
+                <label for="" style="text-align: left; width: 25%;">我看過：</label>
+                <input type="text" id="menu-searchVideo" video-search />
+            </div>
+            <div class="formInput">
+                <label for="comment" style="text-align: left;">影評：</label>
+                <p></p>
+            </div>
+            <div class="formInput">
+                <textarea name="comment" id="comment" cols="30" rows="5" style="width: 97%;" required ng-model="main.makeReview.review" ng-bind="main.makeReview.review"></textarea>
+            </div>
+            <div class="formInput">
+                <label for="date">觀影日期：</label>
+                <p>
+                    <input name="date" type="checkbox" id="date" ng-model="main.hasReviewDate" ng-click="main.initialViewOn()">
+                    <input name="date" type="date" id="date" ng-model="main.makeReview.viewedOn" ng-disabled="!main.hasReviewDate" max="2017-05-11">
+                </p>
+            </div>
+            <div class="formInput">
+                <div class="starW maClean">
+                    <div class="starAll taLeft">
+                        <raty score="main.makeReview.score"></raty>
+                    </div>
+                    <i class="fa fRight taLeft lh15 heart" ng-class="{true:'icon-heart',false:'icon-heart2'}[main.makeReview.isLiked]" ng-click="main.makeReview.isLiked=!main.makeReview.isLiked"></i>
+                </div>
+            </div>
+            <div class="formInput">
+                <button class="btn-default" type="button" ng-click="main.addReview()">確定</button>
+            </div>
+        </fieldset>
+        <div id="review-autocomplete"></div>
+    </div>
+</div>
+<div id="shareTo" class="popTo" ng-show="main.showShareWindow" ng-class="{ blur: main.screenStatus() }">
+    <div class="popwrap">
+        <div class="popclose" ng-click="main.showShareWindow=false">
+            <i class="icon-close"></i>
+        </div>
+        <p class="taCenter fz-s gray-w maT1x">分享</p>
+        <div class="shareToSocial taCenter maT1x maB1x">
+            <a class="paL1x" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'WB')"><img src="/Images/icons_weibo-pc.png" height="40" width="40" alt=""></a>
+            <a class="paL1x" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'FB')"><img src="/Images/icons_facebook-pc.png" height="40" width="40" alt=""></a>
+            <a class="paL1x" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'QQ')"><img src="/Images/icons_qq-pc.png" height="40" width="40" alt=""></a>
+            
+        </div>
+    </div>
+</div>
+<div class="popTo" ng-show="main.shareToQQ" ng-class="{ blur: main.screenStatus() }">
+    <div class="popwrap" style="height:85%">
+        <div class="popclose" ng-click="main.shareToQQ=false;main.showShareWindow=false;main.thirdPartyShareUrl=''"><i class="icon-close"></i></div>
+        <div class="scroll-wrapper">
+            <iframe ng-src="{{ main.thirdPartyShareUrl}}"></iframe>
+        </div>
+    </div>
+</div>
+        <nav class="nav">
+    <ul class="main-menu">
+        <li class="main-menu-option"><a href="/mobile">首頁</a></li>
+        <ul class="sub-menu">
+            <li><a href="/mobile/master/viewed">觀影達人</a></li>
+            <li><a href="/mobile/master/review">影評達人</a></li>
+            <li><a href="/mobile/master/topic">專題達人</a></li>
+        </ul>
+        <li class="main-menu-option"><a href="/mobile/video/ranks">電影</a></li>
+        <ul class="sub-menu">
+            <li><a href="/mobile/video/ranks">電影榜</a></li>
+            <li><a href="/mobile/video/awards">金獎電影</a></li>
+            <li><a href="/mobile/video/gene">電影基因</a></li>
+        </ul>
+        <li class="main-menu-option"><a href="/mobile/topic">專題</a></li>
+        <ul class="sub-menu">
+            <li><a href="/mobile/topic?sort=new">最新</a></li>
+            <li><a href="/mobile/topic?sort=hot">熱門</a></li>
+            <li><a href="/mobile/topic?sort=all">全部</a></li>
+        </ul>
+    </ul>
+</nav>
+        <div ng-class="{ blur: main.screenStatus() }">
+            
+<div ng-controller="HomeIndexCtrl as vm" ng-init="vm.init()">
+    <div class="banner gapToMenu" ng-swipe-left="vm.nextBanner()" ng-swipe-right="vm.previousBanner()">
+        <ul class="banner-list">
+            <li ng-repeat="item in vm.recommendTopics">
+                <a ng-href="/mobile/topic/{{ item.TopicId }}">
+                    <img ng-src="{{ item.BannerUrl }}?width=500" alt="">
+                </a>
+            </li>
+        </ul>
+        <ul class="banner-control">
+            <li ng-repeat="item in vm.recommendTopics" ng-class="{'active' : $first, 'item' : true}"></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="panel-movie hasTitle">
+            <div class="blackTitle clearFix"><span class="fz-m">正在熱映</span><button class="btn-f-default fRight"><a href="/mobile/video/ranks?sort=new">more+</a></button></div>
+            <ul class="panel-movie-list borderBB">
+                <li ng-repeat="item in vm.hotVideos">
+                    <a ng-href="/mobile/video/{{item.Id}}">
+                        <h2 class="movie-title black">&nbsp;<span class="gray-w" ng-bind="item.Name"></span></h2>
+                        <movie-poster ng-if="main.appReady" poster-path="http://121.41.34.59/Content/pictures/files/{{item.Picture}}"></movie-poster>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="panel-info borderBB">
+            <div class="blackTitle clearFix"><span class="fz-m">熱門影評</span><button class="btn-f-default fRight"><a href="/mobile/review">more+</a></button></div>
+            <ul class="panel-info-list">
+                <li ng-repeat="item in vm.hotReviews">
+                    <a ng-href="/mobile/review/{{item.ReviewId}}">
+                        <h3 class="fz-m green paB1x paTHalfX review-name" ng-bind="(item.VideoName) + ' (' + (item.VideoReleaseDate | momentDate :'YYYY') + ') ' + (item.VideoENName)"></h3>
+                        <movie-poster ng-if="main.appReady"  poster-path="http://121.41.34.59/Content/pictures/files/{{item.VideoPicture}}" class="movie-pic"></movie-poster>
+                    </a>
+                    <div class="info lh15">
+                        <p>
+                            <user-avatar data-image-src="/Uploads/UserAvatar/{{item.UserAvatar}}" class="people"></user-avatar>
+                            <a class="green review-author" href="javascript: void(0)" ng-bind="item.UserNickName"></a><br />
+                            <span class="gray-c" ng-show="item.OwnerLinkVideo_ViewedOn==null" ng-bind="'寫於 ' + (item.CreateOn | momentDate :'YYYY/MM/DD')"></span>
+                            <span class="gray-c" ng-show="item.OwnerLinkVideo_ViewedOn!=null" ng-bind="'觀影於 ' + (item.CreateOn| momentDate :'YYYY/MM/DD')"></span>
+                        </p>
+                        <p>
+                            <span class="yellow" data-rate="{{item.OwnerLinkVideo_Score}}">
+                            </span>
+                            <span class="span heart" ng-class="{true:'icon-heart',false:'icon-heart2'}[item.OwnerLinkVideo_IsLiked]"></span>
+                        </p>
+                        <p class="review-content">
+                            <span ng-bind="(item.Review | characters: 48)"></span>
+                            <a class="green" ng-href="/mobile/review/{{item.ReviewId}}">【全文】</a>
+                        </p>
+                        <p class="taCenter borderTBD paTHalfX paBHalfX">
+                            <a ng-href="/mobile/review/{{item.ReviewId}}?response=true">
+                                <i class="icon-bubble"></i>
+                                <span ng-bind="'(' + item.MessageNum + ')'"></span>
+                            </a>&nbsp;&nbsp;
+                            <a ng-click="vm.activing('Like', item)">
+                                <i class="icon-love" ng-class="{'active':item.IsLiked}"></i>
+                                <span class="liked-num" ng-bind="'(' + item.LikedNum + ')'"></span>
+                            </a>
+                            <span>&nbsp;&nbsp;</span>
+                            <a ng-click="vm.activing('Share', item)">
+                                <i class="icon-share" ng-class="{'active':item.IsShared}"></i>
+                                <span class="shared-num" ng-bind="'(' + item.SharedNum + ')'"></span>
+                            </a>&nbsp;&nbsp;
+                            <a href="javascript: void(0)">
+                                <i class="icon-users"></i>
+                                <span ng-bind="'(' + item.PageViews + ')'"></span>
+                            </a>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="panel-pro maT1x borderBB">
+            <div class="blackTitle clearFix"><span class="fz-m">觀影達人</span><button class="btn-f-default fRight"><a href="/mobile/master/viewed">more+</a></button></div>
+            <ul class="panel-pro-list maT1x">
+                <li ng-repeat="item in vm.viewedRanks" class="pro-list-item gray-block pa5 borderBBD">
+                    <span class="green rank" ng-bind="'No.' + ($index + 1)"></span>
+                    <user-avatar class="fLeft paR1x" data-image-src="/Uploads/UserAvatar/{{ item.Avatar }}" height="30" width="30"></user-avatar>
+                    <span class="green lh15" ng-bind="item.NickName"></span><br>
+                    <span>
+                        <i class="icon-eye"></i>&nbsp;<span ng-bind="item.Item1Count"></span>&nbsp;&nbsp;&nbsp;
+                        <i class="icon-heart"></i>&nbsp;<span ng-bind="item.Item2Count"></span>&nbsp;&nbsp;&nbsp;
+                        <i class="icon-fire"></i>&nbsp;<span ng-bind="item.Item3Count"></span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+            <div class="loading-ajax" ng-show="main.loadingStatus()">
+                <i class="fa fa-spinner fa-pulse fa-4x green"></i>
+            </div>
+            <div class="top"></div>
+        </div>
+    </div>
+    <script defer src='/Scripts/jquery-1.8.3.min.js'></script>
+<script defer src='/Scripts/jquery-ui-1.10.3.min.js'></script>
+<script defer src='/Scripts/jquery/jquery.ui.touch-punch.min.js'></script>
+<script defer src='/Scripts/jquery/jquery.lazyload.min.js'></script>
+<script defer src='/Scripts/jquery/jquery.cookie.js'></script>
+<script defer src='/Scripts/moment/moment.min.js'></script>
+<script defer src='/Scripts/mobile/main.js'></script>
+
+    <script defer src='/scripts/angular/angular.js'></script>
+<script defer src='/scripts/angular/components/cssPreload/cssPreload.factory.js'></script>
+<script defer src='/scripts/angular/components/cssPreload/cssPreload.directive.js'></script>
+<script defer src='/scripts/angular/components/ngTouch/ng-touch.js'></script>
+<script defer src='/scripts/angular/components/sortable/ng-sortable.js'></script>
+<script defer src='/scripts/angular/components/infiniteScroll/ng-infinite-scroll.min.js'></script>
+<script defer src='/scripts/angular/app.mobile.module.js'></script>
+<script defer src='/scripts/angular/services/filter.js'></script>
+<script defer src='/scripts/angular/services/service.js'></script>
+<script defer src='/scripts/angular/components/multi-search.directive.js'></script>
+<script defer src='/scripts/angular/components/topic-video-search.directive.js'></script>
+<script defer src='/scripts/angular/components/star-rating.directive.js'></script>
+<script defer src='/scripts/angular/components/all.directive.js'></script>
+
+    <script defer src="/scripts/angular/controllers/mobile/layout.ctrl.js?v=20161209"></script>
+    
+    <script defer src="/scripts/angular/controllers/mobile/home-index.ctrl.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-68883772-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
+<link css-preload ng-href='/Content/jquery-ui.css' rel='stylesheet' />
+<link css-preload ng-href='/Content/mobile/screen.css' rel='stylesheet' />
+<link css-preload ng-href='/Content/mobile/custom.css' rel='stylesheet' />
+
+<link css-preload ng-href="/Content/mobile/font-awesome.min.css" rel="stylesheet" />
+<link css-preload ng-href="/Content/mobile/icomoon/style.min.css" rel="stylesheet" />

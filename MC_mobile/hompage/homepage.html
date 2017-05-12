@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>電影蛋糕</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="在电影蛋糕，你可以给看过的电影贴标签、写一篇日志或做专题。可以记录你的电影人生表达品味，结交有相同爱好的朋友。相信你可以在电影蛋糕找到好电影，好电影也会来找你。" />
+
+    <link href="css/homepage.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="bkgd-mask">
+        <section class="content">
+            <h1 class="logo maT50">
+                <img src="img/mob_home_logo.png" alt="">
+            </h1>
+            <div class="search-area maT3x maB3x">
+                <div class="search-keyword group-wrap">
+                    <i class="fa fa-search fa-lg pull-left maT1x padL1x" aria-hidden="true"></i>
+                    <input class="pull-left" type="text" name="" value="" placeholder="尋找電影...">
+                </div>
+            </div>
+            <div class="group-wrap btn-group">
+                <div class="page-btn-group pull-left">
+                    <a href="#">
+                        <div class="page-btn"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                        <span class="page-title">本週票房榜</span>
+                    </a>
+                </div>
+                <div class="page-btn-group pull-left">
+                    <a href="#">
+                        <div class="page-btn"><i class="fa fa-film" aria-hidden="true"></i></div>
+                        <span class="page-title">院線熱映</span> 
+                    </a>  
+                </div>
+                <div class="page-btn-group pull-left">
+                    <a href="#">
+                        <div class="page-btn"><i class="fa fa-play" aria-hidden="true"></i></div>
+                        <span class="page-title">熱門在線看</span>
+                    </a>   
+                </div>
+                <div class="page-btn-group pull-left">
+                    <a href="#">
+                        <div class="page-btn"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+                        <span class="page-title">熱門專題</span>
+                    </a>   
+                </div>
+                <div class="page-btn-group pull-left">
+                    <a href="#">
+                        <div class="page-btn"><i class="fa fa-users" aria-hidden="true"></i></div>
+                        <span class="page-title">朋友在看</span>
+                    </a>   
+                </div>
+                <div class="page-btn-group pull-left">
+                    <a href="#">
+                        <div class="page-btn avatar"><img src="img/user.jpg" alt=""></div>
+                        <span class="page-title">個人頁面</span>
+                    </a>   
+                </div>
+            </div>
+                <div class="homepage-btn-wrap group-wrap">
+                    <a href="#" class="homepage-btn login-btn pull-left">登入</a>
+                    <a href="#" class="homepage-btn signup-btn pull-right">註冊</a>
+                </div>
+        </section>
+    </div>
+    
+
+    <script defer src='/Scripts/jquery-1.8.3.min.js'></script>
+    <script defer src='/Scripts/jquery-ui-1.10.3.min.js'></script>
+    <script defer src='/Scripts/jquery/jquery.ui.touch-punch.min.js'></script>
+    <script defer src='/Scripts/jquery/jquery.lazyload.min.js'></script>
+    <script defer src='/Scripts/jquery/jquery.cookie.js'></script>
+    <script defer src='/Scripts/moment/moment.min.js'></script>
+    <script defer src='/Scripts/mobile/main.js'></script>
+
+    <script defer src='/scripts/angular/angular.js'></script>
+    <script defer src='/scripts/angular/components/cssPreload/cssPreload.factory.js'></script>
+    <script defer src='/scripts/angular/components/cssPreload/cssPreload.directive.js'></script>
+    <script defer src='/scripts/angular/components/ngTouch/ng-touch.js'></script>
+    <script defer src='/scripts/angular/components/sortable/ng-sortable.js'></script>
+    <script defer src='/scripts/angular/components/infiniteScroll/ng-infinite-scroll.min.js'></script>
+    <script defer src='/scripts/angular/app.mobile.module.js'></script>
+    <script defer src='/scripts/angular/services/filter.js'></script>
+    <script defer src='/scripts/angular/services/service.js'></script>
+    <script defer src='/scripts/angular/components/multi-search.directive.js'></script>
+    <script defer src='/scripts/angular/components/topic-video-search.directive.js'></script>
+    <script defer src='/scripts/angular/components/star-rating.directive.js'></script>
+    <script defer src='/scripts/angular/components/all.directive.js'></script>
+
+    <script defer src="/scripts/angular/controllers/mobile/layout.ctrl.js?v=20161209"></script>
+    <script defer src="/scripts/angular/controllers/mobile/home-index.ctrl.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-68883772-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+</html>
