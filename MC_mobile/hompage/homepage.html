@@ -24,7 +24,7 @@
                 </button>
                 <div class="search-keyword">
                     <i class="fa fa-search fa-lg pull-left" aria-hidden="true"></i>
-                    <input class="pull-left" type="text" name="" value="" placeholder="尋找電影..." />
+                    <input id="search-input" class="pull-left" type="text" name="" value="" placeholder="尋找電影..." />
                 </div>
                 <div class="search-filter">
                     <ul>
@@ -74,14 +74,31 @@
                     </a>   
                 </div>
             </div>
-                <div class="homepage-btn-wrap group-wrap">
-                    <a href="#" class="homepage-btn login-btn pull-left">登入</a>
-                    <a href="#" class="homepage-btn signup-btn pull-right">註冊</a>
-                </div>
+            <div class="homepage-btn-wrap group-wrap">
+                <a href="#" class="homepage-btn login-btn pull-left">登入</a>
+                <a href="#" class="homepage-btn signup-btn pull-right">註冊</a>
+            </div>
         </section>
     </div>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
+
+        $(document).ready(function(){
+            $('#search-input').on("focus", function(){
+                $('.search-area').addClass("searching");
+                $('.btn-close').addClass("searching");
+                $('.search-keyword').addClass("searching");
+            });
+
+            $('.btn-close').on("click", function(){
+                $('.search-area').removeClass("searching");
+                $('.btn-close').removeClass("searching");
+                $('.search-keyword').removeClass("searching");
+            });
+        });
+        
 
     </script>
 
