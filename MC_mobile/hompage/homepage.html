@@ -125,26 +125,24 @@
                 $('.search-keyword').removeClass("searching");
             });
 
-            if ( $("ul.ui-autocomplete").parents("#search-autocomplete").length == 1 ) {
-                $('.more').addClass("searching");
-            } else {
-                $('.more').removeClass("searching");
-            };
+            // if ( $(".ui-autocomplete").parent("#search-autocomplete").length == 1 ) {
+            //     $('.more').addClass("searching");
+            // } else {
+            //     $('.more').removeClass("searching");
+            // };
 
              // 有搜尋結果再出現 “更多搜尋結果”
-            //  $('#search-input').on("keyup", function(){
-            //     if ( $(this).val() == '') {
-            //         $('.more').removeClass("searching");
-            //     } else {
-            //         $('.more').addClass("searching");
-            //     }
-            // });
+             $('#search-input').on("keyup", function(){
+                if ( $(this).val() == '') {
+                    $('.more').removeClass("searching");
+                } else {
+                    $('.more').addClass("searching");
+                }
+            });
 
         });
 
     </script>
-
-
 
 </body>
 </html>
