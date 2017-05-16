@@ -43,7 +43,7 @@ body {
 	overflow: hidden;
 	color: #71cfee;
     font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Heiti TC","Microsoft JhengHei", "å¾®è»Ÿæ­£é»‘", "Arial", sans-serif;
-    background: url(../img/mob_home_bkgd.jpg) -70px 0 no-repeat;
+    background: #0c0c0c url(../img/mob_home_bkgd.jpg) -70px 0 no-repeat;
 	width: 100vw;
 	height: 100vh;
     -webkit-background-size: cover;
@@ -101,6 +101,7 @@ table {
     box-sizing: border-box;
     padding: 30px;
     position: relative;
+    overflow-x: hidden;
 }
 
 /* ---------- LOGO section ---------- */
@@ -120,17 +121,17 @@ table {
     left: 0%;
     width: 100vw;
     height: 40vh;
-    /*z-index: 3;*/
     box-sizing: border-box;
     padding: 20px 30px;
     background-color: rgba(12,12,12,0);
-    transition: background-color .7s;
+    transition: background-color .7s .05s,
+                height .5s .5s;
 }
 .search-area.searching {
     height: 100vh;
     z-index: 5;
     background-color: rgba(12,12,12,.95);
-    transition: background-color .7s;
+    transition: background-color .7s .05s;
 }
 
 .btn-close {
@@ -149,14 +150,14 @@ table {
     padding-left: 12px;
     display: block;
     cursor: pointer;
-    transition: top .5s .2s ease;
+    transition: top .5s .1s ease;
 }
 .btn-close:focus {
     outline: none;
 }
 .btn-close.searching {
     top: 20px;
-    transition: top .5s .2s ease;
+    transition: top .5s .1s ease;
 }
 .btn-close i {
     font-size: 25px;
@@ -172,14 +173,14 @@ table {
     margin-top: 58%;
     width: 100%;
     overflow: hidden;
-    transition: margin-top .6s .2s ease;
+    transition: margin-top .6s .1s ease;
 }
 .search-keyword.searching {
     margin-top: 20%;
-    transition: margin-top .6s .2s ease;
+    transition: margin-top .6s .1s ease;
 }
 .search-keyword input {
-    width: 85%;
+    width: 100%;
     background: transparent;
     border-bottom: 1px solid rgba(113,207,238,.4);
     padding: 10px 5px 10px 45px;
@@ -199,14 +200,54 @@ table {
     left: 15px;
 }
 
+.more {
+    font-size: 0.9em;
+    color: #71cfee;
+    position: absolute;
+    top: 18%;
+    right: -100px;
+    transition: right .5s;
+}
+.more.searching {
+    right: 30px;
+    transition: right .5s 3s;
+}
+
+ /* --- adjust jquery_ui --- */
+ul.ui-autocomplete {
+    width: 100vw !important;
+    max-height: 70vh;
+    top: 25% !important;
+    left: 0 !important;
+    border: none !important;
+    background-color: transparent;
+    font-size: 1em;
+    margin-top: 10px;
+    padding: 0 30px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scrol;
+}
+li.ui-menu-item {
+    width: 100%;
+    color: #ffffff;
+    padding: 5px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(238,238,238,.2);
+}
+div.ui-state-active {
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    color: #71cfee !important;
+    transition: color .5s;
+}
 
 
 /* ---------- MENU section ---------- */
-.btn-group {
+.btn-group-wrap {
     max-height: 45vh;
     overflow: scroll;
     margin-top: 30%;
-    /*z-index: 10;*/
 }
 
 .page-btn-group {
@@ -214,7 +255,6 @@ table {
     width: 31%;
     text-align: center;
 }
-
 .page-btn {
     width: 55px;
     height: 55px;
@@ -244,7 +284,7 @@ table {
     position: fixed;
     left: 0;
     bottom: 0;
-    padding: 8% 0;
+    padding: 5% 0 7% 0;
     background-color: rgba(12,12,12,1);
 }
 
@@ -292,7 +332,9 @@ table {
     margin-left: 40px;
 }
 
-
+.padR1x {
+    padding-right: 10px;
+}
 .padL1x {
     padding-left: 10px;
 }
