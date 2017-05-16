@@ -86,21 +86,8 @@
     <script>
 
         $(document).ready(function(){
-            $('#search-input').on("focus", function(){
-                $('.search-area').addClass("searching");
-                $('.btn-close').addClass("searching");
-                $('.search-keyword').addClass("searching");
-                $('.more').addClass("searching");
 
-            });
-
-            $('.btn-close').on("click", function(){
-                $('.search-area').removeClass("searching");
-                $('.btn-close').removeClass("searching");
-                $('.search-keyword').removeClass("searching");
-                $('.more').removeClass("searching");
-            });
-
+            // 測試搜尋樣式，不是真的搜尋功能
             $( function() {
                 var availableTags = [
                     "美女與野獸 Beauty and the Beast (2017)",
@@ -125,6 +112,33 @@
                     appendTo: "#search-autocomplete"
                 });
             });
+
+            $('#search-input').on("focus", function(){
+                $('.search-area').addClass("searching");
+                $('.btn-close').addClass("searching");
+                $('.search-keyword').addClass("searching");
+            });
+
+            $('.btn-close').on("click", function(){
+                $('.search-area').removeClass("searching");
+                $('.btn-close').removeClass("searching");
+                $('.search-keyword').removeClass("searching");
+            });
+
+            if ( $("ul.ui-autocomplete").parents("#search-autocomplete").length == 1 ) {
+                $('.more').addClass("searching");
+            } else {
+                $('.more').removeClass("searching");
+            };
+
+             // 有搜尋結果再出現 “更多搜尋結果”
+            //  $('#search-input').on("keyup", function(){
+            //     if ( $(this).val() == '') {
+            //         $('.more').removeClass("searching");
+            //     } else {
+            //         $('.more').addClass("searching");
+            //     }
+            // });
 
         });
 

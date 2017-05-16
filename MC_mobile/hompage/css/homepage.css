@@ -211,11 +211,11 @@ table {
     position: absolute;
     top: 18%;
     right: -200px;
-    transition: right .5s;
+    transition: right .5s .2s;
 }
 .more.searching {
     right: 30px;
-    transition: right .5s 3s;
+    transition: right .5s .2s;
 }
 
  /* --- adjust jquery_ui --- */
@@ -231,7 +231,7 @@ ul.ui-autocomplete {
     padding: 0 30px;
     box-sizing: border-box;
     overflow-x: hidden;
-    overflow-y: scrol;
+    overflow-y: scroll;
 }
 li.ui-menu-item {
     width: 100%;
