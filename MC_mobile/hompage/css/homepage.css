@@ -115,6 +115,11 @@ table {
 
 
 /* ---------- SEARCH section ---------- */
+
+#search-input::-webkit-search-cancel-button {
+    position: relative;
+    right: -500px;
+}
 .search-area {
     position: absolute;
     top: 0%;
@@ -205,7 +210,7 @@ table {
     color: #71cfee;
     position: absolute;
     top: 18%;
-    right: -100px;
+    right: -200px;
     transition: right .5s;
 }
 .more.searching {
