@@ -363,6 +363,7 @@ input {
     line-height: 45px;
     cursor: pointer;
     margin-top: 30px;
+    padding: 0;
 	/*box-shadow: 2px 2px 4px rgba(0,0,0,.2);*/
 	-webkit-transition: all .5s;
        -moz-transition: all .5s;
@@ -410,7 +411,7 @@ input {
 .other-title:after,
 .other-title:before {
 	content: "";
-	width: 30%;
+	width: 43%;
 	margin-right: 10px;
 	height: 1px;
 	position: relative;
@@ -821,6 +822,9 @@ span.bind-success:after {
 }
 .maT2x {
 	margin-top: 30px;
+}
+.maB2x {
+	margin-bottom: 30px;
 }
 .maT5 {
     margin-top: 5px;
