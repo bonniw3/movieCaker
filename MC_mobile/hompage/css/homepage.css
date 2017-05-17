@@ -209,10 +209,10 @@ table {
 }
 
 .more {
-    font-size: 0.9em;
+    font-size: .9em;
     color: #71cfee;
     position: absolute;
-    top: 20%;
+    top: 25%;
     right: -200px;
     transition: right .5s .1s;
 }
@@ -230,7 +230,7 @@ ul.ui-autocomplete {
     border: none !important;
     background-color: transparent;
     font-size: 1em;
-    margin-top: 10px;
+    margin-top: 5%;
     padding: 0 30px;
     box-sizing: border-box;
     overflow-x: hidden;
@@ -315,6 +315,12 @@ div.ui-state-active {
     border: 1px solid rgba(216,124,124,1);
     margin-right: 30px;
     color: rgba(216,124,124,1);
+}
+.signout-btn {
+    width: auto;
+    margin: 0 30px;
+    border: 1px solid rgba(113,207,238,1);
+    color: rgba(113,207,238,1);
 }
 
 

@@ -20,7 +20,7 @@
             </h1>
             
             <div class="search-area group-wrap">
-                <form>
+                <form> 
                     <button class="btn-close group-wrap" type="reset">
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -31,7 +31,7 @@
                     </div>
                 </form>
                 <div id="search-autocomplete"></div>
-                <a href="#" class="more maT2x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>更多搜尋結果</a>
+                <a href="#" class="more pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>更多搜尋結果</a>
             </div>
 
             <div class="group-wrap btn-group-wrap">
@@ -59,6 +59,7 @@
                         <span class="page-title">熱門專題</span>
                     </a>   
                 </div>
+                <!-- 朋友在看，個人頁面，只有登入後才會看到-->
                 <div class="page-btn-group pull-left">
                     <a href="#">
                         <div class="page-btn"><i class="fa fa-users" aria-hidden="true"></i></div>
@@ -73,9 +74,14 @@
                 </div>
             </div>
 
+            <!-- 登入，註冊按鈕，未登入時顯示-->
             <div class="homepage-btn-wrap group-wrap">
                 <a href="#" class="homepage-btn login-btn pull-left">登入</a>
                 <a href="#" class="homepage-btn signup-btn pull-right">註冊</a>
+            </div>
+            <!-- 登出按鈕，登入後顯示-->
+            <div class="homepage-btn-wrap" style="display: none;">
+                <a href="#" class="homepage-btn signout-btn">登出</a>
             </div>
         </section>
     </div>
