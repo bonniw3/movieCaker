@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>電影蛋糕</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <meta name="description" content="在电影蛋糕，你可以给看过的电影贴标签、写一篇日志或做专题。可以记录你的电影人生表达品味，结交有相同爱好的朋友。相信你可以在电影蛋糕找到好电影，好电影也会来找你。" />
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -19,7 +19,7 @@
                 <img src="img/mob_home_logo.png" alt="">
             </h1>
             
-            <div class="search-area group-wrap" ng-show="main.isSearchMode">
+            <div class="search-area group-wrap">
                 <form>
                     <button class="btn-close group-wrap" type="reset">
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -86,7 +86,7 @@
     <script>
 
         $(document).ready(function(){
-
+            
             // 測試搜尋樣式，不是真的搜尋功能
             $( function() {
                 var availableTags = [
@@ -105,41 +105,42 @@
                     "野獸情人 Beastly (2011)",
                     "玩美女人 Volver (2006)",
                     "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                    "醜女大翻身 200 Pounds Beauty (2006)","醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "美女與野獸 Beauty and the Beast (2017)",
+                    "小太陽的願望 Little Miss Sunshine (2006)",
                     "醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                    "醜女大翻身 200 Pounds Beauty (2006)"
                 ];
                 $( "#search-input" ).autocomplete({
                     source: availableTags,
-                    appendTo: "#search-autocomplete"
+                    appendTo: "#search-autocomplete",
+                    open: function(){
+                        $('.more').addClass("searching"); // 有搜尋結果再出現”更多搜尋“按鈕
+                    },
+                    close: function(){
+                        $('.more').removeClass("searching"); // 沒有搜尋結果不出現”更多搜尋“按鈕
+                    }
                 });
             });
 
+            // 首頁點擊搜尋的動態效果
             $('#search-input').on("focus", function(){
+                window.scrollBy(0, 1); // 讓鍵盤出現時頁面不會被推上去
                 $('.search-area').addClass("searching");
                 $('.btn-close').addClass("searching");
                 $('.search-keyword').addClass("searching");
             });
-
+            // 點擊叉按鈕關閉搜尋
             $('.btn-close').on("click", function(){
                 $('.search-area').removeClass("searching");
                 $('.btn-close').removeClass("searching");
                 $('.search-keyword').removeClass("searching");
             });
-
-            // if ( $(".ui-autocomplete").parent("#search-autocomplete").length == 1 ) {
-            //     $('.more').addClass("searching");
-            // } else {
-            //     $('.more').removeClass("searching");
-            // };
-
-             // 有搜尋結果再出現 “更多搜尋結果”
-             $('#search-input').on("keyup", function(){
-                if ( $(this).val() == '') {
-                    $('.more').removeClass("searching");
-                } else {
-                    $('.more').addClass("searching");
-                }
-            });
-
         });
 
     </script>

@@ -43,7 +43,7 @@ body {
 	overflow: hidden;
 	color: #71cfee;
     font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Heiti TC","Microsoft JhengHei", "å¾®è»Ÿæ­£é»‘", "Arial", sans-serif;
-    background: #0c0c0c url(../img/mob_home_bkgd.jpg) -70px 0 no-repeat;
+    background: #0c0c0c url(../img/mob_home_bkgd.jpg) 0px 0 no-repeat;
 	width: 100vw;
 	height: 100vh;
     -webkit-background-size: cover;
@@ -127,7 +127,7 @@ table {
     width: 100vw;
     height: 40vh;
     box-sizing: border-box;
-    padding: 20px 30px;
+    padding: 30px;
     background-color: rgba(12,12,12,0);
     transition: background-color .7s .05s,
                 height .5s .5s;
@@ -161,7 +161,7 @@ table {
     outline: none;
 }
 .btn-close.searching {
-    top: 20px;
+    top: 30px;
     transition: top .5s .1s ease;
 }
 .btn-close i {
@@ -175,14 +175,14 @@ table {
 
 .search-keyword {
     position: relative;
-    margin-top: 58%;
+    margin-top: 55%;
     width: 100%;
     overflow: hidden;
-    transition: margin-top .6s .1s ease;
+    transition: margin-top .6s ease;
 }
 .search-keyword.searching {
     margin-top: 20%;
-    transition: margin-top .6s .1s ease;
+    transition: margin-top .6s ease;
 }
 .search-keyword input {
     width: 100%;
@@ -192,6 +192,9 @@ table {
     font-size: 1.2em;
     color: #eeeeee;
     letter-spacing: 1px;
+    border-radius: 0;
+    -webkit-border-radius:0px;
+    -webkit-appearance: none;
     cursor: text;
     transition: border-color .5s;
 }
@@ -209,20 +212,20 @@ table {
     font-size: 0.9em;
     color: #71cfee;
     position: absolute;
-    top: 18%;
+    top: 20%;
     right: -200px;
-    transition: right .5s .2s;
+    transition: right .5s .1s;
 }
 .more.searching {
     right: 30px;
-    transition: right .5s .2s;
+    transition: right .5s .1s;
 }
 
  /* --- adjust jquery_ui --- */
 ul.ui-autocomplete {
     width: 100vw !important;
-    max-height: 70vh;
-    top: 25% !important;
+    max-height: 65vh;
+    top: 26% !important;
     left: 0 !important;
     border: none !important;
     background-color: transparent;
@@ -358,4 +361,5 @@ div.ui-state-active {
 .bkgd-pink {
     background-color: rgba(216,124,124,.5);
 }
+
 
