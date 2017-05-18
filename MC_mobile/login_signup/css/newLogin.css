@@ -446,7 +446,6 @@ input {
     font-weight: 400;
     text-align: center;
     font-size: 1em;
-    /*margin-top: 30px;*/
 }
 
 .toggle_pwd {
@@ -459,6 +458,22 @@ input {
 .toggle_pwd.show {
     color: #71cfee;
 }
+
+.inform {
+    color: #9b9b9b;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/*.inform:before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 45%;
+    background-color: #9b9b9b;
+    width: 30px;
+    height: 1px;
+}*/
 
 /***************
    Checkboxes
