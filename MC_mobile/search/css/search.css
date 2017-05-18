@@ -52,7 +52,7 @@ body {
 	height: 100vh;
 }
 html { 
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 24px;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -179,9 +179,35 @@ caption, th, td {
     color: #71cfee;
 }
 
+.underline-tab {
+  box-sizing: border-box;
+}
+
+.underline-tab .tab-item {
+  box-sizing: border-box;
+  padding: 20px 0;
+  color: #9B9B9B;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin-left: -4px;
+}
+
+.underline-tab .tab-item.active a {
+  color: #71cfee;
+}
+
+.underline-tab.five-tab > .tab-item {
+  width: 20%;
+}
+
 .tab-item a {
     color: #9b9b9b;
 }
+
 
 /* ---------- SEARCH-RESULT section ---------- */
 
@@ -254,16 +280,19 @@ caption, th, td {
 .text-white {
     color: #ffffff;
 }
+.text-gray {
+    color: #9b9b9b;
+}
 .text-blue {
     color: #71cfee;
 }
 
-.bkgd-blue {
-    background-color: rgba(113,207,238,.5);
+.fz-s {
+  font-size: 1em !important;
+}
+.fz-m {
+  font-size: 1.25em !important;
 }
 
-.bkgd-pink {
-    background-color: rgba(216,124,124,.5);
-}
 
 

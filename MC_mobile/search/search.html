@@ -6,11 +6,9 @@
     <title>電影蛋糕</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="在电影蛋糕，你可以给看过的电影贴标签、写一篇日志或做专题。可以记录你的电影人生表达品味，结交有相同爱好的朋友。相信你可以在电影蛋糕找到好电影，好电影也会来找你。" />
-
-    <!--<link href="css/homepage.css" rel="stylesheet" />-->
     
     <!--<link rel="stylesheet" href="css/custom.css">-->
-    <link rel="stylesheet" href="css/screen.css">
+    <!--<link rel="stylesheet" href="css/screen.css">-->
     <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -45,7 +43,7 @@
                     <div class="hasTitle group-wrap">
                         <div class="section-title">
                             <span class="fz-m text-blue">電影 </span>
-                            <span class="fz-s gray-9"> 搜尋結果 {{ search.searchMovieCount }} 筆電影資料</span>
+                            <span class="fz-s text-gray"> 搜尋結果 {{ search.searchMovieCount }} 筆電影資料</span>
                         </div>
                         <ul class="maT1x result-list">
                             <li class="padTB1x" ng-repeat="item in search.movies">
@@ -61,7 +59,7 @@
                     <div class="maT50 hasTitle group-wrap">
                         <div class="section-title">
                             <span class="fz-m text-blue">專題 </span>
-                            <span class="fz-s gray-9"> 搜尋結果 {{ search.searchTopicCount }} 筆專題資料</span>
+                            <span class="fz-s text-gray"> 搜尋結果 {{ search.searchTopicCount }} 筆專題資料</span>
                         </div>
                         <ul class="maT1x result-list">
                             <li class="padTB1x" ng-repeat="item in search.topics">
@@ -77,7 +75,7 @@
                     <div class="maT50 hasTitle group-wrap">
                         <div class="section-title">
                             <span class="fz-m text-blue">影人 </span>
-                            <span class="fz-s gray-9"> 搜尋導演及演員結果 {{ search.searchActorCount }} 筆人名資料</span>
+                            <span class="fz-s text-gray"> 搜尋導演及演員結果 {{ search.searchActorCount }} 筆人名資料</span>
                         </div>
                         <ul class="maT1x result-list">
                             <li class="padTB1x" ng-repeat="item in search.actors">
@@ -93,7 +91,7 @@
                     <div class="maT50 hasTitle group-wrap">
                         <div class="section-title">
                             <span class="fz-m text-blue">朋友 </span>
-                            <span class="fz-s gray-9"> 搜尋結果 {{ search.searchUserCount }} 筆朋友資料</span>
+                            <span class="fz-s text-gray"> 搜尋結果 {{ search.searchUserCount }} 筆朋友資料</span>
                         </div>
                         <ul class="maT1x result-list">
                             <li class="padTB1x" ng-repeat="item in search.users">
@@ -156,17 +154,17 @@
     <script>
 
         $(document).ready(function(){
-            $('#search-input').on("focus", function(){
-                $('.search-area').addClass("searching");
-                $('.btn-close').addClass("searching");
-                $('.search-keyword').addClass("searching");
-            });
+            // $('#search-input').on("focus", function(){
+            //     $('.search-area').addClass("searching");
+            //     $('.btn-close').addClass("searching");
+            //     $('.search-keyword').addClass("searching");
+            // });
 
-            $('.btn-close').on("click", function(){
-                $('.search-area').removeClass("searching");
-                $('.btn-close').removeClass("searching");
-                $('.search-keyword').removeClass("searching");
-            });
+            // $('.btn-close').on("click", function(){
+            //     $('.search-area').removeClass("searching");
+            //     $('.btn-close').removeClass("searching");
+            //     $('.search-keyword').removeClass("searching");
+            // });
         });
     </script>
 
