@@ -46,12 +46,7 @@
                         <ul class="maT1x">
                             <li class="padTBHalfX" ng-repeat="item in search.movies">
                                 <a ng-href="/mobile/video/intro/{{ item.Id }}">
-                                    <!--<movie-poster class="fLeft paR1x" poster-path="{{item.PosterUrl}}" height="83" width="56" alt=""></movie-poster>-->
-                                    <!--<article>-->
-                                        <h3 class="text-white">{{ item.Name }} {{ item.ENName }}</h3>
-                                        <!--<span class="gray-w">導演：<a ng-href="/mobile/actor/details/{{ actor.Id }}" ng-repeat="actor in item.Actor | filter:{ RoleType: 'Director' }" class="tag">{{ actor.Name }}</a></span><br>-->
-                                        <!--<p class="paTHalfX lh15">{{ item.OtherName | characters: 65}}</p>-->
-                                    <!--</article>-->
+                                    <h3 class="text-white">{{ item.Name }} {{ item.ENName }}</h3>
                                 </a>
                             </li>
                         </ul>
