@@ -104,6 +104,7 @@ caption, th, td {
     padding: 30px 30px 0 30px;
     background-color: rgba(12,12,12,.95);
     box-shadow: 0px 0px 2px 4px rgba(0,0,0,0.5);
+    z-index: 5;
 }
 .search-control.scroll {
     box-shadow: 0px 0px 2px 4px rgba(0,0,0,0.5);
@@ -123,7 +124,7 @@ caption, th, td {
     line-height: 40px;
     text-align: center;
     box-sizing: border-box;
-    padding-left: 12px;
+    padding: 6px 0 0 12px;
     display: block;
     cursor: pointer;
 }
@@ -178,140 +179,35 @@ caption, th, td {
     color: #71cfee;
 }
 
+.tab-item a {
+    color: #9b9b9b;
+}
+
 /* ---------- SEARCH-RESULT section ---------- */
 
 .search-result {
-    margin-top: 13em;
+    margin-top: 14em;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*.more {
-    font-size: .9em;
-    color: #71cfee;
+.section-title {
+	cursor: default;
+    position: relative;
+    left: -10px;
+}
+.section-title:before {
+    content: '';
     position: absolute;
-    top: 25%;
-    right: -200px;
-    transition: right .5s .1s;
+    top: 1px;
+    left: -20px;
+    width: 5px;
+    height: 20px;
+    background-color:#71cfee;
 }
-.more.searching {
-    right: 30px;
-    transition: right .5s .1s;
-}*/
 
- /* --- adjust jquery_ui --- */
-/*ul.ui-autocomplete {
-    width: 100vw !important;
-    max-height: 65vh;
-    top: 26% !important;
-    left: 0 !important;
-    border: none !important;
-    background-color: transparent;
-    font-size: 1em;
-    margin-top: 5%;
-    padding: 0 30px;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-li.ui-menu-item {
-    width: 100%;
-    color: #ffffff;
-    padding: 5px 0;
-    box-sizing: border-box;
+.result-list li {
     border-bottom: 1px solid rgba(238,238,238,.2);
-}
-div.ui-state-active {
-    background-color: transparent !important;
-    border: 1px solid transparent !important;
-    color: #71cfee !important;
-    transition: color .5s;
-}*/
-
-
-/* ---------- MENU section ---------- */
-/*.btn-group-wrap {
-    max-height: 45vh;
-    overflow: scroll;
-    margin-top: 30%;
-}
-
-.page-btn-group {
-    margin: 0px 1% 30px 1%;
-    width: 31%;
-    text-align: center;
-}
-.page-btn {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    border: 1px solid rgba(113,207,238,1);
-    line-height: 60px;
-    text-align: center;
-    margin: 0 auto 10px auto;
-}
-.page-btn i {
-    font-size: 25px;
-}
-.page-title {
-    color: #eeeeee;
     font-size: 1em;
 }
-
-.avatar {
-    overflow: hidden;
-}
-.avatar img {
-    width: 100%;
-}
-
-.homepage-btn-wrap {
-    width: 100%;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    padding: 5% 0 7% 0;
-    background-color: rgba(12,12,12,1);
-}
-
-.homepage-btn {
-    width: 39%;
-    height: 40px;
-    border-radius: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    line-height: 40px;
-    display: block;
-}
-
-.login-btn {
-    border: 1px solid rgba(113,207,238,1);
-    margin-left: 30px;
-    color: rgba(113,207,238,1);
-}
-.signup-btn {
-    border: 1px solid rgba(216,124,124,1);
-    margin-right: 30px;
-    color: rgba(216,124,124,1);
-}
-.signout-btn {
-    width: auto;
-    margin: 0 30px;
-    border: 1px solid rgba(113,207,238,1);
-    color: rgba(113,207,238,1);
-}*/
-
-
 
 /* -----------------------------common_css---------------------------------- */
 
@@ -337,6 +233,14 @@ div.ui-state-active {
 .padTBHalfX {
     padding: 5px 0;
 }
+
+.padTB1x {
+    padding: 10px 0;
+}
+
+.padTB15 {
+    padding: 15px 0;
+}
 .padR1x {
     padding-right: 10px;
 }
@@ -349,6 +253,9 @@ div.ui-state-active {
 
 .text-white {
     color: #ffffff;
+}
+.text-blue {
+    color: #71cfee;
 }
 
 .bkgd-blue {

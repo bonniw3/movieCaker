@@ -9,7 +9,7 @@
 
     <!--<link href="css/homepage.css" rel="stylesheet" />-->
     
-    <link rel="stylesheet" href="css/custom.css">
+    <!--<link rel="stylesheet" href="css/custom.css">-->
     <link rel="stylesheet" href="css/screen.css">
     <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,10 +20,10 @@
         <div class="search-wrap">
             <section class="search-control">
                 <div class="search-area group-wrap">
-                    <button class="btn-close group-wrap">
+                    <a href="/" class="btn-close group-wrap">
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
-                    </button>
+                    </a>
                     <div class="search-keyword">
                         <i class="fa fa-search fa-lg pull-left" aria-hidden="true"></i>
                         <input id="search-input" class="pull-left" type="text" name="" value="" placeholder="尋找電影..." />
@@ -41,88 +41,71 @@
             </section>
             <div class="search-result">    
                 <div ng-init="search.init('devil','blur','all')">
-                    <div class="panel-movie hasTitle">
-                        <div class="blackTitle clearFix"><span class="fz-m gray-w">電影</span> <span class="fz-s gray-9">搜尋結果 {{ search.searchMovieCount }} 筆電影資料</span></div>
-                        <ul class="maT1x">
-                            <li class="padTBHalfX" ng-repeat="item in search.movies">
+
+                    <div class="hasTitle group-wrap">
+                        <div class="section-title">
+                            <span class="fz-m text-blue">電影 </span>
+                            <span class="fz-s gray-9"> 搜尋結果 {{ search.searchMovieCount }} 筆電影資料</span>
+                        </div>
+                        <ul class="maT1x result-list">
+                            <li class="padTB1x" ng-repeat="item in search.movies">
                                 <a ng-href="/mobile/video/intro/{{ item.Id }}">
+                                <!-- 電影中文名 電影英文名 電影年份-->
+                                    <h3 class="text-white">{{ item.Name }} {{ item.ENName }} </h3>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="/mobile/search?text=devil&amp;type=movie" ng-show="search.searchMovieCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多電影</a>
+                    </div>
+
+                    <div class="maT50 hasTitle group-wrap">
+                        <div class="section-title">
+                            <span class="fz-m text-blue">專題 </span>
+                            <span class="fz-s gray-9"> 搜尋結果 {{ search.searchTopicCount }} 筆專題資料</span>
+                        </div>
+                        <ul class="maT1x result-list">
+                            <li class="padTB1x" ng-repeat="item in search.topics">
+                                <a ng-href="/mobile/topic/{{ item.Id }}">
+                                <!-- 專題中文名稱-->
+                                    <h3 class="text-white">{{ item.Title }} ({{ item.VideoCount }})</h3>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="/mobile/search?text=devil&amp;type=topic" ng-show="search.searchTopicCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多專題</a>
+                    </div>
+
+                    <div class="maT50 hasTitle group-wrap">
+                        <div class="section-title">
+                            <span class="fz-m text-blue">影人 </span>
+                            <span class="fz-s gray-9"> 搜尋導演及演員結果 {{ search.searchActorCount }} 筆人名資料</span>
+                        </div>
+                        <ul class="maT1x result-list">
+                            <li class="padTB1x" ng-repeat="item in search.actors">
+                                <a ng-href="/mobile/actor/details/{{ item.ActorId }}">
+                                <!-- 影人中文名 影人英文名-->
                                     <h3 class="text-white">{{ item.Name }} {{ item.ENName }}</h3>
                                 </a>
                             </li>
                         </ul>
-                        <button ng-show="search.searchMovieCount > 5" class="btn-xl-default"><a href="/mobile/search?text=devil&amp;type=movie">載入更多電影</a></button>
+                        <a href="/mobile/search?text=devil&amp;type=actor" ng-show="search.searchActorCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多朋友</a>
                     </div>
-                    <div class="panel-movie hasTitle">
-                        <div class="blackTitle clearFix"><span class="fz-m gray-w">影人</span> <span class="fz-s gray-9">搜尋導演及演員 {{ search.searchActorCount }} 筆人名資料</span></div>
-                        <ul class="maT1x">
-                            <li class="gray-block-shadow pa5 clearFix maB1x" ng-repeat="item in search.actors">
-                                <a href="">
-                                    <p class="fLeft">
-                                        <a class="green" ng-href="/mobile/actor/details/{{ item.ActorId }}">
-                                            <user-avatar class="paR1x paBHalfX" data-image-src="/Uploads/ActorAvatar/{{ item.ActorAvatar }}" height="50" width="50" alt=""></user-avatar>
-                                            <br>
-                                            {{ item.Name }} <br>{{ item.ENName }}
-                                        </a>
-                                    </p>
-                                    <article class="taRight">
-                                        <movie-poster ng-repeat="video in item.Videos | limitTo: 3" poster-path="{{video.PosterUrl}}" height="83" width="56" alt=""></movie-poster>
-                                    </article>
+
+                    <div class="maT50 hasTitle group-wrap">
+                        <div class="section-title">
+                            <span class="fz-m text-blue">朋友 </span>
+                            <span class="fz-s gray-9"> 搜尋結果 {{ search.searchUserCount }} 筆朋友資料</span>
+                        </div>
+                        <ul class="maT1x result-list">
+                            <li class="padTB1x" ng-repeat="item in search.users">
+                                <a ng-href=" ">
+                                <!-- 朋友暱稱 -->
+                                    <h3 class="text-white">{{ item.NickName }}</h3>
                                 </a>
                             </li>
                         </ul>
-                        <button ng-show="search.searchActorCount > 5" class="btn-xl-default"><a href="/mobile/search?text=devil&amp;type=actor">載入更多影人</a></button>
+                        <a href="/mobile/search?text=devil&amp;type=user" ng-show="search.searchUserCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多影人</a>
                     </div>
-                    <div class="panel-movie hasTitle">
-                        <div class="blackTitle clearFix"><span class="fz-m gray-w">專題</span> <span class="fz-s gray-9">搜尋結果 {{ search.searchTopicCount }} 筆專題資料</span></div>
-                        <ul class="maT1x">
-                            <li class="topic maB1x" ng-repeat="item in search.topics">
-                                <div class="topic-header">
-                                    <user-avatar class="topic-img" data-image-src="/Uploads/UserAvatar/{{ item.Author.Avatar }}" alt=""></user-avatar>
-                                    <span><a class="green" href="###">{{ item.Author.NickName }}</a></span><br>
-                                    <span class="topic-name gray-w">{{ item.Title }} ({{ item.VideoCount }})</span>
-                                </div>
-                                <div class="topic-movie">
-                                    <a ng-href="/mobile/topic/{{ item.Id }}">
-                                        <movie-poster ng-repeat="video in item.PosterUrl" class="topic-movie-img" poster-path="{{video}}" alt=""></movie-poster>
-                                    </a>
-                                </div>
-                                <div class="topic-content gray-w maB1x">
-                                    <p>{{ item.Content | characters: 50 }}</p>
-                                </div>
-                                <p class="taCenter borderTBD paTHalfX paBHalfX">
-                                    <a><i class="icon-bubble"></i> ({{ item.CommentNum }})</a>&nbsp;&nbsp;
-                                    <a><i class="icon-love"></i> ({{ item.LikeNum }})</a>&nbsp; &nbsp;
-                                    <a><i class="icon-share"></i> ({{ item.ShareNum }})</a>&nbsp; &nbsp;
-                                    <a><i class="icon-users "></i> ({{ item.ViewNum }})</a>
-                                </p>
-                            </li>
-                        </ul>
-                        <button ng-show="search.searchTopicCount > 5" class="btn-xl-default"><a href="/mobile/search?text=devil&amp;type=topic">載入更多專題</a></button>
-                    </div>
-                    <div class="panel-movie hasTitle">
-                        <div class="blackTitle clearFix"><span class="fz-m gray-w">朋友</span> <span class="fz-s gray-9">搜尋結果 {{ search.searchUserCount }} 筆朋友資料</span></div>
-                        <ul class="maT1x">
-                            <li class="gray-block-shadow pa5 clearFix maB1x" ng-repeat="item in search.users">
-                                <p class="fLeft">
-                                    <user-avatar class="paR1x paBHalfX" data-image-src="/Uploads/UserAvatar/{{ item.Avatar }}" height="50" width="50" alt=""></user-avatar>
-                                </p>
-                                <article class="lh15">
-                                    <p class="green">
-                                        {{ item.NickName }}
-                                        <i class="addF" ng-show="item.IsFriend==false"></i>
-                                        <i class="isF" ng-show="item.IsFriend==true"></i>
-                                    </p>
-                                    <p>
-                                        <i class="fa fa-map-marker"></i> {{item.Location}}
-                                        <i class="fa fa-mars blue" ng-show="item.Gender==true"></i>
-                                        <i class="fa fa-venus heart" ng-show="item.Gender==false"></i>
-                                    </p>
-                                    <p>生日：{{ item.Brithday | mcJsLocalDateTime }}</p>
-                                </article>
-                            </li>
-                        </ul>
-                        <button ng-show="search.searchUserCount > 5" class="btn-xl-default"><a href="/mobile/search?text=devil&amp;type=user">載入更多朋友</a></button>
-                    </div>
+
                 </div>
             </div>
         </div>

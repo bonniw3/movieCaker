@@ -1,6 +1,6 @@
 
 html, body { /* this allows the children to inherit this style */
-    font-size: 14px !important;
+    /*font-size: 14px !important;*/
 }
 
 .movie-title, button {
@@ -66,9 +66,9 @@ html, body { /* this allows the children to inherit this style */
     display: inline;
 }
 
-.underline-tab.five-tab > .tab-item {
+/*.underline-tab.five-tab > .tab-item {
     width: 19%;
-}
+}*/
 
 .popTo .starAll {
     font-size: 1em;
@@ -303,9 +303,9 @@ ul.ui-autocomplete {
     }
 /*search index*/
 
-.tab-item a {
+/*.tab-item a {
     color: #9b9b9b;
-}
+}*/
 /*shared menu*/
 .edit-title small {
     font-size: 80%;
