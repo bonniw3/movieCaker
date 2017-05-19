@@ -411,7 +411,7 @@ input {
 .other-title:after,
 .other-title:before {
 	content: "";
-	width: 43%;
+	width: 32%;
 	margin-right: 10px;
 	height: 1px;
 	position: relative;
@@ -425,6 +425,10 @@ input {
 .other-title:after {
 	margin-left: 10px;
 	margin-right: 0;
+}
+.large-width:before,
+.large-width:after {
+    width: 43%;
 }
 
 .btn-resend {
