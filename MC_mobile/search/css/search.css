@@ -174,8 +174,8 @@ caption, th, td {
 
 .search-keyword i {
     position: absolute;
-    top: 20%;
-    left: 5%;
+    top: 9px;
+    left: 15px;
     color: #71cfee;
     font-size: 1.2em;
 }
@@ -192,9 +192,6 @@ caption, th, td {
   display: inline-block;
   vertical-align: middle;
   font-size: 1em;
-  /**vertical-align: auto;
-  *zoom: 1;
-  *display: inline;*/
   margin-left: -4px;
 }
 
