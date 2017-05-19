@@ -23,7 +23,7 @@
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
                     </a>
                     <div class="search-keyword">
-                        <i class="fa fa-search fa-lg pull-left" aria-hidden="true"></i>
+                        <i class="fa fa-search pull-left" aria-hidden="true"></i>
                         <input id="search-input" class="pull-left" type="text" name="" value="" placeholder="尋找電影..." />
                     </div>
                 </div>
@@ -39,7 +39,6 @@
             </section>
             <div class="search-result">    
                 <div ng-init="search.init('devil','blur','all')">
-
                     <div class="hasTitle group-wrap">
                         <div class="section-title">
                             <span class="fz-m text-blue">電影 </span>
@@ -51,7 +50,7 @@
                                 <!-- 電影中文名 電影英文名 電影年份-->
                                     <h3 class="text-white">{{ item.Name }} {{ item.ENName }} </h3>
                                 </a>
-                            </li>
+                            </li>    
                         </ul>
                         <a href="/mobile/search?text=devil&amp;type=movie" ng-show="search.searchMovieCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多電影</a>
                     </div>
@@ -103,7 +102,6 @@
                         </ul>
                         <a href="/mobile/search?text=devil&amp;type=user" ng-show="search.searchUserCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多影人</a>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -135,7 +133,6 @@
     <script defer src='http://test.moviecaker.com/scripts/angular/components/all.directive.js'></script>
 
     <script defer src="http://test.moviecaker.com/scripts/angular/controllers/mobile/layout.ctrl.js?v=20161209"></script>
-    
     <script defer src="http://test.moviecaker.com/scripts/angular/controllers/mobile/home-index.ctrl.js"></script>
 
 
@@ -154,17 +151,13 @@
     <script>
 
         $(document).ready(function(){
-            // $('#search-input').on("focus", function(){
-            //     $('.search-area').addClass("searching");
-            //     $('.btn-close').addClass("searching");
-            //     $('.search-keyword').addClass("searching");
-            // });
-
-            // $('.btn-close').on("click", function(){
-            //     $('.search-area').removeClass("searching");
-            //     $('.btn-close').removeClass("searching");
-            //     $('.search-keyword').removeClass("searching");
-            // });
+            $(window).scroll(function() {
+                if( $(window).scrollTop() != 0 ) {
+                    $('.search-control').addClass('scroll');
+                } else {
+                    $('.search-control').removeClass('scroll');
+                }
+            });
         });
     </script>
 
