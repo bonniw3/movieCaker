@@ -51,6 +51,11 @@ html {
 	line-height: 24px;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
+    background: url(../img/login_desktop_bkgd.jpg) center center no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 ol, ul {
 	list-style: none;
@@ -79,16 +84,6 @@ table {
 	clear: both;
 }
 
-.bg {
-	/*background-image: url(../Images/ilandy_use/loginBg.jpg);*/
-    background: url(../img/login_desktop_bkgd.jpg) 0 0 no-repeat;
-	width: 100vw;
-	height: 100vh;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
 .login {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -98,11 +93,10 @@ table {
 	border-top: #4dd0e1 2px solid;
 	width: 24em;
     min-height: 32em;
-	top: 10vh;
 	padding: 1.25em;
 	left: 0;
 	right: 0;
-	margin: auto;
+	margin: 10vh auto;
     font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Heiti TC","Microsoft JhengHei", "å¾®è»Ÿæ­£é»‘", "Arial", sans-serif;
 }
 
@@ -411,7 +405,7 @@ input {
 .other-title:after,
 .other-title:before {
 	content: "";
-	width: 32%;
+	width: 25%;
 	margin-right: 10px;
 	height: 1px;
 	position: relative;
@@ -428,7 +422,7 @@ input {
 }
 .large-width:before,
 .large-width:after {
-    width: 43%;
+    width: 40%;
 }
 
 .btn-resend {
@@ -450,6 +444,7 @@ input {
     font-weight: 400;
     text-align: center;
     font-size: 1em;
+    margin-bottom: 30px;
 }
 
 .toggle_pwd {
@@ -642,9 +637,10 @@ form p:last-child {
 
 /*chrome account info*/
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px rgb(28,28,28) inset;
-  background-image: none;
-  -webkit-text-fill-color: #4dd0e1 !important;
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s; /* delaying the background-color change */
+    background-image: none;
+    -webkit-text-fill-color: #4dd0e1 !important;
 }
 .login-input.field-validation-error > input:-webkit-autofill, 
 .login-input.field-validation-error > textarea:-webkit-autofill, 
@@ -725,18 +721,19 @@ body.blur-bg > div {
 }
 
 @media screen and (max-width: 480px){
-    .bg {
-        background: url(../img/login_mobile_bkgd.jpg) 0 0 no-repeat;
+    html {
+        background: url(../img/login_mobile_bkgd.jpg) center center no-repeat fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-	}
+    }
+    
 	.login {
         height: 100vh;
         width: 100vw;
-        top: 0vh;
         border-top: none;
+        margin: auto;
         background-color: rgba(12,12,12,.4);
 	}
     a.under-line:active {
@@ -772,6 +769,10 @@ body.blur-bg > div {
         background-color: rgba(255,255,255,0.2);
         border: 1px solid #fff;
     }
+
+    .prompt_signup {
+        margin-bottom: 0;
+    }
 }
 
 
@@ -804,22 +805,6 @@ body.blur-bg > div {
     font-weight: normal;
     display: block;  
 }
-
-/*span.bind-success {
-    position: relative;
-}
-
-span.bind-success:after {
-    content: "";
-    width: 30px;
-    height: 1px;
-    position: absolute;
-    bottom: -15px;
-    right: 44%;
-    background-color: rgba(238,238,238,.5);
-}*/
-
-
 
 
 /*---------------------- common_css --------------------------*/
