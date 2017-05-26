@@ -11,7 +11,6 @@
 
 </head>
 <body>
-    <div class="bg"></div>
     <div class="login" id="login"> 
         <p><a href="/" class="under-line"><i class="fa fa-angle-left padR1x" aria-hidden="true"></i> 回首頁</a></p>
         <h3 class="welcome-title maT2x">歡迎加入電影蛋糕</h3>
@@ -36,6 +35,7 @@
                                     <li>中國 +86 </li>
                                     <li>香港 +852</li>
                                     <li>澳門 +853</li>
+                                    <li>美國 +1</li>
                                 </ul>
                             </div>
                             <!--手機版顯示下拉-->
@@ -46,13 +46,14 @@
                                     <option value="86">中國 ＋86 </option>
                                     <option value="852">香港 ＋852</option>
                                     <option value="853">澳門 ＋853</option>
+                                    <option value="853">美國 ＋1</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="login-input">
                             <label for="PhoneNumber"><i class="fa fa-phone maLR2" aria-hidden="true"></i></label>
-                            <input data-val="true" data-val-length="欄位 電話號碼 必須是最大長度為 15 的字串" data-val-length-max="15" data-val-regex="請輸入有效的手機號" data-val-regex-pattern="^([0-9]{9,15})$" data-val-remote="電話號碼已被使用" data-val-remote-additionalfields="*.UserName" data-val-remote-url="/Account/CheckUserName" data-val-required="電話號碼 欄位是必要項" id="UserName" name="UserName" placeholder="手機號碼" type="tel" value="" />
+                            <input data-val="true" data-val-length="欄位 電話號碼 必須是最大長度為 15 的字串" data-val-length-max="15" data-val-regex="請輸入有效的手機號" data-val-regex-pattern="^([0-9]{9,15})$" data-val-remote="電話號碼已被使用" data-val-remote-additionalfields="*.UserName" data-val-remote-url="/Account/CheckUserName" data-val-required="電話號碼 欄位是必要項" id="UserName" name="UserName" placeholder="常用手機號" type="tel" value="" />
                         </div>
                         <span class="field-validation-valid wrong-message" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
 
@@ -64,11 +65,16 @@
                         <span class="field-validation-valid wrong-message" data-valmsg-for="Password" data-valmsg-replace="true"></span>
 
                         <div class="login-input">
+                            <label for="ConfirmPassword"><i class="fa fa-check" aria-hidden="true"></i></label>
+                            <input data-val="true" data-val-equalto="密碼和確認密碼不相符。" data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" placeholder="再次輸入密碼" type="password" />
+                        </div>
+                        <span class="field-validation-valid wrong-message" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
+
+                        <div class="login-input">
                             <label for="NickName"><i class="fa fa-user maLR3" aria-hidden="true"></i></label>
                             <input data-val="true" data-val-length="暱稱不能超過 16 個字元" data-val-length-max="16" data-val-remote="暱稱已被使用，請選其他暱稱" data-val-remote-additionalfields="*.NickName" data-val-remote-url="/Account/CheckNickName" data-val-required="第一印象很重要，娶個響亮的暱稱吧" id="NickName" name="NickName" placeholder="暱稱" type="text" value="" />
                         </div>
                         <span class="field-validation-valid wrong-message" data-valmsg-for="NickName" data-valmsg-replace="true"></span>
-                        
                         <button class="btn" type="submit">註冊</button>
                     </div>
                 </fieldset>
@@ -82,6 +88,12 @@
     <script src="/Scripts/jquery.validate.unobtrusive.ilandy-edit.js"></script>
     <script src="/Scripts/materialize/materialize.min.js"></script>
     <script src="/Scripts/pages/login-index.js?v=20161207"></script>
+
+    <script src="http://test.moviecaker.com/Scripts/jquery-1.8.3.min.js"></script>
+    <script src="http://test.moviecaker.com/Scripts/jquery.validate.min.js"></script>
+    <script src="http://test.moviecaker.com/Scripts/jquery.validate.unobtrusive.ilandy-edit.js"></script>
+    <script src="http://test.moviecaker.com/Scripts/materialize/materialize.min.js"></script>
+    <script src="http://test.moviecaker.com/Scripts/pages/login-index.js?v=20161207"></script>
 
     <script>
         // show/hide password (eye)
@@ -112,6 +124,11 @@
             $('.area-code-dropdown li').removeClass('active');
             $(this).addClass('active');
             $('.code-display').text( $(this).text() );
+        });
+
+        // 加上btnLoading這個class 就會有 loading
+        $('button').click(function(){
+            $('button').addClass('btnLoading');
         });
         
     </script>

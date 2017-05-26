@@ -37,9 +37,9 @@
                     <div class="other-options">
                         <p>
                             <input type="checkbox" name="RememberMe" class="filled-in" id="filled-in-box" value="true" />
-                            <label for="filled-in-box">記住我？</label>
+                            <label for="filled-in-box" class="color-change">記住我？</label>
                             <input type="hidden" value="false" name="RememberMe" />
-                            <a class="pull-right" href="/account/forgotPassword?open=Mobile">忘記密碼 <i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;</a>
+                            <a class="pull-right color-change" href="/account/forgotPassword?open=Mobile">忘記密碼 <i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;</a>
                         </p>
                     </div>
                     <button type="submit" class="btn">登入</button>
@@ -87,6 +87,7 @@
                 pwd.setAttribute("type","password");
             }
         });
+
     </script>
 </body>
 </html>
