@@ -182,6 +182,7 @@ table {
     background-image: none;
     -webkit-appearance: none;
     cursor: pointer;
+    /*margin-left: 10px;*/
 }
 
 .country-code:focus {
@@ -750,7 +751,7 @@ body.blur-bg > div {
     }
     
 	.login {
-        height: 100vh;
+        min-height: 100vh;
         width: 100vw;
         border-top: none;
         margin: auto;
@@ -792,10 +793,6 @@ body.blur-bg > div {
     .btn-outline:active {
         background-color: rgba(255,255,255,0.2);
         border: 1px solid #fff;
-    }
-
-    .prompt_signup {
-        margin-bottom: 0;
     }
 }
 
@@ -988,7 +985,8 @@ body.blur-bg > div {
     padding-left: 10px;
 }
 .lineh40 {
-    line-height: 40px;
+    display: inline-block;
+    margin-top: 3%;
 }
 .hidden {
 	display: none;
