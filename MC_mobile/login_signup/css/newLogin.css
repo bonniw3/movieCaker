@@ -52,6 +52,8 @@ body {
 html { 
 	font-size: 16px;
 	line-height: 24px;
+    height: 100%; /* for andriod chrome background image to appear properly */
+    min-height: 100%; /* for andriod chrome background image to appear properly */
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
     background: url(../img/login_desktop_bkgd.jpg) center center no-repeat fixed;
@@ -100,9 +102,9 @@ table {
 	width: 24em;
     min-height: 32em;
 	padding: 1.25em;
-	left: 0;
+    left: 0;
 	right: 0;
-	margin: 10vh auto;
+    margin: 10vh auto;
     font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Heiti TC","Microsoft JhengHei", "å¾®è»Ÿæ­£é»‘", "Arial", sans-serif;
 }
 
