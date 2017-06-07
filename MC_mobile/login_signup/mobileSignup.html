@@ -26,7 +26,7 @@
                     <input name="__RequestVerificationToken" type="hidden" value="7NCtnH0ji_neBjsZmVTknXVjxSz-AuzT11MZNgHqjfjGkrdnVnhRtmJmgsUd1CyNtjF9zCoFYoN4f3xV-air5q1YvczPZllg5yqHPRINSIs1" />
                     <section class="signup-part1">
                         <div class="login-input hasDropdown group-wrap">
-                            <label class="pull-left lineh40" for="UserName"><i class="fa fa-phone" aria-hidden="true"></i></label>
+                            <label class="lineh40 pull-left" for="UserName"><i class="fa fa-phone" aria-hidden="true"></i></label>
                             <!--桌機版顯示下拉-->
                             <div id="areaCode" class="area-code pull-left">
                                 <p class="group-wrap">
@@ -43,6 +43,7 @@
                             </div>
                             <!--手機版顯示下拉-->
                             <div class="country-code-wrap pull-left">
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
                                 <select class="country-code" id="areaCodeM">
                                     <option value="886">台灣 +886</option>
                                     <option value="86">中國 +86 </option>
@@ -51,12 +52,13 @@
                                     <option value="853">美國 +1</option>
                                 </select>
                             </div>
+                            <!--電話號碼欄位-->
                             <input class="pull-left" data-val="true" data-val-length="欄位 電話號碼 必須是最大長度為 15 的字串" data-val-length-max="15" data-val-regex="請輸入有效的手機號" data-val-regex-pattern="^([0-9]{9,15})$" data-val-remote="電話號碼已被使用" data-val-remote-additionalfields="*.UserName" data-val-remote-url="/Account/CheckUserName" data-val-required="電話號碼 欄位是必要項" id="UserName" name="UserName" placeholder="常用手機號" type="tel" value="" />
                         </div>
                         <span class="field-validation-valid wrong-message" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
 
                         <div class="pull-left w55p">
-                            <div class="login-input padL9p group-wrap">
+                            <div class="login-input group-wrap shortened">
                                 <label for="Code"><i class="fa fa-key" aria-hidden="true"></i></label>
                                 <input data-val="true" data-val-required="驗證碼 欄位是必要項" id="Code" name="Code" placeholder="驗證碼" type="tel" value="" />
                                 <span class="pull-right code-initial"><i class="fa fa-check-circle padR2x" aria-hidden="true"></i></span>

@@ -127,68 +127,69 @@ table {
 
 /* country code for DESKTOP */
 .area-code {
-	width: 30%;
+	width: 90%;
     height: 40px;
     line-height: 40px;
 	font-size: 0.9em;
-    margin-left: 5px;
-	padding-left: 12px;
+	padding-left: 17px;
 	color: #eeeeee;
 	position: relative;
 	cursor: pointer;
 	letter-spacing: 1px;
 }
-
 .area-code i {
 	position: absolute;
-    right: 0px;
+    right: 10px;
     bottom: 12px;
     font-size: 1.2em;
 }
-
 .area-code-dropdown {
 	position: absolute;
 	top: 40px;
 	left: 0;
 	width: 100%;
 	background-color: rgba(25, 25, 25, 0.8);
-	border-top: 2px solid #71cfee;
-	text-align: center;
-	box-sizing: border-box;
-	padding: 5px 0px;
+    border-left: 2px solid #71cfee; 
+    text-align: left;
+    box-sizing: border-box;
+    padding: 5px 15px;
 	z-index: 5;
 }
-
 .area-code-dropdown li {
 	line-height: 35px;
 	transition: 0.3s;
 	font-weight: 400;
 	cursor: pointer;
 }
-
 .area-code-dropdown li:hover, .area-code-dropdown li.active {
 	color: #71CFEE;
 	font-size: 16px;
 }
 
-/* country code for MOBILE */
-.country-code-wrap {
-    width: 44px;
-    /*width: 85px;*/
-    margin-left: 10px;
-    position: relative;
-    display: none;
+.login-input.hasDropdown .area-code {
+    width: 30%;
+    margin-left: 5px;
+	padding-left: 12px;
+}
+.login-input.hasDropdown .area-code i {
+    right: 0px;
+}
+.login-input.hasDropdown .area-code-dropdown {
+    border-top: 2px solid #71cfee; 
+    text-align: center;
+    padding: 5px 0px; 
 }
 
-.country-code-wrap:after {
-    content: "\f107";
-    font-family: "FontAwesome";
-    font-weight: normal;
-    font-style: normal;
-    position: absolute;
-    top: 10px;
-    right: -15px;
-    color: #71cfee !important;
+/* country code for MOBILE */
+.country-code-wrap {
+    width: 85%;
+    margin-left: 12px;
+    display: none;
+}
+.country-code-wrap i {
+    position: absolute; 
+    bottom: 10px; 
+    right: 10px;
 }
 
 .country-code {
@@ -203,10 +204,32 @@ table {
     -webkit-appearance: none;
     cursor: pointer;
 }
-
 .country-code:focus {
     outline: none;
 }
+
+.hasDropdown .country-code-wrap {
+    width: 44px; 
+    /*width: 85px;*/ 
+    margin-left: 10px; 
+    position: relative; 
+}
+
+.hasDropdown .country-code-wrap i {
+    display: none;
+}
+
+.hasDropdown .country-code-wrap:after {
+    content: "\f107";
+    font-family: "FontAwesome";
+    font-weight: normal;
+    font-style: normal;
+    position: absolute;
+    top: 10px;
+    right: -15px;
+    color: #71cfee !important;
+}
+
 /*-----------------------------------------*/
 
 .login-content {
@@ -263,12 +286,18 @@ table {
     	-ms-transition: border-color 1s;
     		transition: border-color 1s;
 }
+
+/* signup phone number input */
 .login-input.hasDropdown input {
     width: 50%;
     margin-left: 15px;
 }
 
-.login-input input#Code {
+.login-input.shortened {
+    padding-left: 9%;
+}
+/* signup code input */
+.login-input.shortened input { 
     width: 55%;
 }
 
