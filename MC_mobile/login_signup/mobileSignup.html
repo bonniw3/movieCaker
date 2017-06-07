@@ -11,21 +11,24 @@
 
 </head>
 <body>
+    <div class="bg">
+        <img src="img/login_mobile_bkgd.jpg" alt="">
+    </div>
     <div class="login" id="login"> 
         <p><a href="/" class="under-line"><i class="fa fa-angle-left padR1x" aria-hidden="true"></i> 回首頁</a></p>
         <h3 class="welcome-title maT2x">歡迎加入電影蛋糕</h3>
-        <fieldset class="toLogin maT2x maB2x padLR">
+        <section class="toLogin maT2x maB2x padLR">
             <div class="login-title" data-loginTitle="login">
                 <span class="simpleLogin">註冊</span>
             </div>
-            <form action="/account/register" method="post">
-                <input name="__RequestVerificationToken" type="hidden" value="7NCtnH0ji_neBjsZmVTknXVjxSz-AuzT11MZNgHqjfjGkrdnVnhRtmJmgsUd1CyNtjF9zCoFYoN4f3xV-air5q1YvczPZllg5yqHPRINSIs1" />
-                <fieldset>
-                    <div class="login-content slideDown">
-                        <div class="login-input group-wrap">
-                            <label class="lineh40" for="registerNationCode"><i class="fa fa-globe" aria-hidden="true"></i></label>
+            <div class="login-content slideDown">
+                <form action="/account/register" method="post">
+                    <input name="__RequestVerificationToken" type="hidden" value="7NCtnH0ji_neBjsZmVTknXVjxSz-AuzT11MZNgHqjfjGkrdnVnhRtmJmgsUd1CyNtjF9zCoFYoN4f3xV-air5q1YvczPZllg5yqHPRINSIs1" />
+                    <section class="signup-part1">
+                        <div class="login-input hasDropdown group-wrap">
+                            <label class="pull-left lineh40" for="UserName"><i class="fa fa-phone" aria-hidden="true"></i></label>
                             <!--桌機版顯示下拉-->
-                            <div id="areaCode" class="area-code pull-right">
+                            <div id="areaCode" class="area-code pull-left">
                                 <p class="group-wrap">
                                     <span class="code-display text-light-blue">台灣 +886</span>
                                     <i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -39,24 +42,35 @@
                                 </ul>
                             </div>
                             <!--手機版顯示下拉-->
-                            <div class="country-code-wrap pull-right">
-                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <div class="country-code-wrap pull-left">
                                 <select class="country-code" id="areaCodeM">
-                                    <option value="886">台灣 ＋886</option>
-                                    <option value="86">中國 ＋86 </option>
-                                    <option value="852">香港 ＋852</option>
-                                    <option value="853">澳門 ＋853</option>
-                                    <option value="853">美國 ＋1</option>
+                                    <option value="886">台灣 +886</option>
+                                    <option value="86">中國 +86 </option>
+                                    <option value="852">香港 +852</option>
+                                    <option value="853">澳門 +853</option>
+                                    <option value="853">美國 +1</option>
                                 </select>
                             </div>
-                        </div>
-
-                        <div class="login-input">
-                            <label for="PhoneNumber"><i class="fa fa-phone maLR2" aria-hidden="true"></i></label>
-                            <input data-val="true" data-val-length="欄位 電話號碼 必須是最大長度為 15 的字串" data-val-length-max="15" data-val-regex="請輸入有效的手機號" data-val-regex-pattern="^([0-9]{9,15})$" data-val-remote="電話號碼已被使用" data-val-remote-additionalfields="*.UserName" data-val-remote-url="/Account/CheckUserName" data-val-required="電話號碼 欄位是必要項" id="UserName" name="UserName" placeholder="常用手機號" type="tel" value="" />
+                            <input class="pull-left" data-val="true" data-val-length="欄位 電話號碼 必須是最大長度為 15 的字串" data-val-length-max="15" data-val-regex="請輸入有效的手機號" data-val-regex-pattern="^([0-9]{9,15})$" data-val-remote="電話號碼已被使用" data-val-remote-additionalfields="*.UserName" data-val-remote-url="/Account/CheckUserName" data-val-required="電話號碼 欄位是必要項" id="UserName" name="UserName" placeholder="常用手機號" type="tel" value="" />
                         </div>
                         <span class="field-validation-valid wrong-message" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
 
+                        <div class="pull-left w55p">
+                            <div class="login-input padL9p group-wrap">
+                                <label for="Code"><i class="fa fa-key" aria-hidden="true"></i></label>
+                                <input data-val="true" data-val-required="驗證碼 欄位是必要項" id="Code" name="Code" placeholder="驗證碼" type="tel" value="" />
+                                <span class="pull-right code-initial"><i class="fa fa-check-circle padR2x" aria-hidden="true"></i></span>
+                            </div>
+                            <span class="field-validation-valid wrong-message w50p" data-valmsg-for="Code" data-valmsg-replace="true"></span>
+                        </div>
+                        <button class="btn getCode disabled pull-right" type="submit" disabled="disabled" onclick="countDown(this)">獲取驗證碼</button>
+                        <div class="clearfix"></div>
+                        <button id="continue" class="btn" type="submit">提交</button>
+                    </section>
+                </form>
+                        
+                <form action="/account/register" method="post">
+                    <section class="signup-part2">
                         <div class="login-input">
                             <label for="registerPassword"><i class="fa fa-lock maLR3" aria-hidden="true"></i></label>
                             <input data-val="true" data-val-length="請使用6位以上數字或字母符號組合" data-val-length-max="100" data-val-length-min="6" data-val-required="密碼 欄位是必要項" id="registerPassword" name="Password" placeholder="密碼（至少6碼以上）" type="password" />
@@ -76,18 +90,12 @@
                         </div>
                         <span class="field-validation-valid wrong-message" data-valmsg-for="NickName" data-valmsg-replace="true"></span>
                         <button class="btn" type="submit">註冊</button>
-                    </div>
-                </fieldset>
-            </form>
-        </fieldset>
-        <p class="prompt_signup maT2x" >已經是會員？ <a class="under-line" style="font-size:1.2em;" href="/login">登入</a></p>
+                    </section>
+                </form>
+            </div>
+            <p class="prompt_signup appearUp maT2x" >已經是會員？ <a class="under-line" style="font-size:1.2em;" href="/login">登入</a></p>
+        </section>
     </div>
-
-    <script src="/Scripts/jquery-1.8.3.min.js"></script>
-    <script src="/Scripts/jquery.validate.min.js"></script>
-    <script src="/Scripts/jquery.validate.unobtrusive.ilandy-edit.js"></script>
-    <script src="/Scripts/materialize/materialize.min.js"></script>
-    <script src="/Scripts/pages/login-index.js?v=20161207"></script>
 
     <script src="http://test.moviecaker.com/Scripts/jquery-1.8.3.min.js"></script>
     <script src="http://test.moviecaker.com/Scripts/jquery.validate.min.js"></script>
@@ -126,11 +134,57 @@
             $('.code-display').text( $(this).text() );
         });
 
+
         // 加上btnLoading這個class 就會有 loading
-        $('button').click(function(){
-            $('button').addClass('btnLoading');
+        $('.toLogin button[type=submit]').on('click',function(){
+            $(this).addClass('btnLoading');
         });
         
+        // 驗證碼旁邊勾勾變綠色
+        $('button#continue').on('click', function(){
+            $('.code-initial').addClass('verified'); 
+        });
+
+        // fade in 動畫
+        $( document ).ready(function() {
+            $('.login').addClass('appear');
+            $('.signup-part1').addClass('appear');
+            $('.signup-part2').addClass('appear');
+        });
+
+        // 輸入號碼才能點擊獲取驗證碼
+        $('.login-input input#UserName').keyup(function() {
+            var phoneNum = $(this).val();
+            if ( phoneNum!= '' && phoneNum.match(/^\d+$/) ) {
+                $('button.getCode').removeAttr('disabled').removeClass('disabled');
+            } else {
+                $('button.getCode').attr('disabled', 'disabled').addClass('disabled');
+            }
+        });
+
+        // 獲取驗證碼 倒數
+        function countDown(button) {
+            var oldValue = button.innerHTML;
+            var timeleft = 60;
+            button.classList.add("disabled");
+            button.disabled = true;
+            button.innerHTML = timeleft + ' ' + '秒後可重發';
+            
+            var downloadTimer = setInterval(function(){
+                timeleft--;
+                button.innerHTML = timeleft + ' ' + '秒後可重發';
+                if (timeleft == 1) {
+                    clearInterval(downloadTimer);
+                }
+            }, 1000);
+                
+            setTimeout(function(){
+                button.classList.remove("disabled");
+                button.disabled = false;
+                button.innerHTML = oldValue;
+            }, 60000)
+        };
+
     </script>
 </body>
 </html>

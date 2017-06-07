@@ -41,14 +41,6 @@ button {
 button:focus {
     outline: none;
 }
-body {
-	line-height: 24px;
-	background-color: #000;
-	overflow: auto;
-	color: #4dd0e1;
-    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Heiti TC","Microsoft JhengHei", "å¾®è»Ÿæ­£é»‘", "Arial", sans-serif;
-}
-
 html { 
 	font-size: 16px;
 	line-height: 24px;
@@ -62,6 +54,16 @@ html {
     -o-background-size: cover;
     background-size: cover;
 }
+
+body {
+	line-height: 24px;
+	overflow: auto;
+    background-color: #0c0c0c;
+	color: #4dd0e1;
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Heiti TC","Microsoft JhengHei", "å¾®è»Ÿæ­£é»‘", "Arial", sans-serif;
+}
+
+
 ol, ul {
 	list-style: none;
 }
@@ -88,11 +90,19 @@ table {
 	display: table;
 	clear: both;
 }
+.clearfix {
+    clear: both;
+}
 
 
 /* ----------------- content CSS ------------------------ */
+.bg img {
+    display: none;
+}
 
 .login {
+    opacity: 0;
+    overflow: hidden;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -106,6 +116,7 @@ table {
 	right: 0;
     margin: 10vh auto;
     font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Heiti TC","Microsoft JhengHei", "å¾®è»Ÿæ­£é»‘", "Arial", sans-serif;
+    transition: opacity 1s .2s ease-in-out;
 }
 
 .welcome-title {
@@ -116,11 +127,12 @@ table {
 
 /* country code for DESKTOP */
 .area-code {
-	width: 90%;
+	width: 30%;
     height: 40px;
     line-height: 40px;
 	font-size: 0.9em;
-	padding-left: 10px;
+    margin-left: 5px;
+	padding-left: 12px;
 	color: #eeeeee;
 	position: relative;
 	cursor: pointer;
@@ -129,7 +141,7 @@ table {
 
 .area-code i {
 	position: absolute;
-    right: 10px;
+    right: 0px;
     bottom: 12px;
     font-size: 1.2em;
 }
@@ -140,10 +152,10 @@ table {
 	left: 0;
 	width: 100%;
 	background-color: rgba(25, 25, 25, 0.8);
-	border-left: 2px solid #71cfee;
-	text-align: left;
+	border-top: 2px solid #71cfee;
+	text-align: center;
 	box-sizing: border-box;
-	padding: 5px 15px;
+	padding: 5px 0px;
 	z-index: 5;
 }
 
@@ -161,14 +173,22 @@ table {
 
 /* country code for MOBILE */
 .country-code-wrap {
-    width: 91%;
+    width: 44px;
+    /*width: 85px;*/
+    margin-left: 10px;
+    position: relative;
     display: none;
 }
 
-.country-code-wrap i {
+.country-code-wrap:after {
+    content: "\f107";
+    font-family: "FontAwesome";
+    font-weight: normal;
+    font-style: normal;
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    top: 10px;
+    right: -15px;
+    color: #71cfee !important;
 }
 
 .country-code {
@@ -187,9 +207,7 @@ table {
 .country-code:focus {
     outline: none;
 }
-
 /*-----------------------------------------*/
-
 
 .login-content {
 	/*overflow: hidden;*/
@@ -235,7 +253,6 @@ table {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	/*background-color: rgba(0,2,2,.5);*/
     background-color: transparent;
 	margin-top: 15px;
     margin-bottom: 5px;
@@ -246,6 +263,24 @@ table {
     	-ms-transition: border-color 1s;
     		transition: border-color 1s;
 }
+.login-input.hasDropdown input {
+    width: 50%;
+    margin-left: 15px;
+}
+
+.login-input input#Code {
+    width: 55%;
+}
+
+.login-input .code-initial {
+    color: rgba(153,153,153,.3);
+    margin-top: 7px;
+    transition: color .5s ease-in;
+}
+.login-input .code-initial.verified {
+    color: #B8E986;
+}
+
 .login-input.hasPic > input {
 	padding-left: 28px;
 	width: 57.5%;
@@ -256,7 +291,6 @@ table {
 	position: absolute;
 	top: 0;
 	left: 0;
-
 }
 .login-input > input {
 	background: none;
@@ -312,9 +346,6 @@ input {
 }
 .login-input+.wrong-message {
 	display: none;
-	/*position: absolute;
-	top: -10px;
-	right: 0;*/
 }
 .login-input.field-validation-error input::-webkit-input-placeholder { /* WebKit browsers */
     color: #D87C7C;
@@ -352,6 +383,7 @@ input {
     transition: 0.3s;
 }
 
+/* ----------------------------- BUTTONS --------------------------- */
 .btn {
 	background-color: #63A9BD;
     border: 1px solid #63A9BD;
@@ -409,6 +441,22 @@ input {
     font-size: 2em;
 }
 
+button.getCode {
+    width: 40%;
+    border: 1px solid #71cfee;
+    color: #71cfee;
+    font-size: 0.9em;
+    background-color: transparent;
+    margin-top: 10px;;
+    transition: .3s;
+}
+
+button.getCode.disabled {
+    background-color: rgba(153,153,153,.2);
+    border: none;
+    color: rgba(255,255,255,.5);
+    cursor: default;
+}
 
 .other-title {
 	margin-top: 30px;
@@ -452,12 +500,22 @@ input {
     outline: none;
 }
 
+/* -------------------- other misc CSS ----------------------- */
+
+.signup-part1, .signup-part2 {
+    opacity: 0;
+    transition: opacity 1s .5s ease-in-out;
+}
+.appear {
+    opacity: 1;
+}
+
 .prompt_signup {
     color: rgba(238,238,238,1);
     font-weight: 400;
     text-align: center;
     font-size: 1em;
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
 }
 
 .toggle_pwd {
@@ -479,9 +537,7 @@ input {
 
 
 
-/***************
-   Checkboxes
-***************/
+/*************************** Checkboxes ****************************/
 /* CUSTOM CSS CHECKBOXES */
 form p {
   margin-bottom: 10px;
@@ -640,7 +696,7 @@ form p:last-child {
   background-color: #BDBDBD;
   border-color: #BDBDBD; }
 
-/*chrome account info*/
+/* --------------- chrome account autofill ------------------ */
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
     -webkit-transition-delay: 9999s; /* delaying the background-color change */
@@ -652,6 +708,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 .login-input.field-validation-error > select:-webkit-autofill {
   -webkit-text-fill-color: #D87C7C !important;
 }
+
 /* login å½ˆçª— */
 body.blur-bg > div {
     filter: blur(3px);
@@ -692,6 +749,8 @@ body.blur-bg > div {
     top: auto;
     position: relative;
 }
+/* --------------------------------------- */
+
 
 @media screen and (min-width: 481px){
 	
@@ -728,6 +787,18 @@ body.blur-bg > div {
         background-color: rgba(255,255,255,0.2);
         border: 1px solid #fff;
     }
+
+    button.getCode:hover {
+        background-color: rgba(113,207,238,.3) !important;
+        box-shadow: none !important;
+    }
+    button.getCode.disabled:hover {
+        background-color: rgba(153,153,153,.2) !important;
+        box-shadow: none;
+        border: none;
+        color: rgba(255,255,255,.5);
+        cursor: default;
+    }
 }
 
 @media screen and (max-width: 480px){
@@ -738,7 +809,7 @@ body.blur-bg > div {
         -o-background-size: cover;
         background-size: cover;
     }
-    
+
 	.login {
         min-height: 100vh;
         width: 100vw;
@@ -746,6 +817,14 @@ body.blur-bg > div {
         margin: auto;
         background-color: rgba(12,12,12,.4);
 	}
+
+    .login-input.hasDropdown input {
+        width: 50%;
+        margin-left: 30px;
+        /*width: 45%;
+        margin-left: 30px;*/
+    }
+
     a.under-line:active {
         text-decoration: underline;
     }
@@ -782,6 +861,17 @@ body.blur-bg > div {
     .btn-outline:active {
         background-color: rgba(255,255,255,0.2);
         border: 1px solid #fff;
+    }
+
+    button.getCode:active {
+        background-color: rgba(113,207,238,.3) !important;
+    }
+    button.getCode.disabled:active {
+        background-color: rgba(153,153,153,.2) !important;
+        box-shadow: none;
+        border: none;
+        color: rgba(255,255,255,.2);
+        cursor: default;
     }
 }
 
@@ -997,6 +1087,9 @@ body.blur-bg > div {
 .maB2x {
 	margin-bottom: 30px;
 }
+.padL9p {
+    padding-left: 9%; 
+}
 .padLR {
     padding: 0 10px;
 }
@@ -1014,7 +1107,7 @@ body.blur-bg > div {
 }
 .lineh40 {
     display: inline-block;
-    margin-top: 3%;
+    margin-top: 3.5%;
 }
 .lineh18{
     line-height: 18px;
@@ -1067,6 +1160,10 @@ strong {
 .w25p {
     width: 25%;;
 }
+.w55p {
+    width: 55%;
+}
+
 .w75p {
     width: 73%;
 }
