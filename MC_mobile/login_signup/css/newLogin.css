@@ -149,6 +149,7 @@ table {
 	left: 0;
 	width: 100%;
 	background-color: rgba(25, 25, 25, 0.8);
+    border-top: none;
     border-left: 2px solid #71cfee; 
     text-align: left;
     box-sizing: border-box;
@@ -176,6 +177,7 @@ table {
 }
 .login-input.hasDropdown .area-code-dropdown {
     border-top: 2px solid #71cfee; 
+    border-left: none;
     text-align: center;
     padding: 5px 0px; 
 }
