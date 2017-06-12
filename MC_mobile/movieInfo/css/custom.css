@@ -1,6 +1,6 @@
 
 html, body { /* this allows the children to inherit this style */
-    font-size: 14px !important;
+    font-size: 14px;
 }
 
 .movie-title, button {

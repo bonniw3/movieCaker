@@ -8,14 +8,15 @@
     <link rel="canonical" href="http://test.moviecaker.com/video/M00000000158105">
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="css/custom.css" rel="stylesheet" />
+    <link href="css/screen.css" rel="stylesheet" />
     <link href="../entire_css/common.css" rel="stylesheet" />
     <link href="../entire_css/min-search.css" rel="stylesheet" />
-    <!--<link href="css/homepage.css" rel="stylesheet" />-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="http://test.moviecaker.com/Content/mobile/icomoon/style.min.css" rel="stylesheet" />
+    <!--<link href="http://test.moviecaker.com/Content/mobile/icomoon/style.min.css" rel="stylesheet" />-->
 
-    <link href='http://test.moviecaker.com/Content/mobile/screen.css' rel='stylesheet' />
-    <link href='http://test.moviecaker.com/Content/mobile/custom.css' rel='stylesheet' />
+    <!--<link href='http://test.moviecaker.com/Content/mobile/screen.css' rel='stylesheet' />
+    <link href='http://test.moviecaker.com/Content/mobile/custom.css' rel='stylesheet' />-->
 </head>
 <body>
     <!--<div class="bkgd-mask">
@@ -24,70 +25,7 @@
                 <img src="img/mob_home_logo.png" alt="">
             </h1>-->
             
-            <!--<div class="search-area group-wrap">
-                <form> 
-                    <button class="btn-close group-wrap" type="reset">
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                        <i class="fa fa-angle-left" aria-hidden="true"></i>
-                    </button>
-                    <div class="search-keyword ui">
-                        <i class="fa fa-search fa-lg pull-left" aria-hidden="true"></i>
-                        <input id="search-input" class="pull-left" type="search" name="" value="" placeholder="尋找電影..."/>
-                    </div>
-                </form>
-                <div id="search-autocomplete"></div>
-                <a href="#" class="more pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>更多搜尋結果</a>
-            </div>-->
-
-            <!--<div class="group-wrap btn-group-wrap">-->
-                <!--<div class="page-btn-group pull-left">
-                    <a href="#">
-                        <div class="page-btn"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                        <span class="page-title">本週票房榜</span>
-                    </a>
-                </div>
-                <div class="page-btn-group pull-left">
-                    <a href="#">
-                        <div class="page-btn"><i class="fa fa-film" aria-hidden="true"></i></div>
-                        <span class="page-title">院線熱映</span> 
-                    </a>  
-                </div>
-                <div class="page-btn-group pull-left">
-                    <a href="#">
-                        <div class="page-btn"><i class="fa fa-play" aria-hidden="true"></i></div>
-                        <span class="page-title">熱門在線看</span>
-                    </a>   
-                </div>
-                <div class="page-btn-group pull-left">
-                    <a href="#">
-                        <div class="page-btn"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
-                        <span class="page-title">熱門專題</span>
-                    </a>   
-                </div>-->
-                <!-- 朋友在看，個人頁面，只有登入後才會看到-->
-                <!--<div class="page-btn-group pull-left">
-                    <a href="#">
-                        <div class="page-btn"><i class="fa fa-users" aria-hidden="true"></i></div>
-                        <span class="page-title">朋友在看</span>
-                    </a>   
-                </div>
-                <div class="page-btn-group pull-left">
-                    <a href="#">
-                        <div class="page-btn avatar"><img src="img/user.jpg" alt=""></div>
-                        <span class="page-title">個人頁面</span>
-                    </a>   
-                </div>-->
-            <!--</div>-->
-
-            <!-- 登入，註冊按鈕，未登入時顯示-->
-            <!--<div class="homepage-btn-wrap group-wrap">
-                <a href="#" class="homepage-btn login-btn pull-left">登入</a>
-                <a href="#" class="homepage-btn signup-btn pull-right">註冊</a>
-            </div>-->
-            <!-- 登出按鈕，登入後顯示-->
-            <!--<div class="homepage-btn-wrap" style="display: none;">
-                <a href="#" class="homepage-btn signout-btn">登出</a>
-            </div>-->
+            
         <!--</section>
     </div>-->
 
@@ -96,11 +34,34 @@
     </div>-->
     <div>
     <!-- header -->
+       <div class="search-area group-wrap">
+            <form> 
+                <button class="btn-close group-wrap" type="reset">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </button>
+                <div class="search-keyword ui">
+                    <i class="fa fa-search fa-lg pull-left" aria-hidden="true"></i>
+                    <input id="search-input" class="pull-left" type="search" name="" value="" placeholder="尋找電影..." ng-model="main.searchText" ng-bind="main.searchText" multi-search/>
+                </div>
+            </form>
+            <div id="search-autocomplete"></div>
+            <a href="#" class="more pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>更多搜尋結果</a>
+        </div>
+        
         <div class="menu" ng-class="{ blur: main.screenStatus() }">
-            <ul id="header-items" ng-show="!main.isSearchMode">
+            <!--<div ng-show="main.isSearchMode">
+                <label class="search-wrap">
+                    <input id="search-input" class="search-content" type="text" ng-model="main.searchText" ng-bind="main.searchText" multi-search>
+                    <span class="icon-search gray-w" ng-click="main.search()"></span>
+                </label>
+                <span class="search-cancle gray-w fRight" ng-click="main.isSearchMode=false">取消</span>
+            </div>-->
+            <ul id="header-items" ng-show="!main.isSearchMode" style="z-index: 100;">
                 <li id="main-menu">
                     <div class="cell-container">
-                        <a href="" class="menu-button fa fa-bars"></a>
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                        <!--<a href="" class="menu-button fa fa-bars"></a>-->
                     </div>
                 </li>
                 <li id="logo">
@@ -109,18 +70,17 @@
                             <a class="logo" href="/mobile">
                                 <img src="http://test.moviecaker.com/Areas/Mobile/Images/logo.png" height="25" alt="MovieCaker" />
                             </a>
-                            <!--<span class="gray-w">電影：海邊的曼徹斯特</span>-->
                         </h1>
                     </div>
                 </li>
                 <li id="other-operate">
                     <div class="cell-container">
-                            <a class="icon-key2" ng-click="main.MenuLogin()"></a>
-                        <a class="icon-search paL1x" ng-click="main.isSearchMode=true"></a>
+                        <i id="search-btn" class="fa fa-search" aria-hidden="true"></i>
+                        <a class="icon-key2" ng-click="main.MenuLogin()"></a>
+                        <!--<a class="icon-search paL1x" ng-click="main.isSearchMode=true"></a>-->
                     </div>
                 </li>
             </ul>
-            <!--<div id="search-autocomplete"></div>-->
         </div>
 
     <!-- never seen fxn -->
@@ -597,6 +557,64 @@
     ga('send', 'pageview');
 </script>
 
+<script>
+    $(document).ready(function(){
+        // 測試搜尋樣式，不是真的搜尋功能
+        $( function() {
+            var availableTags = [
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)","醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)"
+            ];
+            $( "#search-input" ).autocomplete({
+                source: availableTags,
+                appendTo: "#search-autocomplete",
+                open: function(){
+                    $('.more').addClass("searching"); // 有搜尋結果再出現”更多搜尋“按鈕
+                },
+                close: function(){
+                    $('.more').removeClass("searching"); // 沒有搜尋結果不出現”更多搜尋“按鈕
+                }
+            });
+        });
+
+        // 首頁點擊搜尋的動態效果
+        $('#search-btn').on("click", function(){
+            window.scrollBy(0, 1); // 讓鍵盤出現時頁面不會被推上去
+            $('.search-area').addClass("searching");
+            $('.btn-close').addClass("searching");
+            $('.search-keyword').addClass("searching");
+        });
+        // 點擊叉按鈕關閉搜尋
+        $('.btn-close').on("click", function(){
+            $('.search-area').removeClass("searching");
+            $('.btn-close').removeClass("searching");
+            $('.search-keyword').removeClass("searching");
+        });
+    });
+</script>
 
 </body>
 </html>
