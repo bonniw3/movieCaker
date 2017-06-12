@@ -1,93 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-@charset "UTF-8";
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video, input {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-a {
-	text-decoration: none;
-	color: #71cfee;
-    font-weight: 400;
-}
-a img {
-  border: none;
-}
-button {
-	border: none;
-	background-color: transparent;
-}
-body {
-	line-height: 24px;
-	color: #ffffff;
-    font-family: Arial, "Heiti TC", "Microsoft JhengHei";
-    background: #0c0c0c;
-	width: 100vw;
-	height: 100vh;
-}
-html { 
-	font-size: 16px;
-	line-height: 24px;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-.pull-right {
-	float: right;
-}
-.pull-left {
-	float: left;
-}
-.group-wrap:after {
-    content: "";
-	display: table;
-	clear: both;
-}
 
 .search-wrap {
     padding: 30px;
@@ -209,7 +119,6 @@ caption, th, td {
 
 
 /* ---------- SEARCH-RESULT section ---------- */
-
 .search-result {
     margin-top: 12em;
 }
@@ -234,64 +143,7 @@ caption, th, td {
     font-size: 1em;
 }
 
-/* -----------------------------common_css---------------------------------- */
 
-.maT1x {
-    margin-top: 10px;
-}
-.maT2x {
-    margin-top: 20px;
-}
-.maT3x {
-    margin-top: 30px;
-}
-.maB3x {
-    margin-bottom: 30px;
-}
-.maT50 {
-    margin-top: 50px;
-}
-.maL40 {
-    margin-left: 40px;
-}
-
-.padTBHalfX {
-    padding: 5px 0;
-}
-
-.padTB1x {
-    padding: 10px 0;
-}
-
-.padTB15 {
-    padding: 15px 0;
-}
-.padR1x {
-    padding-right: 10px;
-}
-.padL1x {
-    padding-left: 10px;
-}
-.padLR10 {
-    padding: 0 10px;
-}
-
-.text-white {
-    color: #ffffff;
-}
-.text-gray {
-    color: #9b9b9b;
-}
-.text-blue {
-    color: #71cfee;
-}
-
-.fz-s {
-  font-size: 1em !important;
-}
-.fz-m {
-  font-size: 1.25em !important;
-}
 
 
 

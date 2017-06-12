@@ -1,91 +1,21 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video, input {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-a {
-	text-decoration: none;
-	color: #71cfee;
-    font-weight: 400;
-}
-
-button {
-	border: none;
-	background-color: transparent;
-}
-body {
-	line-height: 24px;
-	overflow: hidden;
-	color: #71cfee;
-    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Heiti TC","Microsoft JhengHei", "å¾®è»Ÿæ­£é»‘", "Arial", sans-serif;
+.bkgd-mask {
     background: #0c0c0c url(../img/mob_home_bkgd.jpg) 0px 0 no-repeat;
 	width: 100vw;
-	height: 100vh;
+	width: 100vw;
+	height: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
-html { 
-	font-size: 16px;
-	line-height: 24px;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-.pull-right {
-	float: right;
-}
-.pull-left {
-	float: left;
-}
-.group-wrap:after {
-    content: "";
-	display: table;
-	clear: both;
-}
-
-.bkgd-mask {
+.bkgd-mask:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
     background: transparent;
     background: -webkit-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,1)); /*Safari 5.1-6*/
     background: -o-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,1)); /*Opera 11.1-12*/
@@ -102,6 +32,7 @@ table {
     padding: 30px;
     position: relative;
     overflow-x: hidden;
+    z-index: 5;
 }
 
 /* ---------- LOGO section ---------- */
@@ -113,115 +44,7 @@ table {
     width: 100%;
 }
 
-
-/* ---------- SEARCH section ---------- */
-
-#search-input::-webkit-search-cancel-button {
-    position: relative;
-    right: -500px;
-}
-.search-area {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100vw;
-    height: 40vh;
-    box-sizing: border-box;
-    padding: 30px;
-    background-color: rgba(12,12,12,0);
-    transition: background-color .7s .05s,
-                height .5s .5s;
-}
-.search-area.searching {
-    height: 100vh;
-    z-index: 5;
-    background-color: rgba(12,12,12,.95);
-    transition: background-color .7s .05s;
-}
-
-.btn-close {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -100px;
-    margin: auto;
-    border-radius: 50%;
-    border: 1px solid rgba(238,238,238,.7);
-    line-height: 40px;
-    text-align: center;
-    box-sizing: border-box;
-    padding-left: 12px;
-    display: block;
-    cursor: pointer;
-    transition: top .5s .1s ease;
-}
-.btn-close:focus {
-    outline: none;
-}
-.btn-close.searching {
-    top: 30px;
-    transition: top .5s .1s ease;
-}
-.btn-close i {
-    font-size: 25px;
-    color: #eeeeee;
-    float: left;
-}
-.btn-close i.fa-angle-right {
-    margin-right: -3px;
-}
-
-.search-keyword {
-    position: relative;
-    margin-top: 55%;
-    width: 100%;
-    overflow: hidden;
-    transition: margin-top .6s ease;
-}
-.search-keyword.searching {
-    margin-top: 20%;
-    transition: margin-top .6s ease;
-}
-.search-keyword input {
-    width: 100%;
-    background: transparent;
-    border-bottom: 1px solid rgba(113,207,238,.4);
-    padding: 10px 5px 10px 45px;
-    font-size: 1.2em;
-    color: #eeeeee;
-    letter-spacing: 1px;
-    border-radius: 0;
-    -webkit-border-radius:0px;
-    -webkit-appearance: none;
-    cursor: text;
-    transition: border-color .5s;
-}
-.search-keyword input:focus {
-    outline: none;
-    border-bottom: 1px solid rgba(113,207,238,1);
-}
-.search-keyword i {
-    position: absolute;
-    top: 13px;
-    left: 15px;
-}
-
-.more {
-    font-size: .9em;
-    color: #71cfee;
-    position: absolute;
-    top: 25%;
-    right: -200px;
-    transition: right .5s .1s;
-}
-.more.searching {
-    right: 30px;
-    transition: right .5s .1s;
-}
-
- /* --- adjust jquery_ui --- */
+/* --- adjust jquery_ui --- */
 ul.ui-autocomplete {
     width: 100vw !important;
     max-height: 65vh;
@@ -322,50 +145,3 @@ div.ui-state-active {
     border: 1px solid rgba(113,207,238,1);
     color: rgba(113,207,238,1);
 }
-
-
-
-/* -----------------------------common_css---------------------------------- */
-
-.maT1x {
-    margin-top: 10px;
-}
-.maT2x {
-    margin-top: 20px;
-}
-.maT3x {
-    margin-top: 30px;
-}
-.maB3x {
-    margin-bottom: 30px;
-}
-.maT50 {
-    margin-top: 50px;
-}
-.maL40 {
-    margin-left: 40px;
-}
-
-.padR1x {
-    padding-right: 10px;
-}
-.padL1x {
-    padding-left: 10px;
-}
-.padLR10 {
-    padding: 0 10px;
-}
-
-.text-white {
-    color: #ffffff;
-}
-
-.bkgd-blue {
-    background-color: rgba(113,207,238,.5);
-}
-
-.bkgd-pink {
-    background-color: rgba(216,124,124,.5);
-}
-
-

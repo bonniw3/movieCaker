@@ -1,0 +1,105 @@
+
+#search-input::-webkit-search-cancel-button {
+    position: relative;
+    right: -500px;
+}
+.search-area {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 40vh;
+    box-sizing: border-box;
+    padding: 30px;
+    background-color: rgba(12,12,12,0);
+    transition: background-color .7s .05s,
+                height .5s .5s;
+}
+.search-area.searching {
+    height: 100vh;
+    z-index: 5;
+    background-color: rgba(12,12,12,.95);
+    transition: background-color .7s .05s;
+}
+
+.btn-close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -100px;
+    margin: auto;
+    border-radius: 50%;
+    border: 1px solid rgba(238,238,238,.7);
+    line-height: 40px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-left: 12px;
+    display: block;
+    cursor: pointer;
+    transition: top .5s .1s ease;
+}
+.btn-close:focus {
+    outline: none;
+}
+.btn-close.searching {
+    top: 30px;
+    transition: top .5s .1s ease;
+}
+.btn-close i {
+    font-size: 25px;
+    color: #eeeeee;
+    float: left;
+}
+.btn-close i.fa-angle-right {
+    margin-right: -3px;
+}
+
+.search-keyword {
+    position: relative;
+    margin-top: 55%;
+    width: 100%;
+    overflow: hidden;
+    transition: margin-top .6s ease;
+}
+.search-keyword.searching {
+    margin-top: 20%;
+    transition: margin-top .6s ease;
+}
+.search-keyword input {
+    width: 100%;
+    background: transparent;
+    border-bottom: 1px solid rgba(113,207,238,.4);
+    padding: 10px 5px 10px 45px;
+    font-size: 1.2em;
+    color: #eeeeee;
+    letter-spacing: 1px;
+    border-radius: 0;
+    -webkit-border-radius:0px;
+    -webkit-appearance: none;
+    cursor: text;
+    transition: border-color .5s;
+}
+.search-keyword input:focus {
+    outline: none;
+    border-bottom: 1px solid rgba(113,207,238,1);
+}
+.search-keyword i {
+    position: absolute;
+    top: 13px;
+    left: 15px;
+}
+
+.more {
+    font-size: .9em;
+    color: #71cfee;
+    position: absolute;
+    top: 25%;
+    right: -200px;
+    transition: right .5s .1s;
+}
+.more.searching {
+    right: 30px;
+    transition: right .5s .1s;
+}
