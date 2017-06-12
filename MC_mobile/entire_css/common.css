@@ -45,7 +45,8 @@ body {
 	overflow: hidden;
 	color: #71cfee;
     font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Heiti TC","Microsoft JhengHei", "å¾®è»Ÿæ­£é»‘", "Arial", sans-serif;
-    background: #0c0c0c url(../img/mob_home_bkgd.jpg) 0px 0 no-repeat;
+    /*background: #0c0c0c url(../img/mob_home_bkgd.jpg) 0px 0 no-repeat;*/
+	background-color: #0c0c0c;
 	width: 100vw;
 	height: 100vh;
     -webkit-background-size: cover;

@@ -44,6 +44,11 @@
     width: 100%;
 }
 
+/* ---------- SEARCH section ---------- */
+.search-area {
+    opacity: 1;
+}
+
 /* --- adjust jquery_ui --- */
 ul.ui-autocomplete {
     width: 100vw !important;
