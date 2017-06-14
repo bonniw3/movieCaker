@@ -6,24 +6,29 @@
 .search-area {
     opacity: 0;
     position: absolute;
-    top: 0%;
+    top: 7%;
     left: 0%;
     width: 100vw;
     height: 40vh;
     box-sizing: border-box;
     padding: 30px;
+    z-index: 15;
     background-color: rgba(12,12,12,0);
-    transition: background-color .7s .05s,
-                height .5s .5s,
-                opacity .5s;
+    transition: background-color .5s .05s ease,
+                top .5s .2s ease,
+                height .5s .2s ease,
+                opacity .4s ease;
 }
 .search-area.searching {
     opacity: 1;
     height: 100vh;
+    top: 0;
     z-index: 15;
     background-color: rgba(12,12,12,.95);
-    transition: background-color .7s .05s,
-                opacity .5s;
+    transition: background-color .5s .2s ease,
+                height .5s ease,
+                top .5s ease,
+                opacity .5s ease;
 }
 
 .btn-close {
@@ -42,14 +47,14 @@
     padding-left: 12px !important;
     display: block;
     cursor: pointer;
-    transition: top .5s .1s ease;
+    transition: top .5s .05s ease;
 }
 .btn-close:focus {
     outline: none !important;
 }
 .btn-close.searching {
     top: 30px;
-    transition: top .5s .1s ease;
+    transition: top .5s .05s ease;
 }
 .btn-close i {
     font-size: 25px;
@@ -62,7 +67,8 @@
 
 .search-keyword {
     position: relative;
-    margin-top: 55%;
+    /*margin-top: 55%;*/
+    margin-top: 40%;
     width: 100%;
     overflow: hidden;
     transition: margin-top .6s ease;

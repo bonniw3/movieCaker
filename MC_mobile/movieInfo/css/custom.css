@@ -25,9 +25,9 @@ html, body { /* this allows the children to inherit this style */
     height: 50px;
 }
 
-#mainInfo .movieInfo h2 {
+/*#mainInfo .movieInfo h2 {
     font-size: 1.2em;
-}
+}*/
 
 .comment > .select-list > li {
     font-size: 1em;
@@ -62,9 +62,9 @@ html, body { /* this allows the children to inherit this style */
     font-size: 1.2em;
 }
 
-.menu ul#header-items > li .cell-container {
+/*.menu ul#header-items > li .cell-container {
     display: inline;
-}
+}*/
 
 /*.underline-tab.five-tab > .tab-item {
     width: 19%;
@@ -79,11 +79,11 @@ html, body { /* this allows the children to inherit this style */
     line-height: 1.5em;
 }
 
-.menu ul#header-items > li#logo {
+/*.menu ul#header-items > li#logo {
     width: 70%;
     line-height: 1.5em;
     overflow: hidden;
-}
+}*/
 
 .topic {
     font-size: 1em;
