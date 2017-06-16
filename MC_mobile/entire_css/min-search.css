@@ -5,8 +5,9 @@
 }
 .search-area {
     opacity: 0;
-    position: absolute;
-    top: 7%;
+    overflow: hidden;
+    position: fixed;
+    top: -50%;
     left: 0%;
     width: 100vw;
     height: 40vh;
@@ -54,7 +55,7 @@
 }
 .btn-close.searching {
     top: 30px;
-    transition: top .5s .05s ease;
+    transition: top .5s .2s ease;
 }
 .btn-close i {
     font-size: 25px;
@@ -106,11 +107,42 @@
     font-size: .9em;
     color: #71cfee;
     position: absolute;
-    top: 25%;
+    top: 23%;
+    /*top: 25%;*/
     right: -200px;
     transition: right .5s .1s;
 }
 .more.searching {
     right: 30px;
     transition: right .5s .1s;
+}
+
+/* --- adjust jquery_ui --- */
+ul.ui-autocomplete {
+    width: 100vw !important;
+    max-height: 65vh;
+    /*top: 26% !important;*/
+    top: 25% !important;
+    left: 0 !important;
+    border: none !important;
+    background-color: transparent;
+    font-size: 1em;
+    margin-top: 5%;
+    padding: 0 30px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+li.ui-menu-item {
+    width: 100%;
+    color: #ffffff;
+    padding: 5px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(238,238,238,.2);
+}
+div.ui-state-active {
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    color: #71cfee !important;
+    transition: color .5s;
 }

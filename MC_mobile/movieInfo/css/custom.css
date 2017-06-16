@@ -1,6 +1,6 @@
 
 html, body { /* this allows the children to inherit this style */
-    font-size: 14px;
+    /*font-size: 14px;*/
 }
 
 .movie-title, button {
@@ -20,18 +20,18 @@ html, body { /* this allows the children to inherit this style */
     width: 140px;
 }
 
-.infoText .infoContent {
+/*.infoText .infoContent {
     font-size: inherit;
     height: 50px;
-}
+}*/
 
 /*#mainInfo .movieInfo h2 {
     font-size: 1.2em;
 }*/
 
-.comment > .select-list > li {
+/*.comment > .select-list > li {
     font-size: 1em;
-}
+}*/
 
 .movieInfo-Like li, .movieInfo-Like {
     font-size: 14px;
@@ -47,9 +47,9 @@ html, body { /* this allows the children to inherit this style */
     color: currentColor;
 }
 
-.comment-list > .comment-item .comment-content {
+/*.comment-list > .comment-item .comment-content {
     font-size: 1em;
-}
+}*/
 
 .top {
     width: 40px;
@@ -58,9 +58,9 @@ html, body { /* this allows the children to inherit this style */
     background-size: cover;
 }
 
-.popMenu {
+/*.popMenu {
     font-size: 1.2em;
-}
+}*/
 
 /*.menu ul#header-items > li .cell-container {
     display: inline;
@@ -70,14 +70,14 @@ html, body { /* this allows the children to inherit this style */
     width: 19%;
 }*/
 
-.popTo .starAll {
+/*.popTo .starAll {
     font-size: 1em;
 }
 
 .popTo .starW {
     font-size: 2.5em;
     line-height: 1.5em;
-}
+}*/
 
 /*.menu ul#header-items > li#logo {
     width: 70%;
@@ -105,9 +105,9 @@ html, body { /* this allows the children to inherit this style */
     font-size: 1em;
 }
 
-.select-list > li, .panel p {
+/*.select-list > li, .panel p {
     font-size: 1em;
-}
+}*/
 /*=================
 
 #fill-screen 是ui-compalete的滿版設定
@@ -174,9 +174,9 @@ html, body { /* this allows the children to inherit this style */
     color: #3bb1cc;
 }
 /* panel-movie */
-.panel-movie .panel-movie-row, .popTo {
+/*.panel-movie .panel-movie-row, .popTo {
     display: block;
-}
+}*/
 
 .panel-movie.scroll {
     min-height: 600px;
@@ -231,6 +231,7 @@ ul.ui-autocomplete {
     background:black!important;
     color:#09b2ba!important;
 }*/
+
 /*go Top or Down*/
 .down {
     width: 30px;
@@ -255,7 +256,7 @@ ul.ui-autocomplete {
     margin-top: 0px;
 }
 /*search bar setting*/
-.searchBar {
+/*.searchBar {
     background-color: black;
     border-bottom: 1px solid #2e839e;
     height: 29px;
@@ -287,7 +288,7 @@ ul.ui-autocomplete {
             background-color: #20292b !important;
             border: 1px solid #0d4e59 !important;
             border-radius: 3px !important;
-        }
+        }*/
 
 /* review detail special mavieInfo */
 .movieInfo-list-row {

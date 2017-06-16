@@ -47,6 +47,7 @@
 /* ---------- SEARCH section ---------- */
 .search-area {
     opacity: 1;
+    top: 7%;
 }
 
 /* --- adjust jquery_ui --- */
@@ -120,7 +121,7 @@ div.ui-state-active {
     position: fixed;
     left: 0;
     bottom: 0;
-    padding: 5% 0 7% 0;
+    padding: 5% 0 7% 0 !important;
     background-color: rgba(12,12,12,1);
 }
 

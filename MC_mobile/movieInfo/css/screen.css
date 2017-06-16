@@ -898,7 +898,8 @@ body:after {
   font-size: 13px;
   line-height: 1.1em;
   font-weight: 900;
-}
+}*/
+
 #mainInfo .movieInfo h3 {
   font-weight: 900;
 }
@@ -917,7 +918,7 @@ body:after {
 #mainInfo .isF {
   background-image: url("/Areas/Mobile/Images/isF.png");
 }
-
+/*
 .movieInfo-Like {
   font-size: 12px;
 }
@@ -1033,7 +1034,7 @@ body:after {
   color: #09b2ba;
 }*/
 
-.infoText .infoContent {
+/*.infoText .infoContent {
   text-align: justify;
   line-height: 1.2em;
   font-size: 12px;
@@ -1054,7 +1055,7 @@ body:after {
   color: #3bb1cc;
   text-align: right;
   cursor: pointer;
-}
+}*/
 .infoText .commentPeople {
   overflow: hidden;
   *zoom: 1;
@@ -1521,7 +1522,7 @@ body:after {
   width: 48%;
 }
 
-.popTo {
+/*.popTo {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -1673,7 +1674,7 @@ body:after {
 }
 .popTo .starNum span {
   font-size: 16px;
-}
+}*/
 
 .addTag {
   position: relative;
@@ -1845,7 +1846,7 @@ body:after {
   font-size: 14px;
 }
 
-.comment-list {
+/*.comment-list {
   background: #333;
   -moz-box-shadow: 0px 2px 3px #000;
   -webkit-box-shadow: 0px 2px 3px #000;
@@ -1922,9 +1923,9 @@ body:after {
   *zoom: 1;
   *display: inline;
   margin-right: 10px;
-}
+}*/
 
-.select-list {
+/*.select-list {
   margin-top: 10px;
   margin-bottom: 10px;
   background: #333;
@@ -1938,7 +1939,7 @@ body:after {
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
-  font-size: 12px;
+  font-size: 1em;
   line-height: 2em;
   width: 25%;
   text-align: center;
@@ -1958,13 +1959,13 @@ body:after {
 .select-list .active {
   background: #1f1f1f;
   color: #3bb1cc;
-}
+}*/
 
 .w30 {
   width: 32% !important;
 }
 
-.tab-Content a, .tag {
+/*.tab-Content a, .tag {
   padding-right: 5px;
   padding-left: 5px;
   background: #0e2f37;
@@ -2010,7 +2011,7 @@ body:after {
 }
 .tab-Content.active {
   display: block;
-}
+}*/
 
 .tab-list li {
   overflow: hidden;

@@ -8,8 +8,8 @@
     <link rel="canonical" href="http://test.moviecaker.com/video/M00000000158105">
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link href="css/custom.css" rel="stylesheet" />
-    <link href="css/screen.css" rel="stylesheet" />
+    <!--<link href="css/custom.css" rel="stylesheet" />-->
+    <!--<link href="css/screen.css" rel="stylesheet" />-->
     <link href="../entire_css/common.css" rel="stylesheet" />
     <link href="css/movie.css" rel="stylesheet" />
     <link href="../entire_css/min-search.css" rel="stylesheet" />
@@ -64,137 +64,317 @@
                 </li>
             </ul>
         </div>
-        
+
         <!-- content -->
         <div ng-class="{ blur: main.screenStatus() }">
             <div ng-controller="videoIntroCtrl as vm" ng-init="vm.init('M00000000158105')">
-                <section class="content-wrap">
-                    <div class="bkgd-img">
-                        <!--<movie-poster ng-if="main.appReady" poster-path="http://121.41.34.59/Content/pictures/files/M1660937_posters.jpg" alt=""></movie-poster>-->
-                        <img src="img/manchester.png" alt="">
-                        <div class="gradient"></div>
-                    </div>
-                    <div class="card-wrap">
-                        <div id="mainInfo">
-                            <div class="movieInfo">
-                                <h2 class="movieInfo-title fz-m">海邊的曼徹斯特</h2>
-                                <h3 class="movieInfo-subTitle fz-subtitle maTHalf1x">Manchester By The Sea</h3>
-                                <p class="maT15">
-                                    <span class="movieInfo-date fz-xs">上映日期 2016/01/23</span> <br/>
-                                    <span class="movieInfo-rating fz-s">豆瓣 <span class="text-blue">8.6</span></span>
-                                    <span class="movieInfo-rating fz-s maL15">IMDB <span class="text-blue">8.1</span></span>
-                                </p>
-                                <p class="maT15 fz-s">
-                                    <span class=""><i class="fa fa-eye" aria-hidden="true"></i><span class="maLHalfx">6</span></span>
-                                    <span class="maL2x"><i class="fa fa-heart" aria-hidden="true"></i><span class="maLHalfx">10</span></span>
-                                    <span class="maL2x"><i class="icon-fire"></i><span class="maLHalfx">4</span></span>
-                                </p>
-                            </div>
-                            <a href="#" class="btn btn-play maT13p maT50">
-                                <i class="fa fa-play-circle-o" aria-hidden="true"></i><span class="maLHalfx">在線看</span>
-                            </a>
-                            <!--<ul class="movieInfo-btn">
-                                <li class="c-eye" ng-class="{'active':vm.userData.IsViewed}" ng-click="vm.activing('Watch')">
-                                    <i class="icon-eye"></i>
-                                    <br />看過 <span ng-bind="'(' + vm.movie.ViewedNum + ')'"></span>
-                                </li>
-                                <li class="c-heart" ng-class="{'active':vm.userData.IsLiked}" ng-click="vm.activing('Like')">
-                                    <i class="icon-heart"></i>
-                                    <br />喜歡 <span ng-bind="'(' + vm.movie.LikedNum + ')'"></span>
-                                </li>
-                                <li class="c-fire" ng-class="{'active':vm.userData.IsWantView}" ng-click="vm.activing('WannaWatch')">
-                                    <i class="icon-fire"></i>
-                                    <br />想看 <span ng-bind="'(' + vm.movie.WantViewNum + ')'"></span>
-                                </li>
-                                <li ng-click="vm.displayPlayWindow()" class="c-play" ng-class="{'active':vm.films.length===0}">
-                                    <i class="fa fa-play-circle-o"></i>
-                                    <br />播放
-                                </li>
-                                <li ng-click="vm.displayOtherWindow()" class="c-file">
-                                    <i class="icon-folder-open"></i>
-                                    <br />其他
-                                </li>
-                            </ul>-->
-                            <!--<div class="infoText">
-                                <div class="infoContent" ng-class="{'active':vm.seeAllContent}">
-                                    <div style="white-space: pre-line" ng-hide="vm.seeAllContent" ng-bind="(vm.movie.Story | characters:50 :true)">
-                                    </div>
-                                    <div style="white-space: pre-line" ng-show="vm.seeAllContent" ng-bind="vm.movie.Story">
-                                    </div>
-                                </div>
-                                <div class="seeMore" ng-click="vm.seeMore()">
-                                    <span ng-show="!vm.seeAllContent">顯示全部&nbsp;<i class="fa fa-angle-down"></i></span>
-                                    <span ng-show="vm.seeAllContent">隱藏部分&nbsp;<i class="fa fa-angle-up"></i></span>
-                                </div>
-                            </div>-->
-                        </div>
-                        <!--<div class="tab">
-                            <ul class="tab-Select">
-                                <li><a ng-class="{'active':vm.tagSelected=='director'}" ng-click="vm.tagSelected='director'">導演</a></li>
-                                <li><a ng-class="{'active':vm.tagSelected=='actor'}" ng-click="vm.tagSelected='actor'">演員</a></li>
-                                <li><a ng-class="{'active':vm.tagSelected=='tag'}" ng-click="vm.tagSelected='tag'">標簽</a></li>
-                            </ul>
-                            <div class="tab-Content" ng-class="{'active':vm.tagSelected=='director'}">
-                                <a ng-href="/mobile/actor/details/{{ director.ActorId }}" ng-repeat="director in vm.directores" ng-bind="director.Name"></a>
-                            </div>
-                            <div class="tab-Content" ng-class="{'active':vm.tagSelected=='actor'}">
-                                <a ng-href="/mobile/actor/details/{{ actor.ActorId }}" ng-repeat="actor in vm.actores" ng-bind="actor.Name"></a>
-                            </div>
-                            <div class="tab-Content" ng-class="{'active':vm.tagSelected=='tag'}">
-                                <a href="" ng-repeat="tag in vm.tags" ng-bind="tag.Tag"></a>
-                            </div>
-                        </div>
-                        <div class="comment">
-                            <ul class="select-list">
-                                <li ng-click="vm.getComments('hot')" ng-class="{'active':vm.reviewSelected=='hot'}">熱門</li>
-                                <li ng-click="vm.getComments('createOn')" ng-class="{'active':vm.reviewSelected=='createOn'}">最新</li>
-                                <li ng-show="vm.isAuthenticated" ng-click="vm.getComments('myFriend')" ng-class="{'active':vm.reviewSelected=='myFriend'}">我的朋友</li>
-                                <li ng-show="vm.isAuthenticated" ng-click="vm.getComments('mine')" ng-class="{'active':vm.reviewSelected=='mine'}">我的</li>
-                            </ul>
-                            <div class="comment-list">
-                                <div class="comment-item" ng-repeat="review in vm.reviews">
-                                    <user-avatar data-image-src="/Uploads/UserAvatar/{{review.UserAvatar}}" alt=""></user-avatar>
-                                    <div class="comment-content">
-                                        <h3>
-                                            <a href="#" ng-bind="review.UserNickName"></a>
-                                            <span ng-show="review.ViewedOn!==null" ng-bind="' 觀影於 ' + (review.ViewedOn| mcJsLocalDateTime)"></span>
-                                            <span ng-show="review.ViewedOn===null" ng-bind="' 寫於 ' + (review.CreateOn| mcJsLocalDateTime)"></span>
-                                            <div class="stars">
-                                                <span data-rate="{{review.OwnerLinkVideo_Score}}">
-                                                </span>
-                                                <i ng-class="{true:'icon-heart',false:'icon-heart2'}[review.OwnerLinkVideo_IsLiked]"></i>
-                                            </div>
-                                        </h3>
-                                        <p>
-                                            <span ng-bind="(review.Review | characters:48 :true)"></span>
-                                            <a class="green" ng-href="/mobile/review/{{review.ReviewId}}">【全文】</a>
-                                        </p>
-                                        <ul class="comment-shar paTHalfX">
-                                            <li><a ng-href="/mobile/review/{{review.ReviewId}}?response=true"><i class="icon-bubble"></i> (<span ng-bind="review.MessageNum"></span>)</a></li>
-                                            <li ng-show="vm.isAuthenticated">
-                                                <a href="" ng-click="vm.activingReview($index,'Like')" style="vertical-align: text-bottom;">
-                                                    <i class="icon-love" ng-class="{'active':review.IsLiked}"></i> (<span ng-bind="review.LikedNum"></span>)
-                                                </a>
-                                            </li>
-                                            <li ng-click="vm.shareReview($index)">
-                                                <a href=""><i class="icon-share" ng-class="{'active':review.IsShared}"></i> (<span ng-bind="review.SharedNum"></span>)</a>
-                                            </li>
-                                            <li>
-                                                <a href=""><i class="icon-users"></i> (<span ng-bind="review.PageViews"></span>)</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
-                    </div>
-                </section>
-                <!-- 彈出視窗 -->
+            <!-- fixed background -->
+                <div class="bkgd-img">
+                    <!--<movie-poster ng-if="main.appReady" poster-path="http://121.41.34.59/Content/pictures/files/M1660937_posters.jpg" alt=""></movie-poster>-->
+                    <img src="img/manchester.png" alt="">
+                </div>
 
-                <!-- 寫影評 -->
-                <!--<div id="writeCom" class="popTo ng-hide" ng-show="vm.showReviewWindow">
+            <!-- 簽到按鈕 -->
+                <div>
+                    <ul class="reaction-btn group-wrap">
+                        <li class="c-eye" ng-class="{'active':vm.userData.IsViewed}" ng-click="vm.activing('Watch')">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            <span>看過</span> 
+                        </li>
+                        <li class="c-heart" ng-class="{'active':vm.userData.IsLiked}" ng-click="vm.activing('Like')">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                            <span>喜歡</span>
+                        </li>
+                        <li class="c-fire" ng-class="{'active':vm.userData.IsWantView}" ng-click="vm.activing('WannaWatch')">
+                            <i class="icon-fire"></i>
+                            <span>想看</span>
+                        </li>
+                        <li class="" ng-class="" ng-click="vm.showReviewWindow=true;vm.showOtherWindow=false">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            <span>寫影誌</span>
+                        </li>
+                        <li class="" ng-class="" ng-click="vm.shareMovie('M00000000158105')">
+                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                            <span>分享</span>
+                        </li>
+                    </ul>
+                </div>
+                
+            <!-- main content -->
+                <div class="card-wrap scroll">
+                    <section class="movieInfo">
+                        <h2 class="fz-m">海邊的曼徹斯特</h2>
+                        <h3 class="fz-subtitle maTHalf1x">Manchester By The Sea</h3>
+                        <p class="maT15">
+                            <span class="fz-xs">上映日期 2016/01/23</span> <br/>
+                            <span class="fz-s">豆瓣 <span class="text-blue">8.6</span></span>
+                            <span class="fz-s maL15">IMDB <span class="text-blue">8.1</span></span>
+                        </p>
+                        <p class="maT15 fz-s">
+                        <!--看過 喜歡 想看 有幾個-->
+                            <span class="c-eye" ng-class="{'active':vm.userData.IsViewed}">
+                                <i class="fa fa-eye" aria-hidden="true"></i><span class="maLHalfx" ng-bind="'(' + vm.movie.ViewedNum + ')'">6</span>
+                            </span>
+                            <span class="maL2x c-heart" ng-class="{'active':vm.userData.IsLiked}">
+                                <i class="fa fa-heart" aria-hidden="true"></i><span class="maLHalfx" ng-bind="'(' + vm.movie.LikedNum + ')'">10</span>
+                            </span>
+                            <span class="maL2x c-fire" ng-class="{'active':vm.userData.IsWantView}">
+                                <i class="icon-fire"></i><span class="maLHalfx" ng-bind="'(' + vm.movie.WantViewNum + ')'">4</span>
+                            </span>
+                        </p>
+                    </section>
+
+                    <a href="#" class="btn-playMovie maT13p" ng-click="vm.displayPlayWindow()" ng-class="{'active':vm.films.length===0}">
+                        <i class="fa fa-play-circle-o" aria-hidden="true"></i><span class="maLHalfx">在線看</span>
+                    </a>
+
+                    <section class="movieAbout maT13p">
+                        <div class="section-title fz-subtitle text-blue">電影介紹</div>
+                        <article class="padLR10 maT2x">
+                            <div class="moviePlot active" ng-class="{'active':vm.seeAllContent}">
+                                <div ng-hide="vm.seeAllContent" ng-bind="(vm.movie.Story | characters:50 :true)">
+                                    <!--劇情描述，為了逃避苦澀過往，李錢德勒（凱西艾佛列克 飾演）離鄉背井，在波士頓某個小鎮當水電工。哥哥的意外逝世，讓他不得不回到位在麻州的「曼徹斯特海邊」，並成為姪子派屈克（盧卡斯海吉斯 飾演）的法定監護人。除了兩代之間的溝通隔閡，李一方面要撫平派屈克的喪父傷痛，同時還得要面對擁有新家庭的前妻蘭蒂（蜜雪兒威廉絲 飾演）。這趟旅程，也讓李破碎的心，有了重新拾起的機會…。-->
+                                </div>
+                                <div ng-show="vm.seeAllContent" ng-bind="vm.movie.Story">
+                                    劇情描述，為了逃避苦澀過往，李錢德勒（凱西艾佛列克 飾演）離鄉背井，在波士頓某個小鎮當水電工。哥哥的意外逝世，讓他不得不回到位在麻州的「曼徹斯特海邊」，並成為姪子派屈克（盧卡斯海吉斯 飾演）的法定監護人。除了兩代之間的溝通隔閡，李一方面要撫平派屈克的喪父傷痛，同時還得要面對擁有新家庭的前妻蘭蒂（蜜雪兒威廉絲 飾演）。這趟旅程，也讓李破碎的心，有了重新拾起的機會…。
+                                </div>
+                            </div>
+                            <div class="movieTag maT2x">
+                                <span class="fz-xs" ng-repeat="tag in vm.tags" ng-bind="tag.Tag"> 美國 / 奧斯卡</span>
+                            </div>
+                            <div class="seeMore maT2x" ng-click="vm.seeMore()">
+                                <span ng-show="!vm.seeAllContent">顯示全部&nbsp;<i class="fa fa-angle-down"></i></span>
+                                <span ng-show="vm.seeAllContent">隱藏部分&nbsp;<i class="fa fa-angle-up"></i></span>
+                            </div>
+                        </article>
+                    </section>
+
+                    <section class="movieCast maT13p">
+                        <div class="section-title fz-subtitle text-blue">導演及演員</div>
+                        <article class="padLR10 maT2x">
+                            <div class="cast-wrap active" ng-class="{'active':vm.seeAllContent}">
+                                <span class="fz-s text-white fontW-light">導演</span>
+                                <div class="castName maB1x">
+                                    <a ng-href="/mobile/actor/details/{{ director.ActorId }}" ng-repeat="director in vm.directores" ng-bind="director.Name">詹姆斯·马什</a>
+                                </div>
+                                <span class="fz-s text-white fontW-light">演員</span>
+                                <div class="castName">
+                                    <a ng-href="/mobile/actor/details/{{ actor.ActorId }}" ng-repeat="actor in vm.actores" ng-bind="actor.Name">卡西·阿弗莱克</a>
+                                    <a ng-href="/mobile/actor/details/{{ actor.ActorId }}" ng-repeat="actor in vm.actores" ng-bind="actor.Name">凯尔·钱德勒</a>
+                                    <a ng-href="/mobile/actor/details/{{ actor.ActorId }}" ng-repeat="actor in vm.actores" ng-bind="actor.Name">泰·多诺万</a>
+                                    <a ng-href="/mobile/actor/details/{{ actor.ActorId }}" ng-repeat="actor in vm.actores" ng-bind="actor.Name">米歇尔·威廉姆斯</a>
+                                </div>
+                            </div>
+                            <div class="seeMore maT2x" ng-click="vm.seeMore()">
+                                <span ng-show="!vm.seeAllContent">顯示全部&nbsp;<i class="fa fa-angle-down"></i></span>
+                                <span ng-show="vm.seeAllContent">隱藏部分&nbsp;<i class="fa fa-angle-up"></i></span>
+                            </div>
+                        </article>
+                    </section>
+                    
+                    <section class="relatedProject maT13p">
+                        <div class="section-title fz-subtitle text-blue">相關專題</div>
+                        <article class="maT2x group-wrap">
+                            <div class="scroll-h">
+                                <ul class="project-group group-wrap">
+                                    <li class="" style="background-image:url('img/captain.png');">
+                                        <a href="#">
+                                            <div class="group-wrap">
+                                                <div class="proj-author pull-right group-wrap">
+                                                    <span class="maLHalfx pull-right fz-xs text-white">AUTHOR's NAME</span>
+                                                    <div class="circle-mask circle-xs pull-right">
+                                                        <img src="img/user.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="project-content maT15">
+                                                <p class="fz-normal fontW-bold text-white">PROJECT TITLE GOES HERE</p>
+                                                <p class="text-white maTHalf1x" ng-bind="characters:50 :true">2016年对电影行业来说是标志性的一年，全球票房总收入超过111亿美元，远远超过去年刚刚突破的球票房总收入超过111亿美元，远远超过去年刚刚突破的</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="" style="background-image:url('img/man_h.png');">
+                                        <a href="#">
+                                            <div class="group-wrap">
+                                                <div class="proj-author pull-right group-wrap">
+                                                    <span class="maLHalfx pull-right fz-xs text-white">AUTHOR's NAME</span>
+                                                    <div class="circle-mask circle-xs pull-right">
+                                                        <img src="img/user.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="project-content maT15">
+                                                <p class="fz-normal fontW-bold text-white">PROJECT TITLE GOES HERE</p>
+                                                <p class="text-white maTHalf1x" ng-bind="characters:50 :true">2016年对电影行业来说是标志性的一年，全球票房总收入超过111亿美元，远远超过去年刚刚突破的球票房总收入超过111亿美元，远远超过去年刚刚突破的</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="" style="background-image:url('img/captain.png');">
+                                        <a href="#">
+                                            <div class="group-wrap">
+                                                <div class="proj-author pull-right group-wrap">
+                                                    <span class="maLHalfx pull-right fz-xs text-white">AUTHOR's NAME</span>
+                                                    <div class="circle-mask circle-xs pull-right">
+                                                        <img src="img/user.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="project-content maT15">
+                                                <p class="fz-normal fontW-bold text-white">PROJECT TITLE GOES HERE</p>
+                                                <p class="text-white maTHalf1x" ng-bind="characters:50 :true">2016年对电影行业来说是标志性的一年，全球票房总收入超过111亿美元，远远超过去年刚刚突破的球票房总收入超过111亿美元，远远超过去年刚刚突破的</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <!--<nav class="project-dot">
+                                <span></span>
+                                <span class="active"></span>
+                                <span></span>
+                            </nav>-->
+                        </article>
+                    </section>
+
+                    <section class="movieReviews maT13p">
+                        <div class="section-title fz-subtitle text-blue">影評</div>
+                        <article class="padLR10">
+                            <div class="review-wrap">
+                                <ul class="review-nav">
+                                    <li class="active" ng-click="vm.getComments('hot')" ng-class="{'active':vm.reviewSelected=='hot'}">熱門</li>
+                                    <li ng-click="vm.getComments('createOn')" ng-class="{'active':vm.reviewSelected=='createOn'}">最新</li>
+                                    <!--<li ng-show="vm.isAuthenticated" ng-click="vm.getComments('myFriend')" ng-class="{'active':vm.reviewSelected=='myFriend'}">我的朋友</li>-->
+                                    <!--<li ng-show="vm.isAuthenticated" ng-click="vm.getComments('mine')" ng-class="{'active':vm.reviewSelected=='mine'}">我的</li>-->
+                                </ul>
+                                <div class="review-list active" ng-class="{'active':vm.reviewSelected=='hot'}">
+                                    <div class="review-item maT2x" ng-repeat="review in vm.reviews">
+                                        <div class="group-wrap">
+                                            <div class="circle-mask circle40 pull-left maT4">
+                                                <img src="img/user.jpg" alt="">
+                                                <!--<user-avatar data-image-src="/Uploads/UserAvatar/{{review.UserAvatar}}" alt=""></user-avatar>-->
+                                            </div>
+                                            <div class="review-info pull-right">
+                                                <a href="#" ng-bind="review.UserNickName">AUTHOR's NAME</a>
+                                                <div class="group-wrap">
+                                                    <span class="stars pull-left" data-rate="{{review.OwnerLinkVideo_Score}}">
+                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                    </span>
+                                                    <i class="icon-heart maL5p maTHalf1x pull-left" ng-class="{true:'icon-heart',false:'icon-heart2'}[review.OwnerLinkVideo_IsLiked]"></i>
+                                                    <p class="fz-xs text-gray pull-right" ng-show="review.ViewedOn!==null" ng-bind="' 觀影於 ' + (review.ViewedOn| mcJsLocalDateTime)">觀影於 2017/01/31</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="review-content maT1x maBHalf1x">
+                                            <p ng-bind="(review.Review | characters:89 :true)">
+                                                我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶懦弱神經質的感覺。凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶
+                                            </p>
+                                            <div class="group-wrap maT1x">
+                                                <ul class="review-reaction pull-left">
+                                                    <li ng-show="vm.isAuthenticated">
+                                                        <a href="" class="review-heart" ng-click="vm.activingReview($index,'Like')" ng-class="{'active':review.IsLiked}">
+                                                            <i class="fa fa-heart" ng-class="{'active':review.IsLiked}" aria-hidden="true"></i> <span ng-bind="review.LikedNum">4</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a ng-href="/mobile/review/{{review.ReviewId}}?response=true">
+                                                            <i class="fa fa-comment" aria-hidden="true"></i> <span ng-bind="review.MessageNum">5</span>
+                                                        </a>
+                                                    </li>
+                                                    <li ng-click="vm.shareReview($index)">
+                                                        <a href="" class="review-share" ng-class="{'active':review.IsShared}">
+                                                            <i class="fa fa-share-alt" ng-class="{'active':review.IsShared}" aria-hidden="true"></i> <span ng-bind="review.SharedNum">2</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">
+                                                            <i class="fa fa-users" aria-hidden="true"></i> <span ng-bind="review.PageViews">10</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <a class="pull-right readMore" ng-href="/mobile/review/{{review.ReviewId}}">全文</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-list" ng-class="{'active':vm.reviewSelected=='creatOn'}">
+                                    <div class="review-item maT2x" ng-repeat="review in vm.reviews">
+                                        <div class="group-wrap">
+                                            <div class="circle-mask circle40 pull-left maT4">
+                                                <img src="img/user.jpg" alt="">
+                                                <!--<user-avatar data-image-src="/Uploads/UserAvatar/{{review.UserAvatar}}" alt=""></user-avatar>-->
+                                            </div>
+                                            <div class="review-info pull-right">
+                                                <a href="#" ng-bind="review.UserNickName">AUTHOR's NAME</a>
+                                                <div class="group-wrap">
+                                                    <span class="stars pull-left" data-rate="{{review.OwnerLinkVideo_Score}}">
+                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                    </span>
+                                                    <i class="icon-heart maL5p maTHalf1x pull-left" ng-class="{true:'icon-heart',false:'icon-heart2'}[review.OwnerLinkVideo_IsLiked]"></i>
+                                                    <p class="fz-xs text-gray pull-right" ng-show="review.ViewedOn!==null" ng-bind="' 觀影於 ' + (review.ViewedOn| mcJsLocalDateTime)">觀影於 2017/01/31</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="review-content maT1x maBHalf1x">
+                                            <p ng-bind="(review.Review | characters:89 :true)">
+                                                我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶懦弱神經質的感覺。凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶
+                                            </p>
+                                            <div class="group-wrap maT1x">
+                                                <ul class="review-reaction pull-left">
+                                                    <li ng-show="vm.isAuthenticated">
+                                                        <a href="" class="-heart active" ng-click="vm.activingReview($index,'Like')" ng-class="{'active':review.IsLiked}">
+                                                            <i class="fa fa-heart" ng-class="{'active':review.IsLiked}" aria-hidden="true"></i> <span ng-bind="review.LikedNum">4</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a ng-href="/mobile/review/{{review.ReviewId}}?response=true">
+                                                            <i class="fa fa-comment" aria-hidden="true"></i> <span ng-bind="review.MessageNum">5</span>
+                                                        </a>
+                                                    </li>
+                                                    <li ng-click="vm.shareReview($index)">
+                                                        <a href="" class="active -share" ng-class="{'active':review.IsShared}">
+                                                            <i class="fa fa-share-alt" ng-class="{'active':review.IsShared}" aria-hidden="true"></i> <span ng-bind="review.SharedNum">2</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">
+                                                            <i class="fa fa-users" aria-hidden="true"></i> <span ng-bind="review.PageViews">10</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <a class="pull-right readMore" ng-href="/mobile/review/{{review.ReviewId}}">全文</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+
+
+
+
+        <!-- 彈出視窗 -->
+                <!-- 寫影評 - 電影介紹頁裡面的-->
+                <div id="writeCom" class="popTo" ng-show="vm.showReviewWindow">
+                    <ul class="pop-nav group-wrap">
+                        <li class="pull-left" ng-click="vm.showReviewWindow=false">
+                            <button class="btn-cancel fz-s" type="button">取消</button>
+                        </li>
+                        <li class="pull-right" ng-click="vm.addReview()">
+                            <button class="btn-done fz-s" type="button">完成</button>
+                        </li>
+                        <li class="title">寫影誌</li>
+                    </ul>
                     <div class="popwrap">
-                        <div class="popclose" ng-click="vm.showReviewWindow=false"><i class="icon-close"></i></div>
                         <fieldset class="fieldset">
                             <div class="formInput">
                                 <label for="" style="text-align: left; width: 25%;">我看過：</label>
@@ -222,12 +402,12 @@
                                     <i class="fRight taLeft lh15 heart" ng-class="{true:'icon-heart',false:'icon-heart2'}[vm.makeReview.isLiked]" ng-click="vm.makeReview.isLiked=!vm.makeReview.isLiked"></i>
                                 </div>
                             </div>
-                            <div class="formInput">
+                            <!--<div class="formInput">
                                 <button class="btn-default" type="button" ng-click="vm.addReview()">確定</button>
-                            </div>
+                            </div>-->
                         </fieldset>
                     </div>
-                </div>-->
+                </div>
 
                 <!-- 其他按鈕 -->
                 <!--<div id="ortherBtn" class="popTo ng-hide" ng-show="vm.showOtherWindow">

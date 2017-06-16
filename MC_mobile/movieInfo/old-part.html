@@ -1,0 +1,117 @@
+    <!-- never seen fxn -->
+        <!--<div class="popTo" ng-class="{ blur: main.screenStatus() }" id="login" ng-show="main.showMenuLogin">
+            <div class="popwrap">
+                <div class="popclose" ng-click="main.showMenuLogin=false"><i class="icon-close"></i></div>
+                <div class="login popMenu">
+                    <img src="/Images/popcorn.png" />
+                    <h2 class="title">您发现了一项会员功能</h2>
+                    <p>
+                        在电影蛋糕，您可以给看过的电影贴标签、写日志或做专题。<br />
+                        记录您的电影人生、结交相同爱好的朋友，相信您可以找到好电影，它也会来找你。
+                    </p>
+                    <a class="btn-f-default" href="/login?open=Mobile">立即使用</a>
+                </div>
+            </div>
+        </div>-->
+
+        <!--<div class="popTo" ng-show="main.screenStatus()" style="background-color: rgba(0,0,0,.3);z-index:99999999">
+            <div class="loader">Loading...</div>
+        </div>-->
+
+        <!-- menu bar 裡 plus btn -->
+        <!--<div id="creat" class="popTo" ng-show="main.showMenuExtraWindows" ng-class="{ blur: main.screenStatus() }">
+            <div class="popwrap">
+                <div class="popclose" ng-click="main.showMenuExtraWindows=false"><i class="icon-close"></i></div>
+                <ul class="popMenu">
+                    <li><a style="display:block" ng-click="main.showMenuReviewWindow=true">寫影誌</a></li>
+                    <li><a style="display:block" href="/mobile/Topic/Create">做專題</a></li>
+                </ul>
+            </div>
+        </div>-->
+
+        <!-- 寫影誌 -->
+        <!--<div id="writeCom" class="popTo" ng-show="main.showMenuReviewWindow" ng-class="{ blur: main.screenStatus() }">
+            <div class="popwrap">
+                <div class="popclose" ng-click="main.showMenuReviewWindow=false;main.showMenuExtraWindows=false"><i class="icon-close"></i></div>
+                <fieldset class="fieldset">
+                    <div class="formInput">
+                        <label for="" style="text-align: left; width: 25%;">我看過：</label>
+                        <input type="text" id="menu-searchVideo" video-search />
+                    </div>
+                    <div class="formInput">
+                        <label for="comment" style="text-align: left;">影評：</label>
+                        <p></p>
+                    </div>
+                    <div class="formInput">
+                        <textarea name="comment" id="comment" cols="30" rows="5" style="width: 97%;" required ng-model="main.makeReview.review" ng-bind="main.makeReview.review"></textarea>
+                    </div>
+                    <div class="formInput">
+                        <label for="date">觀影日期：</label>
+                        <p>
+                            <input name="date" type="checkbox" id="date" ng-model="main.hasReviewDate" ng-click="main.initialViewOn()">
+                            <input name="date" type="date" id="date" ng-model="main.makeReview.viewedOn" ng-disabled="!main.hasReviewDate" max="2017-06-12">
+                        </p>
+                    </div>
+                    <div class="formInput">
+                        <div class="starW maClean">
+                            <div class="starAll taLeft">
+                                <raty score="main.makeReview.score"></raty>
+                            </div>
+                            <i class="fa fRight taLeft lh15 heart" ng-class="{true:'icon-heart',false:'icon-heart2'}[main.makeReview.isLiked]" ng-click="main.makeReview.isLiked=!main.makeReview.isLiked"></i>
+                        </div>
+                    </div>
+                    <div class="formInput">
+                        <button class="btn-default" type="button" ng-click="main.addReview()">確定</button>
+                    </div>
+                </fieldset>
+                <div id="review-autocomplete"></div>
+            </div>
+        </div>-->
+
+        <!-- 分享 -->
+        <!--<div id="shareTo" class="popTo" ng-show="main.showShareWindow" ng-class="{ blur: main.screenStatus() }">
+            <div class="popwrap">
+                <div class="popclose" ng-click="main.showShareWindow=false">
+                    <i class="icon-close"></i>
+                </div>
+                <p class="taCenter fz-s gray-w maT1x">分享</p>
+                <div class="shareToSocial taCenter maT1x maB1x">
+                    <a class="paL1x" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'WB')"><img src="/Images/icons_weibo-pc.png" height="40" width="40" alt=""></a>
+                    <a class="paL1x" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'FB')"><img src="/Images/icons_facebook-pc.png" height="40" width="40" alt=""></a>
+                    <a class="paL1x" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'QQ')"><img src="/Images/icons_qq-pc.png" height="40" width="40" alt=""></a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="popTo" ng-show="main.shareToQQ" ng-class="{ blur: main.screenStatus() }">
+            <div class="popwrap" style="height:85%">
+                <div class="popclose" ng-click="main.shareToQQ=false;main.showShareWindow=false;main.thirdPartyShareUrl=''"><i class="icon-close"></i></div>
+                <div class="scroll-wrapper">
+                    <iframe ng-src="{{ main.thirdPartyShareUrl}}"></iframe>
+                </div>
+            </div>
+        </div>-->
+        
+        <!--<nav class="nav">
+            <ul class="main-menu">
+                <li class="main-menu-option"><a href="/mobile">首頁</a></li>
+                <ul class="sub-menu">
+                    <li><a href="/mobile/master/viewed">觀影達人</a></li>
+                    <li><a href="/mobile/master/review">影評達人</a></li>
+                    <li><a href="/mobile/master/topic">專題達人</a></li>
+                </ul>
+                <li class="main-menu-option"><a href="/mobile/video/ranks">電影</a></li>
+                <ul class="sub-menu">
+                    <li><a href="/mobile/video/ranks">電影榜</a></li>
+                    <li><a href="/mobile/video/awards">金獎電影</a></li>
+                    <li><a href="/mobile/video/gene">電影基因</a></li>
+                </ul>
+                <li class="main-menu-option"><a href="/mobile/topic">專題</a></li>
+                <ul class="sub-menu">
+                    <li><a href="/mobile/topic?sort=new">最新</a></li>
+                    <li><a href="/mobile/topic?sort=hot">熱門</a></li>
+                    <li><a href="/mobile/topic?sort=all">全部</a></li>
+                </ul>
+            </ul>
+        </nav>-->
