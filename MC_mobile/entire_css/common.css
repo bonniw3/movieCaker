@@ -171,6 +171,63 @@ table {
   color: #fcee21;
 }*/
 
+/* -------------- share BTNs ---------------- */
+.share-btn li {
+	width: 23.2%;
+	line-height: 45px;
+}
+
+.share-btn li:nth-child(2),
+.share-btn li:nth-child(3),
+.share-btn li:nth-child(4),
+.share-btn li:nth-child(5) {
+	width: 13%;
+	margin-top: 3px;
+}
+.share-btn li a {
+	color: #ffffff;
+}
+.share-btn li a i {
+	font-size: 1.25em;
+}
+
+.btn-social-share {
+    border-radius: 50%;
+    text-align: center;
+    line-height: 47px;
+    transition: 0.5s;
+}
+.btn-wechat {
+    background-color: rgba(115,162,50,.7);
+    margin-left: 0;
+}
+.btn-fb {
+    background-color: rgba(25,85,152,.7);
+}
+.btn-weibo {
+    background-color: rgba(158,27,43,.7);
+}
+.btn-qq {
+    background-color: rgba(63,150,222,.7);
+}
+
+/* -------------- weixin alert ---------------- */
+.weixin-alert {
+	width: 100%;
+	position: fixed;
+	left: 0;
+	z-index: 10;
+	background-color: rgba(12,12,12,.9);
+	padding: 15px;
+	box-sizing: border-box;
+	border-bottom: 3px solid #71cfee;
+	border-radius: 5px 5px 0 0;
+	display: none;
+}
+.weixin-alert.showAlert {
+	display: block;
+}
+
 
 /* ----------- CIRCLE avatar ------------- */
 .circle-mask {
@@ -226,6 +283,51 @@ table {
 	border-radius: 5px;
 	color: #fff;
 }
+[class*="-weixinAlert"] {
+	padding: 2.5% 5%;
+	border-radius: 5px;
+	color: rgba(235,235,235,1);
+	font-size: .9em;
+}
+.btn-wrap {
+	position: relative;
+}
+
+
+/* ----------- PLAY button select/option ------------- */
+.btn-wrap ul:before {
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background-color: #71cfee;
+}
+.btn-wrap ul {
+	display: none;
+	position: absolute;
+	top: 45px;
+	left: 0;
+	width: 100%;
+	background-color: rgba(124,159,171,.9);
+	border-radius: 5px;
+	box-sizing: border-box;
+	padding: 0 7%;
+	z-index: 2;
+}
+.btn-wrap ul li {
+	text-align: center;
+	padding: 10px 0;
+	border-bottom: 1px solid rgba(255,255,255,.3);
+	color: rgba(255,255,255,.8);
+}
+.btn-wrap ul li:last-child {
+	border-bottom: none;
+}
+.btn-wrap ul.show {
+	display: block;
+}
 
 
 /* ----------- POP windows ------------- */
@@ -254,10 +356,12 @@ table {
 	color: #eeeeee;
 	text-align: center;
 	box-sizing: border-box;
-	padding: 2.5% 15px;
+	line-height: 45px;
+	padding: 6px 15px;
 }
 .pop-nav li:nth-child(3) {
 	margin: 2px auto 0 auto;
+	padding: 0 15px;
 }
 
 .popTo .popwrap {
@@ -280,22 +384,16 @@ table {
 	background-color: rgba(216,216,216,.2);
 }
 .line-adjust:after {
-	/*content:'';
-	position: absolute;
-	left: 0;*/
 	bottom: -15px;
-	/*width: 100%;
-	height: 1px;
-	background-color: rgba(216,216,216,.2);*/
 }
 
 .popTo .starRating {
   letter-spacing: -1px;
 }
-.writeReivew [class*="-star"] {
+.writeReview [class*="-star"] {
 	color: #71CFEE;
 }
-.writeReivew [class*="-heart"] {
+.writeReview [class*="-heart"] {
 	color: #D87C7C;
 }
 
@@ -309,25 +407,44 @@ table {
 	color: #1A2F35;
 }*/
 
-.writeReivew input, .writeReivew textarea {
-	background-color: rgba(173,216,228,.6);
+
+.writeReview input[type="date"] {
+	padding: 3px 40px 3px 20px;
+
+}
+.writeReview input, .writeReview textarea {
+	background-color: rgba(173,216,228,.4);
 	color: #0c0c0c;
 	border-radius: 5px;
 	border: none;
 	transition: background-color .5s;
 }
-.writeReivew input {
-	padding: 3px 30px 3px 15px;
+.writeReview textarea::-webkit-input-placeholder {
+	color: rgba(0,0,0,.5);
+    font-weight: 400;
 }
+.writeReview textarea:-moz-placeholder {
+	color: rgba(0,0,0,.5);
+    font-weight: 400;
+}
+.writeReview textarea::-moz-placeholder {
+	color: rgba(0,0,0,.5);
+    font-weight: 400;
+}
+.writeReview textarea:-ms-input-placeholder {
+	color: rgba(0,0,0,.5);
+    font-weight: 400;
+}
+
 textarea.reviewContent {
 	width: 100%;
-	height: 50vh;
+	height: 45vh;
 	box-sizing: border-box;
 	padding: 15px;
-	font-size: 15px;
+	font-size: 1em;
 }
 textarea.reviewContent:focus {
-	background-color: rgba(173,216,228,.85);
+	background-color: rgba(173,216,228,.8);
 	outline: none;
 	color: #0c0c0c;
 }
@@ -469,6 +586,9 @@ textarea.reviewContent:focus {
     margin-left: 40px;
 }
 
+.pad0 {
+	padding: 0;
+}
 .padT3 {
 	padding-top: 3px;
 }
@@ -502,6 +622,9 @@ textarea.reviewContent:focus {
 
 .text-white {
     color: #ffffff;
+}
+.text-white80p {
+	color: rgba(235,235,235,.8);
 }
 .text-white60p {
 	color: rgba(235,235,235,.6);
@@ -573,7 +696,9 @@ textarea.reviewContent:focus {
 .taR {
 	text-align: right;
 }
-
+.align-bottom {
+	bottom: 45px;
+}
 
 
 
