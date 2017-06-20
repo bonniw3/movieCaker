@@ -32,22 +32,49 @@
     top: 35vh;
     width: 100%;
     height: 50vh;
-    background: -moz-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,1));  
-    background: -webkit-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,1)); 
-    background: -o-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,1));
-    background: linear-gradient(rgba(12,12,12,0), rgba(12,12,12,1));
     box-sizing: border-box;
     padding: 20% 5%;
-    transition: all .5s ease;
-    /*z-index: 20;*/
+    transition: all .5s .3s ease;
+    z-index: 1;
 }
+.card-wrap:before {
+    content:'';
+    position: fixed;
+    top: 0vh;
+    left: 0;
+    width: 100%;
+    height: 85vh;
+    z-index: -1;
+    background-image: -moz-linear-gradient(rgba(12,12,12,0) 40%, rgba(12,12,12,1));  
+    background-image: -webkit-linear-gradient(rgba(12,12,12,0) 40%, rgba(12,12,12,1)); 
+    background-image: -o-linear-gradient(rgba(12,12,12,0) 40%, rgba(12,12,12,1));
+    background-image: linear-gradient(rgba(12,12,12,0) 40%, rgba(12,12,12,1));
+    background-color: rgab(12,12,12,0);
+    transition: background-color .5s .1s ease;
+}
+
 .card-wrap.scroll {
     height: auto;
-    background: -moz-linear-gradient(rgba(12,12,12,.55), rgba(12,12,12,.55));  
-    background: -webkit-linear-gradient(rgba(12,12,12,.55), rgba(12,12,12,.55)); 
-    background: -o-linear-gradient(rgba(12,12,12,.55), rgba(12,12,12,.55));
-    background: linear-gradient(rgba(12,12,12,.55), rgba(12,12,12,.55));
+    transition: all .5s .3s ease;
 }
+.card-wrap.scroll:before {
+    content:'';
+    position: fixed;
+    top: 0vh;
+    left: 0;
+    width: 100%;
+    height: 85vh;
+    z-index: -1;
+    background-image: none;
+    background-color: rgba(12,12,12,.5);
+    background-image: -moz-linear-gradient(rgba(12,12,12,0) 40%, rgba(12,12,12,1));  
+    background-image: -webkit-linear-gradient(rgba(12,12,12,0) 40%, rgba(12,12,12,1)); 
+    background-image: -o-linear-gradient(rgba(12,12,12,0) 40%, rgba(12,12,12,1));
+    background-image: linear-gradient(rgba(12,12,12,0) 40%, rgba(12,12,12,1));
+    transition: background-color .5s .1s ease;
+}
+
+
 
 .section-title {
     position: relative;

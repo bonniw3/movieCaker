@@ -51,12 +51,12 @@ html, body { /* this allows the children to inherit this style */
     font-size: 1em;
 }*/
 
-.top {
+/*.top {
     width: 40px;
     height: 40px;
     bottom: 60px;
     background-size: cover;
-}
+}*/
 
 /*.popMenu {
     font-size: 1.2em;
