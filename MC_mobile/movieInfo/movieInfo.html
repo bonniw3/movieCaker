@@ -23,7 +23,7 @@
     <!--<div ng-hide="main.appReady">
         <div class="loader">Loading...</div>
     </div>-->
-    <!--<div>-->
+
     <!-- search area -->
         <div class="search-area group-wrap">
             <form> 
@@ -68,13 +68,13 @@
         <!-- content -->
         <div ng-class="{ blur: main.screenStatus() }">
             <div ng-controller="videoIntroCtrl as vm" ng-init="vm.init('M00000000158105')">
-            <!-- fixed background -->
+                <!-- fixed background -->
                 <div class="bkgd-img">
                     <!--<movie-poster ng-if="main.appReady" poster-path="http://121.41.34.59/Content/pictures/files/M1660937_posters.jpg" alt=""></movie-poster>-->
                     <img src="img/manchester.png" alt="">
                 </div>
 
-            <!-- 簽到按鈕 -->
+                <!-- 簽到按鈕 -->
                 <div>
                     <ul class="reaction-btn group-wrap">
                         <li class="c-eye" ng-class="{'active':vm.userData.IsViewed}" ng-click="vm.activing('Watch')">
@@ -414,9 +414,9 @@
 
 
 
-        <!-- 彈出視窗 -->
+            <!-- 彈出視窗 -->
                 <!-- 寫影評 - 電影介紹頁裡面的-->
-                <div id="writeCom" class="popTo writeReview ng-hide" ng-show="vm.showReviewWindow" style="display:none;">
+                <div id="writeCom" class="popTo writeReview ng-hide" ng-show="vm.showReviewWindow" >
                     <ul class="pop-nav group-wrap">
                         <li class="pull-left" ng-click="vm.showReviewWindow=false">
                             <button class="btn-cancel fz-s" type="button">取消</button>
@@ -567,6 +567,7 @@
                         </fieldset>
                     </div>
                 </div>-->
+
             </div> <!--end of ng controller -->
 
             <!--<div class="loading-ajax" ng-show="main.loadingStatus()">
@@ -576,7 +577,6 @@
                 <i class="fa fa-angle-up" aria-hidden="true"></i>
             </div> 
         </div> <!--end of ng class -->
-    <!--</div> end of ng class -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
