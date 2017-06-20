@@ -15,16 +15,13 @@
     <link href="../entire_css/min-search.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="http://test.moviecaker.com/Content/mobile/icomoon/style.min.css" rel="stylesheet" />
-
-    <!--<link href='http://test.moviecaker.com/Content/mobile/screen.css' rel='stylesheet' />
-    <link href='http://test.moviecaker.com/Content/mobile/custom.css' rel='stylesheet' />-->
 </head>
 <body>
     <!--<div ng-hide="main.appReady">
         <div class="loader">Loading...</div>
     </div>-->
-
-    <!-- search area -->
+    <div ng-show="main.appReady">
+        <!-- search area -->
         <div class="search-area group-wrap">
             <form> 
                 <button class="btn-close group-wrap" type="reset">
@@ -39,7 +36,8 @@
             <div id="search-autocomplete"></div>
             <a href="#" class="more pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>更多搜尋結果</a>
         </div>
-    <!-- header -->
+
+        <!-- header -->
         <div class="header" ng-class="{ blur: main.screenStatus() }">
             <ul class="group-wrap header-items" ng-show="!main.isSearchMode">
                 <li id="logo" class="pull-left">
@@ -145,7 +143,7 @@
             </div>-->
                 
             <!-- main content -->
-                <div class="card-wrap">
+                <div class="content-wrap distance-top">
                     <section class="movieInfo">
                         <h2 class="fz-m">海邊的曼徹斯特</h2>
                         <h3 class="fz-subtitle maTHalf1x">Manchester By The Sea</h3>
@@ -577,6 +575,7 @@
                 <i class="fa fa-angle-up" aria-hidden="true"></i>
             </div> 
         </div> <!--end of ng class -->
+    </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -718,6 +717,7 @@
             $('.search-keyword').removeClass("searching");
         });
 
+        // 點擊線上看按鈕會出現下拉選單
         $('.btn-playMovie').on('click',function(){
             if ($('.play-movie-selection').hasClass('show')) {
                 $('.play-movie-selection').removeClass('show');
@@ -726,16 +726,17 @@
             }
         });
 
+        // 滑動畫面 會出現黑色底
         $(window).scroll(function() {
             var windowpos = $(window).scrollTop();
             var header = $('.header');
-            var card = $('.card-wrap')
+            var content = $('.content-wrap')
             if ( windowpos > 0 ) {
                 header.addClass('scroll');
-                card.addClass('scroll');
+                content.addClass('scroll');
             } else {
                 header.removeClass('scroll');
-                card.removeClass('scroll');
+                content.removeClass('scroll');
             }
         });
     });
