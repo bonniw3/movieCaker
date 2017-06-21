@@ -124,6 +124,14 @@ table {
 	color: #fff;
 }
 
+.login-icon {
+	width: 20px;
+	height: 20px;
+}
+.login-icon img {
+	width: 100%;
+}
+
 
 /* -------------- fixed Backgrounds-images ---------------- */
 .bkgd-img {
@@ -784,6 +792,10 @@ textarea.reviewContent:focus {
 	font-weight: 600;
 }
 
+.width-xss {
+	width: 20px;
+	height: 20px;
+}
 .circle-xs {
 	width: 25px;
 	height: 25px;

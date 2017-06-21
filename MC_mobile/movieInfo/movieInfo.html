@@ -48,16 +48,18 @@
                 </li>
                 <li id="user-icon" class="pull-right">
                     <a href="/login" ng-click="main.MenuLogin()">
-                        <i class="fa fa-user padTBHalfX" aria-hidden="true"></i>
+                        <div class="login-icon padTBHalfX maLHalfx">
+                            <img src="img/login_icon.png"alt="">
+                        </div>
                     </a>
                     <!-- 登入後顯示 -->
                     <a href="#" style="display:none;">
                         <div class="circle-mask circle1x">
-                            <img src="img/user.jpg" alt="">
+                            <img src="img/default_avatar.png" alt="">
                         </div>
                     </a>
                 </li>
-                <li id="search-icon" class="pull-right maR15">
+                <li id="search-icon" class="pull-right maR1x">
                     <i class="fa fa-search padTBHalfX" aria-hidden="true"></i>
                 </li>
             </ul>
@@ -300,7 +302,7 @@
                                     <div class="review-item maT2x" ng-repeat="review in vm.reviews">
                                         <div class="group-wrap">
                                             <div class="circle-mask circle40 pull-left maT4">
-                                                <img src="img/user.jpg" alt="">
+                                                <img src="img/default_avatar.png" alt="">
                                                 <!--<user-avatar data-image-src="/Uploads/UserAvatar/{{review.UserAvatar}}" alt=""></user-avatar>-->
                                             </div>
                                             <div class="review-info pull-right">
