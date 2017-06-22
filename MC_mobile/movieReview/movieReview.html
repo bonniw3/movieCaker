@@ -12,7 +12,7 @@
     <link href="css/custom.css" rel="stylesheet" />
     <link href="css/screen.css" rel="stylesheet" />
     <link href="../entire_css/common.css" rel="stylesheet" />
-    <link href="css/movie.css" rel="stylesheet" />
+    <link href="css/reviews.css" rel="stylesheet" />
     <link href="../entire_css/min-search.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="http://test.moviecaker.com/Content/mobile/icomoon/style.min.css" rel="stylesheet" />
@@ -49,16 +49,18 @@
                 </li>
                 <li id="user-icon" class="pull-right">
                     <a href="/login" ng-click="main.MenuLogin()">
-                        <i class="fa fa-user padTBHalfX" aria-hidden="true"></i>
+                        <div class="login-icon padTBHalfX maLHalfx">
+                            <img src="img/login_icon.png"alt="">
+                        </div>
                     </a>
                     <!-- 登入後顯示 -->
                     <a href="#" style="display:none;">
                         <div class="circle-mask circle1x">
-                            <img src="img/user.jpg" alt="">
+                            <img src="img/default_avatar.png" alt="">
                         </div>
                     </a>
                 </li>
-                <li id="search-icon" class="pull-right maR15">
+                <li id="search-icon" class="pull-right maR1x">
                     <i class="fa fa-search padTBHalfX" aria-hidden="true"></i>
                 </li>
             </ul>
@@ -221,12 +223,12 @@
             <div ng-controller="ReviewDetailsCtrl as vm" ng-init="vm.init('M00000000088380','1485','')">
                 <!-- fixed background -->
                 <div class="bkgd-img">
-                    <!--<img ng-src="http://121.41.34.59/Content/pictures/banners/M00000000088380.png?width=400" alt="" onerror="this.src=''" />-->
-                    <img src="img/manchester.png" alt="">
+                    <!--<movie-poster ng-if="main.appReady" poster-path="http://121.41.34.59/Content/pictures/files/M1335086_posters.jpg"></movie-poster>-->
+                    <img src="img/beauty.png" alt="">
                 </div>
 
                 <!-- 簽到按鈕 -->
-                <div>
+                <!--<div>
                     <ul class="reaction-btn group-wrap">
                         <li class="c-eye" ng-class="{'active':vm.userData.IsViewed}" ng-click="vm.activing('Watch')">
                             <i class="fa fa-eye" aria-hidden="true"></i>
@@ -249,7 +251,7 @@
                             <span>分享</span>
                         </li>
                     </ul>
-                </div>
+                </div>-->
             
                 <!-- 分享 -->
                 <div id="shareTo" class="ng-hide" ng-show="main.showShareWindow" ng-class="{ blur: main.screenStatus() }">
@@ -295,25 +297,109 @@
                 </div>-->
 
                 <div class="content-wrap">
-                    <div id="mainInfo">
-                        <div class="movieInfo">
-                            <movie-poster ng-if="main.appReady" poster-path="http://121.41.34.59/Content/pictures/files/M1335086_posters.jpg"></movie-poster>
-                            <div class="movie-btns">
-                                <h2 class="movieInfo-title">
-                                    <a href="/mobile/video/M00000000088380">真愛每一天</a>
-                                </h2>
-                                <h3 class="movieInfo-subTitle">About Time</h3>
-                                <div class="movieInfo-Like">
-                                    <p class="borderTB borderBB">
-                                        <span data-rate="{{ vm.review.OwnerLinkVideo_Score }}">
-                                        </span>
-                                        <i ng-class="{true:'icon-heart',false:'icon-heart2'}[ vm.review.IsLiked ]"></i>
-                                    </p>
+                    <section class="movieInfo">
+                        <div class="section-title fz-subtitle text-blue"><span>Rich</span> 的影評</div>
+                        <article class="padLR10 maT2x">
+                            <a href="#" class="avatar circle4x">
+                                <div class="circle-mask circle100 rel-pos">
+                                    <!--<user-avatar data-image-src="/Uploads/UserAvatar/user_164.jpg"></user-avatar>-->
+                                    <img src="img/default_avatar.png" alt="">
+                                    <!--<img src="img/user.jpg" alt="">-->
+
+                                    <!-- 是不是朋友 - 登入後才會顯示 -->
+                                    <div ng-show="vm.currentUser.isAuthenticated">
+                                        <div class="text-blue btn-friendOption bkgd-light-grey ng-hide" ng-show="vm.isFriend && vm.review.UserId!=vm.currentUser.Id"><i class="fa fa-check" aria-hidden="true"></i> 朋友</div>
+                                        <div class="text-black btn-friendOption bkgd-grey ng-hide"><i class="fa fa-clock-o" aria-hidden="true"></i> 待確認</div>
+                                        <div class="text-white btn-friendOption bkgd-grey ng-hide" ng-show="!vm.isFriend && vm.review.UserId!=vm.currentUser.Id"><i class="fa fa-user-plus" aria-hidden="true"></i> 加朋友</div>
+                                    </div> 
                                 </div>
-                                <span class="creatDate" ng-bind="'瀏覽量：' + (vm.pageView)"></span>
+                            </a>
+
+                            <section>
+                                <h2 class="fz-m text-white"><a href="/mobile/video/M00000000088380" class="text-white">美女與野獸</a></h2>
+                                <h3 class="fz-subtitle maTHalf1x text-white">Beauty and the Beast</h3>
+                                <div class="group-wrap maT1x">
+                                    <div class="group-wrap hasColor pull-left width50p">
+                                        <span class="stars pull-left fz-subtitle">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+                                        <!--<span class="stars pull-left fz-subtitle" data-rate="{{review.OwnerLinkVideo_Score}}">
+                                            <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                            <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                            <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                            <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                            <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                        </span>-->
+                                        <i class="fa fa-heart maL5p maT4 pull-left" ng-class="{true:'fa-heart',false:'fa-heart-o'}[ vm.review.IsLiked ]"></i>
+                                    </div>
+                                    <a href="/mobile/video/M00000000088380" class="pull-right text-white fz-s"><i class="fa fa-angle-right padRHalfX fz-subtitle" aria-hidden="true"></i> 電影介紹頁</a>
+                                </div>
+                            </section>
+
+                            <div class="btn-wrap maT2x">
+                                <div class="btn-playMovie" ng-click="vm.displayPlayWindow()" ng-class="{'active':vm.films.length===0}">
+                                    <i class="fa fa-play-circle-o" aria-hidden="true"></i><span class="maLHalfx">在線看</span>
+                                </div>
+                                <!-- ul addClass show 會出現-->
+                                <ul class="play-movie-selection"> 
+                                    <li><a href="#">騰訊視頻</a></li>
+                                    <li><a href="#">優酷視頻</a></li>
+                                    <li><a href="#">搜狐視頻</a></li>
+                                </ul>
                             </div>
-                        </div>
-                        <ul class="movieInfo-btn">
+
+                            <section class="maT2x reviewContent divider-line">
+                                <p class="fz-xs text-white60p taR letter-space-1x maT1x">寫於 2017/03/21</p>
+                                <div class="maT1x text-white80p fz-15">
+                                    被遮蔽的雙眼，你因而選擇了盲目？還是用心？
+                                    <br>
+                                    <br>
+                                    居然引用莎士比亞的話『love looks not with the eyes but with the mind and therefore is winged cupid painted blind 』愛不是用眼睛判斷，而是用心。因此愛神常常被描繪成遮蔽了雙眼
+                                    <br>
+                                    <br>
+                                    愛情是盲目的？別會錯意了。那是因為愛情要用心，而不是雙眼。
+                                    <br>
+                                    <br>
+                                    兩個人心靈相通，喜歡的事物一樣，真的也很重要。一邊吃飯一邊看書很可愛。而且野獸是真正願意傾聽貝兒那天馬行空的幻想，以及願意聽她讀著書，感受那書中世界。心靈相通和共鳴，是貝兒愛上野獸的關鍵。那才是對的頻率造成的共鳴啊！
+                                </div>
+                                <!-- ul li 裡的 a addClass active 變色 -->
+                                <ul class="reaction-stats maT2x">
+                                    <li ng-show="vm.isAuthenticated">
+                                        <a href="" class="review-heart" ng-click="vm.activingReview($index,'Like')" ng-class="{'active':review.IsLiked}">
+                                            <i class="fa fa-heart" ng-class="{'active':review.IsLiked}" aria-hidden="true"></i> <span ng-bind="review.LikedNum">4</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a ng-href="/mobile/review/{{review.ReviewId}}?response=true">
+                                            <i class="fa fa-comment" aria-hidden="true"></i> <span ng-bind="review.MessageNum">5</span>
+                                        </a>
+                                    </li>
+                                    <li ng-click="vm.shareReview($index)">
+                                        <a href="" class="review-share" ng-class="{'active':review.IsShared}">
+                                            <i class="fa fa-share-alt" ng-class="{'active':review.IsShared}" aria-hidden="true"></i> <span ng-bind="review.SharedNum">2</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <i class="fa fa-users" aria-hidden="true"></i> <span ng-bind="review.PageViews">10</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            
+
+                        </article>
+                    </section>
+
+                    <!--<span class="creatDate" ng-bind="'瀏覽量：' + (vm.pageView)"></span>-->
+                    <!--<p class="fz-xs text-gray pull-right" ng-show="review.ViewedOn!==null" ng-bind="' 觀影於 ' + (review.ViewedOn| mcJsLocalDateTime)">觀影於 2017/01/31</p>-->
+
+                        <!--<ul class="movieInfo-btn">
                             <li class="c-heart" ng-click="vm.activing('Like')">
                                 <i class="icon-heart" ng-class="{'active':vm.likeReview.IsOnAction}"></i>
                                 <br>喜歡 <span ng-bind="'(' + vm.likeReview.Count + ')'"></span>
@@ -327,27 +413,10 @@
                                 <i class="icon-share" ng-class="{'active':vm.shareReview.IsOnAction}"></i>
                                 <br>分享 <span ng-bind="'(' + vm.shareReview.Count + ')'"></span>
                             </li>
-                        </ul>
-                        <div class="infoText">
-                            <div class="commentPeople">
-                                <user-avatar data-image-src="/Uploads/UserAvatar/user_164.jpg"></user-avatar>
-                                <p class="commentPeople-info vaB">
-                                    <a href="#">享看電影</a>
-                                    <span ng-show="vm.currentUser.isAuthenticated">
-                                        <span ng-show="!vm.isFriend && vm.review.UserId!=vm.currentUser.Id" class="addF ng-hide"></span>
-                                        <span ng-show="vm.isFriend && vm.review.UserId!=vm.currentUser.Id" class="isF ng-hide"></span>
-                                    </span>
-                                    &nbsp;
-                                        <span>觀影於 2015/05/15</span>     
-                                </p>
-                            </div>
-                            <div class="infoContent active" style="white-space: pre-line">
-                                本劇一開始是男女主角的愛情感動到我，可是看到最後，卻是父子親情深刻在我心裡。男主角無數次地穿越時空，去改變人生的不美好，但最後在父親過世後他不再穿越時空，因為他悟到：「我們一起度過的每一天，其實都是時光中的旅行。我們能做的，就是盡其所能好好地去品味珍惜這不凡的人生旅程。」劇情中，有段女主角央求男主角要生第三個小孩的喬段，讓我慧心一笑，女主角說：「我們只有二個小孩太少了」，男主角說：「我們已經比中國家庭多生了一個孩子」，女主角說：「如果我們兩個小孩中有一個比較聰明，另一個就會變成笨蛋，兩個小孩都會不開心，若有三個小孩，就會變成是二個笨蛋，比較不會困擾...」（好可愛的理由）。電影裡的每一首插曲，簡簡單單如此耐聽，決定把原聲帶收藏起來。
-                            </div>
-                        </div>
-                    </div>
+                        </ul>-->
+                        
 
-                    <div class="reply">
+                    <!--<div class="reply">
                         <fieldset>
                             <h3><a href="###" ng-bind="'回應 (' + (vm.reviewMessages.length) + ')'"></a></h3>
                             <div class="replyTo">
@@ -391,7 +460,7 @@
                         </ul>
                         <div ng-hide="vm.displayAllMessage" class="replymore" ng-click="vm.displayAllMessage=!vm.displayAllMessage">看全部回覆&nbsp;<i class="fa fa-angle-double-down"></i></div>
                         <div ng-hide="!vm.displayAllMessage" class="replymore" ng-click="vm.displayAllMessage=!vm.displayAllMessage">隱藏回覆&nbsp;<i class="fa fa-angle-double-up"></i></div>
-                    </div>
+                    </div>-->
 
                     <!-- 回覆 別人的 comment -->
                     <div id="writeCom" class="popTo ng-hide" ng-show="vm.showReplyWindow">
@@ -515,8 +584,12 @@
         </div>
     </div>
 
-    <script defer src='http://test.moviecaker.com/Scripts/jquery-1.8.3.min.js'></script>
-    <script defer src='http://test.moviecaker.com/Scripts/jquery-ui-1.10.3.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <!--<script defer src='http://test.moviecaker.com/Scripts/jquery-1.8.3.min.js'></script>-->
+    <!--<script defer src='http://test.moviecaker.com/Scripts/jquery-ui-1.10.3.min.js'></script>-->
     <script defer src='http://test.moviecaker.com/Scripts/jquery/jquery.ui.touch-punch.min.js'></script>
     <script defer src='http://test.moviecaker.com/Scripts/jquery/jquery.lazyload.min.js'></script>
     <script defer src='http://test.moviecaker.com/Scripts/jquery/jquery.cookie.js'></script>
@@ -602,86 +675,86 @@
     </script>
 
     <script>
-        $(document).ready(function(){
-            // 測試搜尋樣式，不是真的搜尋功能
-            $( function() {
-                var availableTags = [
-                    "美女與野獸 Beauty and the Beast (2017)",
-                    "小太陽的願望 Little Miss Sunshine (2006)",
-                    "醜女大翻身 200 Pounds Beauty (2006)",
-                    "野獸情人 Beastly (2011)",
-                    "玩美女人 Volver (2006)",
-                    "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
-                    "醜女大翻身 200 Pounds Beauty (2006)",
-                    "野獸情人 Beastly (2011)",
-                    "玩美女人 Volver (2006)",
-                    "美女與野獸 Beauty and the Beast (2017)",
-                    "小太陽的願望 Little Miss Sunshine (2006)",
-                    "醜女大翻身 200 Pounds Beauty (2006)",
-                    "野獸情人 Beastly (2011)",
-                    "玩美女人 Volver (2006)",
-                    "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
-                    "醜女大翻身 200 Pounds Beauty (2006)","醜女大翻身 200 Pounds Beauty (2006)",
-                    "野獸情人 Beastly (2011)",
-                    "玩美女人 Volver (2006)",
-                    "美女與野獸 Beauty and the Beast (2017)",
-                    "小太陽的願望 Little Miss Sunshine (2006)",
-                    "醜女大翻身 200 Pounds Beauty (2006)",
-                    "野獸情人 Beastly (2011)",
-                    "玩美女人 Volver (2006)",
-                    "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
-                    "醜女大翻身 200 Pounds Beauty (2006)"
-                ];
-                $( "#search-input" ).autocomplete({
-                    source: availableTags,
-                    appendTo: "#search-autocomplete",
-                    open: function(){
-                        $('.more').addClass("searching"); // 有搜尋結果再出現”更多搜尋“按鈕
-                    },
-                    close: function(){
-                        $('.more').removeClass("searching"); // 沒有搜尋結果不出現”更多搜尋“按鈕
-                    }
-                });
-            });
-
-            // 首頁點擊搜尋的動態效果
-            $('#search-icon').on("click", function(){
-                window.scrollBy(0, 1); // 讓鍵盤出現時頁面不會被推上去
-                $('.search-area').addClass("searching");
-                $('.btn-close').addClass("searching");
-                $('.search-keyword').addClass("searching");
-            });
-            // 點擊叉按鈕關閉搜尋
-            $('.btn-close').on("click", function(){
-                $('.search-area').removeClass("searching");
-                $('.btn-close').removeClass("searching");
-                $('.search-keyword').removeClass("searching");
-            });
-
-            // 點擊線上看按鈕會出現下拉選單
-            $('.btn-playMovie').on('click',function(){
-                if ($('.play-movie-selection').hasClass('show')) {
-                    $('.play-movie-selection').removeClass('show');
-                } else {
-                    $('.play-movie-selection').addClass('show');
-                }
-            });
-
-            // 滑動畫面 會出現黑色底
-            $(window).scroll(function() {
-                var windowpos = $(window).scrollTop();
-                var header = $('.header');
-                var content = $('.content-wrap')
-                if ( windowpos > 0 ) {
-                    header.addClass('scroll');
-                    content.addClass('scroll');
-                } else {
-                    header.removeClass('scroll');
-                    content.removeClass('scroll');
+    $(document).ready(function(){
+        // 測試搜尋樣式，不是真的搜尋功能
+        $( function() {
+            var availableTags = [
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)","醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)"
+            ];
+            $( "#search-input" ).autocomplete({
+                source: availableTags,
+                appendTo: "#search-autocomplete",
+                open: function(){
+                    $('.more').addClass("searching"); // 有搜尋結果再出現”更多搜尋“按鈕
+                },
+                close: function(){
+                    $('.more').removeClass("searching"); // 沒有搜尋結果不出現”更多搜尋“按鈕
                 }
             });
         });
-    </script>
+
+        // 首頁點擊搜尋的動態效果
+        $('#search-icon').on("click", function(){
+            window.scrollBy(0, 1); // 讓鍵盤出現時頁面不會被推上去
+            $('.search-area').addClass("searching");
+            $('.btn-close').addClass("searching");
+            $('.search-keyword').addClass("searching");
+        });
+        // 點擊叉按鈕關閉搜尋
+        $('.btn-close').on("click", function(){
+            $('.search-area').removeClass("searching");
+            $('.btn-close').removeClass("searching");
+            $('.search-keyword').removeClass("searching");
+        });
+
+        // 點擊線上看按鈕會出現下拉選單
+        $('.btn-playMovie').on('click',function(){
+            if ($('.play-movie-selection').hasClass('show')) {
+                $('.play-movie-selection').removeClass('show');
+            } else {
+                $('.play-movie-selection').addClass('show');
+            }
+        });
+
+        // 滑動畫面 會出現黑色底
+        $(window).scroll(function() {
+            var windowpos = $(window).scrollTop();
+            var header = $('.header');
+            var content = $('.content-wrap')
+            if ( windowpos > 0 ) {
+                header.addClass('scroll');
+                content.addClass('scroll');
+            } else {
+                header.removeClass('scroll');
+                content.removeClass('scroll');
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

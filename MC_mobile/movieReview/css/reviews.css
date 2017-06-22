@@ -1,0 +1,24 @@
+
+.bkgd-img:after { 
+    background-color: rgba(238,238,238,.5);
+}
+
+.content-wrap {
+    padding-top: 5vh;
+    border-radius: 5px 5px 0 0;
+    top: 22vh;
+    height: auto;
+    background-color: rgba(12,12,12,.5);
+}
+
+.content-wrap:before {
+    content: none;
+}
+.content-wrap.scroll:before {
+    content: none;
+}
+
+/* -------------- Review Content CSS--------------- */
+.reviewContent {
+    border-top: 1px solid rgba(216,216,216,.2);
+}

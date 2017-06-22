@@ -11,7 +11,7 @@
     <!--<link href="css/custom.css" rel="stylesheet" />-->
     <!--<link href="css/screen.css" rel="stylesheet" />-->
     <link href="../entire_css/common.css" rel="stylesheet" />
-    <link href="css/movie.css" rel="stylesheet" />
+    <link href="css/movieInfo.css" rel="stylesheet" />
     <link href="../entire_css/min-search.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="http://test.moviecaker.com/Content/mobile/icomoon/style.min.css" rel="stylesheet" />
@@ -145,7 +145,7 @@
             </div>-->
                 
             <!-- main content -->
-                <div class="content-wrap distance-top">
+                <div class="content-wrap top35vh">
                     <section class="movieInfo">
                         <h2 class="fz-m">海邊的曼徹斯特</h2>
                         <h3 class="fz-subtitle maTHalf1x">Manchester By The Sea</h3>
@@ -154,7 +154,7 @@
                             <span class="fz-s">豆瓣 <span class="text-blue">8.6</span></span>
                             <span class="fz-s maL15">IMDB <span class="text-blue">8.1</span></span>
                         </p>
-                        <p class="maT15 fz-s">
+                        <p class="maT15 fz-s noColor">
                         <!--看過 喜歡 想看 有幾個-->
                             <span class="c-eye" ng-class="{'active':vm.userData.IsViewed}">
                                 <i class="fa fa-eye" aria-hidden="true"></i><span class="maLHalfx" ng-bind="'(' + vm.movie.ViewedNum + ')'">6</span>
@@ -307,15 +307,15 @@
                                             </div>
                                             <div class="review-info pull-right">
                                                 <a href="#" ng-bind="review.UserNickName">AUTHOR's NAME</a>
-                                                <div class="group-wrap">
+                                                <div class="group-wrap hasColor">
                                                     <span class="stars pull-left" data-rate="{{review.OwnerLinkVideo_Score}}">
-                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
-                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
-                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
-                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
-                                                        <i class="icon-star3 ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
                                                     </span>
-                                                    <i class="icon-heart maL5p maTHalf1x pull-left" ng-class="{true:'icon-heart',false:'icon-heart2'}[review.OwnerLinkVideo_IsLiked]"></i>
+                                                    <i class="fa fa-heart maL5p maTHalf1x pull-left" ng-class="{true:'fa-heart',false:'fa-heart-o'}[review.OwnerLinkVideo_IsLiked]"></i>
                                                     <p class="fz-xs text-gray pull-right" ng-show="review.ViewedOn!==null" ng-bind="' 觀影於 ' + (review.ViewedOn| mcJsLocalDateTime)">觀影於 2017/01/31</p>
                                                 </div>
                                             </div>
@@ -325,7 +325,7 @@
                                                 我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶懦弱神經質的感覺。凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶
                                             </p>
                                             <div class="group-wrap maT1x">
-                                                <ul class="review-reaction pull-left">
+                                                <ul class="reaction-stats pull-left">
                                                     <li ng-show="vm.isAuthenticated">
                                                         <a href="" class="review-heart" ng-click="vm.activingReview($index,'Like')" ng-class="{'active':review.IsLiked}">
                                                             <i class="fa fa-heart" ng-class="{'active':review.IsLiked}" aria-hidden="true"></i> <span ng-bind="review.LikedNum">4</span>
@@ -439,15 +439,15 @@
                                     <span class="fz-s text-white60p">評分電影</span><br />
                                     <div class="starRating fz-lg">
                                         <raty score="makeReview.score">
-                                            <i ng-repeat="star in stars" class="icon-star" ng-click="setScope($index)"></i>
-                                            <i ng-repeat="star in stars" class="icon-star" ng-click="setScope($index)"></i>
-                                            <i ng-repeat="star in stars" class="icon-star" ng-click="setScope($index)"></i>
-                                            <i ng-repeat="star in stars" class="icon-star" ng-click="setScope($index)"></i>
-                                            <i ng-repeat="star in stars" class="icon-star" ng-click="setScope($index)"></i>
+                                            <i ng-repeat="star in stars" class="fa fa-star-o" ng-click="setScope($index)"></i>
+                                            <i ng-repeat="star in stars" class="fa fa-star-o" ng-click="setScope($index)"></i>
+                                            <i ng-repeat="star in stars" class="fa fa-star-o" ng-click="setScope($index)"></i>
+                                            <i ng-repeat="star in stars" class="fa fa-star-o" ng-click="setScope($index)"></i>
+                                            <i ng-repeat="star in stars" class="fa fa-star-o" ng-click="setScope($index)"></i>
                                         </raty>
                                     </div>
                                 </div>
-                                <div class="pull-right taR">
+                                <div class="pull-right taR hasColor">
                                     <span class="fz-s text-white60p">喜歡電影</span><br />
                                     <i class="fa fa-heart-o fz-lg" ng-class="{true:'fa-heart',false:'fa-heart-o'}[vm.makeReview.isLiked]" ng-click="vm.makeReview.isLiked=!vm.makeReview.isLiked"></i>
                                 </div>

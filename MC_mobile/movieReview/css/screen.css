@@ -577,7 +577,7 @@ body:after {
 
 [class*="btn-"] {
   display: inline-block;
-  padding: 2px 5px;
+  /*padding: 2px 5px;*/
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -900,7 +900,7 @@ body:after {
   font-weight: 900;
 }*/
 
-#mainInfo .movieInfo h3 {
+/*#mainInfo .movieInfo h3 {
   font-weight: 900;
 }
 #mainInfo .addF, #mainInfo .isF {
@@ -917,7 +917,7 @@ body:after {
 }
 #mainInfo .isF {
   background-image: url("/Areas/Mobile/Images/isF.png");
-}
+}*/
 /*
 .movieInfo-Like {
   font-size: 12px;
@@ -1056,7 +1056,7 @@ body:after {
   text-align: right;
   cursor: pointer;
 }*/
-.infoText .commentPeople {
+/*.infoText .commentPeople {
   overflow: hidden;
   *zoom: 1;
   margin-bottom: 10px;
@@ -1076,7 +1076,7 @@ body:after {
 }
 .infoText .commentPeople a {
   color: #3bb1cc;
-}
+}*/
 
 .movieInfo-list-row {
   margin-bottom: 10px;

@@ -201,22 +201,11 @@
     font-size: 1em;
 }
 .review-info [class*="-star"] {
-    color: #71cfee;
     margin-left: -2px;
-}
-.review-info [class*="-heart"] {
-    color: #D87C7C;
-}
-.review-info [class*="-fire"] {
-    color: #ECA473;
-}
-.review-info [class*="-eye"] {
-    color: #71cfee;
 }
 .review-info i {
     font-size: 15px;
 }
-
 
 .review-content p {
     text-align: justify;
@@ -226,27 +215,7 @@
     height: 116px;
     overflow: hidden;
 }
-.review-content .review-reaction li {
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: inline;
-  margin-left: 15px;
-  font-size: .9em;
-}
-.review-content .review-reaction li a {
-    color: rgba(238,238,238,.7);
-}
-.review-content .review-reaction li:first-child {
-    margin-left: 0;
-}
-.review-reaction li a.active[class*="-share"] {
-  color: #71CFEE;
-}
-.review-reaction li a.active[class*="-heart"] {
-  color: #D87C7C;
-}
+
 .readMore {
     position: relative;
     width: 20%;
