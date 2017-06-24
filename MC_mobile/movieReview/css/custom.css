@@ -42,10 +42,10 @@ html, body { /* this allows the children to inherit this style */
         padding-top: 5px;
     }
 
-.creatDate {
+/*.creatDate {
     font-size: 1em;
     color: currentColor;
-}
+}*/
 
 /*.comment-list > .comment-item .comment-content {
     font-size: 1em;

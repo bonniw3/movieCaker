@@ -633,13 +633,13 @@ body:after {
   box-shadow: #056c71 0px 2px 0px;
 }
 
-[class*="-like"] {
+/*[class*="-like"] {
   background: #f97d9d;
   border: none;
   -moz-box-shadow: #f63466 0px 2px 0px;
   -webkit-box-shadow: #f63466 0px 2px 0px;
   box-shadow: #f63466 0px 2px 0px;
-}
+}*/
 
 [class*="-cencle"] {
   background: #999;
@@ -1207,13 +1207,13 @@ body:after {
   float: left;
 }
 
-.creatDate {
+/*.creatDate {
   color: #555;
   font-size: 7px;
   letter-spacing: -1px;
   position: relative;
   top: 5px;
-}
+}*/
 
 .btns {
   float: right;

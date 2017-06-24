@@ -17,7 +17,7 @@
 .movieAbout .moviePlot {
     text-align: justify;
     line-height: 1.6em;
-    font-size: 15px;
+    font-size: .95em;
     overflow: hidden;
     margin-bottom: 10px;
     height: 70px;
@@ -39,7 +39,7 @@
     color: #71cfee;
     text-align: right;
     cursor: pointer;
-    font-size: 15px;
+    font-size: .95em;
 }
 
 /* ----------------- MOVIE CAST ------------------ */
@@ -204,16 +204,16 @@
     margin-left: -2px;
 }
 .review-info i {
-    font-size: 15px;
+    font-size: .95em;
 }
 
 .review-content p {
     text-align: justify;
-    font-size: 15px;
+    font-size: .95em;
     color: rgba(255,255,255,.8);
     line-height: 1.6em;
-    height: 116px;
-    overflow: hidden;
+    /*height: 116px;*/
+    /*overflow: hidden;*/
 }
 
 .readMore {
@@ -225,7 +225,7 @@
     border-left: 1px solid #71cfee;
     border-right: 1px solid #71cfee;
     text-align: center;
-    font-size: 14px;
+    font-size: .9em;
 }
 
 

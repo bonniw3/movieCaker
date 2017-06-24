@@ -255,7 +255,7 @@
             
                 <!-- 分享 -->
                 <div id="shareTo" class="ng-hide" ng-show="main.showShareWindow" ng-class="{ blur: main.screenStatus() }">
-                    <ul class="reaction-btn share-btn group-wrap pad0">
+                    <ul class="sticky sticky-bottom share-btn group-wrap pad0">
                         <li class="fz-normal text-white60p">分享</li>
                         <li>
                             <a href="#" class="btn-social-share circle40 btn-wechat" name="provider" value="WeChat" title="使用 微信 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'WX')">
@@ -353,7 +353,7 @@
                             </div>
 
                             <section class="maT2x reviewContent divider-line">
-                                <p class="fz-xs text-white60p taR letter-space-1x maT1x">寫於 2017/03/21</p>
+                                <p class="fz-xs text-white60p taR letter-space-1x maT1x" ng-show="review.ViewedOn!==null" ng-bind="(review.ViewedOn| mcJsLocalDateTime)">寫於 2017/03/21</p>
                                 <div class="maT1x text-white80p fz-15">
                                     被遮蔽的雙眼，你因而選擇了盲目？還是用心？
                                     <br>
@@ -370,97 +370,181 @@
                                 <ul class="reaction-stats maT2x">
                                     <li ng-show="vm.isAuthenticated">
                                         <a href="" class="review-heart" ng-click="vm.activingReview($index,'Like')" ng-class="{'active':review.IsLiked}">
-                                            <i class="fa fa-heart" ng-class="{'active':review.IsLiked}" aria-hidden="true"></i> <span ng-bind="review.LikedNum">4</span>
+                                            <i class="fa fa-heart" ng-class="{'active':review.IsLiked}" aria-hidden="true"></i> <span ng-bind="vm.likeReview.Count">4</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a ng-href="/mobile/review/{{review.ReviewId}}?response=true">
-                                            <i class="fa fa-comment" aria-hidden="true"></i> <span ng-bind="review.MessageNum">5</span>
+                                            <i class="fa fa-comment" aria-hidden="true"></i> <span ng-bind="vm.reviewMessages.length">5</span>
                                         </a>
                                     </li>
                                     <li ng-click="vm.shareReview($index)">
                                         <a href="" class="review-share" ng-class="{'active':review.IsShared}">
-                                            <i class="fa fa-share-alt" ng-class="{'active':review.IsShared}" aria-hidden="true"></i> <span ng-bind="review.SharedNum">2</span>
+                                            <i class="fa fa-share-alt" ng-class="{'active':review.IsShared}" aria-hidden="true"></i> <span ng-bind="vm.shareReview.Count">2</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="">
-                                            <i class="fa fa-users" aria-hidden="true"></i> <span ng-bind="review.PageViews">10</span>
+                                            <i class="fa fa-users" aria-hidden="true"></i> <span ng-bind="vm.pageView">10</span>
                                         </a>
                                     </li>
                                 </ul>
                             </section>
 
-                            
-
+                            <div class="btn-wrap maT3x group-wrap">
+                                <!-- 編輯影評只有作者到自己的影評時才會出現，其他時候都是喜歡影評 -->
+                                <div class="btn-like-share pull-left bkgd-blue fz-15 btn-like" style="display: none;" ng-click="vm.reviewshowReviewWindow=true">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> 編輯影評
+                                </div>
+                                <!-- btn-like addClass active 會換色 -->
+                                <div class="btn-like-share pull-left bkgd-white fz-15 btn-like" ng-click="vm.activing('Like')">
+                                    <i class="fa fa-heart" ng-class="{'active':vm.likeReview.IsOnAction}"></i> 喜歡影評
+                                </div>
+                                <div class="btn-like-share pull-right bkgd-white fz-15" ng-click="vm.shareVideoReview('1485')">
+                                    <i class="fa fa-share-alt" ng-class="{'active':vm.shareReview.IsOnAction}"></i> 分享影評
+                                </div>
+                            </div>
+                            <div id="shareTo" class="share-wrap short ng-hide" ng-show="main.showShareWindow" ng-class="{ blur: main.screenStatus() }">
+                                <ul class="share-btn short group-wrap pad0">
+                                    <li>
+                                        <a href="#" class="btn-social-share circle40 btn-wechat" name="provider" value="WeChat" title="使用 微信 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'WX')">
+                                            <i class="fa fa-weixin" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-social-share circle40 btn-fb" name="provider" value="Facebook" title="使用 Facebook 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'FB')">
+                                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-social-share circle40 btn-weibo" name="provider" value="Weibo" title="使用 新浪微博 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'WB')">
+                                            <i class="fa fa-weibo" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-social-share circle40 btn-qq" name="provider" value="QQ" title="使用 QQ 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'QQ')">
+                                            <i class="fa fa-qq" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="text-white60p fz-m" ng-click="main.showShareWindow=false"><i class="fa fa-times" aria-hidden="true"></i></li>
+                                </ul>
+                                <!-- 加上 class showAlert 會出現 -->
+                                <div class="weixin-alert align-bottom group-wrap top-alert short-alert showAlert">
+                                    <p class="text-blue fz-normal"><i class="fa fa-weixin" aria-hidden="true"></i> 微信分享小叮嚀</p>
+                                    <p class="maT4 text-white80p fz-s">目前暫時還沒有直接分享到微信朋友圈的功能，請點選您手機<span class="text-blue">右上角三個點</span>選項中的分享功能就可以分享到微信。</p>
+                                    <button class="btn-weixinAlert pull-right bkgd-pink maL1x maT1x">不用再提醒</button>
+                                    <button class="btn-weixinAlert pull-right bkgd-blue maT1x">下次再提醒</button>
+                                </div>
+                            </div>
                         </article>
                     </section>
 
-                    <!--<span class="creatDate" ng-bind="'瀏覽量：' + (vm.pageView)"></span>-->
-                    <!--<p class="fz-xs text-gray pull-right" ng-show="review.ViewedOn!==null" ng-bind="' 觀影於 ' + (review.ViewedOn| mcJsLocalDateTime)">觀影於 2017/01/31</p>-->
+                    <section class="author-other-review maT13p">
+                        <div class="section-title fz-subtitle text-blue"><span>Rich</span> 的其他影評</div>
+                        <article class="padLR10 maT2x">
+                            <!-- 這邊開始 repeat 3 個 -->
+                            <div class="other-review-item padTB1x group-wrap">
+                                <a href="#">
+                                    <div class="circle-mask circle40 pull-left maT15">
+                                        <img src="img/default_avatar.png" alt="">
+                                        <!--<user-avatar data-image-src="/Uploads/UserAvatar/{{review.UserAvatar}}" alt=""></user-avatar>-->
+                                    </div>
+                                    <div class="other-review-details pull-right">
+                                        <a href="#" class="text-light-blue fz-s" ng-bind="review.UserNickName">評：MOVIE's TITLE</a>
+                                        <p class="text-white80p fz-s line-clamp clamp-2" ng-bind="(review.Review | characters:89 :true)">
+                                            我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶我們的過去與未來的經歷，只為了能在這一刻與你相遇，就是『今天』的現在
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="other-review-item padTB1x group-wrap">
+                                <a href="#">
+                                    <div class="circle-mask circle40 pull-left maT15">
+                                        <img src="img/default_avatar.png" alt="">
+                                        <!--<user-avatar data-image-src="/Uploads/UserAvatar/{{review.UserAvatar}}" alt=""></user-avatar>-->
+                                    </div>
+                                    <div class="other-review-details pull-right">
+                                        <a href="#" class="text-light-blue fz-s" ng-bind="review.UserNickName">評：MOVIE's TITLE</a>
+                                        <p class="text-white80p fz-s line-clamp clamp-2" ng-bind="(review.Review | characters:89 :true)">
+                                            我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶我們的過去與未來的經歷，只為了能在這一刻與你相遇，就是『今天』的現在
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="other-review-item padTB1x group-wrap">
+                                <a href="#">
+                                    <div class="circle-mask circle40 pull-left maT15">
+                                        <img src="img/default_avatar.png" alt="">
+                                        <!--<user-avatar data-image-src="/Uploads/UserAvatar/{{review.UserAvatar}}" alt=""></user-avatar>-->
+                                    </div>
+                                    <div class="other-review-details pull-right">
+                                        <a href="#" class="text-light-blue fz-s" ng-bind="review.UserNickName">評：MOVIE's TITLE</a>
+                                        <p class="text-white80p fz-s line-clamp clamp-2" ng-bind="(review.Review | characters:89 :true)">
+                                            我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶我們的過去與未來的經歷，只為了能在這一刻與你相遇，就是『今天』的現在
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <a href="#" class="viewMore text-light-blue fz-s maT15">全部 <span>24</span> 則影評</a>
+                        </article>
+                    </section>
 
-                        <!--<ul class="movieInfo-btn">
-                            <li class="c-heart" ng-click="vm.activing('Like')">
-                                <i class="icon-heart" ng-class="{'active':vm.likeReview.IsOnAction}"></i>
-                                <br>喜歡 <span ng-bind="'(' + vm.likeReview.Count + ')'"></span>
-                            </li>
-                            <li class="c-fire" ng-click="vm.displayReplyWindow('','')">
-                                <i class=" icon-bubbles2">
-                                </i>
-                                <br>回應 <span ng-bind="'(' + vm.reviewMessages.length + ')'"></span>
-                            </li>
-                            <li ng-click="vm.shareVideoReview('1485')">
-                                <i class="icon-share" ng-class="{'active':vm.shareReview.IsOnAction}"></i>
-                                <br>分享 <span ng-bind="'(' + vm.shareReview.Count + ')'"></span>
-                            </li>
-                        </ul>-->
+                    <section class="author-other-review maT13p">
+                        <div class="section-title fz-subtitle text-blue">回應</div>
+                        <article class="padLR10 maT2x">
+                            <div class="reply">
+                                <fieldset>
+                                    <h3><a href="###" ng-bind="'回應 (' + (vm.reviewMessages.length) + ')'"></a></h3>
+                                    <div class="replyTo">
+                                        <label for="replysend"><img ng-src="/Uploads/UserAvatar/{{vm.currentUser.Avatar}}" alt="" user-avatar /></label>
+                                        <textarea name="replyto" id="replysend" cols="30" rows="10" ng-model="vm.replyMessage" show-focus="response"></textarea>
+                                        <p class="taRight"><button class="btn-m-default" type="button" ng-click="vm.replyToVideoReview('')">發表</button></p>
+                                    </div>
+                                </fieldset>
+                                <ul class="reply-list borderTBD" ng-show="vm.reviewMessages.length > 0">
+                                    <li class="borderBBD" ng-hide="!vm.displayAllMessage && $index >= 2" ng-repeat="reviewMessage in vm.reviewMessages">
+                                        <div class="replyitem">
+                                            <div class="replyitemImg">
+                                                <user-avatar data-image-src="{{reviewMessage.UserAvatar}}" alt=""></user-avatar>
+                                                <button class="btn-s-default" ng-click="vm.displayReplyWindow(reviewMessage.Id,reviewMessage.NickName)">回覆</button>
+                                                <button ng-class="{'btn-s-like':reviewMessage.IsLiked, 'btn-s-cencle': !reviewMessage.IsLiked}" ng-click="vm.likeThisReply(reviewMessage)"><i class="icon-love"></i> ({{reviewMessage.LikedAmount}})</button>
+                                            </div>
+                                            <div class="replyitemCon">
+                                                <h4>
+                                                    <span class="green" ng-bind="reviewMessage.NickName"></span>
+                                                    <span ng-bind="(reviewMessage.CreateOn| jsonUtcDateToLocal)"></span> 
+                                                    
+                                                </h4>
+                                                <p style="white-space: pre-line" ng-bind="reviewMessage.Message"></p>
+                                            </div>
+                                        </div>
+                                        <div class="re-replyCon" ng-repeat="replyReview in reviewMessage.ReplyReviewMessage">
+                                            <div class="replyitemImg">
+                                                <user-avatar data-image-src="{{replyReview.UserAvatar}}" alt=""></user-avatar>
+                                                <button ng-class="{'btn-s-like':replyReview.IsLiked, 'btn-s-cencle': !replyReview.IsLiked}" ng-click="vm.likeThisReply(replyReview)"><i class="icon-love"></i> ({{replyReview.LikedAmount}})</button>
+                                            </div>
+                                            <div class="replyitemCon">
+                                                <h4>
+                                                    <span class="green" ng-bind="replyReview.NickName"></span>
+                                                    <span ng-bind="(replyReview.CreateOn| jsonUtcDateToLocal)"></span>
+                                                    
+                                                </h4>
+                                                <p style="white-space: pre-line" ng-bind="replyReview.Message"></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div ng-hide="vm.displayAllMessage" class="replymore" ng-click="vm.displayAllMessage=!vm.displayAllMessage">看全部回覆&nbsp;<i class="fa fa-angle-double-down"></i></div>
+                                <div ng-hide="!vm.displayAllMessage" class="replymore" ng-click="vm.displayAllMessage=!vm.displayAllMessage">隱藏回覆&nbsp;<i class="fa fa-angle-double-up"></i></div>
+                            </div>
+                        </article>
+                    </section>
+
+                
+
                         
 
-                    <!--<div class="reply">
-                        <fieldset>
-                            <h3><a href="###" ng-bind="'回應 (' + (vm.reviewMessages.length) + ')'"></a></h3>
-                            <div class="replyTo">
-                                <label for="replysend"><img ng-src="/Uploads/UserAvatar/{{vm.currentUser.Avatar}}" alt="" user-avatar /></label>
-                                <textarea name="replyto" id="replysend" cols="30" rows="10" ng-model="vm.replyMessage" show-focus="response"></textarea>
-                                <p class="taRight"><button class="btn-m-default" type="button" ng-click="vm.replyToVideoReview('')">發表</button></p>
-                            </div>
-                        </fieldset>
-                        <ul class="reply-list borderTBD" ng-show="vm.reviewMessages.length > 0">
-                            <li class="borderBBD" ng-hide="!vm.displayAllMessage && $index >= 2" ng-repeat="reviewMessage in vm.reviewMessages">
-                                <div class="replyitem">
-                                    <div class="replyitemImg">
-                                        <user-avatar data-image-src="{{reviewMessage.UserAvatar}}" alt=""></user-avatar>
-                                        <button class="btn-s-default" ng-click="vm.displayReplyWindow(reviewMessage.Id,reviewMessage.NickName)">回覆</button>
-                                        <button ng-class="{'btn-s-like':reviewMessage.IsLiked, 'btn-s-cencle': !reviewMessage.IsLiked}" ng-click="vm.likeThisReply(reviewMessage)"><i class="icon-love"></i> ({{reviewMessage.LikedAmount}})</button>
-                                    </div>
-                                    <div class="replyitemCon">
-                                        <h4>
-                                            <span class="green" ng-bind="reviewMessage.NickName"></span>
-                                            <span ng-bind="(reviewMessage.CreateOn| jsonUtcDateToLocal)"></span> 
-                                            
-                                        </h4>
-                                        <p style="white-space: pre-line" ng-bind="reviewMessage.Message"></p>
-                                    </div>
-                                </div>
-                                <div class="re-replyCon" ng-repeat="replyReview in reviewMessage.ReplyReviewMessage">
-                                    <div class="replyitemImg">
-                                        <user-avatar data-image-src="{{replyReview.UserAvatar}}" alt=""></user-avatar>
-                                        <button ng-class="{'btn-s-like':replyReview.IsLiked, 'btn-s-cencle': !replyReview.IsLiked}" ng-click="vm.likeThisReply(replyReview)"><i class="icon-love"></i> ({{replyReview.LikedAmount}})</button>
-                                    </div>
-                                    <div class="replyitemCon">
-                                        <h4>
-                                            <span class="green" ng-bind="replyReview.NickName"></span>
-                                            <span ng-bind="(replyReview.CreateOn| jsonUtcDateToLocal)"></span>
-                                            
-                                        </h4>
-                                        <p style="white-space: pre-line" ng-bind="replyReview.Message"></p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <div ng-hide="vm.displayAllMessage" class="replymore" ng-click="vm.displayAllMessage=!vm.displayAllMessage">看全部回覆&nbsp;<i class="fa fa-angle-double-down"></i></div>
-                        <div ng-hide="!vm.displayAllMessage" class="replymore" ng-click="vm.displayAllMessage=!vm.displayAllMessage">隱藏回覆&nbsp;<i class="fa fa-angle-double-up"></i></div>
-                    </div>-->
+                    
 
                     <!-- 回覆 別人的 comment -->
                     <div id="writeCom" class="popTo ng-hide" ng-show="vm.showReplyWindow">

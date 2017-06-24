@@ -76,7 +76,7 @@
 
                 <!-- 簽到按鈕 -->
                 <div>
-                    <ul class="reaction-btn group-wrap">
+                    <ul class="sticky sticky-bottom reaction-btn group-wrap">
                         <li class="c-eye" ng-class="{'active':vm.userData.IsViewed}" ng-click="vm.activing('Watch')">
                             <i class="fa fa-eye" aria-hidden="true"></i>
                             <span>看過</span> 
@@ -102,7 +102,7 @@
             
                 <!-- 分享 -->
                 <div id="shareTo" class="ng-hide" ng-show="main.showShareWindow" ng-class="{ blur: main.screenStatus() }">
-                    <ul class="reaction-btn share-btn group-wrap pad0">
+                    <ul class="sticky sticky-bottom share-btn group-wrap pad0">
                         <li class="fz-normal text-white60p">分享</li>
                         <li>
                             <a href="#" class="btn-social-share circle40 btn-wechat" name="provider" value="WeChat" title="使用 微信 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'WX')">
@@ -124,10 +124,10 @@
                                 <i class="fa fa-qq" aria-hidden="true"></i>
                             </a>
                         </li>
-                        <li class="text-white60p fz-m" ng-click="main.showShareWindow=false"><i class="icon-close"></i></li>
+                        <li class="text-white60p fz-m" ng-click="main.showShareWindow=false"><i class="fa fa-times" aria-hidden="true"></i></li>
                     </ul>
                     <!-- 加上 class showAlert 會出現 -->
-                    <div class="weixin-alert align-bottom group-wrap">
+                    <div class="weixin-alert fixed-alert bottom-alert group-wrap">
                         <p class="text-blue fz-normal"><i class="fa fa-weixin" aria-hidden="true"></i> 微信分享小叮嚀</p>
                         <p class="maT4 text-white80p fz-s">目前暫時還沒有直接分享到微信朋友圈的功能，請點選您手機<span class="text-blue">右上角三個點</span>選項中的分享功能就可以分享到微信。</p>
                         <button class="btn-weixinAlert pull-right bkgd-pink maL1x maT1x">不用再提醒</button>
@@ -299,6 +299,7 @@
                                     <!--<li ng-show="vm.isAuthenticated" ng-click="vm.getComments('mine')" ng-class="{'active':vm.reviewSelected=='mine'}">我的</li>-->
                                 </ul>
                                 <div class="review-list active" ng-class="{'active':vm.reviewSelected=='hot'}">
+                                    <!-- 這邊開始repeat -->
                                     <div class="review-item maT2x" ng-repeat="review in vm.reviews">
                                         <div class="group-wrap">
                                             <div class="circle-mask circle40 pull-left maT4">
@@ -321,7 +322,7 @@
                                             </div>
                                         </div>
                                         <div class="review-content maT1x maBHalf1x">
-                                            <p ng-bind="(review.Review | characters:89 :true)">
+                                            <p class="line-clamp clamp-5" ng-bind="(review.Review | characters:89 :true)">
                                                 我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶懦弱神經質的感覺。凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶
                                             </p>
                                             <div class="group-wrap maT1x">
@@ -352,7 +353,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div class="review-list" ng-class="{'active':vm.reviewSelected=='creatOn'}">
+                                    <!-- 這邊開始repeat -->
                                     <div class="review-item maT2x" ng-repeat="review in vm.reviews">
                                         <div class="group-wrap">
                                             <div class="circle-mask circle40 pull-left maT4">

@@ -99,10 +99,6 @@ table {
 	transition: background-color .3s ease-in-out;
 }
 .header.scroll {
-	/*background-image: -moz-linear-gradient(rgba(12,12,12,.8), rgba(12,12,12,.8));  
-    background-image: -webkit-linear-gradient(rgba(12,12,12,.8), rgba(12,12,12,.8)); 
-    background-image: -o-linear-gradient(rgba(12,12,12,.8), rgba(12,12,12,.8));
-    background-image: linear-gradient(rgba(12,12,12,.8), rgba(12,12,12,.8));*/
 	background-image: none;
 	background-color: rgba(12,12,12,.8);
 	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
@@ -223,12 +219,10 @@ table {
 }
 
 
-/* -------------- movie-reaction BTNs ---------------- */
-.reaction-btn {
+/* -------------- sticky situations ---------------- */
+.sticky {
 	position: fixed;
-	bottom: 0;
 	left: 0;
-	right: 0;
 	width: 100%;
 	height: 2.8em;
 	box-sizing: border-box;
@@ -238,12 +232,21 @@ table {
 	background-color: rgba(12,12,12,.9);
 	box-shadow: 0px -2px 4px 2px rgba(0,0,0,.5);
 }
-.reaction-btn li {
+.sticky li {
 	float: left;
 	height: 100%;
-	width: 19.5%;
 	text-align: center;
-	cursor: pointer;
+}
+.sticky-bottom {
+	bottom: 0;
+}
+.sticky-top {
+	top: 0;
+}
+
+/* -------------- 簽到按鈕 reaction-BTNs ---------------- */
+.reaction-btn li {
+	width: 19.5%;
 	border-left: 1px solid rgba(155,155,155,.05);
 }
 .reaction-btn li:first-child {
@@ -252,7 +255,7 @@ table {
 .reaction-btn li i {
   	position: relative;
 	top: -2px;
-	font-size: 16px;
+	font-size: 1em;
 }
 .reaction-btn li span {
 	display: block;
@@ -273,7 +276,7 @@ table {
   color: #fcee21;
 }*/
 
-/* -------------- share BTNs ---------------- */
+/* -------------- 分享按鈕 share-BTNs ---------------- */
 .share-btn li {
 	width: 23.2%;
 	line-height: 45px;
@@ -313,17 +316,77 @@ table {
     background-color: rgba(63,150,222,.7);
 }
 
+.share-wrap.short {
+	position: absolute;
+	right: 7.5%;
+}
+
+.share-btn.short {
+	position: relative;
+	margin-top: 2%;
+	width: 250px;
+	background-color: rgba(12,12,12,.9);
+	box-sizing: border-box;
+	padding: 10px 15px;
+	border-radius: 5px 5px 0 0;
+}
+.share-btn.short:before {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: -29px 0 0 65%;;
+	background-color: transparent;
+	border-left: 10px solid transparent;
+	border-top: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid rgba(12,12,12,.9);
+	width: 0px;
+	height: 10px;
+}
+.share-btn.short li {
+	width: 45px;
+	float: left;
+	margin-top: 0;
+	line-height: 0;
+}
+.share-btn.short li:last-child {
+	text-align: right;
+	float: right;
+	width: 30px;
+	height: 40px;
+	line-height: 40px;
+}
+
+
 /* -------------- weixin alert ---------------- */
-.weixin-alert {
+.fixed-alert {
 	width: 100%;
 	position: fixed;
 	left: 0;
+}
+.bottom-alert {
+	bottom: 45px;
+	border-radius: 5px 5px 0 0;
+	border-bottom: 3px solid #71cfee;
+}
+.top-alert {
+	top: 45px;
+	border-radius: 0 0 5px 5px;
+	border-top: 3px solid #71cfee;
+}
+.top-alert.short-alert {
+	width: 250px;
+	top: 0;
+	position: relative;
+}
+.weixin-alert {
 	z-index: 10;
 	background-color: rgba(12,12,12,.9);
 	padding: 15px;
 	box-sizing: border-box;
-	border-bottom: 3px solid #71cfee;
-	border-radius: 5px 5px 0 0;
 	display: none;
 }
 .weixin-alert.showAlert {
@@ -382,8 +445,22 @@ table {
 	border-radius: 5px;
 	color: #fff;
 }
+[class*="-like"].active {
+	background-color: rgba(216,124,124,.5);
+	color: #E9A1A1;
+}
+[class*="-like-share"] {
+	height: 40px;
+	width: 47%;
+	padding: 9px 0 !important;
+	border-radius: 5px;
+	color: #ffffff;
+}
 [class*="-weixinAlert"] {
+	width: 105px;
+	height: 35px;
 	padding: 2.5% 5%;
+	box-sizing: border-box;
 	border-radius: 5px;
 	color: rgba(235,235,235,1);
 	font-size: .9em;
@@ -422,7 +499,7 @@ table {
 }
 
 /* ----------- PLAY button select/option ------------- */
-.btn-wrap ul:before {
+.btn-wrap .play-movie-selection:before {
 	content: '';
 	position: absolute;
 	top: -2px;
@@ -431,7 +508,7 @@ table {
 	height: 4px;
 	background-color: #3F8295;
 }
-.btn-wrap ul {
+.btn-wrap .play-movie-selection {
 	display: none;
 	position: absolute;
 	top: 45px;
@@ -443,18 +520,18 @@ table {
 	padding: 0 7%;
 	z-index: 2;
 }
-.btn-wrap ul li {
+.btn-wrap .play-movie-selection li {
 	text-align: center;
 	padding: 10px 0;
 	border-bottom: 1px solid rgba(255,255,255,.3);
 }
-.btn-wrap ul li a {
+.btn-wrap .play-movie-selection li a {
 	color: rgba(255,255,255,.8);
 }
-.btn-wrap ul li:last-child {
+.btn-wrap .play-movie-selection li:last-child {
 	border-bottom: none;
 }
-.btn-wrap ul.show {
+.btn-wrap .play-movie-selection.show {
 	display: block;
 }
 
@@ -508,6 +585,27 @@ table {
 	display: flex;
   	flex-direction: column;
   	justify-content: center;
+}
+
+/* ----------------- avatar ------------------ */
+.viewMore {
+	position: relative;
+	text-align: center;
+	display: block;
+}
+.viewMore:before, .viewMore:after{
+	content: '';
+	position: absolute;
+	top: 45%;
+	background-color: #71cfee;
+	height: 1px;
+	width: 25px;
+}
+.viewMore:before {
+	left: 22%;
+}
+.viewMore:after	{
+	right: 22%;
 }
 
 
@@ -680,7 +778,7 @@ textarea.reviewContent:focus {
   text-align: center;
 }
 .popTo .starNum span {
-  font-size: 16px;
+  font-size: 1em;
 }
 /*.popMenu {
     font-size: 1.2em;
@@ -817,6 +915,9 @@ textarea.reviewContent:focus {
 .text-blue {
     color: #71cfee;
 }
+.text-light-blue {
+	color: #B2EEFF;
+}
 
 .bkgd-blue {
     background-color: rgba(113,207,238,.5);
@@ -825,7 +926,7 @@ textarea.reviewContent:focus {
     background-color: rgba(216,124,124,.5);
 }
 .bkgd-white {
-	background-color: rgba(255,255,255.5);
+	background-color: rgba(255,255,255,.5);
 }
 .bkgd-light-grey {
 	background-color: rgba(225,225,225,.5);
@@ -920,6 +1021,19 @@ textarea.reviewContent:focus {
 }
 .rel-pos {
 	position: relative;
+}
+
+.line-clamp {
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical; 
+}
+.clamp-2 {
+	-webkit-line-clamp: 2;
+}
+.clamp-5 {
+	-webkit-line-clamp: 5;
 }
 
 
