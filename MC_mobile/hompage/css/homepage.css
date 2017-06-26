@@ -50,6 +50,29 @@
     top: 7%;
 }
 
+.search-area {
+transition: background-color .5s .05s ease,
+            top .5s .2s ease,
+            height .5s .2s ease;
+}
+
+.btn-close {
+    transition: top .5s .05s ease;
+}
+.btn-close.searching {
+    top: 30px;
+    transition: top .5s .1s ease;
+}
+
+.search-keyword {
+    margin-top: 40%;
+    transition: margin-top .6s ease;
+}
+.search-keyword.searching {
+    margin-top: 20%;
+    transition: margin-top .6s .05s ease;
+}
+
 /* --- adjust jquery_ui --- */
 ul.ui-autocomplete {
     width: 100vw !important;
