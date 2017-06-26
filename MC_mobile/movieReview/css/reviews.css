@@ -35,6 +35,8 @@
 .other-review-details {
     width: 82%;
 }
+
+/* used line-clamp to solve for now */
 /*.other-review-details p {
     height: 45px;
     overflow: hidden;

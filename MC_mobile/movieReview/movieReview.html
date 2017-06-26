@@ -254,7 +254,7 @@
                 </div>-->
             
                 <!-- 分享 -->
-                <div id="shareTo" class="ng-hide" ng-show="main.showShareWindow" ng-class="{ blur: main.screenStatus() }">
+                <div id="shareTo" class="ng-hide" ng-show="main.showShareWindow" ng-class="{ blur: main.screenStatus() }" style="display: none;">
                     <ul class="sticky sticky-bottom share-btn group-wrap pad0">
                         <li class="fz-normal text-white60p">分享</li>
                         <li>
@@ -296,6 +296,27 @@
                     </div>
                 </div>-->
 
+                 <!--回應匡 (只有登入後才會出現) -->
+                <div class="sticky sticky-bottom typeReply">
+                    <form action="" method="post">
+                        <ul class="addComment group-wrap">
+                            <li class="pull-left">
+                                <div class="circle-mask circle1x">
+                                    <img src="img/default_avatar.png" alt="">
+                                    <!--<img ng-src="/Uploads/UserAvatar/{{vm.currentUser.Avatar}}" alt="" user-avatar />-->
+                                </div>
+                            </li>
+                            <li class="pull-right">
+                                <button class="btn-post" type="button" ng-click="vm.replyToVideoReview('')">發表</button>
+                            </li>
+                            <li>
+                                <textarea name="replyto" id="replysend" rows="1" class="addComment-text typeReply" placeholder="回應..." ng-model="vm.replyMessage" show-focus="response"></textarea>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+
+                <!-- MAIN CONTENT -->
                 <div class="content-wrap">
                     <section class="movieInfo">
                         <div class="section-title fz-subtitle text-blue"><span>Rich</span> 的影評</div>
@@ -404,7 +425,7 @@
                                     <i class="fa fa-share-alt" ng-class="{'active':vm.shareReview.IsOnAction}"></i> 分享影評
                                 </div>
                             </div>
-                            <div id="shareTo" class="share-wrap short ng-hide" ng-show="main.showShareWindow" ng-class="{ blur: main.screenStatus() }">
+                            <div id="shareTo" class="share-wrap short ng-hide" ng-show="main.showShareWindow" ng-class="{ blur: main.screenStatus() }" style="display: none;">
                                 <ul class="share-btn short group-wrap pad0">
                                     <li>
                                         <a href="#" class="btn-social-share circle40 btn-wechat" name="provider" value="WeChat" title="使用 微信 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'WX')">
@@ -443,48 +464,43 @@
                         <div class="section-title fz-subtitle text-blue"><span>Rich</span> 的其他影評</div>
                         <article class="padLR10 maT2x">
                             <!-- 這邊開始 repeat 3 個 -->
-                            <div class="other-review-item padTB1x group-wrap">
-                                <a href="#">
-                                    <div class="circle-mask circle40 pull-left maT15">
-                                        <img src="img/default_avatar.png" alt="">
-                                        <!--<user-avatar data-image-src="/Uploads/UserAvatar/{{review.UserAvatar}}" alt=""></user-avatar>-->
-                                    </div>
-                                    <div class="other-review-details pull-right">
-                                        <a href="#" class="text-light-blue fz-s" ng-bind="review.UserNickName">評：MOVIE's TITLE</a>
-                                        <p class="text-white80p fz-s line-clamp clamp-2" ng-bind="(review.Review | characters:89 :true)">
-                                            我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶我們的過去與未來的經歷，只為了能在這一刻與你相遇，就是『今天』的現在
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="other-review-item padTB1x group-wrap">
-                                <a href="#">
-                                    <div class="circle-mask circle40 pull-left maT15">
-                                        <img src="img/default_avatar.png" alt="">
-                                        <!--<user-avatar data-image-src="/Uploads/UserAvatar/{{review.UserAvatar}}" alt=""></user-avatar>-->
-                                    </div>
-                                    <div class="other-review-details pull-right">
-                                        <a href="#" class="text-light-blue fz-s" ng-bind="review.UserNickName">評：MOVIE's TITLE</a>
-                                        <p class="text-white80p fz-s line-clamp clamp-2" ng-bind="(review.Review | characters:89 :true)">
-                                            我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶我們的過去與未來的經歷，只為了能在這一刻與你相遇，就是『今天』的現在
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="other-review-item padTB1x group-wrap">
-                                <a href="#">
-                                    <div class="circle-mask circle40 pull-left maT15">
-                                        <img src="img/default_avatar.png" alt="">
-                                        <!--<user-avatar data-image-src="/Uploads/UserAvatar/{{review.UserAvatar}}" alt=""></user-avatar>-->
-                                    </div>
-                                    <div class="other-review-details pull-right">
-                                        <a href="#" class="text-light-blue fz-s" ng-bind="review.UserNickName">評：MOVIE's TITLE</a>
-                                        <p class="text-white80p fz-s line-clamp clamp-2" ng-bind="(review.Review | characters:89 :true)">
-                                            我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶我們的過去與未來的經歷，只為了能在這一刻與你相遇，就是『今天』的現在
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
+                            <a href="#" class="other-review-item padTB1x group-wrap">
+                                <div class="circle-mask circle40 pull-left maT15">
+                                    <img src="img/default_avatar.png" alt="">
+                                    <!--<user-avatar data-image-src="/Uploads/UserAvatar/{{review.UserAvatar}}" alt=""></user-avatar>-->
+                                </div>
+                                <div class="other-review-details pull-right">
+                                    <span class="text-light-blue fz-s" ng-bind="review.UserNickName">評：MOVIE's TITLE</span>
+                                    <p class="text-white80p fz-s line-clamp clamp-2" ng-bind="(review.Review | characters:89 :true)">
+                                        我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶我們的過去與未來的經歷，只為了能在這一刻與你相遇，就是『今天』的現在
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="#" class="other-review-item padTB1x group-wrap">
+                                <div class="circle-mask circle40 pull-left maT15">
+                                    <img src="img/default_avatar.png" alt="">
+                                    <!--<user-avatar data-image-src="/Uploads/UserAvatar/{{review.UserAvatar}}" alt=""></user-avatar>-->
+                                </div>
+                                <div class="other-review-details pull-right">
+                                    <span class="text-light-blue fz-s" ng-bind="review.UserNickName">評：MOVIE's TITLE</span>
+                                    <p class="text-white80p fz-s line-clamp clamp-2" ng-bind="(review.Review | characters:89 :true)">
+                                        我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶我們的過去與未來的經歷，只為了能在這一刻與你相遇，就是『今天』的現在
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="#" class="other-review-item padTB1x group-wrap">
+                                <div class="circle-mask circle40 pull-left maT15">
+                                    <img src="img/default_avatar.png" alt="">
+                                    <!--<user-avatar data-image-src="/Uploads/UserAvatar/{{review.UserAvatar}}" alt=""></user-avatar>-->
+                                </div>
+                                <div class="other-review-details pull-right">
+                                    <span class="text-light-blue fz-s" ng-bind="review.UserNickName">評：MOVIE's TITLE</span>
+                                    <p class="text-white80p fz-s line-clamp clamp-2" ng-bind="(review.Review | characters:89 :true)">
+                                        我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶我們的過去與未來的經歷，只為了能在這一刻與你相遇，就是『今天』的現在
+                                    </p>
+                                </div>
+                            </a>
+
                             <a href="#" class="viewMore text-light-blue fz-s maT15">全部 <span>24</span> 則影評</a>
                         </article>
                     </section>
@@ -492,62 +508,50 @@
                     <section class="author-other-review maT13p">
                         <div class="section-title fz-subtitle text-blue">回應</div>
                         <article class="padLR10 maT2x">
-                            <div class="reply">
-                                <fieldset>
-                                    <h3><a href="###" ng-bind="'回應 (' + (vm.reviewMessages.length) + ')'"></a></h3>
-                                    <div class="replyTo">
-                                        <label for="replysend"><img ng-src="/Uploads/UserAvatar/{{vm.currentUser.Avatar}}" alt="" user-avatar /></label>
-                                        <textarea name="replyto" id="replysend" cols="30" rows="10" ng-model="vm.replyMessage" show-focus="response"></textarea>
-                                        <p class="taRight"><button class="btn-m-default" type="button" ng-click="vm.replyToVideoReview('')">發表</button></p>
-                                    </div>
-                                </fieldset>
-                                <ul class="reply-list borderTBD" ng-show="vm.reviewMessages.length > 0">
-                                    <li class="borderBBD" ng-hide="!vm.displayAllMessage && $index >= 2" ng-repeat="reviewMessage in vm.reviewMessages">
-                                        <div class="replyitem">
-                                            <div class="replyitemImg">
-                                                <user-avatar data-image-src="{{reviewMessage.UserAvatar}}" alt=""></user-avatar>
-                                                <button class="btn-s-default" ng-click="vm.displayReplyWindow(reviewMessage.Id,reviewMessage.NickName)">回覆</button>
-                                                <button ng-class="{'btn-s-like':reviewMessage.IsLiked, 'btn-s-cencle': !reviewMessage.IsLiked}" ng-click="vm.likeThisReply(reviewMessage)"><i class="icon-love"></i> ({{reviewMessage.LikedAmount}})</button>
+                            <div>
+                                <ul class="comment-list" ng-show="vm.reviewMessages.length > 0">
+                                     <!--ngRepeat: reviewMessage in vm.reviewMessages -->
+                                    <li class="ng-scope" ng-hide="!vm.displayAllMessage &amp;&amp; $index >= 2">
+                                        <div class="comment-item">
+                                            <div class="circle-mask circle40 pull-left">
+                                                <img src="img/default_avatar.png" alt="">
+                                            <!--<img lazy-load="" alt="" data-original="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill" onerror="this.src='/Images/nobody.jpg?width=30&amp;height=30&amp;stretch=fill'" data-image-src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg" class="ng-isolate-scope" src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill">-->
                                             </div>
-                                            <div class="replyitemCon">
-                                                <h4>
-                                                    <span class="green" ng-bind="reviewMessage.NickName"></span>
-                                                    <span ng-bind="(reviewMessage.CreateOn| jsonUtcDateToLocal)"></span> 
-                                                    
-                                                </h4>
-                                                <p style="white-space: pre-line" ng-bind="reviewMessage.Message"></p>
+                                            <div class="comment-info pull-left maL1x">
+                                                <a href="#" class="fz-normal" ng-bind="reviewMessage.NickName">COMMENTer's NAME</a><br>
+                                                <span class="fz-s text-gray ng-binding" ng-bind="(reviewMessage.CreateOn| jsonUtcDateToLocal)">2013/04/06 05:17</span>
+                                                <p class="fz-s text-white60p taR likeComment" ng-class="{'text-pink':reviewMessage.IsLiked, 'text-white60p': !reviewMessage.IsLiked}" ng-click="vm.likeThisReply(reviewMessage)"><i class="fa fa-heart"></i> 0</p>
                                             </div>
+                                            <p class="comment-content maL50 maTHalf1x ng-binding" ng-bind="reviewMessage.Message">酷喔!!!!!!!!!!!!!</p>
                                         </div>
-                                        <div class="re-replyCon" ng-repeat="replyReview in reviewMessage.ReplyReviewMessage">
-                                            <div class="replyitemImg">
-                                                <user-avatar data-image-src="{{replyReview.UserAvatar}}" alt=""></user-avatar>
-                                                <button ng-class="{'btn-s-like':replyReview.IsLiked, 'btn-s-cencle': !replyReview.IsLiked}" ng-click="vm.likeThisReply(replyReview)"><i class="icon-love"></i> ({{replyReview.LikedAmount}})</button>
+                                        <!-- ngRepeat: replyReview in reviewMessage.ReplyReviewMessage -->
+                                        <div class="reply-item maL50 ng-scope">
+                                            <div class="circle-mask circle1x pull-left">
+                                                <img src="img/default_avatar.png" alt="">
+                                            <!--<img lazy-load="" alt="" data-original="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill" onerror="this.src='/Images/nobody.jpg?width=30&amp;height=30&amp;stretch=fill'" data-image-src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg" class="ng-isolate-scope" src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill">-->
                                             </div>
-                                            <div class="replyitemCon">
-                                                <h4>
-                                                    <span class="green" ng-bind="replyReview.NickName"></span>
-                                                    <span ng-bind="(replyReview.CreateOn| jsonUtcDateToLocal)"></span>
-                                                    
-                                                </h4>
-                                                <p style="white-space: pre-line" ng-bind="replyReview.Message"></p>
+                                            <div class="reply-info pull-left maL1x">
+                                                <a href="#" class="fz-s" ng-bind="replyReview.NickName">REPLYer's NAME</a><br>
+                                                <span class="fz-xs text-gray ng-binding" ng-bind="(replyReview.CreateOn| jsonUtcDateToLocal)">2013/04/06 05:17</span>
+                                                <p class="fz-s text-white60p taR likeReply" ng-class="{'text-pink':reviewMessage.IsLiked, 'text-white60p': !reviewMessage.IsLiked}" ng-click="vm.likeThisReply(reviewMessage)"><i class="fa fa-heart"></i> 0</p>
                                             </div>
+                                            <p class="comment-content maL40 maTHalf1x ng-binding" ng-bind="replyReview.Message">有夠霹靂酷</p>
                                         </div>
+                                        <!-- end ngRepeat: replyReview in reviewMessage.ReplyReviewMessage -->
                                     </li>
+                                    <!-- end ngRepeat: reviewMessage in vm.reviewMessages -->
                                 </ul>
-                                <div ng-hide="vm.displayAllMessage" class="replymore" ng-click="vm.displayAllMessage=!vm.displayAllMessage">看全部回覆&nbsp;<i class="fa fa-angle-double-down"></i></div>
-                                <div ng-hide="!vm.displayAllMessage" class="replymore" ng-click="vm.displayAllMessage=!vm.displayAllMessage">隱藏回覆&nbsp;<i class="fa fa-angle-double-up"></i></div>
+                                <div class="seeMore maT3x" ng-click="vm.seeMore()">
+                                    <span ng-hide="vm.displayAllMessage" ng-click="vm.displayAllMessage=!vm.displayAllMessage">顯示全部 <span>5</span> 則回應 <i class="fa fa-angle-down"></i></span>
+                                    <span ng-hide="!vm.displayAllMessage" ng-click="vm.displayAllMessage=!vm.displayAllMessage">隱藏回應 <i class="fa fa-angle-up"></i></span>
+                                </div>
                             </div>
                         </article>
                     </section>
-
-                
-
-                        
-
-                    
+ 
 
                     <!-- 回覆 別人的 comment -->
-                    <div id="writeCom" class="popTo ng-hide" ng-show="vm.showReplyWindow">
+                    <div id="writeCom" class="popTo ng-hide" ng-show="vm.showReplyWindow" style="display: none;">
                         <div class="popwrap">
                             <div class="popclose" ng-click="vm.showReplyWindow=false"><i class="icon-close"></i></div>
                             <fieldset class="fieldset">
@@ -566,7 +570,7 @@
                     </div>
 
                     <!-- 修改自己的 review -->
-                    <div id="writeCom" class="popTo ng-hide" ng-show="vm.showReviewWindow">
+                    <div id="writeCom" class="popTo ng-hide" ng-show="vm.showReviewWindow" style="display: none;">
                         <div class="popwrap">
                             <div class="popclose" ng-click="vm.showReviewWindow=false"><i class="icon-close"></i></div>
                             <fieldset class="fieldset">
