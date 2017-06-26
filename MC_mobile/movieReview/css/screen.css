@@ -1731,7 +1731,7 @@ body:after {
   color: #3bb1cc;
 }
 
-.reply {
+/*.reply {
   background: #333;
   -moz-box-shadow: 0px 2px 3px #000;
   -webkit-box-shadow: 0px 2px 3px #000;
@@ -1754,9 +1754,9 @@ body:after {
 }
 .reply.panelReset li:last-child {
   border: none;
-}
+}*/
 
-.replyTo {
+/*.replyTo {
   overflow: hidden;
   *zoom: 1;
   margin-bottom: 10px;
@@ -1784,7 +1784,7 @@ body:after {
   border: none;
   color: #FFF;
   margin-bottom: 10px;
-}
+}*/
 
 /*.reply-list {
   padding-top: 10px;

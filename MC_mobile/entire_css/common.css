@@ -767,39 +767,39 @@ table {
   letter-spacing: -1px;
 }
 
-.writeReview input[type="date"]::-webkit-clear-button {
+.write-edit-review input[type="date"]::-webkit-clear-button {
 	display: none;
 }
-.writeReview input[type="date"]::-webkit-inner-spin-button {
+.write-edit-review input[type="date"]::-webkit-inner-spin-button {
 	display: none;
 }
-/*.writeReview input[type="date"]::-webkit-calendar-picker-indicator {
+/*.write-edit-review input[type="date"]::-webkit-calendar-picker-indicator {
 	color: #1A2F35;
 }*/
 
-.writeReview input[type="date"] {
+.write-edit-review input[type="date"] {
 	padding: 3px 40px 3px 20px;
 }
-.writeReview input, .writeReview textarea {
+.write-edit-review input, .write-edit-review textarea {
 	background-color: rgba(173,216,228,.4);
 	color: #0c0c0c;
 	border-radius: 5px;
 	border: none;
 	transition: background-color .5s;
 }
-.writeReview textarea::-webkit-input-placeholder {
+.write-edit-review textarea::-webkit-input-placeholder {
 	color: rgba(0,0,0,.5);
     font-weight: 400;
 }
-.writeReview textarea:-moz-placeholder {
+.write-edit-review textarea:-moz-placeholder {
 	color: rgba(0,0,0,.5);
     font-weight: 400;
 }
-.writeReview textarea::-moz-placeholder {
+.write-edit-review textarea::-moz-placeholder {
 	color: rgba(0,0,0,.5);
     font-weight: 400;
 }
-.writeReview textarea:-ms-input-placeholder {
+.write-edit-review textarea:-ms-input-placeholder {
 	color: rgba(0,0,0,.5);
     font-weight: 400;
 }
@@ -817,37 +817,6 @@ textarea.reviewContent:focus {
 	color: #0c0c0c;
 }
 
-/*.popTo .formInput p img {
-  top: 3px;
-  margin-right: 5px;
-  position: relative;
-}
-.popTo input, .popTo textarea {
-  background: rgba(173,216,228,.6);
-  color: #ccc;
-  border-radius: 5px;
-  border: none;
-}
-.popTo .formInput > button {
-  margin-top: 10px;
-  float: left;
-}*/
-/*.popTo .popMenu {
-  width: 90%;
-}
-.popTo .popMenu li {
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-bottom: #333 1px solid;
-}
-.popTo .popMenu li i {
-  padding-right: 20px;
-}
-.popTo .popMenu li:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
-  border: none;
-}*/
 .popTo .shareTo {
   text-align: center;
 }
@@ -859,12 +828,7 @@ textarea.reviewContent:focus {
   *display: inline;
   margin: 0px 5px;
 }
-/*.popTo fieldset textarea {
-  width: 70%;
-}*/
-/*.popTo fieldset button {
-  float: right;
-}*/
+
 .popTo .edit-title {
   color: #fff !important;
 }
@@ -877,9 +841,6 @@ textarea.reviewContent:focus {
 .popTo .starNum span {
   font-size: 1em;
 }
-/*.popMenu {
-    font-size: 1.2em;
-}*/
 
 
 
