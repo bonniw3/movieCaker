@@ -1,0 +1,454 @@
+
+html, body { /* this allows the children to inherit this style */
+    /*font-size: 14px;*/
+}
+
+.movie-title, button {
+    font-size: 16px;
+}
+
+[class*=" icon-"], i {
+    font-size: 1em;
+}
+
+.panel-pro .pro-list-item {
+    height: 40px;
+}
+
+.review-author {
+    height: 20px;
+    width: 140px;
+}
+
+/*.infoText .infoContent {
+    font-size: inherit;
+    height: 50px;
+}*/
+
+/*#mainInfo .movieInfo h2 {
+    font-size: 1.2em;
+}*/
+
+/*.comment > .select-list > li {
+    font-size: 1em;
+}*/
+
+.movieInfo-Like li, .movieInfo-Like {
+    font-size: 14px;
+}
+
+    .movieInfo-Like li:first-child {
+        font-size: 1.2em;
+        padding-top: 5px;
+    }
+
+/*.creatDate {
+    font-size: 1em;
+    color: currentColor;
+}*/
+
+/*.comment-list > .comment-item .comment-content {
+    font-size: 1em;
+}*/
+
+/*.top {
+    width: 40px;
+    height: 40px;
+    bottom: 60px;
+    background-size: cover;
+}*/
+
+/*.popMenu {
+    font-size: 1.2em;
+}*/
+
+/*.menu ul#header-items > li .cell-container {
+    display: inline;
+}*/
+
+/*.underline-tab.five-tab > .tab-item {
+    width: 19%;
+}*/
+
+/*.popTo .starAll {
+    font-size: 1em;
+}
+
+.popTo .starW {
+    font-size: 2.5em;
+    line-height: 1.5em;
+}*/
+
+/*.menu ul#header-items > li#logo {
+    width: 70%;
+    line-height: 1.5em;
+    overflow: hidden;
+}*/
+
+.topic {
+    font-size: 1em;
+}
+
+.movie-pro .pro-movie {
+    width: 50%;
+}
+
+.master-name {
+    height: 20px;
+}
+
+.mainPeople, .mainPeople-half {
+    font-size: 1em;
+}
+
+.btns {
+    font-size: 1em;
+}
+
+/*.select-list > li, .panel p {
+    font-size: 1em;
+}*/
+/*=================
+
+#fill-screen 是ui-compalete的滿版設定
+
+=================*/
+/* 頁面 blur 樣式 */
+.blur {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+
+.loading-pop {
+    position: absolute;
+    top: 40vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}
+
+.loading-ajax {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    padding: 5px;
+}
+/*icon status color summery*/
+.movieInfo-list .icon-heart.active,
+.movieInfo-list .fa-heart.active,
+.panel-info-list .icon-love.active,
+.icon-heart.active,
+.icon-love.active,
+.movieInfo-list-row i.icon-heart.active,
+.panel-movie-row li .movie-info .icon-heart.active {
+    color: #ff3e75;
+}
+
+.movieInfo-list .icon-share.active,
+.movieInfo-list .fa-share-alt.active,
+.movieInfo-list .icon-enter.active,
+.movieInfo-list .fa-check-square-o.active,
+.panel-info-list .icon-share.active,
+.icon-share.active,
+.movieInfo-list-row i.icon-share.active, .panel-movie-row li .movie-info .icon-eye.active,
+.icon-share.active {
+    color: #09b2ba;
+}
+
+.panel-movie-row li .movie-info .icon-fire.active {
+    color: #f15a24;
+}
+
+.MCuser [class*="icon-star"] {
+    color: #AFDD53 !important;
+}
+
+.movieInfo-btn li.active[class*="-play"] {
+    color: #777;
+}
+
+.icon-share.active {
+    color: #3bb1cc;
+}
+/* panel-movie */
+/*.panel-movie .panel-movie-row, .popTo {
+    display: block;
+}*/
+
+.panel-movie.scroll {
+    min-height: 600px;
+}
+
+.panel-movie .fa {
+    font-size: 1.2em;
+}
+
+.panel-movie .panel-movie-list > li .movie-title img {
+    height: 12px;
+    width: auto;
+    vertical-align: text-top;
+    padding-left: 5px;
+}
+/*  autocomplete */
+ul.ui-autocomplete {
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100vw !important;
+}
+
+.autocomplete-fixed {
+    position: fixed !important;
+    top: 60px !important;
+}
+
+#review-autocomplete > ul {
+    max-height: 300px;
+}
+
+#search-autocomplete > ul {
+    max-height: 95vh !important;
+}
+
+.ui-menu .ui-menu-item {
+    line-height: 2em;
+    height: 20px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.ui-state-hover,
+.ui-state-active,
+.ui-state-focus,
+.ui-state-visited {
+    background: rgba(46, 131, 159, 0.68) !important;
+    border: none;
+}
+/*.ui-state-focus{
+    background:black!important;
+    color:#09b2ba!important;
+}*/
+
+/*go Top or Down*/
+.down {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-image: url("/Areas/Mobile/Images/down-01.png");
+}
+/*club detail*/
+.group-member {
+    position: fixed;
+    bottom: 0px;
+    background-color: #333;
+    height: 100px;
+    width: 100%;
+    left: 0px;
+    z-index: 2;
+}
+
+.select-list {
+    margin-top: 0px;
+}
+/*search bar setting*/
+/*.searchBar {
+    background-color: black;
+    border-bottom: 1px solid #2e839e;
+    height: 29px;
+    padding: 5px 0;
+    text-align: center;
+    position: fixed;
+    top: 30px;
+    left: 0;
+    z-index: 2;
+    width: 100vw;
+    display: block;
+    margin: 0;
+}
+
+    .searchBar label {
+        text-align: right !important;
+        line-height: 26px !important;
+    }
+
+    .searchBar .input {
+        float: left !important;
+        text-align: left !important;
+        margin-left: 15px !important;
+        width: 70% !important;
+    }
+
+        .searchBar .input input {
+            height: 25px !important;
+            background-color: #20292b !important;
+            border: 1px solid #0d4e59 !important;
+            border-radius: 3px !important;
+        }*/
+
+/* review detail special mavieInfo */
+.movieInfo-list-row {
+    margin-top: 10px;
+}
+
+    .movieInfo-list-row li {
+        margin-right: 0;
+    }
+
+    .movieInfo-list-row [class^="icon-"], .movieInfo-list-row [class*=" icon-"] {
+        font-size: 1em;
+    }
+/*search index*/
+
+/*.tab-item a {
+    color: #9b9b9b;
+}*/
+/*shared menu*/
+.edit-title small {
+    font-size: 80%;
+}
+
+.scroll-wrapper {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+    height: 100%;
+    /* important:  dimensions or positioning here! */
+}
+
+    .scroll-wrapper iframe {
+        height: 100%;
+        width: 100%;
+    }
+
+#main-menu .menu-button.fa {
+    font-size: 1.5em;
+}
+/*shared navigation*/
+.nav li {
+    line-height: 1.5em;
+}
+
+.nav {
+    height: 95vh;
+    overflow: auto;
+    position: fixed;
+}
+
+.runIn {
+    width: 65vw;
+}
+
+#menu ul#header-items > li#main-menu {
+    width: 7%;
+}
+
+.self-pic {
+    width: 45px;
+    float: left;
+}
+
+.main-menu {
+    font-size: 1.4em;
+}
+
+.nav > .main-menu > .main-menu-option.for-login-user > a > .text {
+    white-space: nowrap;
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 5px;
+}
+/*topic create*/
+.loading-video-searching {
+    position: relative;
+    left: -50px;
+    display: none;
+    border-radius: 4px;
+    height: 35px;
+    top: -20px;
+}
+
+input[type="checkbox"] {
+    width: auto !important;
+}
+
+.clear {
+    clear: both;
+    height: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.edit-movie-select .eMS-Info h2 {
+    height: 15px;
+}
+
+.edit-movie-select .eMS-Info p {
+    height: 10px;
+}
+
+.edit input, .edit textarea {
+    color: white;
+}
+/*topic index*/
+.topic-name {
+    display: inline-block;
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/*topic message*/
+.reply-list .re-replyCon .replyitemImg {
+    width: 50px;
+}
+
+    .reply-list .re-replyCon .replyitemImg > img {
+        padding-left: 0px;
+    }
+/*other setting*/
+.infinite-scroll {
+    height: 999999px;
+}
+
+.maB100 {
+    margin-bottom: 100px;
+}
+
+.master-name {
+    display: inline-block;
+    height: 15px;
+    text-overflow: ellipsis;
+    width: 85px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.topic-name {
+    display: inline-block;
+    text-overflow: ellipsis;
+    width: 145px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.panel-info-list .isF {
+    background-image: url("/Areas/Mobile/Images/isF.png");
+}
+
+.panel-info-list .addF {
+    background-image: url("/Areas/Mobile/Images/addF.png");
+}
+
+.panel-info-list .addF, .panel-info-list .isF {
+    width: 14px;
+    height: 14px;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 100% 100%;
+}
