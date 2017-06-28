@@ -654,6 +654,28 @@ table {
 }
 
 
+/* -------------- large avatar CSS--------------- */
+.avatar-large {
+	background-color: rgba(255,255,255,.2);
+	border-radius: 50%;
+	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+}
+
+.avatar-pos-right {
+	position: absolute;
+	top: -3%;
+	right: 7%;
+}
+
+.avatar-pos-center {
+	position: relative;
+	margin: auto;
+	left: 0;
+	right: 0;
+}
+
 
 /* ----------------- MORE ------------------ */
 .viewMore {
