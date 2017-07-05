@@ -3,6 +3,25 @@
     background-color: rgba(238,238,238,.3);
     height: 100vh;
 }
+.poster-group {
+    text-align: center;
+}
+
+.poster-group li {
+    display: inline-block;
+    margin-left: -137px;
+    width: 160px;
+    height: 225px;
+    overflow: hidden; 
+    font-size: 16px;
+    box-shadow: -4px 0 5px 0px rgba(12, 12, 12, .5);
+}
+.poster-group li img {
+    width: 100%;
+}
+.poster-group li:first-child {
+    margin-left: 0;
+}
 
 /*.content-wrap {
     padding-top: 5vh;

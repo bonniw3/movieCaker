@@ -676,6 +676,32 @@ table {
 	right: 0;
 }
 
+.user-name {
+	display: block;
+	text-align: center;
+	font-size: .95em;
+	color: #B2EEFF;
+}
+
+
+/* ---------------------- 內文 CSS content CSS ---------------- */
+.movieAbout .moviePlot, .projectAbout .projectPlot {
+    text-align: justify;
+    line-height: 1.6em;
+    font-size: .95em;
+    overflow: hidden;
+    margin-bottom: 10px;
+    height: 70px;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    color: rgba(255,255,255,.8);
+}
+.movieAbout .moviePlot.active, .projectAbout .projectPlot.active {
+    height: auto;
+}
+
 
 /* ----------------- MORE ------------------ */
 .viewMore {
@@ -909,6 +935,10 @@ textarea.reviewContent:focus {
 .maT50 {
     margin-top: 50px;
 }
+.maT-50 {
+    margin-top: -50px;
+}
+
 .maT13p {
     margin-top: 13%;
 }
@@ -972,6 +1002,9 @@ textarea.reviewContent:focus {
 }
 .padTBHalfX {
     padding: 5px 0;
+}
+.padT1x {
+    padding-top: 10px;
 }
 .padTB1x {
     padding: 10px 0;
@@ -1113,6 +1146,9 @@ textarea.reviewContent:focus {
 .taR {
 	text-align: right;
 }
+.taC {
+	text-align: center;
+}
 .taL {
 	text-align: left;
 }
@@ -1121,6 +1157,9 @@ textarea.reviewContent:focus {
 }
 .width50p {
 	width: 50%;
+}
+.content-preline {
+	white-space: pre-line;
 }
 
 .top10vh {

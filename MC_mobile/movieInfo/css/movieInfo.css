@@ -14,7 +14,7 @@
 }
 
 /* ---------------------- ABOUT MOVIE ---------------- */
-.movieAbout .moviePlot {
+/*.movieAbout .moviePlot {
     text-align: justify;
     line-height: 1.6em;
     font-size: .95em;
@@ -29,7 +29,7 @@
 }
 .movieAbout .moviePlot.active {
     height: auto;
-}
+}*/
 .movieAbout .movieTag {
     color: rgba(238,238,238,.5);
     word-break: break-all;
