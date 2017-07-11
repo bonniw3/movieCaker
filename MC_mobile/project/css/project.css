@@ -1,6 +1,6 @@
 
 .content-wrap {
-    padding: 20% 5% 60% 5%;
+    padding: 20% 5% 70% 5%;
 }
 
 .poster-group {
@@ -51,7 +51,7 @@
 
 /* -------------- movie-comment-text -------------- */
 .movie-comment-text {
-    padding: 10px;
+    padding: 8px 10px;
     box-sizing: border-box;
     width: 100%;
     border-top: 1px solid rgba(155,155,155,.2);

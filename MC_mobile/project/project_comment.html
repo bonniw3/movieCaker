@@ -101,10 +101,10 @@
                 </div>
 
                 <!-- MAIN CONTENT -->
-                <div class="content-wrap">
+                <div class="content-wrap short-bottom">
                     <section class="movieInfo">
                         <article class="padLR10 maT2x">
-                            <ul class="poster-group padT1x">
+                            <ul class="poster-group project-comment padT1x">
                                 <li><img src="img/movie1.jpg" alt=""></li>
                                 <li><img src="img/movie2.jpg" alt=""></li>
                                 <li><img src="img/movie3.jpg" alt=""></li>
@@ -128,105 +128,17 @@
                             <a class="user-name maTHalf1x" href="#">歡影 </a>
 
                             <section class="maT2x reviewContent">
-                                <h2 class="fz-subtitle text-white taC">在電影中看見的愛情心法13條</h2>
-                                <!-- ul li 裡 addClass active 變色 -->
-                                <ul class="reaction-stats taC maTHalf1x">
-                                    <li class="review-heart" ng-show="vm.isAuthenticated" ng-class="{'active':vm.topic.IsLiked}">
-                                        <i class="fa fa-heart" aria-hidden="true"></i> <span ng-bind="vm.topic.LikeNum">4</span>
-                                    </li>
-                                    <li class="review-comment">
-                                        <i class="fa fa-comment" aria-hidden="true"></i> <span ng-bind="vm.topic.CommentNum">5</span>
-                                    </li>
-                                    <li class="review-share" ng-class="{'active':vm.topic.IsShared}">
-                                        <i class="fa fa-share-alt" aria-hidden="true"></i> <span ng-bind="vm.topic.ShareNum">2</span>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-users" aria-hidden="true"></i> <span ng-bind="vm.topic.ViewNum">10</span>
-                                    </li>
-                                </ul>
+                                <h2 class="fz-subtitle text-white taC">
+                                    <a href="#" class="text-light-blue">“在電影中看見的愛情心法13條”</a>
+                                    <br />的回應
+                                </h2>
                             </section>
-
-                            <div class="btn-wrap maT3x group-wrap like-share-wrap">
-                                <!-- 編輯影評只有作者到自己的影評時才會出現，其他時候都是喜歡影評 -->
-                                <div class="btn-like-share pull-left bkgd-blue fz-15 btn-selfEdit" style="display: none;" ng-click="vm.reviewshowReviewWindow=true">
-                                    <i class="fa fa-pencil" aria-hidden="true"></i> 編輯專題文字
-                                </div>
-                                <!-- btn-like addClass active 會換色 -->
-                                <div class="btn-like-share pull-left bkgd-white fz-15 btn-like" ng-click="vm.activing('Like')">
-                                    <i class="fa fa-heart" ng-class="{'active':vm.topic.IsLiked}"></i> 喜歡專題
-                                </div>
-                                <div id="btn-share-review" class="btn-like-share pull-right bkgd-white fz-15 btn-sharing" ng-click="vm.shareVideoReview('1485')">
-                                    <i class="fa fa-share-alt" ng-class="{'active':vm.topic.IsShared}"></i> 分享專題
-                                </div>
-                            </div>
-                            <div id="shareTo" class="share-wrap short fixed" ng-show="main.showShareWindow" ng-class="{ blur: main.screenStatus() }" style="display: none;">
-                                <ul class="share-btn short group-wrap pad0">
-                                    <li>
-                                        <a href="#" class="btn-social-share circle40 btn-wechat" name="provider" value="WeChat" title="使用 微信 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'WX')">
-                                            <i class="fa fa-weixin" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="btn-social-share circle40 btn-fb" name="provider" value="Facebook" title="使用 Facebook 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'FB')">
-                                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="btn-social-share circle40 btn-weibo" name="provider" value="Weibo" title="使用 新浪微博 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'WB')">
-                                            <i class="fa fa-weibo" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="btn-social-share circle40 btn-qq" name="provider" value="QQ" title="使用 QQ 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'QQ')">
-                                            <i class="fa fa-qq" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li class="text-white60p fz-m" ng-click="main.showShareWindow=false"><i class="fa fa-times" aria-hidden="true"></i></li>
-                                </ul>
-                                <!-- 加上 class showAlert 會出現 -->
-                                <div class="weixin-alert align-bottom group-wrap top-alert short-alert showAlert">
-                                    <p class="text-blue fz-normal"><i class="fa fa-weixin" aria-hidden="true"></i> 微信分享小叮嚀</p>
-                                    <p class="maT4 text-white80p fz-s">目前暫時還沒有直接分享到微信朋友圈的功能，請點選您手機<span class="text-blue">右上角三個點</span>選項中的分享功能就可以分享到微信。</p>
-                                    <button class="btn-weixinAlert pull-right bkgd-pink maL1x maT1x">不用再提醒</button>
-                                    <button class="btn-weixinAlert pull-right bkgd-blue maT1x">下次再提醒</button>
-                                </div>
-                            </div>
-                        </article>
-                    </section>
-
-                    <section class="projectAbout nextSection maT13p">
-                        <div class="section-title fz-subtitle text-blue">專題內容</div>
-                        <article class="padLR10 maT2x rel-pos">
-                            <p class="pos-nextToTitle fz-xs text-white50p letter-space-1x" ng-show="review.ViewedOn!==null" ng-bind="(review.ViewedOn| mcJsLocalDateTime)"><span class="">修改於</span> 2017/03/21</p>
-                            <div class="projectPlot active" ng-class="{'active':vm.seeAllContent}">
-                                <div ng-hide="vm.seeAllContent" ng-bind="(vm.movie.Story | characters:50 :true)"><!--小時候我們都聽過兩個和尚到南海取經的故事，窮和尚只帶著一個碗、一根木杖就動身，經過一年的努力之後，窮和尚從南海取經回來，而富和尚却還在原地裹足不前。
-
-                                    在職場上，有些人愛做夢，但做事只有三、五分鐘的熱度，然而，也有些人就算遇到挫折，仍能不氣餒，堅持到底。長久下來，兩者之間的成就便有了明顯的差距。我認為，造就每個人成功與否，除了先天條件外，最大的差別就在於堅持力。
-
-                                    堅持是一種在對的時間、堅持做對的事，有時也意味取捨，甚至犧牲。堅持其實是一種生活態度：願意挑戰自己、戰勝自己，相對的，它會帶來成就感、滿足感，甚至讓個人的自尊提升，使我們更有自信！
-
-                                    這裡推薦15部關於堅持的電影，這些電影會告訴你一些改變人生的神奇力量，讓自己更有堅持的動力！相信抱持著永不放棄的信念、不斷的練習堅持，我們在生活及工作中都將更為圓滿，能朝自己的目 標勇往直前。-->
-                                </div>
-                                <div class="content-preline" ng-show="vm.seeAllContent" ng-bind="vm.movie.Story">小時候我們都聽過兩個和尚到南海取經的故事，窮和尚只帶著一個碗、一根木杖就動身，經過一年的努力之後，窮和尚從南海取經回來，而富和尚却還在原地裹足不前。
-
-                                    在職場上，有些人愛做夢，但做事只有三、五分鐘的熱度，然而，也有些人就算遇到挫折，仍能不氣餒，堅持到底。長久下來，兩者之間的成就便有了明顯的差距。我認為，造就每個人成功與否，除了先天條件外，最大的差別就在於堅持力。
-
-                                    堅持是一種在對的時間、堅持做對的事，有時也意味取捨，甚至犧牲。堅持其實是一種生活態度：願意挑戰自己、戰勝自己，相對的，它會帶來成就感、滿足感，甚至讓個人的自尊提升，使我們更有自信！
-
-                                    這裡推薦15部關於堅持的電影，這些電影會告訴你一些改變人生的神奇力量，讓自己更有堅持的動力！相信抱持著永不放棄的信念、不斷的練習堅持，我們在生活及工作中都將更為圓滿，能朝自己的目 標勇往直前。
-                                </div>
-                            </div>
-                            <div class="seeMore maT2x" ng-click="vm.seeMore()">
-                                <span ng-show="!vm.seeAllContent">顯示全部 <i class="fa fa-angle-down"></i></span>
-                                <span ng-show="vm.seeAllContent">隱藏部分 <i class="fa fa-angle-up"></i></span>
-                            </div>
                         </article>
                     </section>
 
                     <section class="author-comments maT13p">
                         <div class="section-title fz-subtitle text-blue">專題回應（<span>5</span>則）</div>
                         <article class="padLR10 maT2x rel-pos">
-                            <!--<a href="#" class="pos-nextToTitle fz-15 text-light-blue"><i class="fa fa-angle-right padRHalfX fz-subtitle" aria-hidden="true"></i> 更多回應</a>-->
                             <ul class="comment-list" ng-show="vm.reviewMessages.length > 0">
                                     <!--ngRepeat: reviewMessage in vm.reviewMessages -->
                                 <li class="ng-scope" ng-hide="!vm.displayAllMessage &amp;&amp; $index >= 2">
@@ -259,71 +171,7 @@
                                 </li>
                                 <!-- end ngRepeat: reviewMessage in vm.reviewMessages -->
                             </ul>
-                            <a href="project_comment.html" class="viewMore text-light-blue fz-s maT15">查看更多回應</a>
-                        </article>
-                    </section>
-
-                    <section class="author-comments maT13p" ng-show="vm.user!=null">
-                        <div class="section-title fz-subtitle text-blue">我的專題刷片度</div>
-                        <article class="padLR10 maT2x rel-pos">
-                            <div>
-                                <div class="group-wrap">
-                                    <p class="pull-left text-gray fz-15" ng-bind="'我已經看過 ' + (vm.user.ViewedNum) + ' 部'">我已經看過 <span class="text-blue">2</span> 部</p>
-                                    <p class="pull-right text-blue fz-m" ng-bind="(vm.user.ViewedPercent) + '%'">7%</p>
-                                </div>
-                                <div class="completeness maTHalf1x">
-                                    <div class="completed" ng-show="vm.user.ViewedNum&&vm.user.VideoNum" ng-style="{'width':vm.user.ViewedPercent+'%'}"></div>
-                                </div>
-                                <p ng-show="vm.currentUser.isAuthenticated" class="text-gray fz-s taR maT1x">專題電影：&nbsp; 我喜歡 <span class="text-pink" ng-bind="vm.iLikeNum">5</span> 部 &nbsp; 我想看 <span class="text-light-orange" ng-bind="vm.iWantNum">17</span> 部</p>
-                            </div>
-                        </article>
-                    </section>
-
-                    <section class="author-comments maT13p">
-                        <div class="section-title fz-subtitle text-blue">專題電影列表（<span>18</span>部）</div>
-                        <article class="maT2x">
-                            <ul class="hor-nav project-movie-nav group-wrap">
-                                <li class="active" value="default">作者自訂</li>
-                                <li value="hot">最熱門</li>
-                                <li value="releasedate">最新</li>
-                                <li value="avg_score">最好評</li>
-                                <div class="display-dropdown">
-                                    <div id="display-btn">顯示 <i class="fa fa-angle-down padLHalfX" aria-hidden="true"></i></div>
-                                    <ul class="ver-nav display-ver-dropdown">
-                                        <li class="active">全部</li>
-                                        <li ng-show="vm.currentUser.isAuthenticated" ng-click="vm.isViewed=!vm.isViewed" ng-class="{'active':vm.isViewed}">我沒看過</li>
-                                        <li ng-click="vm.isOnlyPlayable=!vm.isOnlyPlayable" ng-class="{'active':vm.isOnlyPlayable}">可在線看</li>
-                                    </ul>
-                                </div>
-                            </ul>
-                            <section class="maT2x">
-                                <!--<movie-list data-array="vm.topicMovies" data-type="topic" data-viewed="vm.isViewed" data-playable="vm.isOnlyPlayable"></movie-list>-->
-                                <ul class="movie-list group-wrap">
-                                    <li>
-                                        <span class="movie-order width-xss" style="display:none;">1</span>
-                                        <a href="#">
-                                            <img src="img/movie1.jpg" alt="">
-                                            <div class="btn-playOnline-indication"><i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看</div>
-                                            <div class="movie-info-wrap">
-                                                <div class="locate-bottom padHalfX">
-                                                    <p class="movie-rating text-blue fz-s">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <span class="" ng-bind="item.Ratings_Douban">7.4</span> <!-- 評分是 豆瓣＋IMDB的平均分數 -->
-                                                    </p>
-                                                    <p class="movie-name text-white padT4" ng-bind="item.VideoName">知無涯者</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <ul class="check-in-btns group-wrap">
-                                            <li><i class="fa fa-eye" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-heart" aria-hidden="true"></i></li>
-                                            <li><i class="icon-fire"></i></li>
-                                            <li class="viewComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
-                                            <li class="movie-comment-text" ng-bind="item.VideoDesc">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </section>
+                            <!--<a href="#" class="viewMore text-light-blue fz-s maT15">查看更多回應</a>-->
                         </article>
                     </section>
                 </div>
@@ -343,7 +191,7 @@
                         <fieldset class="fieldset">
                             <div>
                                 <span class="fz-s text-white60p fontW-normal">專題標題</span><br />
-                                <input type="text" class="projectTitle-edit maTHalf1x fontW-bold" value="">
+                                <input type="text" class="projectTitle-edit maTHalf1x fontW-bold" value="TotalFilm評最佳20部靈魂互換身體的電影">
                             </div>
                             <div class="maT2x">
                                 <span class="fz-s text-white60p">專題內容</span><br />

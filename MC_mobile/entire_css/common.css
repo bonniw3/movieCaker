@@ -725,6 +725,7 @@ table {
 }
 
 .movie-info-wrap {
+	display: table;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -735,16 +736,13 @@ table {
     background-image: -o-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,.6));
     background-image: linear-gradient(rgba(12,12,12,0), rgba(12,12,12,.6));
 }
-
+.locate-bottom {
+	display: table-cell; 
+	vertical-align: bottom;
+}
 .movie-info-wrap p {
-	position: absolute;
-	bottom: 3px;
-	left: 8px;
+	line-height: 15px;
 }
-.movie-info-wrap p:first-child {
-	bottom: 23px;
-}
-
 .movie-name {
 	font-size: .8125em;
 	letter-spacing: .9px;
@@ -812,7 +810,7 @@ table {
 .project-movie-nav > li {
 	color: rgba(238,238,238,.7);
 	margin-left: 4.5%;
-	transition: color .5s ease-in-out;
+	transition: color .3s ease-in-out;
 }
 .project-movie-nav > li:first-child {
 	margin-left: 0;
@@ -820,7 +818,7 @@ table {
 .project-movie-nav > li.active {
 	color: #71cfee;
 	border-bottom: 3px solid #71cfee;
-	transition: color .5s ease-in-out;
+	transition: color .3s ease-in-out;
 }
 
 div.display-dropdown {
@@ -965,6 +963,13 @@ div.display-dropdown {
 }
 .reply-info {
 	line-height: 16px;
+}
+
+/* ----------- project-comment page CSS ------------- */
+.poster-group.project-comment li {
+	margin-left: -32%;
+	width: 40%;
+	height: 28.5vh;
 }
 
 
@@ -1194,6 +1199,9 @@ textarea.reviewContent:focus {
 .pad0 {
 	padding: 0;
 }
+.padHalfX {
+	padding: 5px;
+}
 .padT3 {
 	padding-top: 3px;
 }
@@ -1398,6 +1406,10 @@ textarea.reviewContent:focus {
 }
 .clamp-5 {
 	-webkit-line-clamp: 5;
+}
+
+.short-bottom {
+	padding-bottom: 30% !important;
 }
 
 
