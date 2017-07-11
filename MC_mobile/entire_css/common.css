@@ -139,11 +139,27 @@ table {
     position: fixed;
     z-index: 0;
 }
+
+.white-mask {
+    content: '';
+    width: 100%;
+    height: 75%;
+    position: fixed;
+    top: -5px;
+    left: 0;
+	z-index: 1;
+	background: -moz-linear-gradient(rgba(238,238,238,.25) 40%, rgba(12,12,12,0) 100%);  
+    background: -webkit-linear-gradient(rgba(238,238,238,.25) 40%, rgba(12,12,12,0) 100%); 
+    background: -o-linear-gradient(rgba(238,238,238,.25) 40%, rgba(12,12,12,0) 100%);
+    background: linear-gradient(rgba(238,238,238,.25) 40%, rgba(12,12,12,0) 100%);
+}
+
 .bkgd-img img {
     width: 100%;
     position: relative;
     top: -5px;
 }
+
 .bkgd-img:after {
     content: '';
     width: 100%;
@@ -151,6 +167,7 @@ table {
     position: absolute;
     top: -5px;
     left: 0;
+	z-index: 2;
     background-color: transparent;
     background: -moz-linear-gradient(rgba(12,12,12,0) 30%, rgba(12,12,12,1) 99%);  
     background: -webkit-linear-gradient(rgba(12,12,12,0) 30%, rgba(12,12,12,1) 99%); 
@@ -501,9 +518,30 @@ table {
 	border-radius: 5px;
 	color: #fff;
 }
+[class*="-playOnline-indication"] {
+	height: 30px;
+	/*width: 70px;*/
+	padding: 4px 6px;
+	text-align: center;
+	background-color: rgba(236,164,114,.9);
+	border-radius: 3px;
+	color: #fff;
+	position: absolute;
+	right: 6px;
+	top: 6px;
+	font-size: .85em;
+}
 [class*="-like"].active {
 	background-color: rgba(216,124,124,.5);
 	color: #E9A1A1;
+}
+[class*="-sharing"].active {
+	background-color: rgba(236,164,115,.5);
+	color: #FFBB8D;
+}
+[class*="-selfEdit"].active {
+	background-color: rgba(113,207,238,.5);
+	color: #eeeeee;
 }
 [class*="-like-share"] {
 	height: 40px;
@@ -554,7 +592,7 @@ table {
 }
 
 .seeMore {
-    color: #71cfee;
+    color: #B2EEFF;
     text-align: right;
     font-size: .95em;
 }
@@ -622,18 +660,22 @@ table {
   *display: inline;
   margin-left: 15px;
   font-size: .9em;
+  color: rgba(238,238,238,.7);
 }
-.reaction-stats li a {
+/*.reaction-stats li a {
     color: rgba(238,238,238,.7);
-}
+}*/
 .reaction-stats li:first-child {
     margin-left: 0;
 }
-.reaction-stats li a.active[class*="-share"] {
-  color: #71CFEE;
+.reaction-stats li.active[class*="-comment"]  {
+	color: #71CFEE;
 }
-.reaction-stats li a.active[class*="-heart"] {
-  color: #D87C7C;
+.reaction-stats li.active[class*="-heart"] {
+	color: #D87C7C;
+}
+.reaction-stats li.active[class*="-share"] {
+	color: #ECA473;
 }
 
 
@@ -653,6 +695,60 @@ table {
 	color: rgba(238,238,238,.7);
 }
 
+
+/* -------------- MOVIE-LIST CSS --------------- */
+.movie-list {
+	width: 100%;
+	position: relative;
+}
+.movie-list > li {
+	float: left;
+	width: 48%;
+	position: relative;
+}
+.movie-list > li a {
+	width: 100%;
+	height: 34.5vh;
+	overflow: hidden;
+	display: block;
+	position: relative;
+}
+
+.movie-list > li:nth-child(2n) {
+	float: right;
+}
+.movie-list > li:nth-child(n+3) {
+	margin-top: 15px;
+}
+.movie-list > li img {
+	width: 100%;
+}
+
+.movie-info-wrap {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100px;
+	width: 100%;
+	background-image: -moz-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,.6));  
+    background-image: -webkit-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,.6)); 
+    background-image: -o-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,.6));
+    background-image: linear-gradient(rgba(12,12,12,0), rgba(12,12,12,.6));
+}
+
+.movie-info-wrap p {
+	position: absolute;
+	bottom: 3px;
+	left: 8px;
+}
+.movie-info-wrap p:first-child {
+	bottom: 23px;
+}
+
+.movie-name {
+	font-size: .8125em;
+	letter-spacing: .9px;
+}
 
 /* -------------- large avatar CSS--------------- */
 .avatar-large {
@@ -702,6 +798,109 @@ table {
     height: auto;
 }
 
+/* ----------------- NAV css ------------------ */
+.hor-nav {
+	border-bottom: 1px solid rgba(200,200,200,.2);
+}
+.hor-nav > li {
+	float: left;
+	font-size: .95em;
+	padding-bottom: 5px;
+	text-align: center; 
+}
+
+.project-movie-nav > li {
+	color: rgba(238,238,238,.7);
+	margin-left: 4.5%;
+	transition: color .5s ease-in-out;
+}
+.project-movie-nav > li:first-child {
+	margin-left: 0;
+}
+.project-movie-nav > li.active {
+	color: #71cfee;
+	border-bottom: 3px solid #71cfee;
+	transition: color .5s ease-in-out;
+}
+
+div.display-dropdown {
+	float: right;
+	color: #B2EEFF;
+	font-size: .9em;
+	text-align: right; 
+	width: 20%;
+	margin-left: 0;
+	position: relative;
+}
+
+.ver-nav {
+	border-top: 2px solid #71cfee;
+	background-color: rgba(28,28,28,.9);
+	position: absolute;
+	top: 30px;
+	right: 0;
+	width: 70px;
+	display: none;
+	padding: 5px 0;
+	z-index: 10;
+}
+.ver-nav.show {
+	display: block;
+}
+.ver-nav > li {
+	padding: 5px 0 0 0;
+	text-align: center;
+	font-size: .88em;
+	transition: .3s ease;
+	color: rgba(238,238,238,.7);
+}
+.ver-nav > li:first-child {
+	padding-top: 0;
+}
+.ver-nav > li.active {
+	font-size: .98em;
+	color: #71cfee;
+	border: none;
+	transition: .3s ease;
+}
+
+
+/* ----------------- CHECK-IN Btns ------------------ */
+.check-in-btns {
+	position: relative;
+	border-top: 3px solid #71cfee;
+	background-color: rgba(12,12,12,.7);
+	padding: 6px 10px 5px 10px;
+}
+.check-in-btns > li:not(.movie-comment-text) {
+	float: left;
+	font-size: 1.25em;
+	margin-left: 11%;
+	vertical-align: top;
+	color: #9b9b9b;
+}
+.check-in-btns > li:nth-child(4) {
+	float: right;
+	font-size: 1em;
+	margin-top: -1px;
+}
+.check-in-btns > li:nth-child(4), .check-in-btns > li:first-child {
+	margin-left: 0;
+}
+
+.check-in-btns > li i.active[class*="-eye"] {
+	color: #71CFEE;
+}
+.check-in-btns > li i.active[class*="-heart"] {
+	color: #D87C7C;
+}
+.check-in-btns > li i.active[class*="-fire"] {
+	color: #ECA473;
+}
+
+.viewComment.active > i{
+	color: #71cfee;
+}
 
 /* ----------------- MORE ------------------ */
 .viewMore {
@@ -799,6 +998,7 @@ table {
 	padding: 6px 15px;
 }
 .pop-nav li:nth-child(3) {
+	width: auto;
 	margin: 2px auto 0 auto;
 	padding: 0 15px;
 }
@@ -1018,6 +1218,12 @@ textarea.reviewContent:focus {
 .padR1x {
     padding-right: 10px;
 }
+.padRHalfX {
+    padding-right: 5px;
+}
+.padLHalfX {
+    padding-left: 5px;
+}
 .padL1x {
     padding-left: 10px;
 }
@@ -1040,6 +1246,9 @@ textarea.reviewContent:focus {
 .text-white60p {
 	color: rgba(235,235,235,.6);
 }
+.text-white50p {
+	color: rgba(235,235,235,.5);
+}
 .text-grey70p {
 	color: rgba(100,100,100,.7);
 }
@@ -1054,6 +1263,12 @@ textarea.reviewContent:focus {
 }
 .text-light-blue {
 	color: #B2EEFF;
+}
+.text-pink {
+	color: #D87C7C;
+}
+.text-light-orange {
+	color: #FFBB8D;
 }
 
 .bkgd-blue {

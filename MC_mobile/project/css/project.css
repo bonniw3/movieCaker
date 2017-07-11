@@ -1,70 +1,98 @@
 
-.bkgd-img:after { 
-    background-color: rgba(238,238,238,.3);
-    height: 100vh;
+.content-wrap {
+    padding: 20% 5% 60% 5%;
 }
+
 .poster-group {
     text-align: center;
 }
 
 .poster-group li {
     display: inline-block;
-    margin-left: -137px;
-    width: 160px;
-    height: 225px;
+    margin-left: -43%;
+    width: 53%;
+    height: 37.5vh;
+    vertical-align: top;
     overflow: hidden; 
-    font-size: 16px;
     box-shadow: -4px 0 5px 0px rgba(12, 12, 12, .5);
 }
+
 .poster-group li img {
     width: 100%;
 }
+
 .poster-group li:first-child {
     margin-left: 0;
 }
 
-/*.content-wrap {
-    padding-top: 5vh;
-    border-radius: 5px 5px 0 0;
-    top: 22vh;
-    height: auto;
-    background-color: rgba(12,12,12,.5);
-}*/
 
-/*.content-wrap:before {
-    content: none;
-}
-.content-wrap.scroll:before {
-    content: none;
-}*/
-
-
-/* -------------- Review Content CSS--------------- */
-/*.reviewContent {
-    border-top: 1px solid rgba(216,216,216,.2);
+/* -------------- PROJECT CONTENT --------------- */
+.pos-nextToTitle {
+    position: absolute;
+    right: 10px;
+    top: -42px;
+    text-align: right;
 }
 
-.other-review-item {
-    border-top: 1px solid rgba(238,238,238,.2);
+
+/* -------------- completeness bar -------------- */
+.completeness {
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: rgba(90,90,90,.65);
+}
+.completeness .completed {
+    width: 22%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #71cfee;
+}
+
+/* -------------- movie-comment-text -------------- */
+.movie-comment-text {
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    border-top: 1px solid rgba(155,155,155,.2);
+    border-bottom: 3px solid #71cfee;
+    background-color: rgba(12,12,12,1);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 5;
+    color: #ffffff;
+    font-size: .85em;
+    text-align: justify;
+    display: none;
+}
+.movie-comment-text.active {
     display: block;
 }
-.other-review-item:first-child {
-    border-top: none;
-    padding-top: 0;
-}
-.other-review-details {
-    width: 82%;
-}*/
 
-/* used line-clamp to solve for now */
-/*.other-review-details p {
-    height: 45px;
-    overflow: hidden;
-    position: relative;
-}*/
-/*.other-review-details p:after {
-    content: '...';
+/* -------------- movie-order CSS -------------- */
+.movie-order {
+    display: block;
     position: absolute;
-    right: -1px;
-    bottom: -3px;;
-} */
+    top: -7px;
+    left: -7px;
+    border-radius: 50%;
+    background-color: #628E9A;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: .75em;
+    z-index: 5;
+}
+
+
+/* -------------- 編輯專題文字 editing project content CSS -------------- */
+.projectTitle-edit {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 15px;
+}
+
+textarea.reviewContent {
+    height: auto !important;
+}

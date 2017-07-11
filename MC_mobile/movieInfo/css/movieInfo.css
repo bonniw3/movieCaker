@@ -173,7 +173,7 @@
   height: 20px;
 }
 .review-nav li.active {
-  color: #71cfee;
+  color: #B2EEFF;
 }
 .review-list {
     display: none;
@@ -192,7 +192,7 @@
 }
 .review-info a {
     display: block;
-    color: #71cfee;
+    color: #B2EEFF;
     font-size: 1em;
 }
 .review-info [class*="-star"] {
@@ -217,8 +217,9 @@
     height: 15px;
     line-height: 15px;
     margin-top: 6px;
-    border-left: 1px solid #71cfee;
-    border-right: 1px solid #71cfee;
+    border-left: 1px solid #B2EEFF;
+    border-right: 1px solid #B2EEFF;
+    color: #B2EEFF;
     text-align: center;
     font-size: .9em;
 }

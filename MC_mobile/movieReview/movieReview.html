@@ -138,7 +138,7 @@
                                         </span>-->
                                         <i class="fa fa-heart maL10p maT4 pull-left" ng-class="{true:'fa-heart',false:'fa-heart-o'}[ vm.review.IsLiked ]"></i>
                                     </div>
-                                    <a href="/mobile/video/M00000000088380" class="pull-right text-white fz-s"><i class="fa fa-angle-right padRHalfX fz-subtitle" aria-hidden="true"></i> 電影介紹頁</a>
+                                    <a href="/mobile/video/M00000000088380" class="pull-right text-light-blue fz-s"><i class="fa fa-angle-right padRHalfX fz-subtitle" aria-hidden="true"></i> 電影介紹頁</a>
                                 </div>
                             </section>
 
@@ -166,39 +166,31 @@
                                 </div>
                                 <!-- ul li 裡的 a addClass active 變色 -->
                                 <ul class="reaction-stats maT2x">
-                                    <li ng-show="vm.isAuthenticated">
-                                        <a href="" class="review-heart" ng-click="vm.activingReview($index,'Like')" ng-class="{'active':review.IsLiked}">
-                                            <i class="fa fa-heart" ng-class="{'active':review.IsLiked}" aria-hidden="true"></i> <span ng-bind="vm.likeReview.Count">4</span>
-                                        </a>
+                                    <li class="review-heart" ng-class="{'active':review.IsLiked}">
+                                        <i class="fa fa-heart" ng-class="{'active':review.IsLiked}" aria-hidden="true"></i> <span ng-bind="vm.likeReview.Count">4</span>
+                                    </li>
+                                    <li class="review-comment">
+                                        <i class="fa fa-comment" aria-hidden="true"></i> <span ng-bind="vm.reviewMessages.length">5</span>
+                                    </li>
+                                    <li class="review-share" ng-class="{'active':review.IsShared}">
+                                        <i class="fa fa-share-alt"  aria-hidden="true"></i> <span ng-bind="vm.shareReview.Count">2</span>
                                     </li>
                                     <li>
-                                        <a ng-href="/mobile/review/{{review.ReviewId}}?response=true">
-                                            <i class="fa fa-comment" aria-hidden="true"></i> <span ng-bind="vm.reviewMessages.length">5</span>
-                                        </a>
-                                    </li>
-                                    <li ng-click="vm.shareReview($index)">
-                                        <a href="" class="review-share" ng-class="{'active':review.IsShared}">
-                                            <i class="fa fa-share-alt" ng-class="{'active':review.IsShared}" aria-hidden="true"></i> <span ng-bind="vm.shareReview.Count">2</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <i class="fa fa-users" aria-hidden="true"></i> <span ng-bind="vm.pageView">10</span>
-                                        </a>
+                                        <i class="fa fa-users" aria-hidden="true"></i> <span ng-bind="vm.pageView">10</span>
                                     </li>
                                 </ul>
                             </section>
 
                             <div class="btn-wrap maT2x group-wrap like-share-wrap">
                                 <!-- 編輯影評只有作者到自己的影評時才會出現，其他時候都是喜歡影評 -->
-                                <div class="btn-like-share pull-left bkgd-blue fz-15 btn-like" style="display: none;" ng-click="vm.reviewshowReviewWindow=true">
+                                <div class="btn-like-share pull-left bkgd-blue fz-15 btn-selfEdit" style="display: none;" ng-click="vm.reviewshowReviewWindow=true">
                                     <i class="fa fa-pencil" aria-hidden="true"></i> 編輯影評
                                 </div>
                                 <!-- btn-like addClass active 會換色 -->
                                 <div class="btn-like-share pull-left bkgd-white fz-15 btn-like" ng-click="vm.activing('Like')">
                                     <i class="fa fa-heart" ng-class="{'active':vm.likeReview.IsOnAction}"></i> 喜歡影評
                                 </div>
-                                <div id="btn-share-review" class="btn-like-share pull-right bkgd-white fz-15" ng-click="vm.shareVideoReview('1485')">
+                                <div id="btn-share-review" class="btn-like-share pull-right bkgd-white fz-15 btn-sharing" ng-click="vm.shareVideoReview('1485')">
                                     <i class="fa fa-share-alt" ng-class="{'active':vm.shareReview.IsOnAction}"></i> 分享影評
                                 </div>
                             </div>
@@ -295,7 +287,7 @@
                                         <!--<img lazy-load="" alt="" data-original="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill" onerror="this.src='/Images/nobody.jpg?width=30&amp;height=30&amp;stretch=fill'" data-image-src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg" class="ng-isolate-scope" src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill">-->
                                         </div>
                                         <div class="comment-info pull-left maL1x">
-                                            <a href="#" class="fz-normal" ng-bind="reviewMessage.NickName">COMMENTer's NAME</a><br>
+                                            <a href="#" class="fz-normal text-light-blue" ng-bind="reviewMessage.NickName">COMMENTer's NAME</a><br>
                                             <span class="fz-s text-gray ng-binding" ng-bind="(reviewMessage.CreateOn| jsonUtcDateToLocal)">2013/04/06 05:17</span>
                                             <p class="fz-s text-white60p taR likeComment" ng-class="{'text-pink':reviewMessage.IsLiked, 'text-white60p': !reviewMessage.IsLiked}" ng-click="vm.likeThisReply(reviewMessage)"><i class="fa fa-heart"></i> 0</p>
                                         </div>
@@ -308,7 +300,7 @@
                                         <!--<img lazy-load="" alt="" data-original="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill" onerror="this.src='/Images/nobody.jpg?width=30&amp;height=30&amp;stretch=fill'" data-image-src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg" class="ng-isolate-scope" src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill">-->
                                         </div>
                                         <div class="reply-info pull-left maL1x">
-                                            <a href="#" class="fz-s" ng-bind="replyReview.NickName">REPLYer's NAME</a><br>
+                                            <a href="#" class="fz-s text-light-blue" ng-bind="replyReview.NickName">REPLYer's NAME</a><br>
                                             <span class="fz-xs text-gray ng-binding" ng-bind="(replyReview.CreateOn| jsonUtcDateToLocal)">2013/04/06 05:17</span>
                                             <p class="fz-s text-white60p taR likeReply" ng-class="{'text-pink':reviewMessage.IsLiked, 'text-white60p': !reviewMessage.IsLiked}" ng-click="vm.likeThisReply(reviewMessage)"><i class="fa fa-heart"></i> 0</p>
                                         </div>

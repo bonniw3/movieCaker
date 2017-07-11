@@ -9,8 +9,8 @@
     <link rel="canonical" href="http://test.moviecaker.com/topic/160">
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link href="css/custom.css" rel="stylesheet" />
-    <link href="css/screen.css" rel="stylesheet" />
+    <!--<link href="css/custom.css" rel="stylesheet" />-->
+    <!--<link href="css/screen.css" rel="stylesheet" />-->
     <link href="../entire_css/common.css" rel="stylesheet" />
     <link href="css/project.css" rel="stylesheet" />
     <link href="../entire_css/min-search.css" rel="stylesheet" />
@@ -76,6 +76,7 @@
                 <!-- fixed background -->
                 <div class="bkgd-img">
                     <!--<img ng-src="http://121.41.34.59/Content/pictures/banners/{{ vm.topicMovies[0].VideoId }}.png?width=320" onerror="this.src=''">-->
+                    <div class="white-mask"></div>
                     <img src="img/theoryOE.png" alt="">
                 </div>
 
@@ -127,46 +128,37 @@
                             <a class="user-name maTHalf1x" href="#">歡影 </a>
 
                             <section class="maT2x reviewContent">
-                                <h2 class="fz-m text-white taC">在電影中看見的愛情心法13條</h2>
+                                <h2 class="fz-subtitle text-white taC">在電影中看見的愛情心法13條</h2>
                                 <!-- ul li 裡的 a addClass active 變色 -->
                                 <ul class="reaction-stats taC maTHalf1x">
-                                    <li ng-show="vm.isAuthenticated">
-                                        <a href="" class="review-heart" ng-click="vm.activingReview($index,'Like')" ng-class="{'active':review.IsLiked}">
-                                            <i class="fa fa-heart" ng-class="{'active':review.IsLiked}" aria-hidden="true"></i> <span ng-bind="vm.likeReview.Count">4</span>
-                                        </a>
+                                    <li class="review-heart" ng-show="vm.isAuthenticated" ng-class="{'active':vm.topic.IsLiked}">
+                                        <i class="fa fa-heart" aria-hidden="true"></i> <span ng-bind="vm.topic.LikeNum">4</span>
+                                    </li>
+                                    <li class="review-comment">
+                                        <i class="fa fa-comment" aria-hidden="true"></i> <span ng-bind="vm.topic.CommentNum">5</span>
+                                    </li>
+                                    <li class="review-share" ng-class="{'active':vm.topic.IsShared}">
+                                        <i class="fa fa-share-alt" aria-hidden="true"></i> <span ng-bind="vm.topic.ShareNum">2</span>
                                     </li>
                                     <li>
-                                        <a ng-href="/mobile/review/{{review.ReviewId}}?response=true">
-                                            <i class="fa fa-comment" aria-hidden="true"></i> <span ng-bind="vm.reviewMessages.length">5</span>
-                                        </a>
-                                    </li>
-                                    <li ng-click="vm.shareReview($index)">
-                                        <a href="" class="review-share" ng-class="{'active':review.IsShared}">
-                                            <i class="fa fa-share-alt" ng-class="{'active':review.IsShared}" aria-hidden="true"></i> <span ng-bind="vm.shareReview.Count">2</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <i class="fa fa-users" aria-hidden="true"></i> <span ng-bind="vm.topic.ViewNum">10</span>
-                                        </a>
+                                        <i class="fa fa-users" aria-hidden="true"></i> <span ng-bind="vm.topic.ViewNum">10</span>
                                     </li>
                                 </ul>
                             </section>
 
                             <div class="btn-wrap maT3x group-wrap like-share-wrap">
                                 <!-- 編輯影評只有作者到自己的影評時才會出現，其他時候都是喜歡影評 -->
-                                <div class="btn-like-share pull-left bkgd-blue fz-15 btn-like" style="display: none;" ng-click="vm.reviewshowReviewWindow=true">
+                                <div class="btn-like-share pull-left bkgd-blue fz-15 btn-selfEdit" style="display: none;" ng-click="vm.reviewshowReviewWindow=true">
                                     <i class="fa fa-pencil" aria-hidden="true"></i> 編輯影評
                                 </div>
                                 <!-- btn-like addClass active 會換色 -->
                                 <div class="btn-like-share pull-left bkgd-white fz-15 btn-like" ng-click="vm.activing('Like')">
-                                    <i class="fa fa-heart" ng-class="{'active':vm.likeReview.IsOnAction}"></i> 喜歡影評
+                                    <i class="fa fa-heart" ng-class="{'active':vm.topic.IsLiked}"></i> 喜歡影評
                                 </div>
-                                <div id="btn-share-review" class="btn-like-share pull-right bkgd-white fz-15" ng-click="vm.shareVideoReview('1485')">
-                                    <i class="fa fa-share-alt" ng-class="{'active':vm.shareReview.IsOnAction}"></i> 分享影評
+                                <div id="btn-share-review" class="btn-like-share pull-right bkgd-white fz-15 btn-sharing" ng-click="vm.shareVideoReview('1485')">
+                                    <i class="fa fa-share-alt" ng-class="{'active':vm.topic.IsShared}"></i> 分享影評
                                 </div>
                             </div>
-
                             <div id="shareTo" class="share-wrap short fixed" ng-show="main.showShareWindow" ng-class="{ blur: main.screenStatus() }" style="display: none;">
                                 <ul class="share-btn short group-wrap pad0">
                                     <li>
@@ -202,11 +194,11 @@
                         </article>
                     </section>
 
-                    <section class="projectAbout maT13p">
+                    <section class="projectAbout nextSection maT13p">
                         <div class="section-title fz-subtitle text-blue">專題內容</div>
-                        <article class="padLR10 maT2x">
+                        <article class="padLR10 maT2x rel-pos">
+                            <p class="pos-nextToTitle fz-xs text-white50p letter-space-1x" ng-show="review.ViewedOn!==null" ng-bind="(review.ViewedOn| mcJsLocalDateTime)"><span class="">修改於</span> 2017/03/21</p>
                             <div class="projectPlot active" ng-class="{'active':vm.seeAllContent}">
-                                <p class="fz-xs text-white60p taR letter-space-1x" ng-show="review.ViewedOn!==null" ng-bind="(review.ViewedOn| mcJsLocalDateTime)"><span class="">修改於</span> 2017/03/21</p>
                                 <div ng-hide="vm.seeAllContent" ng-bind="(vm.movie.Story | characters:50 :true)"><!--小時候我們都聽過兩個和尚到南海取經的故事，窮和尚只帶著一個碗、一根木杖就動身，經過一年的努力之後，窮和尚從南海取經回來，而富和尚却還在原地裹足不前。
 
                                     在職場上，有些人愛做夢，但做事只有三、五分鐘的熱度，然而，也有些人就算遇到挫折，仍能不氣餒，堅持到底。長久下來，兩者之間的成就便有了明顯的差距。我認為，造就每個人成功與否，除了先天條件外，最大的差別就在於堅持力。
@@ -225,15 +217,16 @@
                                 </div>
                             </div>
                             <div class="seeMore maT2x" ng-click="vm.seeMore()">
-                                <span ng-show="!vm.seeAllContent">顯示全部&nbsp;<i class="fa fa-angle-down"></i></span>
-                                <span ng-show="vm.seeAllContent">隱藏部分&nbsp;<i class="fa fa-angle-up"></i></span>
+                                <span ng-show="!vm.seeAllContent">顯示全部 <i class="fa fa-angle-down"></i></span>
+                                <span ng-show="vm.seeAllContent">隱藏部分 <i class="fa fa-angle-up"></i></span>
                             </div>
                         </article>
                     </section>
 
                     <section class="author-comments maT13p">
-                        <div class="section-title fz-subtitle text-blue">專題回應</div>
-                        <article class="padLR10 maT2x">
+                        <div class="section-title fz-subtitle text-blue">專題回應（<span>5</span>則）</div>
+                        <article class="padLR10 maT2x rel-pos">
+                            <!--<a href="#" class="pos-nextToTitle fz-15 text-light-blue"><i class="fa fa-angle-right padRHalfX fz-subtitle" aria-hidden="true"></i> 更多回應</a>-->
                             <ul class="comment-list" ng-show="vm.reviewMessages.length > 0">
                                     <!--ngRepeat: reviewMessage in vm.reviewMessages -->
                                 <li class="ng-scope" ng-hide="!vm.displayAllMessage &amp;&amp; $index >= 2">
@@ -243,7 +236,7 @@
                                         <!--<img lazy-load="" alt="" data-original="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill" onerror="this.src='/Images/nobody.jpg?width=30&amp;height=30&amp;stretch=fill'" data-image-src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg" class="ng-isolate-scope" src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill">-->
                                         </div>
                                         <div class="comment-info pull-left maL1x">
-                                            <a href="#" class="fz-normal" ng-bind="reviewMessage.NickName">COMMENTer's NAME</a><br>
+                                            <a href="#" class="fz-normal text-light-blue" ng-bind="reviewMessage.NickName">COMMENTer's NAME</a><br>
                                             <span class="fz-s text-gray ng-binding" ng-bind="(reviewMessage.CreateOn| jsonUtcDateToLocal)">2013/04/06 05:17</span>
                                             <p class="fz-s text-white60p taR likeComment" ng-class="{'text-pink':reviewMessage.IsLiked, 'text-white60p': !reviewMessage.IsLiked}" ng-click="vm.likeThisReply(reviewMessage)"><i class="fa fa-heart"></i> 0</p>
                                         </div>
@@ -256,7 +249,7 @@
                                         <!--<img lazy-load="" alt="" data-original="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill" onerror="this.src='/Images/nobody.jpg?width=30&amp;height=30&amp;stretch=fill'" data-image-src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg" class="ng-isolate-scope" src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill">-->
                                         </div>
                                         <div class="reply-info pull-left maL1x">
-                                            <a href="#" class="fz-s" ng-bind="replyReview.NickName">REPLYer's NAME</a><br>
+                                            <a href="#" class="fz-s text-light-blue" ng-bind="replyReview.NickName">REPLYer's NAME</a><br>
                                             <span class="fz-xs text-gray ng-binding" ng-bind="(replyReview.CreateOn| jsonUtcDateToLocal)">2013/04/06 05:17</span>
                                             <p class="fz-s text-white60p taR likeReply" ng-class="{'text-pink':reviewMessage.IsLiked, 'text-white60p': !reviewMessage.IsLiked}" ng-click="vm.likeThisReply(reviewMessage)"><i class="fa fa-heart"></i> 0</p>
                                         </div>
@@ -266,38 +259,75 @@
                                 </li>
                                 <!-- end ngRepeat: reviewMessage in vm.reviewMessages -->
                             </ul>
-                            <div class="seeMore maT3x" ng-click="vm.seeMore()">
-                                <span ng-hide="vm.displayAllMessage" ng-click="vm.displayAllMessage=!vm.displayAllMessage">顯示全部 <span>5</span> 則回應 <i class="fa fa-angle-down"></i></span>
-                                <span ng-hide="!vm.displayAllMessage" ng-click="vm.displayAllMessage=!vm.displayAllMessage">隱藏回應 <i class="fa fa-angle-up"></i></span>
+                            <a href="#" class="viewMore text-light-blue fz-s maT15">查看更多回應</a>
+                        </article>
+                    </section>
+
+                    <section class="author-comments maT13p" ng-show="vm.user!=null">
+                        <div class="section-title fz-subtitle text-blue">我的專題刷片度</div>
+                        <article class="padLR10 maT2x rel-pos">
+                            <div>
+                                <div class="group-wrap">
+                                    <p class="pull-left text-gray fz-15" ng-bind="'我已經看過 ' + (vm.user.ViewedNum) + ' 部'">我已經看過 <span class="text-blue">2</span> 部</p>
+                                    <p class="pull-right text-blue fz-m" ng-bind="(vm.user.ViewedPercent) + '%'">7%</p>
+                                </div>
+                                <div class="completeness maTHalf1x">
+                                    <div class="completed" ng-show="vm.user.ViewedNum&&vm.user.VideoNum" ng-style="{'width':vm.user.ViewedPercent+'%'}"></div>
+                                </div>
+                                <p ng-show="vm.currentUser.isAuthenticated" class="text-gray fz-s taR maT1x">專題電影：&nbsp; 我喜歡 <span class="text-pink" ng-bind="vm.iLikeNum">5</span> 部 &nbsp; 我想看 <span class="text-light-orange" ng-bind="vm.iWantNum">17</span> 部</p>
                             </div>
                         </article>
                     </section>
 
-
                     <section class="author-comments maT13p">
                         <div class="section-title fz-subtitle text-blue">專題電影列表（<span>18</span>部）</div>
-                        <article class="padLR10 maT2x">
+                        <article class="maT2x">
+                            <ul class="hor-nav project-movie-nav group-wrap">
+                                <li class="active" value="default">作者自訂</li>
+                                <li value="hot">最熱門</li>
+                                <li value="releasedate">最新</li>
+                                <li value="avg_score">最好評</li>
+                                <div class="display-dropdown">
+                                    <div id="display-btn">顯示 <i class="fa fa-angle-down padLHalfX" aria-hidden="true"></i></div>
+                                    <ul class="ver-nav display-ver-dropdown">
+                                        <li class="active">全部</li>
+                                        <li ng-show="vm.currentUser.isAuthenticated" ng-click="vm.isViewed=!vm.isViewed" ng-class="{'active':vm.isViewed}">我沒看過</li>
+                                        <li ng-click="vm.isOnlyPlayable=!vm.isOnlyPlayable" ng-class="{'active':vm.isOnlyPlayable}">可在線看</li>
+                                    </ul>
+                                </div>
+                            </ul>
+                            <section class="maT2x">
+                                <!--<movie-list data-array="vm.topicMovies" data-type="topic" data-viewed="vm.isViewed" data-playable="vm.isOnlyPlayable"></movie-list>-->
+                                <ul class="movie-list group-wrap">
+                                    <li>
+                                        <span class="movie-order width-xss" style="display:none;">1</span>
+                                        <a href="#">
+                                            <img src="img/movie1.jpg" alt="">
+                                            <div class="btn-playOnline-indication"><i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看</div>
+                                            <div class="movie-info-wrap">
+                                                <p class="movie-rating text-blue fz-s">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <span class="" ng-bind="item.Ratings_Douban">7.4</span> <!-- 評分是 豆瓣＋IMDB的平均分數 -->
+                                                </p>
+                                                <p class="movie-name text-white" ng-bind="item.VideoName">知無涯者</p>
+                                            </div>
+                                        </a>
+                                        <ul class="check-in-btns group-wrap">
+                                            <li><i class="fa fa-eye" aria-hidden="true"></i></li>
+                                            <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                            <li><i class="icon-fire"></i></li>
+                                            <li class="viewComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
+                                            <li class="movie-comment-text" ng-bind="item.VideoDesc">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </section>
                         </article>
                     </section>
                 </div>
 
-
                 
                 <div class="content">
-                    <!--<div id="mainInfo">
-                        
-                        <div class="complete" ng-show="vm.user!=null">
-                            <div class="complete-Info">
-                                <p ng-bind="(vm.user.UserName) + ' 已經看過 ' + (vm.user.ViewedNum) + ' of ' + (vm.user.VideoNum)"></p>
-                                <div class="completeness">
-                                    <div class="completed" ng-show="vm.user.ViewedNum&&vm.user.VideoNum" ng-style="{'width':vm.user.ViewedPercent+'%'}"></div>
-                                </div>
-                            </div>
-                            <div class="complete-number" ng-bind="(vm.user.ViewedPercent) + '%'"></div>
-                        </div>
-                        
-                    </div>-->
-
                     <!--<ul class="movieInfo-btn">
                         <li class="c-heart" ng-click="vm.activing('Like')">
                             <i class="icon-heart" ng-class="{'active':vm.topic.IsLiked}"></i>
@@ -400,8 +430,6 @@
                     </div>-->
                 </div> <!-- end of content-->
 
-
-
                 <!-- 修改自己的 review -->
                 <div id="writeCom" class="popTo write-edit-review ng-hide" ng-show="vm.showReviewWindow">
                     <ul class="pop-nav group-wrap">
@@ -411,45 +439,17 @@
                         <li class="pull-right" ng-click="vm.editReview()">
                             <button class="btn-done fz-s" type="button">完成</button>
                         </li>
-                        <li class="title">寫影誌</li>
+                        <li class="title">編輯專題文字</li>
                     </ul>
                     <div class="popwrap">
                         <fieldset class="fieldset">
-                            <div class="text-white divider-line">
-                                <span class="fz-s text-white60p fontW-normal">我看過</span><br>
-                                <span class="fz-subtitle fontW-bold text-white" ng-bind="vm.movie.Name">美女與野獸</span><br>
-                                <span class="fz-subtitle text-white" ng-bind="vm.movie.Name">Beauty and the Beast</span>
-                                （ <span class="fz-subtitle text-white" ng-bind="vm.movie.Year">2017</span> ）
+                            <div>
+                                <span class="fz-s text-white60p fontW-normal">專題標題</span><br />
+                                <input type="text" class="projectTitle-edit maTHalf1x fontW-bold" value="TotalFilm評最佳20部靈魂互換身體的電影">
                             </div>
-                            <div class="maT2x group-wrap">
-                                <div class="pull-left">
-                                    <span class="fz-s text-white60p">評分電影</span><br />
-                                    <div class="starRating fz-lg">
-                                        <raty score="vm.review.ChangeScore">
-                                            <i ng-repeat="star in stars" class="icon-star" ng-click="setScope($index)"></i>
-                                            <i ng-repeat="star in stars" class="icon-star" ng-click="setScope($index)"></i>
-                                            <i ng-repeat="star in stars" class="icon-star" ng-click="setScope($index)"></i>
-                                            <i ng-repeat="star in stars" class="icon-star" ng-click="setScope($index)"></i>
-                                            <i ng-repeat="star in stars" class="icon-star" ng-click="setScope($index)"></i>
-                                        </raty>
-                                    </div>
-                                </div>
-                                <div class="pull-right taR hasColor">
-                                    <span class="fz-s text-white60p">喜歡電影</span><br />
-                                    <i class="fa fa-heart-o fz-lg" ng-class="{true:'fa-heart',false:'fa-heart-o'}[vm.makeReview.isLiked]" ng-click="vm.review.IsLiked=!vm.review.IsLiked"></i>
-                                </div>
-                            </div>
-                            <div class="divider-line maT15 line-adjust">
-                                <div class="group-wrap">
-                                    <label for="date" class="fz-s text-white60p pull-left">觀影日期</label>
-                                    <div class="pull-left maL14">
-                                        <input name="date" type="checkbox" id="date" ng-model="vm.hasReviewDate" ng-click="vm.initialViewOn()">
-                                        <input class="maL1x" name="date" type="date" id="date" ng-model="vm.makeReview.viewedOn" ng-disabled="!vm.hasReviewDate" max="2017-06-12" disabled="disabled">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="maT3x">
-                                <textarea class="reviewContent" name="comment" id="comment" required ng-model="vm.review.Review" ng-bind="vm.review.Review"></textarea>
+                            <div class="maT2x">
+                                <span class="fz-s text-white60p">專題內容</span><br />
+                                <textarea class="reviewContent maTHalf1x" name="comment" id="comment" required ng-model="vm.review.Review" ng-bind="vm.review.Review"></textarea>
                             </div>
                         </fieldset>
                     </div>
@@ -470,6 +470,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!--<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>-->
 
     <!--<script defer src='http://test.moviecaker.com/Scripts/jquery-1.8.3.min.js'></script>-->
     <!--<script defer src='http://test.moviecaker.com/Scripts/jquery-ui-1.10.3.min.js'></script>-->
@@ -642,7 +644,7 @@
                 }
                 
                 // 讓喜歡分享按鈕可以 fixed 住 (專題頁是 300)
-                if (windowpos > 400 ) {
+                if (windowpos > 510 ) {
                     likeShare.addClass('fixed');
                     header.addClass('hide');
                     nextSect.removeClass('maT13p').addClass('maT30p');
@@ -658,6 +660,53 @@
             $('#btn-share-review').on('click', function() {
                 $('.share-wrap').css('display','block');
             });
+
+            // 電影列表顯示的下拉
+            $('#display-btn').on('click', function() {
+                if ($('.display-ver-dropdown').hasClass('show')) {
+                    $('.display-ver-dropdown').removeClass('show');
+                } else {
+                    $('.display-ver-dropdown').addClass('show');
+                }
+            });
+
+            $('.project-movie-nav > li').on('click', function(){
+                $('.project-movie-nav > li').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $('.display-ver-dropdown > li').on('click', function(){
+                $('.display-ver-dropdown > li').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $('.check-in-btns > li > i').on('click', function(){
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                } else {
+                    $(this).addClass('active');
+                }
+            });
+
+            $('.viewComment').on('click', function(){
+                if ( $(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    $(this).next('li.movie-comment-text').removeClass('active');
+                } else {
+                    $(this).addClass('active');
+                    $(this).next('li.movie-comment-text').addClass('active');
+                }
+            });
+
+            // $('.grid').masonry({
+            //     itemSelector: '.grid-item',
+            //     columnWidth: '.grid-sizer',
+            //     percentPosition: true,
+            //     gutter: 10
+            // });
+
+            
+
         });
     </script>
 
