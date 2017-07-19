@@ -9,8 +9,6 @@
     <link rel="canonical" href="http://test.moviecaker.com/topic/160">
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <!--<link href="css/custom.css" rel="stylesheet" />-->
-    <!--<link href="css/screen.css" rel="stylesheet" />-->
     <link href="../entire_css/common.css" rel="stylesheet" />
     <link href="css/project.css" rel="stylesheet" />
     <link href="../entire_css/min-search.css" rel="stylesheet" />
@@ -103,6 +101,7 @@
                 <div class="content-wrap">
                     <section class="movieInfo">
                         <article class="padLR10 maT2x">
+                            <!-- 這邊的電影海報是專體裡的前五部電影的電影海報 -->
                             <ul class="poster-group padT1x">
                                 <li><img src="img/movie1.jpg" alt=""></li>
                                 <li><img src="img/movie2.jpg" alt=""></li>
@@ -158,6 +157,8 @@
                                     <i class="fa fa-share-alt" ng-class="{'active':vm.topic.IsShared}"></i> 分享專題
                                 </div>
                             </div>
+
+                            <!-- 四個分享的按鈕 -->
                             <div id="shareTo" class="share-wrap short fixed" ng-show="main.showShareWindow" ng-class="{ blur: main.screenStatus() }" style="display: none;">
                                 <ul class="share-btn short group-wrap pad0">
                                     <li>
@@ -182,7 +183,7 @@
                                     </li>
                                     <li class="text-white60p fz-m" ng-click="main.showShareWindow=false"><i class="fa fa-times" aria-hidden="true"></i></li>
                                 </ul>
-                                <!-- 加上 class showAlert 會出現 -->
+                                <!-- 分享按鈕點了 ”微信“ 才會出現，加上 class showAlert 會出現 -->
                                 <div class="weixin-alert align-bottom group-wrap top-alert short-alert showAlert">
                                     <p class="text-blue fz-normal"><i class="fa fa-weixin" aria-hidden="true"></i> 微信分享小叮嚀</p>
                                     <p class="maT4 text-white80p fz-s">目前暫時還沒有直接分享到微信朋友圈的功能，請點選您手機<span class="text-blue">右上角三個點</span>選項中的分享功能就可以分享到微信。</p>
@@ -281,19 +282,17 @@
                     <section class="author-comments maT13p">
                         <div class="section-title fz-subtitle text-blue">專題電影列表（<span>18</span>部）</div>
                         <article class="maT2x">
-                            <ul class="hor-nav project-movie-nav group-wrap">
+                            <ul class="nav-horizontal nav-type-scroll optionNum-4">
                                 <li class="active" value="default">作者自訂</li>
                                 <li value="hot">最熱門</li>
                                 <li value="releasedate">最新</li>
                                 <li value="avg_score">最好評</li>
-                                <div class="display-dropdown">
-                                    <div id="display-btn">顯示 <i class="fa fa-angle-down padLHalfX" aria-hidden="true"></i></div>
-                                    <ul class="ver-nav display-ver-dropdown">
-                                        <li class="active">全部</li>
-                                        <li ng-show="vm.currentUser.isAuthenticated" ng-click="vm.isViewed=!vm.isViewed" ng-class="{'active':vm.isViewed}">我沒看過</li>
-                                        <li ng-click="vm.isOnlyPlayable=!vm.isOnlyPlayable" ng-class="{'active':vm.isOnlyPlayable}">可在線看</li>
-                                    </ul>
-                                </div>
+                            </ul>
+                            <ul class="nav-horizontal nav-type-box group-wrap">
+                                <li>顯示</li>
+                                <li class="active">全部</li>
+                                <li ng-show="vm.currentUser.isAuthenticated" ng-click="vm.isViewed=!vm.isViewed" ng-class="{'active':vm.isViewed}">我沒看過</li>
+                                <li ng-click="vm.isOnlyPlayable=!vm.isOnlyPlayable" ng-class="{'active':vm.isOnlyPlayable}">可在線看</li>
                             </ul>
                             <section class="maT2x">
                                 <!--<movie-list data-array="vm.topicMovies" data-type="topic" data-viewed="vm.isViewed" data-playable="vm.isOnlyPlayable"></movie-list>-->
@@ -304,22 +303,24 @@
                                             <img src="img/movie1.jpg" alt="">
                                             <div class="btn-playOnline-indication"><i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看</div>
                                             <div class="movie-info-wrap">
-                                                <div class="locate-bottom padHalfX">
-                                                    <p class="movie-rating text-blue fz-s">
-                                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                                        <span class="" ng-bind="item.Ratings_Douban">7.4</span> <!-- 評分是 豆瓣＋IMDB的平均分數 -->
-                                                    </p>
-                                                    <p class="movie-name text-white padT4" ng-bind="item.VideoName">知無涯者</p>
-                                                </div>
+                                                <p class="base-sector movie-rating text-white fz-s">
+                                                    <i class="fa fa-star" aria-hidden="true"></i><br />
+                                                    <span class="" ng-bind="item.Ratings_Douban">7.4</span> <!-- 評分是 豆瓣＋IMDB的平均分數 -->
+                                                </p>
+                                                <!-- add class active 出現首映日期 -->
+                                                <p class="date-released">2017-07-13</p>
                                             </div>
                                         </a>
-                                        <ul class="check-in-btns group-wrap">
-                                            <li><i class="fa fa-eye" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-heart" aria-hidden="true"></i></li>
-                                            <li><i class="icon-fire"></i></li>
-                                            <li class="viewComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
-                                            <li class="movie-comment-text" ng-bind="item.VideoDesc">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
-                                        </ul>
+                                        <div class="base-bkgd">
+                                            <p class="movie-name text-white line-clamp clamp-1" ng-bind="item.VideoName">知無涯者</p>
+                                            <ul class="movie-checkin-btns group-wrap">
+                                                <li><i class="icon-fire"></i></li>
+                                                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-eye" aria-hidden="true"></i></li>
+                                                <li class="viewComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
+                                                <li class="movie-comment-text" ng-bind="item.VideoDesc">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
+                                            </ul>
+                                        </div>
                                     </li>
                                 </ul>
                             </section>
@@ -531,13 +532,16 @@
                 var nextSect = $('.nextSection');
                 var content = $('.content-wrap');
                 var shareToBtns = $('.share-wrap');
+                // var bkgd_img = $('.bkgd-img img')
 
                 if ( windowpos > 0 ) {
                     header.addClass('scroll');
                     content.addClass('scroll');
+                    // bkgd_img.addClass('scroll');
                 } else {
                     header.removeClass('scroll');
                     content.removeClass('scroll');
+                    // bkgd_img.removeClass('scroll');
                 }
                 
                 // 讓喜歡分享按鈕可以 fixed 住 (專題頁是 300)
@@ -567,17 +571,27 @@
                 }
             });
 
-            $('.project-movie-nav > li').on('click', function(){
-                $('.project-movie-nav > li').removeClass('active');
+            $('.nav-type-scroll > li').on('click', function(){
+                $('.nav-type-scroll > li').removeClass('active');
                 $(this).addClass('active');
             });
+
+            $('.nav-type-box > li').on('click', function(){
+                $('.nav-type-box > li').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            // $('.scroll-h > li').on('click', function(){
+            //     $('.scroll-h > li').removeClass('active');
+            //     $(this).addClass('active');
+            // });
 
             $('.display-ver-dropdown > li').on('click', function(){
                 $('.display-ver-dropdown > li').removeClass('active');
                 $(this).addClass('active');
             });
 
-            $('.check-in-btns > li > i').on('click', function(){
+            $('.movie-checkin-btns > li > i').on('click', function(){
                 if ($(this).hasClass('active')) {
                     $(this).removeClass('active');
                 } else {

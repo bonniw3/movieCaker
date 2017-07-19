@@ -67,7 +67,6 @@
         <!--<div class="popTo" ng-show="main.screenStatus()" style="background-color: rgba(0,0,0,.3);z-index:99999999">
             <div class="loader">Loading...</div>
         </div> -->
-
         
         <div ng-class="{ blur: main.screenStatus() }">            
             <div ng-controller="ReviewDetailsCtrl as vm" ng-init="vm.init('M00000000088380','1485','')">
@@ -106,7 +105,6 @@
                                 <div class="circle-mask circle100 rel-pos">
                                     <!--<user-avatar data-image-src="/Uploads/UserAvatar/user_164.jpg"></user-avatar>-->
                                     <img src="img/default_avatar.png" alt="">
-                                    <!--<img src="img/user.jpg" alt="">-->
 
                                     <!-- 是不是朋友 - 登入後才會顯示 -->
                                     <div ng-show="vm.currentUser.isAuthenticated">
@@ -164,7 +162,7 @@
 
                                     兩個人心靈相通，喜歡的事物一樣，真的也很重要。一邊吃飯一邊看書很可愛。而且野獸是真正願意傾聽貝兒那天馬行空的幻想，以及願意聽她讀著書，感受那書中世界。心靈相通和共鳴，是貝兒愛上野獸的關鍵。那才是對的頻率造成的共鳴啊！
                                 </div>
-                                <!-- ul li 裡的 a addClass active 變色 -->
+                                <!-- ul li addClass active 變色 -->
                                 <ul class="reaction-stats maT2x">
                                     <li class="review-heart" ng-class="{'active':review.IsLiked}">
                                         <i class="fa fa-heart" ng-class="{'active':review.IsLiked}" aria-hidden="true"></i> <span ng-bind="vm.likeReview.Count">4</span>

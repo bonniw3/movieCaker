@@ -157,8 +157,17 @@ table {
 .bkgd-img img {
     width: 100%;
     position: relative;
-    top: -5px;
+	top: -5px;
+	filter: blur(0px);
 }
+
+/* .bkgd-img img.scroll {
+	animation: fadeBlur 1s ease-in-out forwards;
+}
+@keyframes fadeBlur {
+	0% { filter: blur(0px); }
+	100% { filter: blur(10px); }
+} */
 
 .bkgd-img:after {
     content: '';
@@ -519,9 +528,10 @@ table {
 	color: #fff;
 }
 [class*="-playOnline-indication"] {
-	height: 30px;
+	height: 28px;
+	line-height: 28px;
 	/*width: 70px;*/
-	padding: 4px 6px;
+	padding: 0 6px;
 	text-align: center;
 	background-color: rgba(236,164,114,.9);
 	border-radius: 3px;
@@ -725,24 +735,51 @@ table {
 }
 
 .movie-info-wrap {
-	display: table;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	height: 100px;
 	width: 100%;
-	background-image: -moz-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,.6));  
-    background-image: -webkit-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,.6)); 
-    background-image: -o-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,.6));
-    background-image: linear-gradient(rgba(12,12,12,0), rgba(12,12,12,.6));
+	background-image: -moz-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,.9));  
+    background-image: -webkit-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,.9)); 
+    background-image: -o-linear-gradient(rgba(12,12,12,0), rgba(12,12,12,.9));
+    background-image: linear-gradient(rgba(12,12,12,0), rgba(12,12,12,.9));
 }
-.locate-bottom {
-	display: table-cell; 
-	vertical-align: bottom;
+.base-sector {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+    background: rgba(113,207,238,.6);
+    border-top-right-radius: 3.5em;
+    width: 28%;
+	height: 48%;
+	line-height: 16px;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 12px 5px 10px 0;	
 }
-.movie-info-wrap p {
-	line-height: 15px;
+
+.date-released {
+	color: #eeeeee;
+	position: absolute;
+	right: 15px;
+	bottom: 3px;
+	font-size: .9em;
+	display: none;
 }
+.date-released:after {
+	content: '';
+	position: absolute;
+	right: -15px;
+	bottom: 5px;
+	background-color: #fff;
+	width: 3px;
+	height: 15px;
+}
+.date-released.active {
+	display: block;
+}
+
 .movie-name {
 	font-size: .8125em;
 	letter-spacing: .9px;
@@ -797,31 +834,62 @@ table {
 }
 
 /* ----------------- NAV css ------------------ */
-.hor-nav {
-	border-bottom: 1px solid rgba(200,200,200,.2);
-}
-.hor-nav > li {
+.nav-horizontal > li {
 	float: left;
 	font-size: .95em;
-	padding-bottom: 5px;
-	text-align: center; 
+	text-align: center;
+	color: rgba(238,238,238,.6);
+	transition: color .3s ease-in-out;  
 }
 
-.project-movie-nav > li {
-	color: rgba(238,238,238,.7);
-	margin-left: 4.5%;
-	transition: color .3s ease-in-out;
+.nav-type-scroll {
+	display: flex;
+    white-space: nowrap;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	border-bottom: 1px solid rgba(200,200,200,.2);
 }
-.project-movie-nav > li:first-child {
-	margin-left: 0;
+.nav-type-scroll > li {
+	flex: 0 0 auto;
+	white-space: normal;
+	overflow: hidden;
+	float: none !important;
+	padding-bottom: 2px;
 }
-.project-movie-nav > li.active {
+.nav-type-scroll > li.active {
 	color: #71cfee;
 	border-bottom: 3px solid #71cfee;
 	transition: color .3s ease-in-out;
 }
 
-div.display-dropdown {
+.nav-type-box {
+	margin-top: 7px;
+}
+.nav-type-box > li {
+	margin-left: 2px;
+	height: 28px;
+	line-height: 28px;
+	box-sizing: border-box;
+	border-radius: 3px;
+	border: 1px solid transparent;
+	padding: 0px 8px;
+}
+.nav-type-box > li:first-child {
+	font-size: .75em;
+	color: #ffffff;
+	text-align: left;
+	margin-left: 0;
+	padding-left: 0;
+}
+.nav-type-box > li.active {
+	color: #71cfee;
+	border: 1px solid #71cfee;
+}
+
+
+
+/* div.display-dropdown {
 	float: right;
 	color: #B2EEFF;
 	font-size: .9em;
@@ -860,43 +928,55 @@ div.display-dropdown {
 	color: #71cfee;
 	border: none;
 	transition: .3s ease;
-}
+} */
 
+
+/* ----------------- movie-poster bottom block ------------------ */
+.base-bkgd {
+	background-color: rgba(12,12,12,.7);
+	border-top: 3px solid #71cfee;
+	padding: 6px 8px;
+}
 
 /* ----------------- CHECK-IN Btns ------------------ */
-.check-in-btns {
-	position: relative;
-	border-top: 3px solid #71cfee;
-	background-color: rgba(12,12,12,.7);
-	padding: 6px 10px 5px 10px;
+.movie-checkin-btns {
+	margin-top: 8%;
 }
-.check-in-btns > li:not(.movie-comment-text) {
-	float: left;
+
+.movie-checkin-btns > li:not(.movie-comment-text) {
+	float: right;
 	font-size: 1.25em;
 	margin-left: 11%;
 	vertical-align: top;
 	color: #9b9b9b;
 }
-.check-in-btns > li:nth-child(4) {
-	float: right;
+.movie-checkin-btns > li:nth-child(4) {
+	float: left;
 	font-size: 1em;
 	margin-top: -1px;
 }
-.check-in-btns > li:nth-child(4), .check-in-btns > li:first-child {
+.movie-checkin-btns > li:nth-child(3),
+.movie-checkin-btns > li:nth-child(4) {
 	margin-left: 0;
 }
-
-.check-in-btns > li i.active[class*="-eye"] {
+.movie-checkin-btns > li i {
+	color: #9b9b9b;
+	transition: color .3s ease-in-out;
+}
+.movie-checkin-btns > li i.active[class*="-eye"] {
 	color: #71CFEE;
+	transition: color .3s ease-in-out;
 }
-.check-in-btns > li i.active[class*="-heart"] {
+.movie-checkin-btns > li i.active[class*="-heart"] {
 	color: #D87C7C;
+	transition: color .3s ease-in-out;
 }
-.check-in-btns > li i.active[class*="-fire"] {
+.movie-checkin-btns > li i.active[class*="-fire"] {
 	color: #ECA473;
+	transition: color .3s ease-in-out;
 }
 
-.viewComment.active > i{
+.viewComment.active > i {
 	color: #71cfee;
 }
 
@@ -1381,15 +1461,26 @@ textarea.reviewContent:focus {
 .width50p {
 	width: 50%;
 }
+
+.optionNum-3 > li {
+	width: 33.33%;
+}
+.optionNum-4 > li {
+	width: 25%;
+}
+.optionNum-4more > li {
+	width: 23%;
+}
+
 .content-preline {
 	white-space: pre-line;
 }
 
 .top10vh {
-	top: 10vh !important;;
+	top: 10vh !important;
 }
 .top35vh {
-	top: 35vh !important;;
+	top: 35vh !important;
 }
 .rel-pos {
 	position: relative;
@@ -1400,6 +1491,9 @@ textarea.reviewContent:focus {
 	text-overflow: ellipsis;
 	display: -webkit-box;
 	-webkit-box-orient: vertical; 
+}
+.clamp-1 {
+	-webkit-line-clamp: 1;
 }
 .clamp-2 {
 	-webkit-line-clamp: 2;
