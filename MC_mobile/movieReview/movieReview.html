@@ -99,18 +99,20 @@
                 <!-- MAIN CONTENT -->
                 <div class="content-wrap">
                     <section class="movieInfo">
-                        <div class="section-title fz-subtitle text-blue"><span>Rich</span> 的影評</div>
+                        <div class="section-title fz-subtitle fontW-normal text-blue"><span class="fz-m fontW-bold">Rich</span> 的影評</div>
                         <article class="padLR10 maT2x">
                             <a href="#" class="avatar-large avatar-pos-right circle4x">
                                 <div class="circle-mask circle100 rel-pos">
                                     <!--<user-avatar data-image-src="/Uploads/UserAvatar/user_164.jpg"></user-avatar>-->
-                                    <img src="img/default_avatar.png" alt="">
+                                    <img src="img/default_avatar.png" alt="">   
+                                    <img src="img/user.jpg" alt="">   
 
                                     <!-- 是不是朋友 - 登入後才會顯示 -->
                                     <div ng-show="vm.currentUser.isAuthenticated">
-                                        <div class="text-blue btn-friendOption bkgd-light-grey ng-hide" ng-show="vm.isFriend && vm.review.UserId!=vm.currentUser.Id"><i class="fa fa-check" aria-hidden="true"></i> 朋友</div>
-                                        <div class="text-black btn-friendOption bkgd-grey ng-hide"><i class="fa fa-clock-o" aria-hidden="true"></i> 待確認</div>
+                                        <div class="text-blue-friend btn-friendOption bkgd-light-grey " ng-show="vm.isFriend && vm.review.UserId!=vm.currentUser.Id"><i class="fa fa-check" aria-hidden="true"></i> 朋友</div>
+                                        <div class="text-black btn-friendOption bkgd-light-grey ng-hide"><i class="fa fa-clock-o" aria-hidden="true"></i> 待確認</div>
                                         <div class="text-white btn-friendOption bkgd-grey ng-hide" ng-show="!vm.isFriend && vm.review.UserId!=vm.currentUser.Id"><i class="fa fa-user-plus" aria-hidden="true"></i> 加朋友</div>
+                                        <div class="text-green btn-friendOption bkgd-light-grey ng-hide" ng-show="!vm.isFriend && vm.review.UserId!=vm.currentUser.Id"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> 接受邀請</div>
                                     </div> 
                                 </div>
                             </a>

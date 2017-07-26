@@ -576,7 +576,7 @@ table {
 	width: 100%;
 	height: 35px;
 	text-align: center;
-	line-height: 28px;
+	line-height: 26px;
 	font-size: .9em;
 }
 
@@ -1358,6 +1358,12 @@ textarea.reviewContent:focus {
 .text-light-orange {
 	color: #FFBB8D;
 }
+.text-blue-friend {
+	color: #3F8295;
+}
+.text-green {
+	color: #417505;
+}
 
 .bkgd-blue {
     background-color: rgba(113,207,238,.5);
@@ -1369,10 +1375,10 @@ textarea.reviewContent:focus {
 	background-color: rgba(255,255,255,.5);
 }
 .bkgd-light-grey {
-	background-color: rgba(225,225,225,.5);
+	background-color: rgba(225,225,225,.7);
 }
 .bkgd-grey {
-	background-color: rgba(120,120,120,.5)
+	background-color: rgba(120,120,120,.7)
 }
 
 .fz-xs { 
