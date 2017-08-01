@@ -301,20 +301,22 @@
                                         <span class="movie-order width-xss" style="display:none;">1</span>
                                         <a href="#">
                                             <img src="img/movie1.jpg" alt="">
-                                            <div class="btn-playOnline-indication"><i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看</div>
-                                            <div class="movie-info-wrap">
-                                                <p class="base-sector movie-rating text-white fz-s">
-                                                    <i class="fa fa-star" aria-hidden="true"></i><br />
-                                                    <span class="" ng-bind="item.Ratings_Douban">7.4</span> <!-- 評分是 豆瓣＋IMDB的平均分數 -->
-                                                </p>
+                                            <div class="movie-info-wrap"> <!-- addClass hasContent 會出現-->
                                                 <!-- add class active 出現首映日期 -->
                                                 <p class="date-released">2017-07-13</p>
-                                            </div>
+                                             </div> 
                                         </a>
-                                        <div class="base-bkgd">
-                                            <p class="movie-name text-white line-clamp clamp-1" ng-bind="item.VideoName">知無涯者</p>
+                                        <div class="lineh20 maTHalf1x">
+                                            <p class="fz-13 text-white line-clamp clamp-1" ng-bind="item.VideoName">知無涯者</p>
+                                            <span class="fz-13 text-blue">
+                                                <i class="fa fa-star" aria-hidden="true"></i> 
+                                                <span class="" ng-bind="item.Ratings_Douban">7.4</span>
+                                            </span><!-- 評分是 豆瓣＋IMDB的平均分數 -->
+                                            <span class="fz-13 text-orange maLHalfx">
+                                                <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
+                                            </span>
                                             <ul class="movie-checkin-btns group-wrap">
-                                                <li><i class="icon-fire"></i></li>
+                                                <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-heart" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-eye" aria-hidden="true"></i></li>
                                                 <li class="viewComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
