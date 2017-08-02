@@ -327,26 +327,13 @@
                                                 我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶懦弱神經質的感覺。凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶
                                             </p>
                                             <div class="group-wrap maT1x">
-                                                <ul class="reaction-stats pull-left">
-                                                    <li ng-show="vm.isAuthenticated">
-                                                        <a href="" class="review-heart" ng-click="vm.activingReview($index,'Like')" ng-class="{'active':review.IsLiked}">
-                                                            <i class="fa fa-heart" ng-class="{'active':review.IsLiked}" aria-hidden="true"></i> <span ng-bind="review.LikedNum">4</span>
-                                                        </a>
+                                                <ul class="review-num-stats pull-left group-wrap">
+                                                    <!-- 第一個li拿掉 showLikeNum 就不會出現 (如果有沒人喜歡影評就不要出現第一個li) -->
+                                                    <li class="text-white60p fz-s pull-left maR15 showLikeNum">
+                                                        <span ng-bind="review.LikedNum">11</span> 人喜歡
                                                     </li>
-                                                    <li>
-                                                        <a ng-href="/mobile/review/{{review.ReviewId}}?response=true">
-                                                            <i class="fa fa-comment" aria-hidden="true"></i> <span ng-bind="review.MessageNum">5</span>
-                                                        </a>
-                                                    </li>
-                                                    <li ng-click="vm.shareReview($index)">
-                                                        <a href="" class="review-share" ng-class="{'active':review.IsShared}">
-                                                            <i class="fa fa-share-alt" ng-class="{'active':review.IsShared}" aria-hidden="true"></i> <span ng-bind="review.SharedNum">2</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">
-                                                            <i class="fa fa-users" aria-hidden="true"></i> <span ng-bind="review.PageViews">10</span>
-                                                        </a>
+                                                    <li class="text-white60p fz-s pull-left">
+                                                        <span ng-bind="review.PageViews">50</span> 次瀏覽
                                                     </li>
                                                 </ul>
                                                 <a class="pull-right readMore" ng-href="/mobile/review/{{review.ReviewId}}">全文</a>

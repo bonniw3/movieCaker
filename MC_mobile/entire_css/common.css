@@ -1048,6 +1048,10 @@ table {
 	line-height: 16px;
 }
 
+.review-num-stats li:first-child {
+	display: none;
+}
+
 /* ----------- project-comment page CSS ------------- */
 .poster-group.project-comment li {
 	margin-left: -32%;
@@ -1522,6 +1526,9 @@ textarea.reviewContent:focus {
 
 .short-bottom {
 	padding-bottom: 30% !important;
+}
+.showLikeNum {
+	display: block !important;
 }
 
 
