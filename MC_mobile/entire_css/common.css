@@ -119,6 +119,12 @@ table {
 	padding: 8px 0;
 }
 
+.header-items li:last-child {
+	margin: auto;
+	width: 75px;
+	padding-top: 10px;
+}
+
 .header-items li a {
   	display: block;
 	color: #fff;
@@ -132,6 +138,9 @@ table {
 	width: 100%;
 }
 
+#logo-text a img {
+	width: 100%;
+}
 
 /* -------------- fixed Backgrounds-images ---------------- */
 .bkgd-img {

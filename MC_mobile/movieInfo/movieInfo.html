@@ -40,18 +40,17 @@
         <!-- header -->
         <div class="header" ng-class="{ blur: main.screenStatus() }">
             <ul class="group-wrap header-items" ng-show="!main.isSearchMode">
-                <li id="logo" class="pull-left">
-                    <a href="/mobile" class="padT3 group-wrap">
-                        <img class="pull-left" src="http://test.moviecaker.com/Areas/Mobile/Images/logo.png" height="25" alt="MovieCaker" />
-                        <i class="fa fa-bars maL1x padT3 pull-left" aria-hidden="true"></i>
+                <li class="pull-left">
+                    <a href="/mobile">
+                        <i class="fa fa-bars padTBHalfX" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li id="user-icon" class="pull-right">
-                    <a href="/login" ng-click="main.MenuLogin()">
+                     <a href="/login" ng-click="main.MenuLogin()">
                         <div class="login-icon padTBHalfX maLHalfx">
                             <img src="img/login_icon.png"alt="">
                         </div>
-                    </a>
+                    </a> 
                     <!-- 登入後顯示 -->
                     <a href="#" style="display:none;">
                         <div class="circle-mask circle1x">
@@ -61,6 +60,9 @@
                 </li>
                 <li id="search-icon" class="pull-right maR1x">
                     <i class="fa fa-search padTBHalfX" aria-hidden="true"></i>
+                </li>
+                <li id="logo-text">
+                    <a href="/mobile"><img src="img/mc_logo_text.png" alt=""></a>
                 </li>
             </ul>
         </div>
@@ -87,7 +89,7 @@
                             <span>喜歡</span>
                         </li>
                         <li class="c-fire" ng-class="{'active':vm.userData.IsWantView}" ng-click="vm.activing('WannaWatch')">
-                            <i class="icon-fire"></i>
+                            <i class="fa fa-bookmark"></i>
                             <span>想看</span>
                         </li>
                         <li class="" ng-class="" ng-click="vm.showReviewWindow=true;vm.showOtherWindow=false">
