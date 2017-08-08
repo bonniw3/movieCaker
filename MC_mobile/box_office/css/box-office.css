@@ -1,0 +1,232 @@
+
+
+/* ------------------- MOVIE INFO ------------------- */
+.movieInfo {
+    text-align: center;
+}
+.movieInfo h2, .movieInfo h3 {
+    color: #fff;
+    font-weight: 500;
+}
+.movieInfo p {
+    color: rgba(255,255,255,.7);
+    font-weight: 300;
+}
+
+/* ---------------------- ABOUT MOVIE ---------------- */
+/*.movieAbout .moviePlot {
+    text-align: justify;
+    line-height: 1.6em;
+    font-size: .95em;
+    overflow: hidden;
+    margin-bottom: 10px;
+    height: 70px;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    color: rgba(255,255,255,.8);
+}
+.movieAbout .moviePlot.active {
+    height: auto;
+}*/
+.movieAbout .movieTag {
+    color: rgba(238,238,238,.5);
+    word-break: break-all;
+    text-align: justify;
+}
+
+
+/* ----------------- MOVIE CAST ------------------ */
+.cast-wrap {
+    height: 170px;
+    overflow: hidden;
+}
+.cast-wrap.active {
+    height: auto;
+}
+.castName a {
+    display: inline-block;
+    margin: 4px 2px;
+    padding: 5px;
+    background: rgba(17,32,36,.6);
+    border: #529DB6 1px solid;
+    border-radius: 5px;
+    font-size: 13px;
+    line-height: 1.3em;
+    color: rgba(255,255,255,.8);
+}
+
+/* ----------------- RELATED PROJECT ------------------ */
+.scroll-h {
+    display: flex;
+    white-space: nowrap;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.project-group {
+    display: flex;
+    white-space: nowrap;
+}
+.project-group li {
+    flex: 0 0 auto;
+    margin-left: 10px;
+    width: 88%;
+    height: 125px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 12px;
+    background-size: 155% auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    white-space: normal;
+    overflow: hidden;
+    position: relative;
+}
+.project-group li:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    border-radius: 5px;
+    background: rgba(0,0,0,.4);
+    z-index: 0;
+}
+.project-group li:first-child {
+    margin-left: 0;
+}
+.proj-author, .project-content p {
+    z-index: 2;
+    position: relative;
+}
+.project-content p {
+    line-height: 1.5em;
+    font-size: 0.8em;
+}
+.project-content p:nth-child(2) {
+    height: 3em;
+    width: 98%;
+    overflow: hidden;
+}
+.project-content p:nth-child(2):after {
+    content: '...';
+    position: absolute;
+    right: -1px;
+    bottom: 0;
+}
+
+/* .project-dot {
+    text-align: center;
+}
+.project-dot span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-left: 5px;
+    background-color: rgba(74,74,74,.7);
+}
+.project-dot span:first-child {
+    margin-left: 0;
+}
+.project-dot span.active {
+    background-color: #71cfee;
+} */
+
+/* ----------------- MOVIE REVIEWS ------------------ */
+
+.review-wrap {
+    position: relative;
+}
+.review-nav {
+    position: absolute;
+    right: -10px;
+    top: -45px;
+}
+.review-nav > li {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  font-size: 1em;
+  margin-left: 25px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  color: rgba(238,238,238,.5);
+}
+.review-nav > li:first-child {
+    margin-left: 0;
+}
+.review-nav > li:nth-child(2):after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -13px;
+  z-index: 1;
+  background-color: rgba(238,238,238,.3);
+  width: 1px;
+  height: 20px;
+}
+.review-nav li.active {
+  color: #B2EEFF;
+}
+.review-list {
+    display: none;
+}
+.review-list.active {
+    display: block;
+}
+
+.review-item {
+    border-bottom: 1px solid rgba(238,238,238,.2);
+}
+
+.review-info {
+    text-align: left;
+    width: 82%;
+}
+.review-info a {
+    display: block;
+    color: #B2EEFF;
+    font-size: 1em;
+}
+.review-info [class*="-star"] {
+    margin-left: -2px;
+}
+.review-info i {
+    font-size: .95em;
+}
+
+.review-content p {
+    text-align: justify;
+    font-size: .95em;
+    color: rgba(255,255,255,.8);
+    line-height: 1.6em;
+    /*height: 116px;*/
+    /*overflow: hidden;*/
+}
+
+.readMore {
+    position: relative;
+    width: 20%;
+    height: 15px;
+    line-height: 15px;
+    margin-top: 6px;
+    border-left: 1px solid #B2EEFF;
+    border-right: 1px solid #B2EEFF;
+    color: #B2EEFF;
+    text-align: center;
+    font-size: .9em;
+}
+
+
+
+
+
+
+
