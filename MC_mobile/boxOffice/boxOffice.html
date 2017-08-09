@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>電影蛋糕 - 周票房榜</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="由于哥哥乔（凯勒·钱德勒）过世，看门人李·钱德勒（凯西·阿弗莱克）成为他16岁的侄子帕特里克（卢卡斯·赫奇斯）的法定监护人，李的生活从此发生彻底的改变，他不得不回到家乡的小城市（曼彻斯特），面对与前妻..." />
+    <link rel="canonical" href="http://test.moviecaker.com/video/M00000000158105">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="../entire_css/common.css" rel="stylesheet" />
+    <link href="css/boxOffice.css" rel="stylesheet" />
+    <link href="../entire_css/min-search.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- 週票房榜需要 owl carousel的css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css"> -->
+</head>
+<body>
+    <!--<div ng-hide="main.appReady">
+        <div class="loader">Loading...</div>
+    </div>-->
+    <div ng-show="main.appReady">
+        <!-- search area -->
+        <div class="search-area group-wrap">
+            <form> 
+                <button class="btn-close group-wrap" type="reset">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </button>
+                <div class="search-keyword ui">
+                    <i class="fa fa-search fa-lg pull-left" aria-hidden="true"></i>
+                    <input id="search-input" class="pull-left" type="search" name="" value="" placeholder="尋找電影..." ng-model="main.searchText" ng-bind="main.searchText" multi-search/>
+                </div>
+            </form>
+            <div id="search-autocomplete"></div>
+            <a href="#" class="more pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>更多搜尋結果</a>
+        </div>
+
+        <!-- header -->
+        <div class="header" ng-class="{ blur: main.screenStatus() }">
+            <ul class="group-wrap header-items" ng-show="!main.isSearchMode">
+                <li class="pull-left">
+                    <a href="/mobile">
+                        <i class="fa fa-bars padTBHalfX" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li id="user-icon" class="pull-right">
+                     <a href="/login" ng-click="main.MenuLogin()">
+                        <div class="login-icon padTBHalfX maLHalfx">
+                            <img src="img/login_icon.png"alt="">
+                        </div>
+                    </a> 
+                    <!-- 登入後顯示 -->
+                    <a href="#" style="display:none;">
+                        <div class="circle-mask circle1x">
+                            <img src="img/default_avatar.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li id="search-icon" class="pull-right maR1x">
+                    <i class="fa fa-search padTBHalfX" aria-hidden="true"></i>
+                </li>
+                <li id="logo-text">
+                    <a href="/mobile"><img src="img/mc_logo_text.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- content -->
+        <div ng-class="{ blur: main.screenStatus() }">
+            <div ng-controller="videoIntroCtrl as vm" ng-init="vm.init('M00000000158105')">
+                <!-- fixed background -->
+                <div class="bkgd-img">
+                    <!-- 背景圖要抓每一部電影的電影海報 -->
+                    <img src="img/movie1.jpg" alt="">
+                </div>
+
+                <!-- main content -->
+                <div class="content-wrap">
+                    <section>
+                        <div class="section-title fz-subtitle text-blue">週票房榜</div>
+                        <article class="maT2x overflow-h">
+                            <ul class="nav-horizontal nav-type-scroll optionNum-4more">
+                                <li class="active">中國大陸</li>
+                                <li>台灣地區</li>
+                                <li>美國</li>
+                                <li>日本</li>
+                                <li>韓國</li>
+                            </ul>
+                            <p class="dateRecorded maTHalf1x">統計時間：<span>2017-07-07～2017-07-09</span></p>
+                            <section class="maT50">
+                                <ul class="movie-list group-wrap owl-carousel">
+                                    <!-- 從這裡開始 repeat li -->
+                                    <li class="box-office-movie-item">
+                                        <div>
+                                            <div class="shadow"></div> 
+                                            <div class="movie-order">1</div>
+                                        </div>
+                                        <a href="www.google.com">
+                                            <img src="img/movie1.jpg" alt="">
+                                            <div class="movie-info-wrap hasContent"> <!-- add class "hasContent" 會出現黑色底 -->
+                                                <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
+                                            </div> 
+                                        </a>
+                                        <div class="lineh20 maTHalf1x">
+                                            <p class="fz-13 text-white line-clamp clamp-1">知無涯者</p> <!-- 電影名稱 -->
+                                            <span class="fz-13 text-blue">
+                                                <i class="fa fa-star" aria-hidden="true"></i> 
+                                                <span ng-bind="item.Ratings_Douban">7.4</span> <!-- 評分是 豆瓣＋IMDB的平均分數 -->
+                                            </span>
+                                            <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現在線看 -->
+                                                <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
+                                            </span>
+                                                <ul class="movie-checkin-btns group-wrap">
+                                                <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-eye" aria-hidden="true"></i></li>
+                                                <li class="viewComment noComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
+                                                <li class="movie-comment-text noComment">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
+                                            </ul> 
+                                        </div>
+                                    </li>
+                                    <!-- end repeat li -->
+                                    <li class="box-office-movie-item">
+                                        <div>
+                                            <div class="shadow"></div> 
+                                            <div class="movie-order">2</div>
+                                        </div>
+                                        <a href="#">
+                                            <img src="img/movie1.jpg" alt="">
+                                            <div class="movie-info-wrap hasContent"> <!-- add class hasContent 會出現黑色底 -->
+                                                <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
+                                            </div> 
+                                        </a>
+                                        <div class="lineh20 maTHalf1x">
+                                            <p class="fz-13 text-white line-clamp clamp-1">知無涯者</p> <!-- 電影名稱 -->
+                                            <span class="fz-13 text-blue">
+                                                <i class="fa fa-star" aria-hidden="true"></i> 
+                                                <span ng-bind="item.Ratings_Douban">7.4</span> <!-- 評分是 豆瓣＋IMDB的平均分數 -->
+                                            </span>
+                                            <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現在線看 -->
+                                                <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
+                                            </span>
+                                                <ul class="movie-checkin-btns group-wrap">
+                                                <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-eye" aria-hidden="true"></i></li>
+                                                <li class="viewComment noComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
+                                                <li class="movie-comment-text noComment">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
+                                            </ul> 
+                                        </div>
+                                    </li>
+                                    <li class="box-office-movie-item">
+                                        <div>
+                                            <div class="shadow"></div> 
+                                            <div class="movie-order">3</div>
+                                        </div>
+                                        <a href="#">
+                                            <img src="img/movie1.jpg" alt="">
+                                            <div class="movie-info-wrap hasContent"> <!-- add class hasContent 會出現黑色底 -->
+                                                <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
+                                            </div> 
+                                        </a>
+                                        <div class="lineh20 maTHalf1x">
+                                            <p class="fz-13 text-white line-clamp clamp-1">知無涯者</p> <!-- 電影名稱 -->
+                                            <span class="fz-13 text-blue">
+                                                <i class="fa fa-star" aria-hidden="true"></i> 
+                                                <span ng-bind="item.Ratings_Douban">7.4</span> <!-- 評分是 豆瓣＋IMDB的平均分數 -->
+                                            </span>
+                                            <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現在線看 -->
+                                                <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
+                                            </span>
+                                                <ul class="movie-checkin-btns group-wrap">
+                                                <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-eye" aria-hidden="true"></i></li>
+                                                <li class="viewComment noComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
+                                                <li class="movie-comment-text noComment">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
+                                            </ul> 
+                                        </div>
+                                    </li>
+                                    <li class="box-office-movie-item">
+                                        <div>
+                                            <div class="shadow"></div> 
+                                            <div class="movie-order">4</div>
+                                        </div>
+                                        <a href="#">
+                                            <img src="img/movie1.jpg" alt="">
+                                            <div class="movie-info-wrap hasContent"> <!-- add class hasContent 會出現黑色底 -->
+                                                <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
+                                            </div> 
+                                        </a>
+                                        <div class="lineh20 maTHalf1x">
+                                            <p class="fz-13 text-white line-clamp clamp-1">知無涯者</p> <!-- 電影名稱 -->
+                                            <span class="fz-13 text-blue">
+                                                <i class="fa fa-star" aria-hidden="true"></i> 
+                                                <span ng-bind="item.Ratings_Douban">7.4</span> <!-- 評分是 豆瓣＋IMDB的平均分數 -->
+                                            </span>
+                                            <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現在線看 -->
+                                                <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
+                                            </span>
+                                                <ul class="movie-checkin-btns group-wrap">
+                                                <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-eye" aria-hidden="true"></i></li>
+                                                <li class="viewComment noComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
+                                                <li class="movie-comment-text noComment">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
+                                            </ul> 
+                                        </div>
+                                    </li>
+                                    <li class="box-office-movie-item">
+                                        <div>
+                                            <div class="shadow"></div> 
+                                            <div class="movie-order">5</div>
+                                        </div>
+                                        <a href="#">
+                                            <img src="img/movie1.jpg" alt="">
+                                            <div class="movie-info-wrap hasContent"> <!-- add class hasContent 會出現黑色底 -->
+                                                <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
+                                            </div> 
+                                        </a>
+                                        <div class="lineh20 maTHalf1x">
+                                            <p class="fz-13 text-white line-clamp clamp-1">知無涯者</p> <!-- 電影名稱 -->
+                                            <span class="fz-13 text-blue">
+                                                <i class="fa fa-star" aria-hidden="true"></i> 
+                                                <span ng-bind="item.Ratings_Douban">7.4</span> <!-- 評分是 豆瓣＋IMDB的平均分數 -->
+                                            </span>
+                                            <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現在線看 -->
+                                                <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
+                                            </span>
+                                                <ul class="movie-checkin-btns group-wrap">
+                                                <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-eye" aria-hidden="true"></i></li>
+                                                <li class="viewComment noComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
+                                                <li class="movie-comment-text noComment">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
+                                            </ul> 
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>
+                        </article>
+                    </section>
+                </div>
+
+            </div> <!--end of ng controller -->
+
+            <!--<div class="loading-ajax" ng-show="main.loadingStatus()">
+                <i class="fa fa-spinner fa-pulse fa-4x green"></i>
+            </div>-->
+            <div class="top circle40">
+                <i class="fa fa-angle-up" aria-hidden="true"></i>
+            </div> 
+        </div> <!--end of ng class -->
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- 週票房榜需要 owl carousel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+
+<script defer src='http://test.moviecaker.com/scripts/angular/angular.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/cssPreload/cssPreload.factory.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/cssPreload/cssPreload.directive.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/ngTouch/ng-touch.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/sortable/ng-sortable.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/infiniteScroll/ng-infinite-scroll.min.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/app.mobile.module.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/services/filter.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/services/service.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/multi-search.directive.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/topic-video-search.directive.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/star-rating.directive.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/all.directive.js'></script>
+
+<script defer src="http://test.moviecaker.com/scripts/angular/controllers/mobile/layout.ctrl.js?v=20161209"></script>
+<script defer src="http://test.moviecaker.com/Scripts/angular/controllers/mobile/video-intro.ctrl.js"></script>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script>
+    wx.config({
+        debug: false, 
+        appId: 'wx3069e676ab7765a2', 
+        timestamp: '1497234030', 
+        nonceStr: 'C4B31CE7D95C75CA70D50C19AEF08BF1', 
+        signature: '1c078c6e4b2efdf1cdba40fde2498118b5ec634b', 
+        jsApiList: [
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+        ] 
+    });
+
+    wx.error(function (res) {
+        console.log(res);
+        console.log('验证失败');
+    });
+</script>
+
+<script>
+    wx.ready(function () {
+        wx.onMenuShareTimeline({
+            title: '《海邊的曼徹斯特》電影來自 MovieCaker', // 分享标题
+            link: 'http://test.moviecaker.com/mobile/video/M00000000158105', // 分享链接
+            imgUrl: 'http://121.41.34.59/Content/pictures/files/M1660937_posters.jpg?width=300', // 分享图标
+            //success: function () {
+            //    // 用户确认分享后执行的回调函数
+            //},
+            //cancel: function () {
+            //    // 用户取消分享后执行的回调函数
+            //}
+        });
+
+        wx.onMenuShareAppMessage({
+            title: '《海邊的曼徹斯特》電影來自 MovieCaker', // 分享标题
+            desc: '由于哥哥乔（凯勒&#183;钱德勒）过世，看门人李&#183;钱德勒（凯西&#183;阿弗莱克）成为他16岁的侄子帕特里克（卢卡斯&#183;赫奇斯）的法定监护人，李的生活从此发生彻底的改变，他不得不回到家乡的小城市（曼彻斯特），面对与前妻Randi（米歇尔&#183;威廉姆斯）之间的痛苦问题。', // 分享描述
+            link: 'http://test.moviecaker.com/mobile/video/M00000000158105', // 分享链接
+            imgUrl: 'http://121.41.34.59/Content/pictures/files/M1660937_posters.jpg?width=300', // 分享图标
+            type: '', 
+            dataUrl: '', 
+            //success: function () {
+            //    // 用户确认分享后执行的回调函数
+            //},
+            //cancel: function () {
+            //    // 用户取消分享后执行的回调函数
+            //}
+        });
+    });
+</script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-68883772-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script>
+    $(document).ready(function(){
+        // 測試搜尋樣式，不是真的搜尋功能
+        $( function() {
+            var availableTags = [
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)","醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)"
+            ];
+            $( "#search-input" ).autocomplete({
+                source: availableTags,
+                appendTo: "#search-autocomplete",
+                open: function(){
+                    $('.more').addClass("searching"); // 有搜尋結果再出現”更多搜尋“按鈕
+                },
+                close: function(){
+                    $('.more').removeClass("searching"); // 沒有搜尋結果不出現”更多搜尋“按鈕
+                }
+            });
+        });
+
+        // 首頁點擊搜尋的動態效果
+        $('#search-icon').on("click", function(){
+            window.scrollBy(0, 1); // 讓鍵盤出現時頁面不會被推上去
+            $('.search-area').addClass("searching");
+            $('.btn-close').addClass("searching");
+            $('.search-keyword').addClass("searching");
+        });
+        // 點擊叉按鈕關閉搜尋
+        $('.btn-close').on("click", function(){
+            $('.search-area').removeClass("searching");
+            $('.btn-close').removeClass("searching");
+            $('.search-keyword').removeClass("searching");
+        });
+
+        // 點擊線上看按鈕會出現下拉選單
+        $('.btn-playMovie').on('click',function(){
+            if ($('.play-movie-selection').hasClass('show')) {
+                $('.play-movie-selection').removeClass('show');
+            } else {
+                $('.play-movie-selection').addClass('show');
+            }
+        });
+
+        // 滑動畫面 會出現黑色底
+        $(window).scroll(function() {
+            var windowpos = $(window).scrollTop();
+            var header = $('.header');
+            var content = $('.content-wrap')
+            if ( windowpos > 0 ) {
+                header.addClass('scroll');
+                content.addClass('scroll');
+            } else {
+                header.removeClass('scroll');
+                content.removeClass('scroll');
+            }
+        });
+
+        // 電影列表的排序nav bar
+        $('.nav-type-scroll > li').on('click', function(){
+            $('.nav-type-scroll > li').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        $(".owl-carousel").owlCarousel({
+            center: true,
+            items:2,
+            loop:false,
+            margin:35,
+            dots:true,
+            lazyload:true
+        });
+    });
+</script>
+
+</body>
+</html>

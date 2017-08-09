@@ -1,0 +1,136 @@
+.bkgd-img img {
+    width: 110%;
+    position: relative;
+    top: -20px;
+    left: -5%;
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+}
+
+.content-wrap {
+    height: 100vh;
+    padding-bottom: 5%;
+}
+.content-wrap:before {
+    content:'';
+    position: fixed;
+    top: 0vh;
+    left: 0;
+    width: 100%;
+    height: 95vh;
+    z-index: -1;
+    background-color: rgba(12,12,12,0.25);
+    transition: background-color .5s .1s ease;
+}
+
+
+/* ------------- Date Recorded CSS ------------ */
+.dateRecorded {
+    font-size: 0.625em;
+    text-align: right;
+    color: rgba(238,238,238,.6);
+}
+
+
+/* ------------- movie-order CSS ------------ */
+.movie-order {
+    position: absolute;
+    left: -5px;
+    top: 5%;
+    width: 45px;
+    height: 30px;
+    border-radius: 0 5px 5px 0;
+    background-color: #7EA159; 
+    z-index: 3;
+    text-align: center;
+    color: #ffffff;
+    line-height: 30px;
+}
+.shadow {
+    position: absolute;
+    left: -4px;
+    top: 6%;
+    width: 5px;
+    height: 30px;
+    background-color: #344325;
+    z-index: 1;
+}
+
+
+/* ------- adjust movielist li CSS -------  */
+.owl-carousel li.box-office-movie-item {
+	float: none;
+	position: relative;
+	background-color: rgba(12,12,12,.5);
+	box-sizing: border-box;
+	padding: 7%;
+	border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #71cfee;
+}
+.owl-carousel li.box-office-movie-item a {
+	width: 100%;
+	height: auto; 
+	overflow: hidden; 
+	display: block;
+	position: relative;
+}
+.owl-carousel li.box-office-movie-item img {
+	width: 100%;
+}
+
+
+/* ------- modify owl carousel CSS -------  */
+.owl-carousel {
+    touch-action: none;  /* prevent console from spitting warnings */
+}
+
+.owl-item.active.center li.box-office-movie-item {
+    -webkit-animation: enlarge .4s ease-in-out forwards;
+    -moz-animation: enlarge .4s ease-in-out forwards;
+     -o-animation: enlarge .4s ease-in-out forwards;
+    animation: enlarge .4s ease-in-out forwards;
+}
+@-webkit-keyframes enlarge {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+@-moz-keyframes enlarge {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+@-o-keyframes enlarge {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+@keyframes enlarge {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+.owl-stage-outer {
+    overflow: visible !important;
+}
+.owl-dots, .owl-nav {
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+.owl-nav.disabled+.owl-dots {
+    margin-top: 50px;
+}
+.owl-dots .owl-dot {
+    display: inline-block;
+    zoom: 1;
+}
+.owl-dots .owl-dot span {
+    width: 6px;
+    height: 6px;
+    margin: 5px;
+    display: block;
+    background: rgba(74,74,74,70);
+    -webkit-backface-visibility: visible;
+    transition: opacity .2s ease;
+    border-radius: 50%;
+}
+.owl-dots .owl-dot.active span {
+    background: #71cfee;
+}
