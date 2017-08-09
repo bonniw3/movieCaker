@@ -91,14 +91,14 @@
                             <p class="dateRecorded maTHalf1x">統計時間：<span>2017-07-07～2017-07-09</span></p>
                             <section class="maT50">
                                 <ul class="movie-list group-wrap owl-carousel">
-                                    <!-- 從這裡開始 repeat li -->
+                                    <!-- 從這裡開始 repeat li（週票房應該會有 10 部電影） -->
                                     <li class="box-office-movie-item">
                                         <div>
                                             <div class="shadow"></div> 
                                             <div class="movie-order">1</div>
                                         </div>
-                                        <a href="www.google.com">
-                                            <img src="img/movie1.jpg" alt="">
+                                        <a href="#"> <!-- 連到這部電影的電影介紹頁 -->
+                                            <img class="box-office-movie" src="img/movie1.jpg" alt="">
                                             <div class="movie-info-wrap hasContent"> <!-- add class "hasContent" 會出現黑色底 -->
                                                 <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
                                             </div> 
@@ -112,7 +112,7 @@
                                             <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現在線看 -->
                                                 <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
                                             </span>
-                                                <ul class="movie-checkin-btns group-wrap">
+                                            <ul class="movie-checkin-btns group-wrap">
                                                 <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-heart" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-eye" aria-hidden="true"></i></li>
@@ -122,13 +122,14 @@
                                         </div>
                                     </li>
                                     <!-- end repeat li -->
+
                                     <li class="box-office-movie-item">
                                         <div>
                                             <div class="shadow"></div> 
                                             <div class="movie-order">2</div>
                                         </div>
                                         <a href="#">
-                                            <img src="img/movie1.jpg" alt="">
+                                            <img class="box-office-movie" src="img/movie5.jpg" alt="">
                                             <div class="movie-info-wrap hasContent"> <!-- add class hasContent 會出現黑色底 -->
                                                 <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
                                             </div> 
@@ -157,7 +158,7 @@
                                             <div class="movie-order">3</div>
                                         </div>
                                         <a href="#">
-                                            <img src="img/movie1.jpg" alt="">
+                                            <img class="box-office-movie" src="img/movie3.jpg" alt="">
                                             <div class="movie-info-wrap hasContent"> <!-- add class hasContent 會出現黑色底 -->
                                                 <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
                                             </div> 
@@ -186,7 +187,7 @@
                                             <div class="movie-order">4</div>
                                         </div>
                                         <a href="#">
-                                            <img src="img/movie1.jpg" alt="">
+                                            <img class="box-office-movie" src="img/movie4.jpg" alt="">
                                             <div class="movie-info-wrap hasContent"> <!-- add class hasContent 會出現黑色底 -->
                                                 <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
                                             </div> 
@@ -215,7 +216,7 @@
                                             <div class="movie-order">5</div>
                                         </div>
                                         <a href="#">
-                                            <img src="img/movie1.jpg" alt="">
+                                            <img class="box-office-movie" src="img/manchester.png" alt="">
                                             <div class="movie-info-wrap hasContent"> <!-- add class hasContent 會出現黑色底 -->
                                                 <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
                                             </div> 
@@ -427,14 +428,21 @@
             $(this).addClass('active');
         });
 
-        $(".owl-carousel").owlCarousel({
+        // owl carousel 設定
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
             center: true,
-            items:2,
-            loop:false,
-            margin:35,
-            dots:true,
-            lazyload:true
+            items: 2,
+            margin: 35
         });
+
+        // 滑動 owl carousel 更換背景圖
+        var activeImg = $('.owl-item.center').find('img.box-office-movie').attr('src');
+        owl.on('translated.owl.carousel', function(event) {
+            activeImg = $(this).find('.owl-item.center').find('img.box-office-movie').attr('src');
+            $('.bkgd-img img').attr('src', activeImg );
+        })
+
     });
 </script>
 
