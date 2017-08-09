@@ -223,7 +223,7 @@
                         </article>
                     </section>
 
-                    <section class="author-comments maT13p">
+                    <section class="maT13p">
                         <div class="section-title fz-subtitle text-blue">專題回應（<span>5</span>則）</div>
                         <article class="padLR10 maT2x rel-pos">
                             <!--<a href="#" class="pos-nextToTitle fz-15 text-light-blue"><i class="fa fa-angle-right padRHalfX fz-subtitle" aria-hidden="true"></i> 更多回應</a>-->
@@ -263,7 +263,7 @@
                         </article>
                     </section>
 
-                    <section class="author-comments maT13p" ng-show="vm.user!=null">
+                    <section class="maT13p" ng-show="vm.user!=null">
                         <div class="section-title fz-subtitle text-blue">我的專題刷片度</div>
                         <article class="padLR10 maT2x rel-pos">
                             <div>
@@ -279,7 +279,7 @@
                         </article>
                     </section>
 
-                    <section class="author-comments maT13p">
+                    <section class="maT13p">
                         <div class="section-title fz-subtitle text-blue">專題電影列表（<span>18</span>部）</div>
                         <article class="maT2x">
                             <ul class="nav-horizontal nav-type-scroll optionNum-4">
@@ -301,7 +301,7 @@
                                         <span class="movie-order width-xss" style="display:none;">1</span>
                                         <a href="#">
                                             <img src="img/movie1.jpg" alt="">
-                                            <div class="movie-info-wrap"> <!-- addClass hasContent 會出現-->
+                                            <div class="movie-info-wrap"> <!-- addClass hasContent 會出現黑底-->
                                                 <!-- add class active 出現首映日期 -->
                                                 <p class="date-released">2017-07-13</p>
                                              </div> 
@@ -312,15 +312,18 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i> 
                                                 <span class="" ng-bind="item.Ratings_Douban">7.4</span>
                                             </span><!-- 評分是 豆瓣＋IMDB的平均分數 -->
-                                            <span class="fz-13 text-orange maLHalfx">
+                                            
+                                            <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現在線看 -->
                                                 <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
                                             </span>
                                             <ul class="movie-checkin-btns group-wrap">
                                                 <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-heart" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-eye" aria-hidden="true"></i></li>
-                                                <li class="viewComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
-                                                <li class="movie-comment-text" ng-bind="item.VideoDesc">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
+                                                <!-- 如果電影有評語的話，.viewComment 跟 .movie-comment-text 都要 remove class “noComment” 才會出現 -->
+                                                <!-- .viewComment 被 click 的時候，自己要加上 class "active"，然後會展開下面的 .movie-comment-text -->
+                                                <li class="viewComment noComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
+                                                <li class="movie-comment-text noComment" ng-bind="item.VideoDesc">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li> <!-- .movie-comment-text add class "showMovieComment" 會出現評語 -->
                                             </ul>
                                         </div>
                                     </li>
@@ -573,25 +576,24 @@
                 }
             });
 
+            $('.display-ver-dropdown > li').on('click', function(){
+                $('.display-ver-dropdown > li').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            // 電影列表的排序nav bar
             $('.nav-type-scroll > li').on('click', function(){
                 $('.nav-type-scroll > li').removeClass('active');
                 $(this).addClass('active');
             });
 
+            // 電影列表的顯示 nav bar
             $('.nav-type-box > li').on('click', function(){
                 $('.nav-type-box > li').removeClass('active');
                 $(this).addClass('active');
             });
 
-            // $('.scroll-h > li').on('click', function(){
-            //     $('.scroll-h > li').removeClass('active');
-            //     $(this).addClass('active');
-            // });
-
-            $('.display-ver-dropdown > li').on('click', function(){
-                $('.display-ver-dropdown > li').removeClass('active');
-                $(this).addClass('active');
-            });
+            
 
             $('.movie-checkin-btns > li > i').on('click', function(){
                 if ($(this).hasClass('active')) {
@@ -610,15 +612,6 @@
                     $(this).next('li.movie-comment-text').addClass('active');
                 }
             });
-
-            // $('.grid').masonry({
-            //     itemSelector: '.grid-item',
-            //     columnWidth: '.grid-sizer',
-            //     percentPosition: true,
-            //     gutter: 10
-            // });
-
-            
 
         });
     </script>

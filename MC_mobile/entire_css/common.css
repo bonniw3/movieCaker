@@ -760,7 +760,7 @@ table {
 .movie-info-wrap.hasContent {
 	display: block;
 }
-.base-sector {
+/* .base-sector {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -772,17 +772,16 @@ table {
 	text-align: center;
 	box-sizing: border-box;
 	padding: 12px 5px 10px 0;	
-}
+} */
 
 .date-released {
 	color: #eeeeee;
-	position: absolute;
-	right: 15px;
-	bottom: 3px;
+	text-align: center;
+	margin-top: 4.5%;
 	font-size: .9em;
 	display: none;
 }
-.date-released:after {
+/* .date-released:after {
 	content: '';
 	position: absolute;
 	right: -15px;
@@ -790,7 +789,7 @@ table {
 	background-color: #fff;
 	width: 3px;
 	height: 15px;
-}
+} */
 .date-released.active {
 	display: block;
 }
@@ -990,6 +989,9 @@ table {
 
 .viewComment.active > i {
 	color: #71cfee;
+}
+.viewComment.noComment, .movie-comment-text.noComment {
+	display: none;
 }
 
 /* ----------------- MORE ------------------ */
@@ -1500,7 +1502,7 @@ textarea.reviewContent:focus {
 	width: 25%;
 }
 .optionNum-4more > li {
-	width: 23%;
+	width: 28%;
 }
 
 .content-preline {
@@ -1538,6 +1540,13 @@ textarea.reviewContent:focus {
 }
 .showLikeNum {
 	display: block !important;
+}
+
+.noOnline {
+	display: none !important;
+}
+.overflow-h {
+	overflow: hidden;
 }
 
 
