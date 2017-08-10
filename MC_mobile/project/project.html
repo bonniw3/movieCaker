@@ -108,9 +108,7 @@
                             </ul>
                             <a href="#" class="avatar-large avatar-pos-center circle4x maT-50">
                                 <div class="circle-mask circle100 rel-pos">
-                                    <!--<user-avatar data-image-src="/Uploads/UserAvatar/user_164.jpg"></user-avatar>-->
                                     <img src="img/default_avatar.png" alt="">
-
                                     <!-- 是不是朋友 - 登入後才會顯示 -->
                                     <div ng-show="vm.currentUser.isAuthenticated">
                                         <div class="text-blue btn-friendOption bkgd-light-grey ng-hide" ng-show="vm.isFriend && vm.review.UserId!=vm.currentUser.Id"><i class="fa fa-check" aria-hidden="true"></i> 朋友</div>
@@ -120,11 +118,11 @@
                                 </div>
                             </a>
 
-                            <a class="user-name maTHalf1x" href="#">歡影 </a>
+                            <a class="user-name maTHalf1x" href="#">歡影</a> 
 
                             <section class="maT2x reviewContent">
                                 <h2 class="fz-subtitle text-white taC">在電影中看見的愛情心法13條</h2>
-                                <!-- ul li 裡 addClass active 變色 -->
+                                <!-- li 裡 addClass active 變色 -->
                                 <ul class="reaction-stats taC maTHalf1x">
                                     <li class="review-heart" ng-show="vm.isAuthenticated" ng-class="{'active':vm.topic.IsLiked}">
                                         <i class="fa fa-heart" aria-hidden="true"></i> <span ng-bind="vm.topic.LikeNum">4</span>
@@ -195,22 +193,12 @@
                         <div class="section-title fz-subtitle text-blue">專題內容</div>
                         <article class="padLR10 maT2x rel-pos">
                             <p class="pos-nextToTitle fz-xs text-white50p letter-space-1x" ng-show="review.ViewedOn!==null" ng-bind="(review.ViewedOn| mcJsLocalDateTime)"><span class="">修改於</span> 2017/03/21</p>
-                            <div class="projectPlot active" ng-class="{'active':vm.seeAllContent}">
-                                <div ng-hide="vm.seeAllContent" ng-bind="(vm.movie.Story | characters:50 :true)"><!--小時候我們都聽過兩個和尚到南海取經的故事，窮和尚只帶著一個碗、一根木杖就動身，經過一年的努力之後，窮和尚從南海取經回來，而富和尚却還在原地裹足不前。
-
-                                    在職場上，有些人愛做夢，但做事只有三、五分鐘的熱度，然而，也有些人就算遇到挫折，仍能不氣餒，堅持到底。長久下來，兩者之間的成就便有了明顯的差距。我認為，造就每個人成功與否，除了先天條件外，最大的差別就在於堅持力。
-
-                                    堅持是一種在對的時間、堅持做對的事，有時也意味取捨，甚至犧牲。堅持其實是一種生活態度：願意挑戰自己、戰勝自己，相對的，它會帶來成就感、滿足感，甚至讓個人的自尊提升，使我們更有自信！
-
-                                    這裡推薦15部關於堅持的電影，這些電影會告訴你一些改變人生的神奇力量，讓自己更有堅持的動力！相信抱持著永不放棄的信念、不斷的練習堅持，我們在生活及工作中都將更為圓滿，能朝自己的目 標勇往直前。-->
-                                </div>
-                                <div class="content-preline" ng-show="vm.seeAllContent" ng-bind="vm.movie.Story">小時候我們都聽過兩個和尚到南海取經的故事，窮和尚只帶著一個碗、一根木杖就動身，經過一年的努力之後，窮和尚從南海取經回來，而富和尚却還在原地裹足不前。
-
-                                    在職場上，有些人愛做夢，但做事只有三、五分鐘的熱度，然而，也有些人就算遇到挫折，仍能不氣餒，堅持到底。長久下來，兩者之間的成就便有了明顯的差距。我認為，造就每個人成功與否，除了先天條件外，最大的差別就在於堅持力。
-
-                                    堅持是一種在對的時間、堅持做對的事，有時也意味取捨，甚至犧牲。堅持其實是一種生活態度：願意挑戰自己、戰勝自己，相對的，它會帶來成就感、滿足感，甚至讓個人的自尊提升，使我們更有自信！
-
-                                    這裡推薦15部關於堅持的電影，這些電影會告訴你一些改變人生的神奇力量，讓自己更有堅持的動力！相信抱持著永不放棄的信念、不斷的練習堅持，我們在生活及工作中都將更為圓滿，能朝自己的目 標勇往直前。
+                            <div class="projectPlot">
+                                <!-- add class "clamp-5" 就會只顯示五行字 -->
+                                <div class="content-preline line-clamp">小時候我們都聽過兩個和尚到南海取經的故事，窮和尚只帶著一個碗、一根木杖就動身，經過一年的努力之後，窮和尚從南海取經回來，而富和尚却還在原地裹足不前。
+                                在職場上，有些人愛做夢，但做事只有三、五分鐘的熱度，然而，也有些人就算遇到挫折，仍能不氣餒，堅持到底。長久下來，兩者之間的成就便有了明顯的差距。我認為，造就每個人成功與否，除了先天條件外，最大的差別就在於堅持力。
+                                堅持是一種在對的時間、堅持做對的事，有時也意味取捨，甚至犧牲。堅持其實是一種生活態度：願意挑戰自己、戰勝自己，相對的，它會帶來成就感、滿足感，甚至讓個人的自尊提升，使我們更有自信！
+                                這裡推薦15部關於堅持的電影，這些電影會告訴你一些改變人生的神奇力量，讓自己更有堅持的動力！相信抱持著永不放棄的信念、不斷的練習堅持，我們在生活及工作中都將更為圓滿，能朝自己的目 標勇往直前。
                                 </div>
                             </div>
                             <div class="seeMore maT2x" ng-click="vm.seeMore()">
@@ -225,7 +213,7 @@
                         <article class="padLR10 maT2x rel-pos">
                             <!--<a href="#" class="pos-nextToTitle fz-15 text-light-blue"><i class="fa fa-angle-right padRHalfX fz-subtitle" aria-hidden="true"></i> 更多回應</a>-->
                             <ul class="comment-list" ng-show="vm.reviewMessages.length > 0">
-                                    <!--ngRepeat: reviewMessage in vm.reviewMessages -->
+                                <!--ngRepeat: reviewMessage in vm.reviewMessages (這邊是回應影評)-->
                                 <li class="ng-scope" ng-hide="!vm.displayAllMessage &amp;&amp; $index >= 2">
                                     <div class="comment-item">
                                         <div class="circle-mask circle40 pull-left">
@@ -239,7 +227,7 @@
                                         </div>
                                         <p class="comment-content maL50 maTHalf1x ng-binding" ng-bind="reviewMessage.Message">酷喔!!!!!!!!!!!!!</p>
                                     </div>
-                                    <!-- ngRepeat: replyReview in reviewMessage.ReplyReviewMessage -->
+                                    <!-- ngRepeat: replyReview in reviewMessage.ReplyReviewMessage (這邊是回覆別人的回應)-->
                                     <div class="reply-item maL50 ng-scope">
                                         <div class="circle-mask circle1x pull-left">
                                             <img src="img/default_avatar.png" alt="">
@@ -260,6 +248,7 @@
                         </article>
                     </section>
 
+                    <!-- 這塊只有 登入後才會出現 -->
                     <section class="maT13p" ng-show="vm.user!=null">
                         <div class="section-title fz-subtitle text-blue">我的專題刷片度</div>
                         <article class="padLR10 maT2x rel-pos">
@@ -293,13 +282,9 @@
                             </ul>
                             <section class="maT2x">
                                 <div class="movie-list group-wrap">
-
-                                    <!-- 從這裡開始 repeat div（週票房應該會有 10 部電影） -->
+                                    <!-- 從這裡開始 repeat div -->
                                     <div class="movie-item">
-                                        <div>
-                                            <div class="shadow"></div> 
-                                            <div class="movie-order">1</div> <!-- 每部電影要按123...排下去 -->
-                                        </div>
+                                        <div class="movie-order">1</div> <!-- add class "showOrderNum" 會出現數字排序-->
                                         <a href="#"> <!-- 連到這部電影的電影介紹頁 -->
                                             <img src="img/movie1.jpg" alt="">
                                             <div class="movie-info-wrap"> <!-- add class "hasContent" 會出現黑色底（裡面如果有東西要顯示就要有黑色底) -->
@@ -327,7 +312,6 @@
                                         </div>
                                     </div>
                                     <!-- end repeat div -->
-
                                 </div>
                             </section>
                         </article>

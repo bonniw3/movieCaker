@@ -15,7 +15,7 @@
     position: relative;
     top: -2.5vh;
     left: 0;
-    left: -5vw; 
+    left: -15vw; 
     -webkit-filter: blur(20px);
             filter: blur(20px);
 }
