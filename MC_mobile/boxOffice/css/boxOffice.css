@@ -1,8 +1,21 @@
+.bkgd-img:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -5px;
+    left: 0;
+	z-index: 2;
+    background: none;
+}
+
 .bkgd-img img {
-    width: 110%;
+    height: 105vh;
+    width: auto; 
     position: relative;
-    top: -20px;
-    left: -5%;
+    top: -2.5vh;
+    left: 0;
+    left: -5vw; 
     -webkit-filter: blur(20px);
             filter: blur(20px);
 }
@@ -17,10 +30,13 @@
     top: 0vh;
     left: 0;
     width: 100%;
-    height: 95vh;
+    height: 100%;
     z-index: -1;
     background-color: rgba(12,12,12,0.25);
     transition: background-color .5s .1s ease;
+}
+.content-wrap.scroll:before {
+    height: 100%;
 }
 
 
@@ -58,7 +74,7 @@
 
 
 /* ------- adjust movielist li CSS -------  */
-.owl-carousel li.box-office-movie-item {
+.owl-carousel .movie-item.box-office {
 	float: none;
 	position: relative;
 	background-color: rgba(12,12,12,.5);
@@ -67,14 +83,14 @@
 	border-radius: 5px 5px 0 0;
     border-bottom: 1px solid #71cfee;
 }
-.owl-carousel li.box-office-movie-item a {
+.owl-carousel .movie-item.box-office a {
 	width: 100%;
 	height: auto; 
 	overflow: hidden; 
 	display: block;
 	position: relative;
 }
-.owl-carousel li.box-office-movie-item img {
+.owl-carousel .movie-item.box-office img {
 	width: 100%;
 }
 
@@ -84,11 +100,11 @@
     touch-action: none;  /* prevent console from spitting warnings */
 }
 
-.owl-item.active.center li.box-office-movie-item {
-    -webkit-animation: enlarge .4s ease-in-out forwards;
-    -moz-animation: enlarge .4s ease-in-out forwards;
-     -o-animation: enlarge .4s ease-in-out forwards;
-    animation: enlarge .4s ease-in-out forwards;
+.owl-item.active.center .movie-item.box-office {
+    -webkit-animation: enlarge .4s .1s ease-in-out forwards;
+    -moz-animation: enlarge .4s .1s ease-in-out forwards;
+     -o-animation: enlarge .4s .1s ease-in-out forwards;
+    animation: enlarge .4s .1s ease-in-out forwards;
 }
 @-webkit-keyframes enlarge {
     0% { transform: scale(1); }

@@ -12,9 +12,8 @@
     <link href="css/boxOffice.css" rel="stylesheet" />
     <link href="../entire_css/min-search.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- 週票房榜需要 owl carousel的css -->
+    <!-- 週票房榜需要 owl.carousel.min.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css"> -->
 </head>
 <body>
     <!--<div ng-hide="main.appReady">
@@ -69,7 +68,7 @@
 
         <!-- content -->
         <div ng-class="{ blur: main.screenStatus() }">
-            <div ng-controller="videoIntroCtrl as vm" ng-init="vm.init('M00000000158105')">
+            <div ng-controller="videoIntroCtrl as vm">
                 <!-- fixed background -->
                 <div class="bkgd-img">
                     <!-- 背景圖要抓每一部電影的電影海報 -->
@@ -89,17 +88,17 @@
                                 <li>韓國</li>
                             </ul>
                             <p class="dateRecorded maTHalf1x">統計時間：<span>2017-07-07～2017-07-09</span></p>
-                            <section class="maT50">
-                                <ul class="movie-list group-wrap owl-carousel">
-                                    <!-- 從這裡開始 repeat li（週票房應該會有 10 部電影） -->
-                                    <li class="box-office-movie-item">
+                            <section class="maT50 maB50">
+                                <div class="movie-list group-wrap owl-carousel">
+                                    <!-- 從這裡開始 repeat div（週票房應該會有 10 部電影） -->
+                                    <div class="movie-item box-office">
                                         <div>
                                             <div class="shadow"></div> 
-                                            <div class="movie-order">1</div>
+                                                <div class="movie-order">1</div> <!-- 每部電影要按123...排下去 -->
                                         </div>
                                         <a href="#"> <!-- 連到這部電影的電影介紹頁 -->
                                             <img class="box-office-movie" src="img/movie1.jpg" alt="">
-                                            <div class="movie-info-wrap hasContent"> <!-- add class "hasContent" 會出現黑色底 -->
+                                            <div class="movie-info-wrap hasContent"> <!-- add class "hasContent" 會出現黑色底（裡面如果有東西要顯示就要有黑色底） -->
                                                 <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
                                             </div> 
                                         </a>
@@ -120,46 +119,17 @@
                                                 <li class="movie-comment-text noComment">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
                                             </ul> 
                                         </div>
-                                    </li>
+                                    </div>
                                     <!-- end repeat li -->
 
-                                    <li class="box-office-movie-item">
+                                    <div class="movie-item box-office">
                                         <div>
                                             <div class="shadow"></div> 
-                                            <div class="movie-order">2</div>
+                                                <div class="movie-order">2</div> <!-- 每部電影要按123...排下去 -->
                                         </div>
-                                        <a href="#">
-                                            <img class="box-office-movie" src="img/movie5.jpg" alt="">
-                                            <div class="movie-info-wrap hasContent"> <!-- add class hasContent 會出現黑色底 -->
-                                                <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
-                                            </div> 
-                                        </a>
-                                        <div class="lineh20 maTHalf1x">
-                                            <p class="fz-13 text-white line-clamp clamp-1">知無涯者</p> <!-- 電影名稱 -->
-                                            <span class="fz-13 text-blue">
-                                                <i class="fa fa-star" aria-hidden="true"></i> 
-                                                <span ng-bind="item.Ratings_Douban">7.4</span> <!-- 評分是 豆瓣＋IMDB的平均分數 -->
-                                            </span>
-                                            <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現在線看 -->
-                                                <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
-                                            </span>
-                                                <ul class="movie-checkin-btns group-wrap">
-                                                <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-eye" aria-hidden="true"></i></li>
-                                                <li class="viewComment noComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
-                                                <li class="movie-comment-text noComment">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
-                                            </ul> 
-                                        </div>
-                                    </li>
-                                    <li class="box-office-movie-item">
-                                        <div>
-                                            <div class="shadow"></div> 
-                                            <div class="movie-order">3</div>
-                                        </div>
-                                        <a href="#">
+                                        <a href="#"> <!-- 連到這部電影的電影介紹頁 -->
                                             <img class="box-office-movie" src="img/movie3.jpg" alt="">
-                                            <div class="movie-info-wrap hasContent"> <!-- add class hasContent 會出現黑色底 -->
+                                            <div class="movie-info-wrap hasContent"> <!-- add class "hasContent" 會出現黑色底（裡面如果有東西要顯示就要有黑色底） -->
                                                 <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
                                             </div> 
                                         </a>
@@ -172,7 +142,7 @@
                                             <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現在線看 -->
                                                 <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
                                             </span>
-                                                <ul class="movie-checkin-btns group-wrap">
+                                            <ul class="movie-checkin-btns group-wrap">
                                                 <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-heart" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-eye" aria-hidden="true"></i></li>
@@ -180,15 +150,15 @@
                                                 <li class="movie-comment-text noComment">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
                                             </ul> 
                                         </div>
-                                    </li>
-                                    <li class="box-office-movie-item">
+                                    </div>
+                                    <div class="movie-item box-office">
                                         <div>
                                             <div class="shadow"></div> 
-                                            <div class="movie-order">4</div>
+                                                <div class="movie-order">3</div> <!-- 每部電影要按123...排下去 -->
                                         </div>
-                                        <a href="#">
+                                        <a href="#"> <!-- 連到這部電影的電影介紹頁 -->
                                             <img class="box-office-movie" src="img/movie4.jpg" alt="">
-                                            <div class="movie-info-wrap hasContent"> <!-- add class hasContent 會出現黑色底 -->
+                                            <div class="movie-info-wrap hasContent"> <!-- add class "hasContent" 會出現黑色底（裡面如果有東西要顯示就要有黑色底） -->
                                                 <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
                                             </div> 
                                         </a>
@@ -201,7 +171,7 @@
                                             <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現在線看 -->
                                                 <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
                                             </span>
-                                                <ul class="movie-checkin-btns group-wrap">
+                                            <ul class="movie-checkin-btns group-wrap">
                                                 <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-heart" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-eye" aria-hidden="true"></i></li>
@@ -209,15 +179,15 @@
                                                 <li class="movie-comment-text noComment">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
                                             </ul> 
                                         </div>
-                                    </li>
-                                    <li class="box-office-movie-item">
+                                    </div>
+                                    <div class="movie-item box-office">
                                         <div>
                                             <div class="shadow"></div> 
-                                            <div class="movie-order">5</div>
+                                                <div class="movie-order">4</div> <!-- 每部電影要按123...排下去 -->
                                         </div>
-                                        <a href="#">
-                                            <img class="box-office-movie" src="img/manchester.png" alt="">
-                                            <div class="movie-info-wrap hasContent"> <!-- add class hasContent 會出現黑色底 -->
+                                        <a href="#"> <!-- 連到這部電影的電影介紹頁 -->
+                                            <img class="box-office-movie" src="img/movie5.jpg" alt="">
+                                            <div class="movie-info-wrap hasContent"> <!-- add class "hasContent" 會出現黑色底（裡面如果有東西要顯示就要有黑色底） -->
                                                 <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
                                             </div> 
                                         </a>
@@ -230,7 +200,7 @@
                                             <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現在線看 -->
                                                 <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
                                             </span>
-                                                <ul class="movie-checkin-btns group-wrap">
+                                            <ul class="movie-checkin-btns group-wrap">
                                                 <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-heart" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-eye" aria-hidden="true"></i></li>
@@ -238,9 +208,38 @@
                                                 <li class="movie-comment-text noComment">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
                                             </ul> 
                                         </div>
-                                    </li>
-                                </ul>
-                            </section>
+                                    </div>
+                                    <div class="movie-item box-office">
+                                        <div>
+                                            <div class="shadow"></div> 
+                                                <div class="movie-order">5</div> <!-- 每部電影要按123...排下去 -->
+                                        </div>
+                                        <a href="#"> <!-- 連到這部電影的電影介紹頁 -->
+                                            <img class="box-office-movie" src="img/manchester.png" alt="">
+                                            <div class="movie-info-wrap hasContent"> <!-- add class "hasContent" 會出現黑色底（裡面如果有東西要顯示就要有黑色底） -->
+                                                <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期 -->
+                                            </div> 
+                                        </a>
+                                        <div class="lineh20 maTHalf1x">
+                                            <p class="fz-13 text-white line-clamp clamp-1">知無涯者</p> <!-- 電影名稱 -->
+                                            <span class="fz-13 text-blue">
+                                                <i class="fa fa-star" aria-hidden="true"></i> 
+                                                <span ng-bind="item.Ratings_Douban">7.4</span> <!-- 評分是 豆瓣＋IMDB的平均分數 -->
+                                            </span>
+                                            <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現在線看 -->
+                                                <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
+                                            </span>
+                                            <ul class="movie-checkin-btns group-wrap">
+                                                <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-eye" aria-hidden="true"></i></li>
+                                                <li class="viewComment noComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
+                                                <li class="movie-comment-text noComment">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li>
+                                            </ul> 
+                                        </div>
+                                    </div>
+                                </div>  
+                            </section> 
                         </article>
                     </section>
                 </div>
@@ -259,8 +258,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-<!-- 週票房榜需要 owl carousel -->
+<!-- 週票房榜需要 owl.carousel.min.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 
 <script defer src='http://test.moviecaker.com/scripts/angular/angular.js'></script>
@@ -433,7 +431,8 @@
         owl.owlCarousel({
             center: true,
             items: 2,
-            margin: 35
+            margin: 35,
+            dots: true
         });
 
         // 滑動 owl carousel 更換背景圖
@@ -441,9 +440,9 @@
         owl.on('translated.owl.carousel', function(event) {
             activeImg = $(this).find('.owl-item.center').find('img.box-office-movie').attr('src');
             $('.bkgd-img img').attr('src', activeImg );
-        })
-
+        });
     });
+
 </script>
 
 </body>
