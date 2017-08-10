@@ -48,50 +48,14 @@
 }
 
 
-/* ------------- movie-order CSS ------------ */
-.movie-order {
-    position: absolute;
-    left: -5px;
-    top: 5%;
-    width: 45px;
-    height: 30px;
-    border-radius: 0 5px 5px 0;
-    background-color: #7EA159; 
-    z-index: 3;
-    text-align: center;
-    color: #ffffff;
-    line-height: 30px;
-}
-.shadow {
-    position: absolute;
-    left: -4px;
-    top: 6%;
-    width: 5px;
-    height: 30px;
-    background-color: #344325;
-    z-index: 1;
-}
-
-
 /* ------- adjust movielist li CSS -------  */
-.owl-carousel .movie-item.box-office {
-	float: none;
-	position: relative;
-	background-color: rgba(12,12,12,.5);
-	box-sizing: border-box;
+.owl-carousel .movie-item {
+    float: none;
+    width: initial;
 	padding: 7%;
-	border-radius: 5px 5px 0 0;
-    border-bottom: 1px solid #71cfee;
-}
-.owl-carousel .movie-item.box-office a {
-	width: 100%;
-	height: auto; 
-	overflow: hidden; 
-	display: block;
-	position: relative;
-}
-.owl-carousel .movie-item.box-office img {
-	width: 100%;
+}   
+.owl-carousel .movie-item a {
+	height: auto;
 }
 
 
@@ -100,7 +64,7 @@
     touch-action: none;  /* prevent console from spitting warnings */
 }
 
-.owl-item.active.center .movie-item.box-office {
+.owl-item.active.center .movie-item {
     -webkit-animation: enlarge .4s .1s ease-in-out forwards;
     -moz-animation: enlarge .4s .1s ease-in-out forwards;
      -o-animation: enlarge .4s .1s ease-in-out forwards;
@@ -126,12 +90,10 @@
 .owl-stage-outer {
     overflow: visible !important;
 }
-.owl-dots, .owl-nav {
+.owl-dots {
     text-align: center;
     -webkit-tap-highlight-color: transparent;
-}
-.owl-nav.disabled+.owl-dots {
-    margin-top: 50px;
+    margin-top: 45px;
 }
 .owl-dots .owl-dot {
     display: inline-block;

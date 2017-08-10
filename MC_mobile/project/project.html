@@ -39,18 +39,17 @@
         <!-- header -->
         <div class="header" ng-class="{ blur: main.screenStatus() }">
             <ul class="group-wrap header-items" ng-show="!main.isSearchMode">
-                <li id="logo" class="pull-left">
-                    <a href="/mobile" class="padT3 group-wrap">
-                        <img class="pull-left" src="http://test.moviecaker.com/Areas/Mobile/Images/logo.png" height="25" alt="MovieCaker" />
-                        <i class="fa fa-bars maL1x padT3 pull-left" aria-hidden="true"></i>
+                <li class="pull-left">
+                    <a href="/mobile">
+                        <i class="fa fa-bars padTBHalfX" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li id="user-icon" class="pull-right">
-                    <a href="/login" ng-click="main.MenuLogin()">
+                     <a href="/login" ng-click="main.MenuLogin()">
                         <div class="login-icon padTBHalfX maLHalfx">
                             <img src="img/login_icon.png"alt="">
                         </div>
-                    </a>
+                    </a> 
                     <!-- 登入後顯示 -->
                     <a href="#" style="display:none;">
                         <div class="circle-mask circle1x">
@@ -61,18 +60,16 @@
                 <li id="search-icon" class="pull-right maR1x">
                     <i class="fa fa-search padTBHalfX" aria-hidden="true"></i>
                 </li>
+                <li id="logo-text">
+                    <a href="/mobile"><img src="img/mc_logo_text.png" alt=""></a>
+                </li>
             </ul>
         </div>
-        
-        <!--<div class="popTo" ng-show="main.screenStatus()" style="background-color: rgba(0,0,0,.3);z-index:99999999">
-            <div class="loader">Loading...</div>
-        </div>-->
 
         <div ng-class="{ blur: main.screenStatus() }">
             <div ng-controller="TopicDetailsCtrl as vm" ng-init="vm.init('160')">
                 <!-- fixed background -->
                 <div class="bkgd-img">
-                    <!--<img ng-src="http://121.41.34.59/Content/pictures/banners/{{ vm.topicMovies[0].VideoId }}.png?width=320" onerror="this.src=''">-->
                     <div class="white-mask"></div>
                     <img src="img/theoryOE.png" alt="">
                 </div>
@@ -295,39 +292,43 @@
                                 <li ng-click="vm.isOnlyPlayable=!vm.isOnlyPlayable" ng-class="{'active':vm.isOnlyPlayable}">可在線看</li>
                             </ul>
                             <section class="maT2x">
-                                <!--<movie-list data-array="vm.topicMovies" data-type="topic" data-viewed="vm.isViewed" data-playable="vm.isOnlyPlayable"></movie-list>-->
-                                <ul class="movie-list group-wrap">
-                                    <li>
-                                        <span class="movie-order width-xss" style="display:none;">1</span>
-                                        <a href="#">
+                                <div class="movie-list group-wrap">
+
+                                    <!-- 從這裡開始 repeat div（週票房應該會有 10 部電影） -->
+                                    <div class="movie-item">
+                                        <div>
+                                            <div class="shadow"></div> 
+                                            <div class="movie-order">1</div> <!-- 每部電影要按123...排下去 -->
+                                        </div>
+                                        <a href="#"> <!-- 連到這部電影的電影介紹頁 -->
                                             <img src="img/movie1.jpg" alt="">
-                                            <div class="movie-info-wrap"> <!-- addClass hasContent 會出現黑底-->
-                                                <!-- add class active 出現首映日期 -->
-                                                <p class="date-released">2017-07-13</p>
-                                             </div> 
+                                            <div class="movie-info-wrap"> <!-- add class "hasContent" 會出現黑色底（裡面如果有東西要顯示就要有黑色底) -->
+                                                <p class="date-released">2017-07-13</p> <!-- add class active 出現首映日期 -->
+                                            </div> 
                                         </a>
                                         <div class="lineh20 maTHalf1x">
-                                            <p class="fz-13 text-white line-clamp clamp-1" ng-bind="item.VideoName">知無涯者</p>
+                                            <p class="fz-13 text-white line-clamp clamp-1">知無涯者</p> <!-- 電影名稱 -->
                                             <span class="fz-13 text-blue">
                                                 <i class="fa fa-star" aria-hidden="true"></i> 
-                                                <span class="" ng-bind="item.Ratings_Douban">7.4</span>
-                                            </span><!-- 評分是 豆瓣＋IMDB的平均分數 -->
-                                            
-                                            <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現在線看 -->
+                                                <span class="" ng-bind="item.Ratings_Douban">7.4</span> <!-- 評分是 豆瓣＋IMDB的平均分數 -->
+                                            </span>
+                                            <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現 "在線看" -->
                                                 <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
                                             </span>
                                             <ul class="movie-checkin-btns group-wrap">
                                                 <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-heart" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-eye" aria-hidden="true"></i></li>
-                                                <!-- 如果電影有評語的話，.viewComment 跟 .movie-comment-text 都要 remove class “noComment” 才會出現 -->
+                                                <!-- 如果電影有評語的話，下面的 .viewComment 跟 .movie-comment-text 都要 remove class “noComment” 才會出現 -->
                                                 <!-- .viewComment 被 click 的時候，自己要加上 class "active"，然後會展開下面的 .movie-comment-text -->
                                                 <li class="viewComment noComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
                                                 <li class="movie-comment-text noComment" ng-bind="item.VideoDesc">任何感情，直得自己珍惜，引得他人讚頌，無非二字：堅持。堅持在和平時期不易，在戰爭時期就更難了。</li> <!-- .movie-comment-text add class "showMovieComment" 會出現評語 -->
                                             </ul>
                                         </div>
-                                    </li>
-                                </ul>
+                                    </div>
+                                    <!-- end repeat div -->
+
+                                </div>
                             </section>
                         </article>
                     </section>
@@ -594,7 +595,6 @@
             });
 
             
-
             $('.movie-checkin-btns > li > i').on('click', function(){
                 if ($(this).hasClass('active')) {
                     $(this).removeClass('active');
