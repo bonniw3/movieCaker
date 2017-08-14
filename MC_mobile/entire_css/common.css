@@ -937,11 +937,11 @@ table {
 .nav-type-box > li.active {
 	color: #71cfee;
 	border: 1px solid #71cfee;
+	transition: color .5s ease-in-out,
+				border-color .5s ease-in-out;
 }
 
-
-
- div.dropdown-wrapper {
+div.dropdown-wrapper {
 	text-align: right; 
 	position: relative;
 }
