@@ -54,7 +54,7 @@
     width: initial;
 	padding: 7%;
 }   
-.owl-carousel .movie-item a {
+.owl-carousel .movie-item > .movie-img {
 	height: auto;
 }
 

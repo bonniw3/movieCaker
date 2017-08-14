@@ -277,20 +277,31 @@
                             <ul class="nav-horizontal nav-type-box group-wrap">
                                 <li>顯示</li>
                                 <li class="active">全部</li>
-                                <li ng-show="vm.currentUser.isAuthenticated" ng-click="vm.isViewed=!vm.isViewed" ng-class="{'active':vm.isViewed}">我沒看過</li>
                                 <li ng-click="vm.isOnlyPlayable=!vm.isOnlyPlayable" ng-class="{'active':vm.isOnlyPlayable}">可在線看</li>
+                                <!-- “我沒看過” 只有在登入材會出現  -->
+                                <li ng-show="vm.currentUser.isAuthenticated" ng-click="vm.isViewed=!vm.isViewed" ng-class="{'active':vm.isViewed}">我沒看過</li>
                             </ul>
                             <section class="maT2x">
                                 <div class="movie-list group-wrap">
                                     <!-- 從這裡開始 repeat div -->
                                     <div class="movie-item">
                                         <div class="movie-order">1</div> <!-- add class "showOrderNum" 會出現數字排序-->
-                                        <a href="#"> <!-- 連到這部電影的電影介紹頁 -->
-                                            <img src="img/movie1.jpg" alt="">
-                                            <div class="movie-info-wrap"> <!-- add class "hasContent" 會出現黑色底（裡面如果有東西要顯示就要有黑色底) -->
-                                                <p class="date-released">2017-07-13</p> <!-- add class active 出現首映日期 -->
-                                            </div> 
-                                        </a>
+                                        <div class="movie-img">
+                                            <a href="#"> <!-- 連到這部電影的電影介紹頁 -->
+                                                <img class="box-office-movie" src="img/movie1.jpg" alt="">
+                                            </a>
+                                            <div class="movie-info-wrap"> <!-- add class "hasContent" 會出現黑色底（裡面如果有東西要顯示就要有黑色底）(專題介紹頁 不用) -->
+                                                <p class="date-released">2017-07-13</p><!-- add class active 出現首映日期 (“專題介紹頁” 不用)-->
+                                                <div class="friends-seen group-wrap"> <!-- add class active 出現朋友暱稱（“專題介紹頁” 不用）-->
+                                                    <div class="circle-mask circle-xs">
+                                                        <img src="img/default_avatar.png" alt="">
+                                                    </div>
+                                                    <div class="">
+                                                        <a class="user-name fz-xs" href="#">想看電影</a> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="lineh20 maTHalf1x">
                                             <p class="fz-13 text-white line-clamp clamp-1">知無涯者</p> <!-- 電影名稱 -->
                                             <span class="fz-13 text-blue">
@@ -301,6 +312,7 @@
                                                 <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
                                             </span>
                                             <ul class="movie-checkin-btns group-wrap">
+                                                <!-- i add class "active" 變色 -->
                                                 <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-heart" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-eye" aria-hidden="true"></i></li>

@@ -254,6 +254,33 @@ table {
 }
 
 
+/* ---------- listsPages adjust to background + content ------------ */
+.listsPages.bkgd-img:after {
+    background: none;
+} 
+
+.listsPages.bkgd-img img {
+    height: 105vh;
+    width: auto; 
+    position: relative;
+	top: 0;
+	left: 0;
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+}
+
+.listsPages.content-wrap {
+    height: 100vh;
+    padding-bottom: 5%;
+} 
+.listsPages.content-wrap:before, .content-wrap.scroll:before {
+    height: 100%;
+    background: none;
+}
+
+
 /* -------------- sticky situations ---------------- */
 .sticky {
 	position: fixed;
@@ -730,11 +757,10 @@ table {
 	border-radius: 5px 5px 0 0;
 	border-bottom: 1px solid #71cfee;
 }
-.movie-list .movie-item a {
+.movie-list .movie-item > .movie-img {
 	width: 100%;
 	height: 30.5vh; 
-	overflow: hidden; 
-	display: block;
+	overflow: hidden;
 	position: relative;
 }
 
@@ -790,13 +816,23 @@ table {
 
 .date-released {
 	color: #eeeeee;
-	text-align: center;
-	margin-top: 4.5%;
 	font-size: .9em;
-	display: none;
 }
-.date-released.active {
+.date-released, .friends-seen {
+	text-align: center;
+	display: none;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.date-released.active, .friends-seen.active {
 	display: block;
+}
+.friends-seen > div {
+	display: inline-block;
+	vertical-align: middle;
 }
 
 
@@ -905,13 +941,8 @@ table {
 
 
 
-/* div.display-dropdown {
-	float: right;
-	color: #B2EEFF;
-	font-size: .9em;
+ div.dropdown-wrapper {
 	text-align: right; 
-	width: 20%;
-	margin-left: 0;
 	position: relative;
 }
 
@@ -919,10 +950,10 @@ table {
 	border-top: 2px solid #71cfee;
 	background-color: rgba(28,28,28,.9);
 	position: absolute;
-	top: 30px;
-	right: 0;
-	width: 70px;
-	display: none;
+	top: 38px;
+	right: 0px;
+	width: 85px; 
+	display: none; 
 	padding: 5px 0;
 	z-index: 10;
 }
@@ -944,7 +975,7 @@ table {
 	color: #71cfee;
 	border: none;
 	transition: .3s ease;
-} */
+} 
 
 
 /* ----------------- movie-poster bottom block ------------------ */
@@ -987,7 +1018,7 @@ table {
 	color: #D87C7C;
 	transition: color .3s ease-in-out;
 }
-.movie-checkin-btns > li i.active[class*="-fire"] {
+.movie-checkin-btns > li i.active[class*="-bookmark"] {
 	color: #ECA473;
 	transition: color .3s ease-in-out;
 }
@@ -1215,6 +1246,18 @@ textarea.reviewContent:focus {
 
 
 
+/* ------------ 院線熱映's location CSS ------------ */
+.location {
+    position: absolute !important;
+    right: 0;
+    top: 0;
+}
+.location ul.ver-nav {
+    top: 30px !important;
+}
+
+
+
 /* ------------ MISC css ------------ */
 .maT0 {
 	margin-top: 0px;
@@ -1267,6 +1310,9 @@ textarea.reviewContent:focus {
 }
 .maB3x {
     margin-bottom: 30px;
+}
+.maRHalfx {
+	margin-right: 5px;
 }
 .maR1x {
 	margin-right: 10px;

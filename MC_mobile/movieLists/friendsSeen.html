@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>電影蛋糕 - 院線熱映</title>
+    <title>電影蛋糕 - 朋友在看</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <meta name="description" content="由于哥哥乔（凯勒·钱德勒）过世，看门人李·钱德勒（凯西·阿弗莱克）成为他16岁的侄子帕特里克（卢卡斯·赫奇斯）的法定监护人，李的生活从此发生彻底的改变，他不得不回到家乡的小城市（曼彻斯特），面对与前妻..." />
     <link rel="canonical" href="http://test.moviecaker.com/video/M00000000158105">
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="../entire_css/common.css" rel="stylesheet" />
-     <!-- <link href="css/inTheaters.css" rel="stylesheet" />  -->
+      <!-- <link href="css/inTheaters.css" rel="stylesheet" />   -->
     <link href="../entire_css/min-search.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -77,62 +77,32 @@
                 <!-- 只有 “院線熱映，朋友在看，電影專題，電影影評，想看清單” 要 add class "listPages" -->
                 <div class="content-wrap listsPages">
                     <section class="rel-pos">
-                        <div class="section-title fz-subtitle text-blue">院線熱映</div>
-                        <div class="dropdown-wrapper location">
-                            <div>
-                                <!-- click ”中國大陸“ 會出現下拉，點選下拉選項會顯示在這邊 -->
-                                <span class="dropdown-clickable fz-s text-light-blue">中國大陸<i class="fa fa-angle-down padLHalfX" aria-hidden="true"></i></span>
-                            </div>
-                            <!-- add class "show" 顯示下拉 -->
-                            <ul class="ver-nav display-ver-dropdown">
-                                <li class="active">中國大陸</li>
-                                <li>台灣地區</li>
-                                <li>美國</li>
-                                <li>日本</li>
-                                <li>韓國</li>
-                            </ul>
-                        </div>
+                        <div class="section-title fz-subtitle text-blue">朋友在看</div>
                         <article class="maT2x">
                             <ul class="nav-horizontal nav-type-scroll optionNum-3">
-                                <li class="active">播映日期</li>
-                                <li>最熱門</li>
-                                <li>最好評</li>
+                                <li class="active">最新看過</li>
+                                <li>最新喜歡</li>
+                                <li>最新想看</li>
                             </ul>
-                            <div class="group-wrap">
-                                <ul class="nav-horizontal nav-type-box group-wrap pull-left">
-                                    <li>時間</li>
-                                    <li>上月</li>
-                                    <li class="active">本月</li>
-                                    <li>下月</li>
-                                </ul>
-                                <div class="dropdown-wrapper pull-right">
-                                    <div class="maT1x">
-                                        <span class="maR1x text-white fz-xs">顯示</span>
-                                        <!-- click 全部 會出現下面的下拉，點選下拉選項會顯示在這邊 -->
-                                        <span class="dropdown-clickable fz-s text-light-blue">全部<i class="fa fa-angle-down padLHalfX" aria-hidden="true"></i></span>
-                                    </div>
-                                    <!-- add class "show" 顯示下拉 -->
-                                    <ul class="ver-nav display-ver-dropdown">
-                                        <li class="active">全部</li>
-                                        <li ng-click="vm.isOnlyPlayable=!vm.isOnlyPlayable" ng-class="{'active':vm.isOnlyPlayable}">可在線看</li>
-                                        <!-- “我沒看過” 只有在登入材會出現  -->
-                                        <li ng-show="vm.currentUser.isAuthenticated" ng-click="vm.isViewed=!vm.isViewed" ng-class="{'active':vm.isViewed}">我沒看過</li>
-                                    </ul>
-                                </div> 
-                            </div>
-                            
+                            <ul class="nav-horizontal nav-type-box group-wrap">
+                                <li>顯示</li>
+                                <li class="active">全部</li>
+                                <li ng-click="vm.isOnlyPlayable=!vm.isOnlyPlayable" ng-class="{'active':vm.isOnlyPlayable}">可在線看</li>
+                                <!-- “我沒看過” 只有在登入材會出現  -->
+                                <li ng-show="vm.currentUser.isAuthenticated" ng-click="vm.isViewed=!vm.isViewed" ng-class="{'active':vm.isViewed}">我沒看過</li>
+                            </ul>
                             <section class="maT2x">
                                 <div class="movie-list group-wrap">
                                     <!-- 從這裡開始 repeat div -->
                                     <div class="movie-item">
-                                        <div class="movie-order">1</div> <!-- add class "showOrderNum" 出現數字排序（“院線熱映”不用加） -->
+                                        <div class="movie-order">1</div> <!-- add class "showOrderNum" 出現數字排序（“朋友在看”不用加） -->
                                         <div class="movie-img">
                                             <a href="#"> <!-- 連到這部電影的電影介紹頁 -->
                                                 <img class="box-office-movie" src="img/movie1.png" alt="">
                                             </a>
                                             <div class="movie-info-wrap hasContent"> <!-- add class "hasContent" 會出現黑色底（裡面如果有東西要顯示就要有黑色底） -->
-                                                <p class="date-released active">2017-07-13</p><!-- add class active 出現首映日期（“院線熱映”要出現日期）-->
-                                                <div class="friends-seen group-wrap"> <!-- add class active 出現朋友暱稱 -->
+                                                <p class="date-released">2017-07-13</p><!-- add class active 出現首映日期 -->
+                                                <div class="friends-seen group-wrap active"> <!-- add class active 出現朋友暱稱（“朋友在看”要出現日期）-->
                                                     <div class="circle-mask circle-xs">
                                                         <img src="img/default_avatar.png" alt="">
                                                     </div>
