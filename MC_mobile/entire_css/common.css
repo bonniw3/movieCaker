@@ -275,7 +275,7 @@ table {
     height: 100vh;
     padding-bottom: 5%;
 } 
-.listsPages.content-wrap:before, .content-wrap.scroll:before {
+.listsPages.content-wrap:before {
     height: 100%;
     background: none;
 }
