@@ -66,7 +66,7 @@
 
         <!-- content -->
         <div ng-class="{ blur: main.screenStatus() }">
-            <div ng-controller="videoIntroCtrl as vm">
+            <div ng-controller="">
                 <!-- fixed background -->
                 <!-- 只有 “院線熱映，朋友在看，電影專題，電影影評，想看清單，積分頁面” 要 add class "listPages" -->
                 <div class="bkgd-img listsPages">
@@ -80,42 +80,72 @@
                         <div class="section-title fz-subtitle text-blue">我的積分</div>
                         <div class="points">
                             <p class="points-icon">p</p>
-                            <p class="maLHalfx text-white fz-normal"><span class="text-light-pink fz-m">120</span> 點</p>
+                            <p class="maLHalfx text-white fz-normal"><span class="text-light-pink fz-m maRHalfx">120</span>點</p>
                         </div>
                         <article class="maT2x">
                             <ul class="nav-horizontal nav-type-scroll optionNum-2">
                                 <li>贈送積分</li>
                                 <li class="active">積分兌換</li>
                             </ul>
-                            
                             <section class="maT2x">
-                                <div class="product-list">
-                                    <!-- 從這裡開始 repeat div -->
-                                    <div class="product-item group-wrap">
-                                        <a href="#">
-                                            <div class="product-img pull-left">
-                                                <div class="img-wrapper">
-                                                    <img src="img/movie1.png" alt="">
+                                <div class="tab-content">
+                                    這邊會是贈送積分的 content
+                                </div>
+                                <div class="tab-content active">
+                                    <div class="product-list">
+                                        <!-- 電影海報 -->
+                                        <div id="movie-product" class="product-item group-wrap">
+                                            <a href="#">
+                                                <div class="product-img pull-left">
+                                                    <div class="img-wrapper">
+                                                        <img src="img/movie1.png" alt="">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="product-description pull-right">
-                                                <p class="fz-subtitle  text-blue">電影海報</p> <!-- 商品名稱 -->
-                                                <p class="fz-s text-white80p">一張 60cm x 42cm 的電影海報</p> <!-- 商品介紹 -->
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- end repeat div -->
-                                </div>  
+                                                <div class="product-description pull-right">
+                                                    <p class="fz-subtitle text-blue letter-space-1x">電影海報</p> <!-- 商品名稱 -->
+                                                    <p class="fz-13 text-white80p maTHalf1x letter-space-1x lineh20">一張 60cm x 42cm 的電影海報</p> <!-- 商品介紹 -->
+                                                    <div class="points-amt">
+                                                        <p class="points-icon">p</p>
+                                                        <p class="maLHalfx text-white fz-normal"><span class="text-light-pink fz-25 maRHalfx">120</span>點</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- 代金卷 -->
+                                        <div class="product-item group-wrap">
+                                            <a href="#">
+                                                <div class="product-img pull-left">
+                                                    <div class="img-wrapper">
+                                                        <img src="img/movie1.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="product-description pull-right">
+                                                    <p class="fz-subtitle text-blue letter-space-1x">代金卷</p> <!-- 商品名稱 -->
+                                                    <p class="fz-13 text-white80p maTHalf1x letter-space-1x lineh20">一張觀影優惠卷，可以自行決定要兌換金額</p> <!-- 商品介紹 -->
+                                                    <div class="points-amt">
+                                                        <p class="points-icon">p</p>
+                                                        <p class="maLHalfx"><span class="text-light-pink fz-subtitle letter-space-1x">自訂點數</span></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>  
+                                </div>
                             </section> 
                         </article>
                     </section>
                 </div>
-
             </div> <!--end of ng controller -->
 
-            <!--<div class="loading-ajax" ng-show="main.loadingStatus()">
-                <i class="fa fa-spinner fa-pulse fa-4x green"></i>
-            </div>-->
+            <!-- 如果點數不夠，選擇電影海報，就會出現 alert -->
+            <!-- add class "showAlert" 出現 alert -->
+            <div class="points-alert">
+                <div class="alert-content">
+                    <p><i class="fa fa-exclamation-circle padRHalfX" aria-hidden="true"></i>您目前的積分還不夠兌換此商品。</p>
+                    <div class="btn-ok maT2x">了解</div>
+                </div>
+            </div>
+
             <div class="top circle40">
                 <i class="fa fa-angle-up" aria-hidden="true"></i>
             </div> 
@@ -306,12 +336,22 @@
         $('.nav-type-scroll > li').on('click', function(){
             $('.nav-type-scroll > li').removeClass('active');
             $(this).addClass('active');
+            var index = $(this).index();
+            $(this).parent().siblings('section').children().removeClass('active').eq(index).addClass('active');
         });
 
         // 電影列表的顯示 nav bar
         $('.nav-type-box > li').on('click', function(){
             $('.nav-type-box > li').removeClass('active');
             $(this).addClass('active');
+        });
+
+        // 點擊電影海報 會出現 alert
+        $('#movie-product').on('click',function(){
+            $('.points-alert').addClass('showAlert');
+        });
+        $('.btn-ok').on('click',function(){
+            $('.points-alert').removeClass('showAlert');
         });
     });
 

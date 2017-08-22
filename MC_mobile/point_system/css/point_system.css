@@ -12,6 +12,16 @@
 }
 
 
+/* -------------- TAB-CONTENT CSS --------------- */
+.tab-content {
+    position: relative;
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+
 /* ----------------mypoints_icon---------------- */
 .points > p {
     display: inline-block;
@@ -29,7 +39,7 @@
 }
 
 
-/* -------------- MOVIE-LIST CSS --------------- */
+/* -------------- PRODUCT-LIST CSS --------------- */
 .product-list {
 	width: 100%;
 	position: relative;
@@ -39,23 +49,77 @@
 	position: relative;
 	background-color: rgba(12,12,12,.5);
 	box-sizing: border-box;
-	padding: 3.5% 3.5% 3% 3.5%;
+	padding: 5% 4.5% 2.5% 4.5%;
 	border-radius: 5px 5px 0 0;
-	border-bottom: 1px solid #71cfee;
+    border-bottom: 1px solid #71cfee;
+    margin-top: 20px;
 }
-.product-img, .product-description {
-    height: 100%;
+.product-list .product-item:first-child {
+    margin-top: 0;
 }
+
 .product-img {
-    width: 43%;
-    outline: 1px solid #fff;
+    width: 40%;
 }
 .product-img .img-wrapper {
-    height: 100%;
+    width: 75%;
+    margin: auto;
 }
 .product-img .img-wrapper img {
     width: 100%;
 }
 .product-description {
-    width: 53%;
+    width: 55%;
+}
+
+.points-amt > p  {
+    display: inline-block;
+    vertical-align: top;
+}
+.points-amt {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+}
+
+/* -------------- PRODUCT-LIST CSS --------------- */
+.points-alert {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(12,12,12,.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 15;
+}
+.points-alert.showAlert {
+    display: block;
+}
+
+.alert-content {
+    position: absolute;
+    top: -10vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 70vw;
+    height: 160px;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: rgba(53,53,53,.9);
+    border-top: 2px solid #71cfee;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 7px 0 rgba(12,12,12,.4);
+}
+.alert-content p {
+    text-align: center;
+    padding: 0 15px;
+    margin-top: 10px;
+    color: rgba(235,235,235,.8);
+    letter-spacing: 1px;
+}
+.alert-content p i {
+    font-size: 1.25em;
 }
