@@ -1,0 +1,61 @@
+
+.listsPages.bkgd-img img {
+    height: 105vh;
+    width: auto; 
+    position: relative;
+	top: 0;
+	left: 0;
+    -moz-transform: scaleX(-1); /* flip left-right */
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+
+/* ----------------mypoints_icon---------------- */
+.points > p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.points-icon {
+    border-radius: 50%;
+    background-color: #579AAD;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+    line-height: 20px;
+    color: #ffffff;
+}
+
+
+/* -------------- MOVIE-LIST CSS --------------- */
+.product-list {
+	width: 100%;
+	position: relative;
+}
+.product-list .product-item {
+	width: 100%;
+	position: relative;
+	background-color: rgba(12,12,12,.5);
+	box-sizing: border-box;
+	padding: 3.5% 3.5% 3% 3.5%;
+	border-radius: 5px 5px 0 0;
+	border-bottom: 1px solid #71cfee;
+}
+.product-img, .product-description {
+    height: 100%;
+}
+.product-img {
+    width: 43%;
+    outline: 1px solid #fff;
+}
+.product-img .img-wrapper {
+    height: 100%;
+}
+.product-img .img-wrapper img {
+    width: 100%;
+}
+.product-description {
+    width: 53%;
+}

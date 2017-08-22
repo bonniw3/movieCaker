@@ -1247,7 +1247,7 @@ textarea.reviewContent:focus {
 
 
 /* ------------ 院線熱映's location CSS ------------ */
-.location {
+.location, .points {
     position: absolute !important;
     right: 0;
     top: 0;
@@ -1424,6 +1424,9 @@ textarea.reviewContent:focus {
 .text-light-blue {
 	color: #B2EEFF;
 }
+.text-light-pink {
+	color: #E9A1A1;
+}
 .text-pink {
 	color: #D87C7C;
 }
@@ -1549,6 +1552,9 @@ textarea.reviewContent:focus {
 	width: 50%;
 }
 
+.optionNum-2 > li {
+	width: 50%;
+}
 .optionNum-3 > li {
 	width: 33.33%;
 }
