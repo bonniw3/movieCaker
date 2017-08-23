@@ -615,13 +615,14 @@ table {
 	line-height: 26px;
 	font-size: .9em;
 }
-[class*="-ok"] {
+[class*="-ok"], [class*="-confirm"] {
 	padding: 9px 0;
 	border-radius: 5px;
 	color: #fff;
 	font-weight: normal;
 	background-color: #579AAD;
 	border: 1px solid #579AAD;
+	width: 100%;
 }
 
 .btn-wrap {
@@ -779,7 +780,8 @@ table {
 	margin-top: 15px;
 }
 .movie-list .movie-item img {
-	width: 100%;
+	width: 110%;
+	margin-left: -5%;
 }
 
 .movie-order {
@@ -842,7 +844,11 @@ table {
 	display: inline-block;
 	vertical-align: middle;
 }
-
+.movie-name {
+	height: 20px;
+	color: #ffffff;
+	font-size: 0.85em;
+}
 
 
 /* -------------- large avatar CSS--------------- */
@@ -1294,6 +1300,9 @@ textarea.reviewContent:focus {
 .maT50 {
     margin-top: 50px;
 }
+.maT60 {
+	margin-top: 60px;
+}
 .maT-50 {
     margin-top: -50px;
 }
@@ -1423,6 +1432,9 @@ textarea.reviewContent:focus {
 .text-black {
 	color: #0c0c0c;
 }
+.text-dark-grey {
+	color: #4a4a4a;
+}
 .text-gray {
     color: #9b9b9b;
 }
@@ -1449,6 +1461,9 @@ textarea.reviewContent:focus {
 }
 .text-green {
 	color: #417505;
+}
+.text-yellow {
+	color: #EBD961;
 }
 
 .bkgd-blue {
