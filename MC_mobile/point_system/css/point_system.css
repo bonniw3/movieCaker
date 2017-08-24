@@ -134,10 +134,13 @@
     overflow: hidden;
 }
 
-.coupon .img-wrapper {
+.coupon-content.used {
+    opacity: .5;
+}
+.coupon-content .img-wrapper {
     position: relative;
 }
-.coupon .img-wrapper:before {
+.coupon-content .img-wrapper:before {
     content: '';
     position: absolute;
     top: 0;
@@ -240,6 +243,26 @@
     width: 100%;
     margin-top: -2vh;
 
+}
+
+
+/* -------------- BARCODE CSS --------------- */
+.used-label {
+    position: absolute;
+    top: 2vh;
+    right: 3vw;
+    padding: 1% 4%;
+    border-radius: 3px;
+    color: #ffffff;
+    font-weight: bold;
+    border: 2px solid #E9A1A1;
+    background-color: rgba(216,124,124,.9);
+    z-index: 5;
+    display: none;
+}
+
+.used-label.showUsed {
+    display: block;
 }
 
 
