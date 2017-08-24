@@ -65,7 +65,7 @@
     width: 75%;
     margin: auto;
 }
-.product-img .img-wrapper img {
+.img-wrapper img {
     width: 100%;
 }
 .product-description {
@@ -122,4 +122,130 @@
 }
 .alert-content p i {
     font-size: 1.25em;
+}
+
+/* -------------- COUPON CSS --------------- */
+.coupon {
+    width: 100%;
+    height: 28vh;
+    border-radius: 3px;
+    box-shadow: 0px 2px 7px 0px rgba(12,12,12,.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.coupon .img-wrapper {
+    position: relative;
+}
+.coupon .img-wrapper:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(238,238,238,.2);
+}
+
+.coupon-text-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 35%;
+    border-bottom: 28vh solid rgba(98,142,154,.95);
+    border-left: 0px solid rgba(98,142,154,.95);
+    border-right: 20vw solid transparent;
+    z-index: 10;
+}
+/* .coupon-text-base:before{
+    content: '';
+    z-index: 8;
+    position: absolute;
+    top: -35px;
+    left: 42.5vw;
+    height: 290px;
+    width: 2px;
+    box-shadow: 4px 0px 6px 0px rgba(0,0,0,.7);
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    -o-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+} */
+
+.coupon-text {
+    position: absolute;
+    top: 9vh;
+    left: 0;
+    border-left: 5px solid #EBD961;
+    padding-left: 3vw;
+    width: 130%;
+}
+
+.coupon-description {
+    position: absolute;
+    top: 21vh;
+    left: 4vw;
+    color: rgba(235,235,235,.8);
+    font-size: .75em;
+    letter-spacing: 1px;
+    width: 150%;
+}
+
+.triangle {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 6vw solid transparent;
+	border-right: 6vw solid transparent;
+}
+
+.tri-down {
+    left: 27vw;
+    top: 2vh;
+    width: 0;
+	height: 0;
+    border-top: 6vh solid rgba(233,161,161,.8);
+}
+.tri-up {
+    left: 44vw;
+    top: 22vh;
+    border-left-width: 5vw;
+    border-right-width: 5vw;
+	border-bottom: 5vh solid rgba(235,217,97,.75);
+}
+
+/* -------------- EXCHANGE-TEXT CSS --------------- */
+.exchange-text {
+    text-align: center;
+}
+.exchange-text > p {
+    color: rgba(235,235,235,.8);
+    letter-spacing: 1px;
+}
+
+.exchange-text p:first-child input {
+    width: 120px;
+    font-size: 1.25em;
+    box-sizing: border-box;
+    padding: 5px 15px;
+    margin: 0 10px;
+    color: rgba(113,207,238,1);
+    background-color: transparent;
+    border: 1px solid rgba(113,207,238,1);
+    transition: border-color .5s ease-in-out,
+                background-color .5s ease-in-out,
+                color .5s ease-in-out;
+}
+
+.exchange-text p:first-child input:focus {
+    outline: none;
+    color: rgba(238,238,238,1);
+    background-color: rgba(113,207,238,.3);
+    border: 1px solid rgba(113,207,238,1);
+    transition: border-color .5s ease-in-out,
+                background-color .5s ease-in-out,
+                color .5s ease-in-out;
 }
