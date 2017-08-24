@@ -77,19 +77,22 @@
                 <!-- 只有 “院線熱映，朋友在看，電影專題，電影影評，想看清單，積分頁面” 要 add class "listPages" -->
                 <div class="content-wrap listsPages">
                     <section class="rel-pos">
-                        <div class="section-title fz-subtitle text-blue">兌換代金卷</div>
+                        <div class="section-title fz-subtitle text-blue">兌換代金卷完成</div>
                         <div class="points">
                             <p class="points-icon">p</p>
-                            <p class="maLHalfx text-white fz-normal"><span class="text-light-pink fz-m maRHalfx">120</span>點</p>
+                            <!-- span裡的數字是 原本有的積分點數 減去 對換掉的點數 -->
+                            <p class="maLHalfx text-white fz-normal"><span class="text-light-pink fz-m maRHalfx">32</span>點</p>
                         </div>
                         <article class="maT2x">
                             <section class="maT2x">
+                                <p class="taC fz-15 text-white80p maB2x padLR5p">恭喜你成功兌換代金卷一張！代金卷可在任何影院使用。</p>
                                 <div class="coupon">
                                     <div class="img-wrapper">
                                         <img src="img/theatre.jpg" alt="">
                                     </div>
                                     <div class="coupon-text-base">
-                                        <span class="exchange-date"><span>2017-08-18</span> 兌換</span>
+                                        <!-- add class "showDate" 出現兌換日期 -->
+                                        <span class="exchange-date showDate"><span>2017-08-18</span> 兌換</span>
                                         <div class="coupon-text">
                                             <p class="text-dark-grey fz-subtitle fontW-bold letter-space-1x">觀影代金卷</p>
                                             <!-- span 裡面的值 要跟上面 input 的 value 同步 -->
@@ -100,13 +103,8 @@
                                         <span class="triangle tri-up"></span>
                                     </div>
                                 </div>
-                               <div class="exchange-text maT3x">
-                                   <p>本次想要兌換 <input id="user-points-enter" type="text"/> 點</p>
-                                   <!-- span 裡面的值 要跟上面 input 的 value 同步 -->
-                                   <p class="maT2x fontW-light">=&nbsp;&nbsp;&nbsp;RMB <span class="exchangeRmb text-light-pink fz-lg maLHalfx maRHalfx fontW-normal">0</span> 元</p>
-                               </div>
-                               <button class="btn-confirm fz-subtitle maT3x" type="submit">確定兌換</button>
-                               <a href="#" class="disp-block taC maT2x text-color text-white80p">取消</a>
+                               <button class="btn-confirm fz-subtitle maT3x" type="submit">立即使用</button>
+                               <a href="#" class="disp-block taC maT2x text-color text-white80p">回首頁</a>
                                <a href="#" class="disp-block taR maT3x maB3x text-color text-white80p">代金卷列表<i class="fa fa-angle-right padL1x" aria-hidden="true"></i></a>
                             </section> 
                         </article>

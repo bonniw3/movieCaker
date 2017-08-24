@@ -622,7 +622,9 @@ table {
 	font-weight: normal;
 	background-color: #579AAD;
 	border: 1px solid #579AAD;
-	width: 100%;
+	width: 92%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .btn-wrap {
@@ -1319,14 +1321,17 @@ textarea.reviewContent:focus {
 .maB1x {
 	margin-bottom: 10px;
 }
-.maB50 {
-	margin-bottom: 50px;
-}
 .maB15 {
 	margin-bottom: 15px;
 }
+.maB2x {
+	margin-bottom: 20px;
+}
 .maB3x {
     margin-bottom: 30px;
+}
+.maB50 {
+	margin-bottom: 50px;
 }
 .maRHalfx {
 	margin-right: 5px;
@@ -1412,6 +1417,9 @@ textarea.reviewContent:focus {
 }
 .padLR10 {
     padding: 0 2.5%;
+}
+.padLR5p {
+    padding: 0 5%;
 }
 
 .text-white {

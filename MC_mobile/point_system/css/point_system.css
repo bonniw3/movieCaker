@@ -176,7 +176,7 @@
 
 .coupon-text {
     position: absolute;
-    top: 9vh;
+    top: 10vh;
     left: 0;
     border-left: 5px solid #EBD961;
     padding-left: 3vw;
@@ -185,7 +185,7 @@
 
 .coupon-description {
     position: absolute;
-    top: 21vh;
+    top: 22vh;
     left: 4vw;
     color: rgba(235,235,235,.8);
     font-size: .75em;
@@ -201,7 +201,6 @@
     border-left: 6vw solid transparent;
 	border-right: 6vw solid transparent;
 }
-
 .tri-down {
     left: 27vw;
     top: 2vh;
@@ -215,6 +214,16 @@
     border-left-width: 5vw;
     border-right-width: 5vw;
 	border-bottom: 5vh solid rgba(235,217,97,.75);
+}
+
+.exchange-date {
+    color: rgba(235,235,235,.8);
+    font-size: .65em;
+    margin: 1.5vh 0 0 3vw;
+    display: none;
+}
+.exchange-date.showDate {
+    display: block;
 }
 
 /* -------------- EXCHANGE-TEXT CSS --------------- */
