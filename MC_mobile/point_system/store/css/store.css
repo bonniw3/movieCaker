@@ -73,3 +73,200 @@ table {
 	display: table;
 	clear: both;
 }
+
+/* --------- CONTENT --------- */
+.content {
+    position: relative;
+    top: 0vh;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+	padding: 15% 5%;
+	letter-spacing: 1px;
+}
+
+
+/* --------- SECTION TITLE --------- */
+.section-title {
+    position: relative;
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 1.125em;
+}
+.section-title:before {
+    content:'';
+    position: absolute;
+    top: 2px;
+    left: -5.5%;
+    height: 20px;
+    width: 5px;
+    vertical-align: middle;
+    background-color: #ffffff;
+}
+
+
+/* --------- SEARCH AREA --------- */
+.search input {
+	width: 100%;
+	padding: 2% 5%;
+	box-sizing: border-box;
+	color: #ffffff;
+	letter-spacing: 1.2px;
+	font-weight: normal;
+	background-color: transparent;
+	border: 1px solid rgba(113,207,238,.9);
+	transition: all .5s ease-in-out;
+}
+
+.search input:focus {
+	outline: none;
+	background-color: rgba(113,207,238,.15);
+	border: 1px solid rgb(113, 206, 238);
+	transition: all .5s ease-in-out;
+}
+
+.divider-line {
+	display: block;
+	width: 96%;
+	height: 2px;
+	margin: 0 auto;
+	background-color: rgba(155,155,155,.5);
+}
+
+.divider-line.loading {
+	height: 3px;
+    overflow: hidden;
+	position: relative;
+	background-color: rgba(155,155,155,.3);
+}
+.divider-line.loading:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0%;
+	background-color: #71cfee;
+	-webkit-animation: expandShrink 2.5s .3s ease-in-out infinite;
+	animation: expandShrink 2.5s .1s ease-in-out infinite;
+}
+
+@-webkit-keyframes expandShrink {
+	0% { 
+		width: 0%;
+		margin-left: -10%;
+	}
+	50% { 
+		width: 15%;
+	}
+	100% { 
+		width: 5%;
+		margin-left: 100%;
+	}
+}
+
+@keyframes expandShrink {
+    0% { 
+		width: 0%;
+		margin-left: -10%;
+	}
+	50% { 
+		width: 15%;
+	}
+	100% { 
+		width: 0%;
+		margin-left: 105%;
+	}
+}
+
+/* --------- RESULT AREA --------- */
+.error {
+	text-align: center;
+	display: none;
+}
+.used-label {
+	color: #D87C7C;
+	display: none;
+}
+.found {
+	display: none;
+}
+.show {
+	display: block;
+}
+
+.rmb-amt {
+	font-size: 1.15em;
+	color: #D87C7C;
+	margin: 0 8px;
+}
+
+
+/* ------------ BTNs CSS ------------ */
+.btn {
+	display: block;
+	box-sizing: border-box;
+	padding: 10px 0;
+	text-align: center;
+	white-space: nowrap;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border-radius: 5px;
+	font-size: 1.125em;
+	color: #ffffff;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
+	display: none;
+}
+.btn-short {
+	width: 45%;
+	background-color: #579AAD;
+	display: block;
+}
+.btn-normal {
+	width: 95%;
+	background-color: #579AAD;
+	display: block;
+}
+
+.btn-error {
+	width: 95%;
+	background-color: #4a4a4a !important;
+	color: rgba(155,155,155,.5) !important;
+	display: block;
+}
+
+
+
+
+/* ------------ COMMON MARGIN/PADDING ------------ */
+.maT1x {
+	margin-top: 10px;
+}
+.maT2x {
+	margin-top: 20px;
+}
+.maT3x {
+	margin-top: 30px;
+}
+.maT6x {
+	margin-top: 60px;
+}
+
+.maL1x {
+	margin-left: 10px;
+}
+
+.padLR1x {
+	padding: 0 2%;
+}
+
+.text-color-pink {
+	color: #D87C7C;
+}
