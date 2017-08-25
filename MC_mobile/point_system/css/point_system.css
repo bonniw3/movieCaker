@@ -60,10 +60,15 @@
 
 .product-img {
     width: 40%;
+    height: 21.5vh;
 }
 .product-img .img-wrapper {
     width: 75%;
     margin: auto;
+}
+#coupon .img-wrapper {
+    width: 100%;
+    margin-top: 25%;
 }
 .img-wrapper img {
     width: 100%;
