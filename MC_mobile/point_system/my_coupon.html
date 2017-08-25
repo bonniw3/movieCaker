@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>電影蛋糕 - 兌換代金卷</title>
+    <title>電影蛋糕 - 我的代金卷</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <meta name="description" content="由于哥哥乔（凯勒·钱德勒）过世，看门人李·钱德勒（凯西·阿弗莱克）成为他16岁的侄子帕特里克（卢卡斯·赫奇斯）的法定监护人，李的生活从此发生彻底的改变，他不得不回到家乡的小城市（曼彻斯特），面对与前妻..." />
     <link rel="canonical" href="http://test.moviecaker.com/video/M00000000158105">
@@ -77,24 +77,34 @@
                 <!-- 只有 “院線熱映，朋友在看，電影專題，電影影評，想看清單，積分頁面” 要 add class "listPages" -->
                 <div class="content-wrap listsPages">
                     <section class="rel-pos">
-                        <div class="section-title fz-subtitle text-blue">兌換代金卷</div>
-                        <div class="points">
-                            <p class="points-icon">p</p>
-                            <p class="maLHalfx text-white fz-normal"><span class="text-light-pink fz-m maRHalfx">120</span>點</p>
-                        </div>
+                        <div class="section-title fz-subtitle text-blue">我的代金卷</div>
                         <article class="maT2x">
                             <section class="maT2x">
+                                <!-- div add class "isEmpty" 會出現空狀態 (如果目前都沒有兌換的代金卷，顯示空狀態) -->
+                                <div class="empty">
+                                    <div class="img-wrapper ">
+                                        <img src="img/ripped_ticket.png" alt="">
+                                    </div>
+                                    <p class="text-white80p taC fontW-bold maT1x">您目前沒有代金卷喔</p>
+                                    <!-- a 要連到”兌換代金卷“頁面 -->
+                                    <a href="exchange_coupon.html" class="btn-confirm fz-subtitle maT50" type="submit">立即去兌換</a>
+                                </div>
+
+                                <!-- 開始 repeat (順序是：最新兌換的在最上面，使用過的在還沒使用過的下面) -->
                                 <div class="coupon">
+                                    <!-- add class "showUsed" 會出現 已使用 標籤 (與下面的 "showused" 要一起 add class) -->
                                     <div class="used-label">已使用</div>
+                                    <!-- add class "showused" 會變淡 (與上面的 "showUsed" 要一起 add class) -->
                                     <div class="coupon-content">
                                         <div class="img-wrapper">
                                             <img src="img/theatre.jpg" alt="">
                                         </div>
                                         <div class="coupon-text-base">
-                                            <span class="exchange-date"><span>2017-08-18</span> 兌換</span>
+                                            <!-- add class "showDate" 出現兌換日期（兌換完成後的代金卷都要顯示兌換日期）-->
+                                            <span class="exchange-date showDate"><span>2017-08-18</span> 兌換</span>
                                             <div class="coupon-text">
                                                 <p class="text-dark-grey fz-subtitle fontW-bold letter-space-1x">觀影代金卷</p>
-                                                <!-- span 裡面的值 要跟上面 input 的 value 同步 -->
+                                                <!-- span 裡面的值是對換的積分點數 -->
                                                 <p class="maT1x fontW-light text-dark-grey fz-15">RMB <span class="exchangeRmb text-yellow fz-lg maL1x maRHalfx fontW-normal">0</span> 元</p>
                                             </div>
                                             <p class="coupon-description text-white80p fz-xs ">不限時段 4 人同時觀影</p>
@@ -103,15 +113,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="exchange-text maT3x">
-                                   <!-- input 裡的直要跟 上面還有下面的 span 同步 -->
-                                   <p>本次想要兌換 <input id="user-points-enter" type="text"/> 點</p>
-                                   <!-- span 裡面的值 要跟上面 input 的 value 同步 -->
-                                   <p class="maT2x fontW-light">=&nbsp;&nbsp;&nbsp;RMB <span class="exchangeRmb text-light-pink fz-lg maLHalfx maRHalfx fontW-normal">0</span> 元</p>
-                               </div>
-                               <button class="btn-confirm fz-subtitle maT3x" type="submit">確定兌換</button>
-                               <a href="#" class="disp-block taC maT2x text-color text-white80p">取消</a>
-                               <a href="#" class="disp-block taR maT3x maB3x text-color text-white80p">代金卷列表<i class="fa fa-angle-right padL1x" aria-hidden="true"></i></a>
+                                <!-- end repeat -->
                             </section> 
                         </article>
                     </section>

@@ -132,13 +132,21 @@
     box-shadow: 0px 2px 7px 0px rgba(12,12,12,.3);
     position: relative;
     overflow: hidden;
+    margin-top: 20px;
+}
+.coupon:first-child {
+    margin-top: 0;
 }
 
-.coupon-content.used {
+.coupon-content.showUsed {
     opacity: .5;
 }
 .coupon-content .img-wrapper {
     position: relative;
+}
+.coupon-content .img-wrapper img {
+    width: 110% !important;
+    margin-left: -5%;
 }
 .coupon-content .img-wrapper:before {
     content: '';
@@ -297,5 +305,18 @@
     transition: border-color .5s ease-in-out,
                 background-color .5s ease-in-out,
                 color .5s ease-in-out;
+}
+
+
+/* -------------- EMPTY COUPON LIST CSS --------------- */
+.empty {
+    display: none;
+}
+.empty.isEmpty {
+    display: block;
+}
+.empty .img-wrapper {
+    width: 120px;
+    margin: 50px auto 0 auto;
 }
 
