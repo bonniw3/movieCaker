@@ -180,25 +180,44 @@ table {
 
 
 /* --------- RESULT AREA --------- */
-.error {
-	text-align: center;
+.error, .found {
 	display: none;
-}
-.used-label {
-	color: #D87C7C;
-	display: none;
-}
-.found {
-	display: none;
-}
-.show {
-	display: block;
 }
 
 .rmb-amt {
 	font-size: 1.15em;
 	color: #D87C7C;
 	margin: 0 8px;
+}
+
+.result .btn-exchange {
+	display: none;
+}
+.result.result-error .error {
+	text-align: center;
+	display: block;
+}
+.result.result-error .btn-exchange, .result.result-used .btn-exchange {
+	background-color: #4a4a4a !important;
+	color: rgba(155,155,155,.5) !important;
+	display: block;
+}
+
+.result.result-normal .btn-exchange {
+	display: block;
+}
+.result.result-normal .found, .result.result-used .found {
+	display: block;
+}
+.result.result-normal .found .used-label {
+	visibility: hidden;
+}
+
+.result.result-used .found .used-label {
+	visibility: visible;
+}
+.result.result-used .found .rmb-amt {
+	color: rgba(238,238,238,.5);
 }
 
 
@@ -232,14 +251,6 @@ table {
 .btn-normal {
 	width: 95%;
 	background-color: #579AAD;
-	display: block;
-}
-
-.btn-error {
-	width: 95%;
-	background-color: #4a4a4a !important;
-	color: rgba(155,155,155,.5) !important;
-	display: block;
 }
 
 

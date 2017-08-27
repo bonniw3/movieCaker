@@ -19,21 +19,19 @@
         </section>
         <!-- span add class "loading" 會出現 loading -->
         <span class="divider-line maT2x"></span>
-        <section class="result maT3x padLR1x">
-            <!-- add class "show" 會出現 .error 區塊 (顯示 error 區塊，也要把下面的 button add class "btn-error") -->
+        <!-- section add class "result-error" 會出現 搜尋結果錯誤 樣式 -->
+        <!-- section add class "result-normal" 會出現 搜尋結果正常 樣式 -->
+        <!-- section add class "result-used" 會出現 搜尋結果已使用過 樣式 -->
+        <section class="result maT3x padLR1x result-used">
             <div class="error">查無此代金卷</div>
-            <!-- add class "show" 會出現 .found 區塊 -->
             <div class="found">
                 <div class="group-wrap">
                     <p class="pull-left">抵扣金額</p>
                     <p class="pull-right maL1x">RMB<span class="rmb-amt">88</span>元</p>
-                    <!-- add class "show" 出現會 “已使用過” (顯示 “已使用過”，也要把下面的 button add class "btn-error") -->
-                    <p class="pull-right used-label">已使用過</p>
+                    <p class="pull-right text-color-pink used-label">已使用過</p>
                 </div>
             </div>
-            <!-- add class "btn-error" 出現會 disable 樣式（ 如果結果是：“查無此資料” 或 “代金卷已使用過”，都要出現 disable 樣式 ） -->
-            <!-- add class "btn-normal" 出現會 normal 樣式（ 如果結果是 正常的代金卷金額（還未使用過的），要出現 normal 樣式 ） -->
-            <button class="btn maT6x" type="submit">確定核銷</button>
+            <button class="btn btn-normal maT6x btn-exchange" type="submit">確定核銷</button>
         </section>
     </div>
 </body>
