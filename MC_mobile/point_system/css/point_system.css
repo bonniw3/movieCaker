@@ -144,7 +144,7 @@
     margin-top: 0;
 }
 
-.coupon-content.showUsed {
+.coupon.coupon-used .coupon-content {
     opacity: .5;
 }
 .coupon-content .img-wrapper {
@@ -275,7 +275,7 @@
     display: none;
 }
 
-.used-label.showUsed {
+.coupon.coupon-used .used-label{
     display: block;
 }
 

@@ -82,7 +82,7 @@
                             <section class="maT2x">
                                 <!-- div add class "isEmpty" 會出現空狀態 (如果目前都沒有兌換的代金卷，顯示空狀態) -->
                                 <div class="empty">
-                                    <div class="img-wrapper ">
+                                    <div class="img-wrapper">
                                         <img src="img/ripped_ticket.png" alt="">
                                     </div>
                                     <p class="text-white80p taC fontW-bold maT1x">您目前沒有代金卷喔</p>
@@ -91,10 +91,9 @@
                                 </div>
 
                                 <!-- 開始 repeat (順序是：最新兌換的在最上面，使用過的在還沒使用過的下面) -->
-                                <div class="coupon">
-                                    <!-- add class "showUsed" 會出現 已使用 標籤 (與下面的 "showused" 要一起 add class) -->
+                                <!-- .coupon add class "coupon-used" 會出現 已使用過的代金卷樣式 -->
+                                <div class="coupon coupon-used">
                                     <div class="used-label">已使用</div>
-                                    <!-- add class "showused" 會變淡 (與上面的 "showUsed" 要一起 add class) -->
                                     <div class="coupon-content">
                                         <div class="img-wrapper">
                                             <img src="img/theatre.jpg" alt="">
