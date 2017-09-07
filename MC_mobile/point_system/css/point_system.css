@@ -132,13 +132,7 @@
 
 /* -------------- COUPON CSS --------------- */
 .coupon {
-    width: 100%;
-    height: 28vh;
-    border-radius: 3px;
-    box-shadow: 0px 2px 7px 0px rgba(12,12,12,.3);
     position: relative;
-    overflow: hidden;
-    margin-top: 20px;
 }
 .coupon:first-child {
     margin-top: 0;
@@ -147,116 +141,107 @@
 .coupon.coupon-used .coupon-content {
     opacity: .5;
 }
-.coupon-content .img-wrapper {
+.coupon-content {
     position: relative;
+    background-position: -6px 0;
+    background-size: 103%;
+    background-repeat: no-repeat;
+    height: 32vh;
 }
-.coupon-content .img-wrapper img {
-    width: 110% !important;
-    margin-left: -5%;
-}
-.coupon-content .img-wrapper:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+
+.coupon-base {
     width: 100%;
-    height: 100%;
-    background-color: rgba(238,238,238,.2);
+}
+.coupon-base img {
+    width: 102%;
+    margin-left: -3%;
+}
+
+.coupon-side {
+    width: 12vw;
+    height: auto;
+    position: relative;
+    top: 13vh;
+    left: -5vw;;
+}
+
+.coupon-side img {
+    width: 200%;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+}
+
+.coupon-right-img {
+    width: 25%;
+    margin: 1.3vh 7vw 0 0;
+    position: absolute;
+    right: 0;
+}
+.coupon-right-img img {
+    width: 100%;
 }
 
 .coupon-text-base {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 0;
-    width: 35%;
-    border-bottom: 28vh solid rgba(98,142,154,.95);
-    border-left: 0px solid rgba(98,142,154,.95);
-    border-right: 20vw solid transparent;
-    z-index: 9;
-}
-/* .coupon-text-base:before{
-    content: '';
-    z-index: 8;
-    position: absolute;
-    top: -35px;
-    left: 42.5vw;
-    height: 290px;
-    width: 2px;
-    box-shadow: 4px 0px 6px 0px rgba(0,0,0,.7);
-    -webkit-transform: rotate(-20deg);
-    -moz-transform: rotate(-20deg);
-    -o-transform: rotate(-20deg);
-    -ms-transform: rotate(-20deg);
-    transform: rotate(-20deg);
-} */
-
-.coupon-text {
-    position: absolute;
-    top: 10vh;
-    left: 0;
-    border-left: 5px solid #EBD961;
-    padding-left: 3vw;
-    width: 130%;
+    position: relative;
+    top: 1vh;
+    left: 6vw;
 }
 
+.coupon-title {
+    color: #62766D;
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+    margin-top: 3.5vh;
+}
 .coupon-description {
-    position: absolute;
-    top: 22vh;
-    left: 4vw;
-    color: rgba(235,235,235,.8);
-    font-size: .75em;
+    color: rgba(235,235,235,1);
+    font-size: .9em;
     letter-spacing: 1px;
-    width: 150%;
+    margin: 1vh 0 0 6vw;
 }
-
-.triangle {
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 6vw solid transparent;
-	border-right: 6vw solid transparent;
-}
-.tri-down {
-    left: 27vw;
-    top: 2vh;
-    width: 0;
-	height: 0;
-    border-top: 6vh solid rgba(233,161,161,.8);
-}
-.tri-up {
-    left: 44vw;
-    top: 22vh;
-    border-left-width: 5vw;
-    border-right-width: 5vw;
-	border-bottom: 5vh solid rgba(235,217,97,.75);
+.coupon-description span {
+    color: #87A095;
 }
 
 .exchange-date {
     color: rgba(235,235,235,.8);
-    font-size: .65em;
-    margin: 1.5vh 0 0 3vw;
-    display: none;
+    font-size: .7em;
+    /* margin: 1.5vh 0 0 0; */
+    visibility: hidden;
 }
 .exchange-date.showDate {
-    display: block;
+    visibility: visible;
 }
+
+.exchange-amt.text-olive {
+    color: #6B8076;
+}
+
+.exchangeRmb.text-pink {
+    color: #C25F63;
+}
+.exchangeRmb.coupon-fz {
+    font-size: 2.1em;
+}
+
 
 
 /* -------------- BARCODE CSS --------------- */
 .barcode {
-    width: 100%;
-    height: 18vh;
+    width: 99%;
+    height: 19vh;
     overflow: hidden;
     position: relative;
-    border-top: 5px solid #E9A1A1;
-    box-shadow: 0px 2px 7px 0px rgba(12,12,12,.3);
+    left: 1px;
+    top: -2vh;
+    border-top: 5px solid #495952;
+    box-shadow: 2px 3px 5px 0px rgba(12,12,12,.3);
 }
 .barcode img {
     width: 100%;
-    margin-top: -2vh;
-
+    /* height: 100%; */
 }
 
 
@@ -290,6 +275,7 @@
 }
 
 .exchange-text p:first-child input {
+    -webkit-appearance: none;
     width: 120px;
     font-size: 1.25em;
     box-sizing: border-box;
@@ -304,6 +290,7 @@
 }
 
 .exchange-text p:first-child input:focus {
+    -webkit-appearance: none;
     outline: none;
     color: rgba(238,238,238,1);
     background-color: rgba(113,207,238,.3);
