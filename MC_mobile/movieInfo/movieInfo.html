@@ -67,6 +67,20 @@
             </ul>
         </div>
 
+        <!-- SHARE_marketing -->
+        <!-- 當 scroll 的時候，window position > 80 .share-marketing 要 add class "hidden"; 小於就要 remove class "hidden"  -->
+        <div class="share-marketing">
+            <div class="share-img">
+                <!-- <img src="img/share-marketing-card.png" alt=""> -->
+                <!-- <img src="img/share-marketing-card-s.png" alt=""> --> <!-- 簡體 --> 
+                <img src="img/share-marketing-text.png" alt="">
+                <!-- <img src="img/share-marketing-text-s.png" alt=""> --> <!-- 簡體 --> 
+            </div>
+            <label for="noShow"><input id="noShow" type="checkbox"> 下次不再顯示</label>
+            <!-- 按下 “我知道了” .share-marketing 要 addclass "hidden" 就不會出現 -->
+            <button class="btn-ok maT1x">我知道了</button>
+        </div>
+
         <!-- content -->
         <div ng-class="{ blur: main.screenStatus() }">
             <div ng-controller="videoIntroCtrl as vm" ng-init="vm.init('M00000000158105')">
@@ -712,13 +726,20 @@
         $(window).scroll(function() {
             var windowpos = $(window).scrollTop();
             var header = $('.header');
-            var content = $('.content-wrap')
+            var content = $('.content-wrap');
+            var shareImg = $('.share-marketing');
             if ( windowpos > 0 ) {
                 header.addClass('scroll');
                 content.addClass('scroll');
             } else {
                 header.removeClass('scroll');
                 content.removeClass('scroll');
+            }
+
+            if (windowpos > 80 ) {
+                shareImg.addClass('hidden');
+            } else {
+                shareImg.removeClass('hidden');
             }
         });
     });
