@@ -789,6 +789,27 @@ table {
 	margin-left: -5%;
 }
 
+.movie-list .movie-item.single-col {
+	float: none;
+	width: 100%;
+	margin-top: 45px;
+}
+.movie-list .movie-item.single-col > .movie-img {
+	width: 30%;
+	height: auto; 
+	overflow: hidden;
+	position: relative;
+	border-radius: 5px;
+	margin-top: -6vh;
+	display: block;
+}
+.movie-list .movie-item.single-col img {
+	width: 100%;
+	margin-left: 0;
+}
+
+
+
 .movie-order {
     position: absolute;
     left: -5px;
