@@ -77,7 +77,7 @@
                 <!-- 只有 “院線熱映，朋友在看，電影專題，電影影評，想看清單，積分頁面” 要 add class "listPages" -->
                 <div class="content-wrap listsPages">
                     <section class="rel-pos">
-                        <div class="section-title fz-subtitle text-blue">核銷代金卷</div>
+                        <div class="section-title fz-subtitle text-blue">使用代金卷</div>
                         <div class="points">
                             <p class="points-icon">p</p>
                             <!-- span裡的數字是 原本有的積分點數 減去 對換掉的點數 -->
@@ -91,22 +91,20 @@
                                         <div class="coupon-side pull-left">
                                             <img src="img/mc_logo_text.png" alt="">
                                         </div>
-                                        <div class="coupon-text-base pull-left">
-                                            <!-- 下面 span add class "showDate" 出現兌換日期（兌換完成後的代金卷都要顯示兌換日期）-->
-                                            <span class="exchange-date"><span>2017-08-18</span> 兌換</span>
-                                            <p class="coupon-title fontW-bold">觀影代金卷</p>
-                                            <p class="coupon-description">不限時段 <span>•</span> 一同觀影</p>
-                                            <!-- span 裡面的值 要跟上面 input 的 value 同步 -->
-                                            <p class="maT15 maL1x fontW-light exchange-amt text-olive fz-15">RMB <span class="exchangeRmb text-pink coupon-fz maL1x maRHalfx fontW-normal">0</span> 元</p>
+                                        <div class="coupon-qrcode pull-left">
+                                            <div class="qrcode-img-wrap">
+                                                <!-- 這裡放qr code 圖片 -->
+                                                <img src="img/qrcode.png" alt="">
+                                            </div>
+                                            <!-- qrcode 代碼 -->
+                                            <p class="qrcode-code">MC00000123456789</p>
                                         </div>
-                                        <div class="coupon-right-img pull-right">
-                                            <img src="img/movie_projector.png" alt="">
+                                        <div class="coupon-qrcode-text pull-left">
+                                            <!-- 下面 span add class "showDate" 出現兌換日期（兌換完成後的代金卷都要顯示兌換日期）-->
+                                            <span class="exchange-date showDate"><span>2017-08-18</span> 兌換</span>
+                                            <p class="fontW-normal exchange-amt text-olive fz-normal"><span class="exchangeRmb text-pink fz-m maRHalfx fontW-normal">88</span>元</p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="barcode">
-                                    <!-- 這邊圖片是要放條碼的 -->
-                                    <img src="img/barcode.png" alt="">
                                 </div>
                                 <a href="/" class="btn-confirm fz-subtitle maT3x" type="submit">回首頁</a>
                                 <a href="my_coupon.html" class="disp-block taC maT2x text-color text-white80p">回我的代金卷</a>
