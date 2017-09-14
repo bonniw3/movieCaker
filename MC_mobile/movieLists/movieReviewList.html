@@ -79,26 +79,63 @@
                     <section class="rel-pos">
                         <div class="section-title fz-subtitle text-blue">電影影評</div>
                         <article class="maT2x">
-                            <ul class="nav-horizontal nav-type-scroll optionNum-4">
+                            <!-- ul add class "optionNum-4" 出現 “朋友影評”-->
+                            <ul class="nav-horizontal nav-type-scroll optionNum-3 member-sensitive">
                                 <li class="active">本週熱門</li>
                                 <li>最受歡迎</li>
                                 <li>最新影評</li>
-                                <li>朋友影評</li> <!-- 登入後才出歉 -->
+                                <!-- "朋友影評" 登入後才出現 -->
+                                <li>朋友影評</li> 
                             </ul>
                             <section class="maT2x">
                                 <div class="movie-list group-wrap">
                                     <!-- 從這裡開始 repeat div -->
                                     <div class="movie-item single-col">
-                                        <!-- <a href=""> 連倒影評介紹頁 -->
-                                            <!-- <div > -->
-                                                <a href="/" class="movie-img"> <!-- 連到這部電影的電影介紹頁 -->
-                                                    <img class="box-office-movie" src="img/movie1.png" alt="">
-                                                </a>
-                                            <!-- </div> -->
-                                            <div class="lineh20 maTHalf1x">
-                                                <p class="fz-13 text-white line-clamp clamp-1">美女與野獸</p> <!-- 電影名稱 -->
+                                        <div class="review-author group-wrap">
+                                            <!-- 連到作者的個人頁面 -->
+                                            <a href="#" class="maLHalfx pull-right fz-xs text-light-blue letter-space-1x">作者暱稱</a>
+                                            <div class="circle-mask width-xss pull-right">
+                                                <img src="img/default_avatar.png" alt="">
                                             </div>
-                                        <!-- </a> -->
+                                        </div>
+                                        <div class="container">
+                                            <div class="review-movie-img flex-item">
+                                                <a href="/"> <!-- 連到這部電影的電影介紹頁 -->
+                                                    <img src="img/movie1.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="review-info flex-item">
+                                                <a href="#" class="movie-name line-clamp clamp-1">電影名稱 (2017)</a>
+                                                <div class="group-wrap hasColor">
+                                                    <span class="stars pull-left" data-rate="{{review.OwnerLinkVideo_Score}}">
+                                                        <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                        <i class="fa fa-star ng-scope" ng-repeat="i in getNumber(roundNumber(rate)) track by $index" ng-if="($index+1) % 2 === 0"></i>
+                                                    </span>
+                                                    <i class="fa fa-heart maL5p maTHalf1x pull-left" ng-class="{true:'fa-heart',false:'fa-heart-o'}[review.OwnerLinkVideo_IsLiked]"></i>
+                                                </div>
+                                                <p class="fz-xs text-gray" ng-show="review.ViewedOn!==null" ng-bind="' 觀影於 ' + (review.ViewedOn| mcJsLocalDateTime)">觀影於 2017/01/31</p>
+                                            </div>
+                                        </div>
+                                        <div class="review-content maTHalf1x maBHalf1x">
+                                            <p class="line-clamp clamp-3 fz-15 letter-space-1x text-white80p" ng-bind="(review.Review | characters:89 :true)">
+                                                我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶懦弱神經質的感覺。凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶
+                                            </p>
+                                            <div class="group-wrap maT15">
+                                                <ul class="review-num-stats pull-left group-wrap">
+                                                    <!-- 第一個li拿掉 showLikeNum 就不會出現 (如果有沒人喜歡影評就不要出現第一個li) -->
+                                                    <li class="text-white60p fz-s pull-left maR15 showLikeNum">
+                                                        <span ng-bind="review.LikedNum">11</span> 人喜歡
+                                                    </li>
+                                                    <li class="text-white60p fz-s pull-left">
+                                                        <span ng-bind="review.PageViews">50</span> 次瀏覽
+                                                    </li>
+                                                </ul>
+                                                <a class="pull-right readMore" ng-href="/mobile/review/{{review.ReviewId}}">全文</a>
+                                            </div>
+                                        </div>
                                     </div>
                                     <!-- end repeat div -->
                                 </div>  
