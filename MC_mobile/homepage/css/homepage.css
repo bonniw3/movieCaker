@@ -29,7 +29,7 @@
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
-    padding: 30px;
+    padding: 5%;
     position: relative;
     overflow-x: hidden;
     z-index: 5;
@@ -37,7 +37,7 @@
 
 /* ---------- LOGO section ---------- */
 .logo {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
 }
 .logo img {
@@ -47,7 +47,7 @@
 /* ---------- SEARCH section ---------- */
 .search-area {
     opacity: 1;
-    top: 7%;
+    top: 5%;
 }
 
 .search-area {
@@ -105,34 +105,34 @@ div.ui-state-active {
 
 /* ---------- MENU section ---------- */
 .btn-group-wrap {
-    max-height: 45vh;
+    max-height: 46vh;
     overflow: scroll;
-    margin-top: 30%;
+    margin-top: 25%;
+    padding-top: 3%;
 }
 
 .page-btn-group {
-    margin: 0px 1% 30px 1%;
+    margin: 0px 1% 10% 1%;
     width: 31%;
     text-align: center;
 }
 .page-btn {
-    width: 55px;
-    height: 55px;
     border-radius: 50%;
-    border: 1px solid rgba(113,207,238,1);
-    line-height: 60px;
     text-align: center;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 10% auto;
 }
 .page-btn i {
-    font-size: 25px;
+    font-size: 1.875em; /* 30px */
 }
 .page-title {
     color: #eeeeee;
-    font-size: 1em;
+    font-size: .95em;
 }
 
 .avatar {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 7%;
     overflow: hidden;
 }
 .avatar img {
