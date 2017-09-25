@@ -1,0 +1,164 @@
+
+
+.user_setting_title {
+    margin: 50px 0;
+    color: #71cfee;
+    font-size: 30px;
+    text-align: left;
+    font-weight: 200;
+}
+
+.editor-label, legend, .editor-field {
+    color: white;
+}
+
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+}
+
+iframe {
+    width: 430px;
+    padding: 1px !important;
+    box-shadow: none;
+    border: 1px solid #444;
+    border-top: 2px #579AAD solid;
+    border-radius: 0;
+    background-color: rgba(0,0,0,0);
+    top: 0;
+    left: 150px;
+}
+
+    iframe.dropdown-menu {
+        width:initial;
+        height:280px
+    }
+
+input[name="Web3thParty"] {
+}
+
+.edit-personal-form.form-horizontal label {
+    width: auto;
+    min-width: 4em;
+    text-align: left;
+    display: inline;
+}
+
+.edit-personal-form.form-horizontal select {
+    width: auto;
+    color: #52575c;
+    margin-right: 0.6em;
+}
+
+.edit-personal-form.form-horizontal .row-fluid [class*="span"] {
+    margin: 0.5em 0 0.5em 0;
+}
+
+.edit-personal-form.form-horizontal .sync-title {
+    font-size: 1.2em;
+    color: #579AAD;
+}
+
+.edit-personal-form.form-horizontal input[type="submit"] {
+    background: rgb(91, 192, 222);
+    border: none;
+    padding: 0.5em;
+    margin-top: 1.5em;
+}
+
+.edit-personal-form.form-horizontal input[type="text"],
+.edit-personal-form.form-horizontal input[type="email"] {
+    border-radius: inherit;
+}
+
+.edit-personal-form.form-horizontal input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+.edit-personal-form.form-horizontal legend {
+    color: #71CFEE;
+}
+
+.edit-personal-form.form-horizontal > fieldset {
+    padding-bottom: 50px;
+}
+
+
+.align-center {
+    text-align: center;
+}
+
+.edit-personal-form.form-horizontal .sync-label,
+.edit-personal-form.form-horizontal label {
+    font-size: 1.1em;
+}
+
+.checking_list {
+    margin-top: 30px;
+}
+
+    .checking_list li {
+        margin: 2px;
+        padding: 5px;
+        text-align: center;
+        border-radius: 10px;
+        display: inline-block;
+    }
+
+        .checking_list li label {
+            cursor: pointer;
+            margin: 0;
+            border-radius: inherit;
+            padding: 1px;
+        }
+
+        .checking_list li input {
+            display: none;
+        }
+
+    .checking_list label {
+        color: #363636;
+        margin-top: 15px;
+    }
+
+    .checking_list input:checked + label {
+        padding: 3px;
+        background-color: #579AAD;
+        color: #fff !important;
+    }
+#bind_fb, #bind_wb, #bind_qq {
+    background:#579AAD;
+    padding:0 3px;
+    border-radius:2px;
+}
+.uneditable-input, input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
+    text-shadow: none;
+    color: #52575c;
+}
+a[disabled] {
+    pointer-events: none;
+}

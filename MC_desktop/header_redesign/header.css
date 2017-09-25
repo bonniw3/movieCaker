@@ -1,0 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-family: 微軟正黑體,sans-serif;
+}
+
+.clearfix {
+	clear: both;
+}
+
+body {
+	/* background: url('img/hover_movies_slider.png') 0 0 no-repeat; */
+	/* z-index: 999999; */
+	/* opacity: 0.7; */
+}
+
+
+
+
+
+

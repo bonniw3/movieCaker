@@ -1,0 +1,173 @@
+
+.logintop li.btn {
+	float: left;
+}
+
+#all-setting > li {
+	width: 100%;
+}
+
+ul.logintop li {
+	list-style-type: none;
+	position: relative;
+	padding: 0;
+}
+
+.login_dropdown {
+	padding: 5px 15px;
+	border-radius: 0;
+	text-align: center;
+	border-left: 3px solid #71CFEE;
+	background-color: #1f1f1f;
+	position: absolute;
+	top: 55px;
+	display: none;
+}
+
+.login_dropdown.active {
+	display: block;
+}
+
+ul.login_dropdown li, #inlineFriend, #inlineMessage {
+	width: 100%;
+	margin-top: 0px;
+	padding: 10px 0;
+	font-size: 14px;
+	color: #eee;
+	white-space: nowrap;
+}
+
+ul.login_dropdown li a {
+	display: block;
+	font-size: 14px;
+	color: #eee;
+}
+
+ul.login_dropdown li:hover a {
+	color: #71CFEE;
+	text-decoration: none;
+	transition: 0.3s;
+	font-size: 16px;
+}
+
+ul.login_dropdown li:hover i.fa-power-off {
+	color: #71CFEE;
+	transition: 0.3s;
+}
+
+ul.login_dropdown li a.aOnSelect {
+	background-color: transparent;
+	font-size: 16px;
+	color: rgba(113, 207, 238, 0.6);
+}
+
+
+#all-add {
+	left: -50px;
+	width: 50px;
+}
+
+#all-add:before{
+	content:'';
+	display:inline-block;
+	border-left:7px solid transparent;
+	border-right:7px solid transparent;
+	border-bottom:7px solid #1f1f1f;
+	border-bottom-color:#1f1f1f;
+	position:absolute;
+	top: -7px;
+	left: 35px;
+}
+
+#all-setting {
+	left: -90px;
+	width: 85px;
+}
+
+#all-setting:before{
+	content:'';
+	display:inline-block;
+	border-left:7px solid transparent;
+	border-right:7px solid transparent;
+	border-bottom:7px solid #1f1f1f;
+	border-bottom-color:#1f1f1f;
+	position:absolute;
+	top: -7px;
+	left: 75px;
+}
+
+#all-setting li i {
+	padding-right: 5px;
+}
+
+
+/* -------------交友邀請 dropdown-------------- */
+
+.ShowMessageBlock{
+	position: absolute;
+	left: -70px;
+	top: 55px;
+}
+
+.ShowMessageBlock:before{
+	content: '';
+	display: inline-block;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid #1f1f1f;
+	border-bottom-color: #1f1f1f;
+	position: absolute;
+	top: -7px;
+	left: 80px;
+}
+
+#inlineFriend, #inlineMessage {
+	cursor: default;
+}
+
+#inlineFriend .inviting_list {
+	cursor: pointer;
+}
+
+
+/* -------------訊息通知 dropdown-------------- */
+
+.ShowFriendBlock{
+	position: absolute;
+	top: 55px;
+	left: -50px;
+}
+
+.ShowFriendBlock:before{
+	content: '';
+	display: inline-block;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid #1f1f1f;
+	border-bottom-color: #1f1f1f;
+	position: absolute;
+	top: -7px;
+	left: 60px;
+}
+
+#inlineMessage #see-all-message a {
+	color: #eee;
+	text-decoration: underline;
+	transition: 0.3s;
+}
+
+#inlineMessage #see-all-message a:hover {
+	color: #71CFEE;
+	transition: 0.3s;
+}
+
+ul.logintop li.btn div.active {
+	display: block;
+}
+
+/* li.btn > i {
+	font-size: 16px;
+} */
+
+
+

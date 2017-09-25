@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/wetheater_detail.css">
+</head>
+<body>
+    <div class="header">
+        <!--header goes here...-->
+    </div>
+
+    <div id="website_body">
+        <div class="top_slider">
+            <div class="slider_img">
+                <img src="img/shadow.png" alt="">
+            </div>
+        </div>
+        <section class="theater_info">
+            <div class="theater_left">
+                <div class="theater_img">
+                    <img src="img/logo3.jpg" alt="">
+                </div>
+                <button class="like_btn">
+                    <p><i class="fa fa-heart" aria-hidden="true"></i>喜歡？</p>
+                </button>
+                <button class="like_btn_active">
+                    <p><i class="fa fa-heart" aria-hidden="true"></i>已喜歡</p>
+                </button>
+            </div>
+            <div class="theater_right">
+                <div class="theater_title">
+                    <h3>1 8 9 5 啡 影 音 樂 酒 館</h3>
+                </div>
+                <div class="theater_items">
+                    <div class="detail_info">
+                        <ul>
+                            <li><p><i class="fa fa-clock-o" aria-hidden="true"></i>週一至週日 10:00-2:00</p></li>
+                            <li><p><i class="fa fa-phone" aria-hidden="true"></i>0851-83881116</p></li>
+                            <li><p><i class="fa fa-map-marker" aria-hidden="true"></i>长沙市望城县云栖路白鹤家园小区7栋6门2楼</p></li>
+                            <li><p><i class="fa fa-heart" aria-hidden="true"></i>10K 喜歡</p></li>
+                        </ul>
+                    </div>
+                    <div class="detail_service">
+                        <p>服務類型</p>
+                        <div class="service_tag"><p>桌遊</p></div>
+                        <div class="service_tag"><p>咖啡飲品</p></div>
+                        <div class="service_tag"><p>小食餐點</p></div>
+                        <div class="service_tag"><p>麻將橋牌</p></div>
+                        <div class="service_tag"><p>體感遊戲</p></div>
+                        <div class="service_tag"><p>虛擬實境遊戲</p></div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </section>
+        <article class="theater_detail">
+            <div class="tabs">
+                <ul>
+                    <li class="active"><p>片單</p></li>
+                    <li><p>店家介紹</p></li>
+                    <li><p>包廂介紹</p></li>
+                </ul>
+            </div>
+            <div class="tab_content">
+                <section class="theater_movies active">
+                    <div class="theater_nav">
+                        <ul>
+                            <li class="active"><p><i class="fa fa-caret-right" aria-hidden="true"></i>最新</p></li>
+                            <li class=""><p><i class="fa fa-caret-right" aria-hidden="true"></i>熱門</p></li>
+                            <li class=""><p><i class="fa fa-caret-right" aria-hidden="true"></i>好評</p></li>
+                        </ul>
+                    </div>
+                    <div class="movie_list">
+                        <div class="movie_display active">
+                            <img src="img/movie1.png" alt="">
+                        </div>
+                        <div class="movie_display ">
+                            <img src="img/movie2.png" alt="">
+                        </div>
+                        <div class="movie_display">
+                            <img src="img/movie3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </section>
+                <section class="theater_bio">B</section>
+                <section class="theater_room">C</section>
+            </div>
+        </article>
+    </div>
+
+    <div class="layout-footer">
+        <!--footer goes here...-->
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$('.tabs ul li').click(function(){
+		var numHolder = $(this).index();
+
+		$('.tabs .active').removeClass('active');
+		$('.tab_content .active').removeClass('active');
+
+		$(this).addClass('active'); 
+		$('.tab_content section').eq( numHolder ).addClass('active');
+
+        if (numHolder == 0) {
+            $('.theater_nav ul li').eq(numHolder).addClass('active');
+            $('.movie_list div').eq(numHolder).addClass('active');
+        }
+
+	})
+
+    $('.theater_nav ul li').click(function(){
+		var numHolder = $(this).index();
+
+		$('.theater_nav ul li.active').removeClass('active');
+		$('.movie_list .active').removeClass('active');
+
+		$(this).addClass('active'); 
+		$('.movie_list div').eq( numHolder ).addClass('active');
+	})
+
+    $('.like_btn').click(function(){
+        $(this).css("display", "none");
+        $('.like_btn_active').css("display", "block");
+    })
+
+    $('.like_btn_active').click(function(){
+        $(this).css("display", "none");
+        $('.like_btn').css("display", "block");
+    })
+
+
+
+})
+</script>
+
+
+</body>
+</html>

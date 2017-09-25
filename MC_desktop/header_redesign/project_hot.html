@@ -1,0 +1,2786 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head prefix="">
+    <meta charset="utf-8" />
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    
+    
+    <title>熱門專題</title>
+    <meta name="description" />
+    <meta name="keywords" />
+
+
+    <!-- for Facebook -->
+    <meta property="fb:app_id" content="805159066237146" />
+    <meta property="og:site_name" content="Moviecaker" />
+    <meta property="og:url" content="http://test.moviecaker.com/topic?sort=Hot" />
+    <meta property="og:title" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" />
+    <meta property="og:image" />
+    
+
+    <!-- 360 6.X 以上可识别 -->
+    <meta name="renderer" content="webkit">
+    
+    <meta property="wb:webmaster" content="60e21d9e85ef425a" /><!-- 微博驗證 -->
+    <meta property="qc:admins" content="246360627615313526375" /><!-- QQ 驗證 -->
+    <link href="http://moviecaker.com/Content/jquery-ui.css" rel="stylesheet"/>
+<!-- <link href="http://moviecaker.com/Content/stylesheets/layout-old.css" rel="stylesheet"/> -->
+<link href="http://moviecaker.com/Content/rateit.css" rel="stylesheet"/>
+<link href="http://moviecaker.com/Content/HM_Front.css" rel="stylesheet"/>
+<link href="http://moviecaker.com/Content/effect.css" rel="stylesheet"/>
+<link href="http://moviecaker.com/Scripts/uploadify/uploadify.css" rel="stylesheet"/>
+<link href="http://moviecaker.com/Content/bootstrap-modify.css" rel="stylesheet"/>
+<link href="http://moviecaker.com/Content/topic-page.css" rel="stylesheet"/>
+<link href="http://moviecaker.com/Content/topic-yt.css" rel="stylesheet"/>
+<link href="http://moviecaker.com/Content/imgareaselect/imgareaselect-default.css" rel="stylesheet"/>
+<link href="http://moviecaker.com/Content/other-function.css" rel="stylesheet"/>
+<link href="http://moviecaker.com/Scripts/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet"/>
+<link href="http://moviecaker.com/Scripts/pie/pizza.css" rel="stylesheet"/>
+<link href="http://moviecaker.com/Images/icomoon/style.css" rel="stylesheet"/>
+<link href="http://moviecaker.com/Images/logos/style.css" rel="stylesheet"/>
+<link href="http://moviecaker.com/Content/style.css" rel="stylesheet"/>
+
+
+<!-- <link href="http://moviecaker.com/Content/stylesheets/main.css" rel="stylesheet"/> -->
+<!-- <link href="/Content/pages/multiple-search.min.css" rel="stylesheet" /> -->
+<!-- <link href="/Content/pages/user-login.partial.min.css" rel="stylesheet" /> -->
+
+
+<link href="layout-old.css" rel="stylesheet"/> <!-- CHANGE IT BACK!!!! -->
+<link href="main.css" rel="stylesheet"/> <!-- CHANGE IT BACK!!!! -->
+<link href="multiple-search.min.css" rel="stylesheet" />  <!-- CHANGE IT BACK!!! -->
+<link href="user-login.partial.min.css" rel="stylesheet" /> <!-- CHANGE IT BACK!!!! -->
+
+<link rel="stylesheet" type="text/css" href="circle.css">    <!-- newly added CSS -->
+<link rel="stylesheet" type="text/css" href="detail_nav.css">    <!-- newly added CSS -->
+
+
+    
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=4036480982" type="text/javascript" charset="utf-8"></script><!-- 引用新浪微博 JSSDK 文件 -->
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101224571" data-redirecturi="http://test.moviecaker.com" charset="utf-8"></script>
+    <script src="http://moviecaker.com/Scripts/jquery-1.8.3.js"></script>
+<script src="http://moviecaker.com/Scripts/jquery-ui-1.10.3.js"></script>
+<script src="http://moviecaker.com/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="http://moviecaker.com/Scripts/jquery.validate.js"></script>
+<script src="http://moviecaker.com/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    <script src="http://moviecaker.com/Scripts/sense.js"></script>
+<script src="http://moviecaker.com/Scripts/get-idarr.js"></script>
+<script src="http://moviecaker.com/Scripts/load-userdata.js"></script>
+<script src="http://moviecaker.com/Scripts/load-video.js"></script>
+<script src="http://moviecaker.com/Scripts/load-sign.js"></script>
+<script src="http://moviecaker.com/Scripts/load-friendship.js"></script>
+<script src="http://moviecaker.com/Scripts/load-match.js"></script>
+<script src="http://moviecaker.com/Scripts/load-data.js"></script>
+<script src="http://moviecaker.com/Scripts/socialnetwork.js"></script>
+<script src="http://moviecaker.com/Scripts/jquery.masonry.js"></script>
+<script src="http://moviecaker.com/Scripts/jquery.blockUI.js"></script>
+<script src="http://moviecaker.com/Scripts/jquery.infinitescroll.js"></script>
+<script src="http://moviecaker.com/Scripts/jquery.backgroundPosition.js"></script>
+<script src="http://moviecaker.com/Scripts/jquery.placeholder.1.3.js"></script>
+<script src="http://moviecaker.com/Scripts/ShowTitle.js"></script>
+<script src="http://moviecaker.com/Scripts/jquery.HM.Msg.js"></script>
+<script src="http://moviecaker.com/Scripts/jquery.rateit.js"></script>
+<script src="http://moviecaker.com/Scripts/scrolltotop.js"></script>
+<script src="http://moviecaker.com/Scripts/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script src="http://moviecaker.com/Scripts/fancybox/jquery.fancybox-1.3.4.js"></script>
+<script src="http://moviecaker.com/Scripts/jquery.truncatable.js"></script>
+<script src="http://moviecaker.com/Scripts/jquery.checkbox.js"></script>
+<script src="http://moviecaker.com/Scripts/bootstrap.js"></script>
+<script src="http://moviecaker.com/Scripts/AjaxLogin.js"></script>
+<script src="http://moviecaker.com/Scripts/bday-picker.js"></script>
+<script src="http://moviecaker.com/Scripts/jquery.autosize.js"></script>
+<script src="http://moviecaker.com/Scripts/uploadify/jquery.uploadify-3.2.js"></script>
+<script src="http://moviecaker.com/Scripts/slide.js"></script>
+<script src="http://moviecaker.com/Scripts/fireDropDown.js"></script>
+<script src="http://moviecaker.com/Scripts/share.js"></script>
+<script src="http://moviecaker.com/Scripts/pie/dependencies.js"></script>
+<script src="http://moviecaker.com/Scripts/pie/pizza.js"></script>
+<script src="http://moviecaker.com/Scripts/pages/layout.js"></script>
+<script src="http://moviecaker.com/Scripts/pages/multiple-search.min.js"></script>
+
+    <script>
+        
+        var trackOutboundLink = function(url) {
+           ga('send', 'event', 'outbound', 'click', url, {
+             'transport': 'beacon',
+           });
+        }
+    </script>
+</head>
+<body>
+    <div id="other-function-sheet" class="other-function" data-videoid="" style="display: none;">
+        <div class="rateit bigstars" data-rateit-starwidth="25" data-rateit-starheight="25" style="cursor: pointer;"></div>
+        <a class="sub-other-function gotoVideo" href="#" target="_blank">到電影頁面</a>
+        <a class="sub-other-function addReviews" href="#">寫影誌</a>
+        <a class="sub-other-function addLabel" href="#">加入標籤</a>
+        <a class="sub-other-function addToTopic" href="#">加入專題</a>
+    </div>
+
+    <div class="header navbar navbar-fixed-top layout-header">
+        <div class="container layout-wrap">
+            <ul>
+                <h1 class="logo"><a href="/">MovieCaker</a></h1>
+
+                <nav id="main-menu">
+                    <ul class="main_nav_menu">
+                        <li >
+                            <!-- <a href="/"><span class="cur_line line_before "></span>首頁<span class="cur_line line_after cur_active"></span></a> -->
+                            <a href="header_update.html"><span class="cur_line line_before "></span>首頁<span class="cur_line line_after cur_active"></span></a>
+                        </li>
+                        <li >
+                            <!-- <a href="/video?sort=Hot1M"><span class="cur_line line_before cur_active"></span>電影<span class="cur_line line_after cur_active"></span></a> -->
+                            <a href="movies_hot.html"><span class="cur_line line_before cur_active"></span>電影<span class="cur_line line_after cur_active"></span></a>
+                        </li>
+                        <li class="active">
+                            <!-- <a href="/topic?sort=Hot"><span class="cur_line line_before"></span>專題<span class="cur_line line_after"></span></a> -->
+                            <a href="project_hot.html"><span class="cur_line line_before"></span>專題<span class="cur_line line_after"></span></a>
+                        </li>
+                        <li>
+                            <!-- <a href="/explore/video"><span class="cur_line line_before"></span>發現<span class="cur_line line_after"></span></a> -->
+                            <a href="explore_movie.html"><span class="cur_line line_before"></span>發現<span class="cur_line line_after"></span></a>
+                        </li>
+                    </ul>
+                        
+                    <div class="header_dropdown_wrapper">
+                <!-- movies dropdown starts here -->
+                        <div class="header_dropdown clearfix">
+                            <ul class="dropdown_nav">
+                                <li class="active">
+                                    <!-- <a href="/video?sort=Hot1M">熱門電影
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="movies_hot.html">熱門電影
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- <a href="/video?sort=Global">全球新片
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="movies_global.html">全球新片
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- <a href="/video?sort=Award">金獎電影
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="movies_award.html">金獎電影
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/video?sort=MyFriend&amp;order=Sign">朋友在看
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="dropdown_nav_detail">
+                                <div class="loading_animation" style="display: none;">
+                                    <div class="loader">
+                                        <div class="loadDot-1 loadDot"></div>
+                                        <div class="loadDot-2 loadDot"></div>
+                                        <div class="loadDot-3 loadDot"></div>
+                                    </div>
+                                </div>
+                                <ul class="dropdown_list movies_list active">
+                                <!-- 這邊插入熱門電影列表 （五部） -->
+                                    <li >
+                                        <div class="img_wrapper">
+                                            <img src="img/project2a.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生</p>
+                                    </li>
+                                    <li >
+                                        <div class="img_wrapper">
+                                            <img src="img/project2b.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生</p>
+                                    </li>
+                                    <li>
+                                        <div class="img_wrapper">
+                                            <img src="img/project2c.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生</p>
+                                    </li>
+                                    <li>
+                                        <div class="img_wrapper">
+                                            <img src="img/project1a.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生</p>
+                                    </li>
+                                    <li>
+                                        <div class="img_wrapper">
+                                            <img src="img/project1b.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生</p>
+                                    </li>
+                                </ul> 
+                                <ul class="dropdown_list movies_list">
+                                <!-- 這邊插入新片電影列表 （五部） -->
+                                    <li class="active">
+                                        <div class="img_wrapper">
+                                            <img src="img/project1a.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生2</p>
+                                    </li>
+                                    <li >
+                                        <div class="img_wrapper">
+                                            <img src="img/project1b.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生2</p>
+                                    </li>
+                                    <li>
+                                        <div class="img_wrapper">
+                                            <img src="img/project1c.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生2</p>
+                                    </li>
+                                    <li>
+                                        <div class="img_wrapper">
+                                            <img src="img/project2a.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生2</p>
+                                    </li>
+                                    <li>
+                                        <div class="img_wrapper">
+                                            <img src="img/project2b.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生2</p>
+                                    </li>
+                                </ul>
+                                <ul class="dropdown_list movies_list">
+                                <!-- 這邊插入金獎電影列表 （五部） -->
+                                     <li class="active">
+                                        <div class="img_wrapper">
+                                            <img src="img/project2b.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生3</p>
+                                    </li>
+                                    <li >
+                                        <div class="img_wrapper">
+                                            <img src="img/project1c.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生3</p>
+                                    </li>
+                                    <li>
+                                        <div class="img_wrapper">
+                                            <img src="img/project2a.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生3</p>
+                                    </li>
+                                    <li>
+                                        <div class="img_wrapper">
+                                            <img src="img/project1b.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生3</p>
+                                    </li>
+                                    <li>
+                                        <div class="img_wrapper">
+                                            <img src="img/project1a.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生3</p>
+                                    </li>
+                                </ul>
+                                <ul class="dropdown_list movies_list">
+                                <!-- 這邊插入朋友在看列表 （五部） -->
+                                     <li class="active">
+                                        <div class="img_wrapper">
+                                            <img src="img/project2a.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生4</p>
+                                    </li>
+                                    <li >
+                                        <div class="img_wrapper">
+                                            <img src="img/project1b.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生4</p>
+                                    </li>
+                                    <li>
+                                        <div class="img_wrapper">
+                                            <img src="img/project2b.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生4</p>
+                                    </li>
+                                    <li>
+                                        <div class="img_wrapper">
+                                            <img src="img/project1c.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生4</p>
+                                    </li>
+                                    <li>
+                                        <div class="img_wrapper">
+                                            <img src="img/project1a.jpg">
+                                        </div>
+                                        <p class="movie_name">減法人生4</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> 
+                <!-- project dropdown starts here -->
+                        <div class="header_dropdown clearfix">
+                            <ul class="dropdown_nav">
+                                <li >
+                                    <a href="/topic?sort=All">全部
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <!-- <a href="/topic?sort=Hot">熱門
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="project_hot.html">熱門
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/topic?sort=New">最新
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/topic?sort=MyFriend">朋友專題
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="dropdown_nav_detail">
+                                <div class="loading_animation" style="display: none;">
+                                    <div class="loader">
+                                        <div class="loadDot-1 loadDot"></div>
+                                        <div class="loadDot-2 loadDot"></div>
+                                        <div class="loadDot-3 loadDot"></div>
+                                    </div>
+                                </div>
+                                <ul class="project_list dropdown_list active"> 
+                                <!-- 這邊插入全部專題列表 （三個） -->
+                                    <li class="project_container">
+                                        <div class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="movie_name">在電影中看見的愛情心法13條</p>
+                                    </li>
+                                    <li class="project_container">
+                                        <div class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="movie_name">在電影中看見的愛情心法13條</p>
+                                    </li>
+                                    <li class="project_container">
+                                        <div class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="movie_name">在電影中看見的愛情心法13條</p>
+                                    </li>
+                                </ul> 
+                                <ul class="project_list dropdown_list ">
+                                <!-- 這邊插入熱門專題列表 （三個） -->
+                                    <li class="project_container">
+                                        <div class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="movie_name">引爆大銀幕-全球影史票房百強</p>
+                                    </li>
+                                    <li class="project_container">
+                                        <div class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="movie_name">引爆大銀幕-全球影史票房百強</p>
+                                    </li>
+                                    <li class="project_container">
+                                        <div class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="movie_name">引爆大銀幕-全球影史票房百強</p>
+                                    </li>
+                                </ul>
+                                <ul class="project_list dropdown_list">
+                                <!-- 這邊插入最新專題列表 （三個） -->
+                                    <li class="project_container">
+                                        <div class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="movie_name">韓國本土十大19禁賣座電影</p>
+                                    </li>
+                                    <li class="project_container">
+                                        <div class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="movie_name">韓國本土十大19禁賣座電影</p>
+                                    </li>
+                                    <li class="project_container">
+                                        <div class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="movie_name">韓國本土十大19禁賣座電影</p>
+                                    </li>
+                                </ul>
+                                <ul class="project_list dropdown_list">
+                                <!-- 這邊插入朋友專輯列表 （三個） -->
+                                    <li class="project_container">
+                                        <div class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="movie_name">愛情心法16條</p>
+                                    </li>
+                                    <li class="project_container">
+                                        <div class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="movie_name">愛情心法16條</p>
+                                    </li>
+                                    <li class="project_container">
+                                        <div class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="movie_name">愛情心法16條</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> 
+                <!-- explore dropdown starts here -->
+                        <div class="header_dropdown clearfix">
+                            <ul class="dropdown_nav">
+                                <li >
+                                    <!-- <a href="/explore/video">找電影
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="explore_movie.html">找電影
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <!-- <a href="/explore/master">找影友
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="explore_friend.html">找影友
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- <a href="/explore/master">找達人
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="explore_master.html">找達人
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="dropdown_nav_detail">
+                                <div class="loading_animation" style="display: none;">
+                                    <div class="loader">
+                                        <div class="loadDot-1 loadDot"></div>
+                                        <div class="loadDot-2 loadDot"></div>
+                                        <div class="loadDot-3 loadDot"></div>
+                                    </div>
+                                </div>
+                                <ul class="dropdown_list explore_list">
+                                    <li >
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M9400815_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M8004375_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M9700675_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0801740_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">風格</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0703952_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M9301838_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0701235_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M1130299_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">情節</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0300678_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0600880_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0704889_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0507005_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">心情</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0505913_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M1024010_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M1337860_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M1446244_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">格式</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0203468_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M7200193_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M9604861_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M9305360_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">角色</p>
+                                    </li>
+                                </ul>
+                                <ul class="dropdown_list explore_friends_list active">
+                                <!-- 這邊插入找影友列表（前四名） -->
+                                    <li >
+                                        <div class="explore_friends_wrapper">
+                                            <a href="#">
+                                                <div class="c100 p25">
+                                                    <span>25%</span>
+                                                    <div class="slice">
+                                                        <div class="bar"></div>
+                                                        <div class="fill"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="user_circle">
+                                                    <img src="img/user1.jpg" class="" />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">歡影</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_friends_wrapper">
+                                            <a href="#">
+                                                <div class="c100 p38">
+                                                    <span>38%</span>
+                                                    <div class="slice">
+                                                        <div class="bar"></div>
+                                                        <div class="fill"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="user_circle">
+                                                    <img src="img/user2.jpg" class="" />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">蝶ynamite</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_friends_wrapper">
+                                            <a href="#">
+                                                <div class="c100 p67">
+                                                    <span>67%</span>
+                                                    <div class="slice">
+                                                        <div class="bar"></div>
+                                                        <div class="fill"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="user_circle">
+                                                    <img src="img/user3.jpg" class="" />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">享看電影的Angela</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_friends_wrapper">
+                                            <a href="#">
+                                                <div class="c100 p88">
+                                                    <span>88%</span>
+                                                    <div class="slice">
+                                                        <div class="bar"></div>
+                                                        <div class="fill"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="user_circle">
+                                                    <img src="img/user4.jpg" class="" />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">User</p>
+                                    </li>
+                                </ul> 
+                                <ul class="dropdown_list explore_expert_list">
+                                <!-- 這邊插入找達人（觀影，影評，專題 各個的前四名） -->
+                                    <li>
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="img/user1.jpg" class="" />
+                                                <img src="img/user2.jpg" class="" />
+                                                <img src="img/user3.jpg" class="" />
+                                                <img src="img/user4.jpg" class="" />
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">觀影達人</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="img/user1.jpg" class="" />
+                                                <img src="img/user2.jpg" class="" />
+                                                <img src="img/user3.jpg" class="" />
+                                                <img src="img/user4.jpg" class="" />
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">影評達人</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="img/user1.jpg" class="" />
+                                                <img src="img/user2.jpg" class="" />
+                                                <img src="img/user3.jpg" class="" />
+                                                <img src="img/user4.jpg" class="" />
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">專題達人</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="setting-area">
+                    
+                    <div id="mutiple_search_block" class="clearfix">
+                        <div class="search_wrapper">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                        <div class="search_detail_wrapper">
+                            <input type="text" id="search_text" name="search_text" value="" placeholder="電影，影人，專題，朋友..." style="color: #7EA259;" />
+                            <div class="styled-select">
+                                <div class="menu_display"><p>全部</p><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                                <ul class="search_dropdown" name="searchType">
+                                    <li class="active" value="All">全部<span class="active_line"></span></li>
+                                    <li value="Movie">電影<span class="active_line"></span></li>
+                                    <li value="Actor">影人<span class="active_line"></span></li>
+                                    <li value="Topic">專題<span class="active_line"></span></li>
+                                    <li value="User">朋友<span class="active_line"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>     
+
+                <!-- 未登入header選項 -->
+                    <!-- <ul class="nav pull-right">
+                        <li>
+                            <div class="btn-group">
+                                <span id="qqLoginBtn" style="display:none;"></span> -->
+                                <!-- loginLink 是用來使用 fancybox 開啟登入視窗的元素 -->
+                                <!-- <span id="loginLink" style="display:none;"></span> -->
+                                <!-- needloginLink 是使用 fancybox 來提示用戶需要登入的元素 -->
+                                <!-- <span id="needLoginLink" style="display:none;"></span>
+
+                                <a class="hmenu3 login_signup" href="/login?returnUrl=http%3A%2F%2Fmoviecaker.com%2F">登入<span class="divider_line"></span></a>
+                                <a class="hmenu3 login_signup" href="/login?returnUrl=http%3A%2F%2Fmoviecaker.com%2F">註冊</a>
+                                <a class="hmenu3 language dropdown-toggle" data-toggle="dropdown" href="#">繁<span class="caret" style="margin-left:5px"></span>
+                                </a>
+                                <ul class="dropdown-menu lang_dropdown" style="margin: 20px 0px 0px 0;background-color: #1F1F1F;border-radius: 0px;border-left: 3px solid #71CFEE;">
+                                    <li><a href="/Home/ChangeLang/zh-TW">繁體中文</a></li>
+                                    <li><a href="/Home/ChangeLang/zh-CN">簡體中文</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul> -->
+
+                <!-- 登入header選項 -->
+                    <div class="btn-group">
+                        <ul class="logintop clearfix">
+                            <li class="btn">
+                                <span id="qqLoginBtn" style="display:none;"></span>
+                                <a id="additionalFunction" href="#">
+                                    <span class="icon-myplus icomoon"></span>
+                                </a>
+                                <ul id="all-add" class="login_dropdown">
+                                    <li>
+                                        <a href="/otherFunction/writeAReview" class="nav2group" id="nav2review">寫影誌</a>
+                                        <!--<i class="icon-pencil icon-white" style="margin: 2px 2px 0 0;"></i>-->
+                                    </li>
+                                    <li>
+                                        <a href="/topic/create" class="nav2group" id="nav2topic">做專題</a>
+                                        <!--<i class="icon-list-alt icon-white"></i>-->
+                                     </li>
+                                </ul>
+                            </li>
+                            <li class="btn">
+                                <a id="yougotinvited" href="#inlineFriend">
+                                    <span class="icon-users icomoon"></span>
+                                </a>
+                                <div class="ShowFriendBlock login_dropdown" id="parentOfinlineFriend">
+                                    <div id="inlineFriend">
+                                        <ul class="logintop inviting_list" style="width: auto;margin: 0 auto;"></ul>
+                                        沒有新的交友邀請
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="btn">
+                                <a id="yougotmessage" href="#inlineMessage">
+                                    <span class="icon-envelop icomoon"></span>
+                                </a>
+                                <div class="ShowMessageBlock login_dropdown" id="parentOfinlineMessage">
+                                    <div id="inlineMessage" style="white-space: nowrap;">
+                                        <span id="see-all-message">最近沒有收到新消息
+                                        <br>
+                                        <br>
+                                        <a href="/Message/MessageInBox">查看全部消息</a></span>
+                                    </div>
+                                </div>
+                                <script src="http://moviecaker.com/Scripts/pages/messagebox.min.js"></script> 
+                            </li>
+                            <li class="btn" id="setting">
+                                <a id="userOption" href="#">
+                                    <img class="avatar-photo user-self" src="http://www.moviecaker.com/images/nobody.jpg" onerror="onImgError(this);" />
+                                </a>
+                                <ul id="all-setting" class="login_dropdown pull-left" role="menu">
+                                    <li>
+                                        <a href="/user/477" title="bonnie" id="main_user"><i class="fa fa-user" aria-hidden="true"></i>個人頁面</a>
+                                    </li>
+                                    <li>
+                                        <a href="/user/edit?returnUrl=%2F"><i class="fa fa-cog" aria-hidden="true"></i></i>用戶設定</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Home/ChangeLang/zh-TW" class="aOnSelect">繁體中文</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Home/ChangeLang/zh-CN" class="">簡體中文</a>
+                                    </li>
+                                    <li>
+                                        <a href="/account/logoff"><i class="fa fa-power-off" aria-hidden="true"></i>登出</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li style="display:none;">
+                                <p>online member : <span id="online-member-amount"></span></p>
+                                <p>online user : <span id="online-user-amount"></span></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- end of setting area -->
+            </ul>
+        </div>  <!-- end of container layout-wrap -->
+    </div>
+
+
+<script src="new_header_jq.js"></script>  <!-- header_accompanied jq -->
+
+<!-- HEADER ENDS HERE -->
+
+
+
+    <div id="website_body" class="container layout-main layout-wrap">
+        <div class="gene-main"></div>
+
+        <div class="navbtn_wrapper">
+            <ul class="navbtn otherNav">
+                <li style="background-image: url(http://www.funmovie.tv/Content/pictures/banners/M00000000131893.png);">
+                    <!-- <a href="/video?sort=Hot1M"><div class="mask"><p>熱門電影</p></div></a> -->
+                    <a href=""><div class="mask"><p>全部</p></div></a>
+                </li>
+                <li class="active" style="background-image: url(http://www.funmovie.tv/Content/pictures/banners/M00000000033303.png);">
+                    <!-- <a href="/video?sort=Global"><div class="mask"><p>全球新片</p></div></a> -->
+                    <a href="project_hot.html"><div class="mask"><p>熱門</p></div></a>
+                </li>
+                <li style="background-image: url(http://www.funmovie.tv/Content/pictures/banners/M00000000009867.png);">
+                    <!-- <a href="/video?sort=Award"><div class="mask"><p>金獎電影</p></div></a> -->
+                    <a href="movies_award.html"><div class="mask"><p>最新</p></div></a>
+                </li>
+                <li style="background-image: url(http://www.funmovie.tv/Content/pictures/banners/M00000000158852.png);">
+                    <a href="/video?sort=MyFriend&amp;order=Sign"><div class="mask"><p>朋友專題</p></div></a>
+                </li>
+            </ul>
+        </div>
+
+
+        
+<link type="text/css" rel="stylesheet" href="http://moviecaker.com/Content/pages/topic-index.min.css" />
+
+<div id="topic-container" class="content_body" style="margin-top: 40px; margin-bottom: 50px;">
+        <div class="topic-box css_tr" data-topicid="143">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2014-01-08<br>
+                    修改日期 2014-01-08
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/8">
+                        <img class="avatar-photo user_photo_8" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/8" class="author user_name_8" data-userid="8"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/143" target="_blank">秘密與謊言  (<span class="topic-movie-amount-143">100</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/143" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="143"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">每個人都可能有不想跟別人洩漏的秘密，而每個秘密的背後，可能都是一個人生的遺憾。越是有秘密，越是有謊言，謊言在內心深處成為一道道裂創傷痕，造成人與人之間永無法解決的傷害。
+
+要嘗試走出困境，必須勇敢的揭露秘密。這將是一個傷痛之旅，需要很多的勇氣──勇於接受自己不想要的真相；更重要的，是勇於揭開謊言 ，勇敢的接納現在。讓秘密在心裡徹底過去，讓它不再成為隨時爆發的傷痕，卻永不可能有任何機會再去彌補或翻轉！
+
+這裡推薦幾個秘密與謊言的電影，希望看完這些故事後，讓自己可以去面對秘密，讓自己更真實的去面對未來的人生....</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="143">
+                        <span class="topic-movie-amount-143">100</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-143">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-143">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-143">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-143">883</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="143" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-143">1</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/143" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-143">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="143" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-143">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="143" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="160">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2014-08-10<br>
+                    修改日期 2014-08-10
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/174">
+                        <img class="avatar-photo user_photo_174" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/174" class="author user_name_174" data-userid="174"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/160" target="_blank">陪伴成长的十部佳作 (<span class="topic-movie-amount-160">13</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/160" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="160"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">“亲爱的你是否曾记得自己曾是怎样的少女/是否记得自己曾是多么羞涩多么纤细/什么时候开始收集寂寞的诗句/什么时候开始用日记细细编织你的忧郁/什么时候开始陷入琼瑶设下的陷阱/什么时候决定今生只有一支恋曲/你像一朵静静的睡莲认真等待别人来获取芳心”。黄舒骏的歌曲，很舒缓很舒缓的表达着一个女孩的最初的心动，诗意而美丽，而这也是成长电影中的重要一部分。每一个人都在慢慢的成长，有喜有悲有笑有泪，而电影则是生活的延伸，陪伴着我们一起走过……</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="160">
+                        <span class="topic-movie-amount-160">13</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-160">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-160">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-160">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-160">902</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="160" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-160">1</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/160" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-160">5</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="160" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-160">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="160" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="10">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2012-12-24<br>
+                    修改日期 2015-09-14
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/8">
+                        <img class="avatar-photo user_photo_8" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/8" class="author user_name_8" data-userid="8"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/10" target="_blank">標準收藏-一場關於光影的朝聖 (<span class="topic-movie-amount-10">0</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/10" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="10"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">CC標準收藏致力於將全世界的傑出電影製作成高質量的影音產品，電影選材範圍遍及各個國家各種風格，影片全部源自電影大師的傑作，標準版DVD的影片幾乎每部都獲得過國際性的電影大獎，同時都是電影專業的必修之作</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="10">
+                        <span class="topic-movie-amount-10">0</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-10">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-10">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-10">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-10">10</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="10" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-10">1</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/10" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-10">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="10" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-10">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="10" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="331">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-07-10<br>
+                    修改日期 2015-07-10
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/154">
+                        <img class="avatar-photo user_photo_154" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/154" class="author user_name_154" data-userid="154"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/331" target="_blank">電影誕生120年來，最偉大的100部作品 (<span class="topic-movie-amount-331">21</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/331" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="331"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">1895年，盧米埃兄弟在巴黎的一家咖啡館放映了自己拍攝的《火車進站》《工廠大門》等影片，標誌著電影的正式誕生。 120年後，著名數據統計網站TSPDT根據全球各地上千張專業電影榜單統計出電影誕生120年來最受業界+影評界+學界好評的一千部作品。這裡列出排名前一百位的影片，《花樣年華》與《牯嶺街少年殺人事件》分別排在55位和89位，創下華語片最好成績。以下是百佳名單：</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="331">
+                        <span class="topic-movie-amount-331">21</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-331">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-331">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-331">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-331">415</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="331" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-331">1</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/331" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-331">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="331" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-331">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="331" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="302">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-05-13<br>
+                    修改日期 2015-05-13
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/8">
+                        <img class="avatar-photo user_photo_8" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/8" class="author user_name_8" data-userid="8"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/302" target="_blank">在跑步的路上，你不是一個人 (<span class="topic-movie-amount-302">22</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/302" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="302"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">村上春樹說：『今天不想跑，所以才去跑，這才是長距離跑步者的思維方式。』這話看起來毫無道理，但我每次不想跑的時候，想到這句話，卻似乎得到某種激勵。想跑步的一天，是不錯的一天，狀態不佳不想跑的一天，大概通過跑步也可以讓它變成不錯的一天。我想大概是村上春樹這句話背後的邏輯吧。
+
+這裡推薦一些經典的跑步電影，不管溫馨勵志，還是熱血沸騰，看完這些電影後，我會偷偷抹去眼角的淚水，然後更堅定跑步決心！　</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="302">
+                        <span class="topic-movie-amount-302">22</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-302">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-302">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-302">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-302">651</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="302" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-302">1</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/302" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-302">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="302" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-302">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="302" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="289">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-04-25<br>
+                    修改日期 2015-04-27
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/164">
+                        <img class="avatar-photo user_photo_164" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/164" class="author user_name_164" data-userid="164"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/289" target="_blank">2015年第五屆北京國際電影節影評人推薦TOP 15 (<span class="topic-movie-amount-289">7</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/289" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="289"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">2015年北京展映除了異彩紛呈的電影節目外，影評人推薦環節也是今年電影節中的一大亮點。從全國邀請16位有較高知名度的專業影評人密切參與、全程感受北京展映環節，立足“服務大眾、引導大眾、培養大眾”初衷，通過影評人的專業性引導，宣傳優秀作品，培養大眾的電影節觀影習慣，推動北京展映更加健康的發展。
+通過影評人票選，15部展映影片進入本年度的“影評人推薦”行列，這是影評人們從300余部展映影片中優中選優、按照推薦票數高低得出的結果。這15部上榜的展映影片藝術性較強，其多元的形式、豐富的內涵及卓越的藝術技巧體現了當今世界電影的先進水準和寬闊視野。
+</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="289">
+                        <span class="topic-movie-amount-289">7</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-289">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-289">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-289">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-289">420</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="289" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-289">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/289" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-289">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="289" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-289">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="289" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="284">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-04-20<br>
+                    修改日期 2015-04-20
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/154">
+                        <img class="avatar-photo user_photo_154" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/154" class="author user_name_154" data-userid="154"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/284" target="_blank">日本最高榮譽文學獎直木獎得獎作品改編電影 (<span class="topic-movie-amount-284">10</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/284" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="284"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">素有日本文壇奧斯卡之稱的芥川獎和直木獎，歷年來一直都是日本文壇的焦點，只要作家一旦獲得這兩項殊榮之一，便可說是奠定了舉足輕重的地位。直木獎有口皆碑，獎勵以出書的大眾文學作家依項榮譽的肯定，得獎作品豐個取向以言情小說，時代小說和推理小說等大眾化的作品為主，都是大眾文學銷售的指標，從１９３５年頒發迄今，轉眼已經過了８０個年頭，因為它的存在，許多作家名人輩出，它實在功不可沒。現在就讓我們來看看由直木獎得獎作品改編的電影。</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="284">
+                        <span class="topic-movie-amount-284">10</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-284">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-284">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-284">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-284">176</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="284" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-284">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/284" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-284">1</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="284" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-284">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="284" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="288">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-04-24<br>
+                    修改日期 2015-09-20
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/164">
+                        <img class="avatar-photo user_photo_164" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/164" class="author user_name_164" data-userid="164"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/288" target="_blank">那些年，我們追過的青春文學 (<span class="topic-movie-amount-288">3</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/288" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="288"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">青春文學，又稱青春美文，剛開始它的概念離文學的距離還是遠的，它的作者是80後、90後的年輕人，他們寫的作品大部分的意思沒有很深的內涵，是一個商業化的產品。目前青春文學已經佔上市場的頂峰了，它的讀者已經超過名著的讀者了，讀者大部分是12-26歲的年輕人。
+從《那些年，我們一起追的女孩》到《致我們終將逝去的青春》，再到《小時代》《匆匆那年》，隨著由青春文學改編的電影在票房上屢創佳績，青春片也日漸成為電影市場上備受重視的一種類型片。而在演員方面，以吳亦凡為代表的一批新生代顏好、人氣高的明星成為絕對主力。
+青春文學電影有受大眾歡迎之處，但是也有弊處。這些改編自青春小說的電影大多票房和口碑呈現兩極分化，但口碑似乎並不影響其賺得滿缽，觀眾似乎還是願意一邊吐槽「偽青春」，一邊掏腰包走進電影院。雖然不少青春片被批「消費懷舊」、「偽青春」，但是在這個流行懷舊的年代，觀眾們對其中的「青春回憶」的情感共鳴也無疑是青春小說改編的電影收獲票房的法寶。</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="288">
+                        <span class="topic-movie-amount-288">3</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-288">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-288">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-288">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-288">10</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="288" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-288">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/288" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-288">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="288" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-288">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="288" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="300">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-05-11<br>
+                    修改日期 2015-05-11
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/8">
+                        <img class="avatar-photo user_photo_8" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/8" class="author user_name_8" data-userid="8"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/300" target="_blank">最好的爛片 (<span class="topic-movie-amount-300">70</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/300" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="300"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">基本上最好的爛片就是一個語意悖逆，爛片怎麼最有最好的呢？你都說他是爛片了呀。但其實這行有許多guilty pleasure的作品。這些電影拍得不會林立殿堂大師藝術經典，但卻好消化好有趣。如同高熱量的速食產品，你知道對健康不好，但吃下去的瞬間快意舒暢，所以還是願意掏錢買。好吃的爛食物，好看的爛片，其實也不算矛盾了。
+
+換句話說，好看的電影但不一定好消化，爛片搞不好才好消化。這裡列出好萊塢爛到極致的好片，推薦和友人一起看，方便眾人吐槽。</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="300">
+                        <span class="topic-movie-amount-300">70</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-300">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-300">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-300">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-300">372</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="300" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-300">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/300" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-300">1</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="300" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-300">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="300" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="327">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-07-03<br>
+                    修改日期 2015-07-08
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/164">
+                        <img class="avatar-photo user_photo_164" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/164" class="author user_name_164" data-userid="164"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/327" target="_blank">細細品嚐一杯濃醇的黃昏戀曲酒 (<span class="topic-movie-amount-327">7</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/327" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="327"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">黃昏戀，又稱中老年戀愛。黃昏戀一般有兩種情況：一種是在青春時代未解決好個人問題，到中年遇到合適的才談戀愛；另一種是中老年喪偶或離婚後再成家進行的戀愛。
+年輕時談戀愛，心裡只有彼此，不管外界如何反對，都堅持要在一起，感情像蜜，甜的膩死人；經過了許多的人生歷練後，中老年再戀愛，在乎的是身邊親人的感受，感情像酒，醇的很醉人。</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="327">
+                        <span class="topic-movie-amount-327">7</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-327">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-327">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-327">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-327">225</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="327" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-327">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/327" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-327">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="327" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-327">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="327" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="340">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-07-20<br>
+                    修改日期 2015-07-24
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/164">
+                        <img class="avatar-photo user_photo_164" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/164" class="author user_name_164" data-userid="164"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/340" target="_blank">獨佔鰲頭的漫威漫畫真人電影 (<span class="topic-movie-amount-340">32</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/340" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="340"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">漫威電影宇宙（英語：Marvel Cinematic Universe，縮寫：MCU），是由漫威漫畫工作室（英語：Marvel Studios）基於漫威漫畫出版物中的角色獨立製作的一系列電影所構成的架空世界和共同世界。該共同世界像漫畫中的漫威宇宙一樣，是由共同的元素、設定、表演和角色通過跨界作品所建立的。
+漫威影業從2008年第一部《鋼鐵人》（Iron Man）電影開始，到現在2014年已經帶來了十部超級英雄電影，加上電視影集的互相串聯，精緻巧妙的細節安排，所建立出的電影世界觀絕對是獨佔鰲頭的主要原因。</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="340">
+                        <span class="topic-movie-amount-340">32</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-340">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-340">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-340">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-340">246</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="340" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-340">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/340" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-340">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="340" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-340">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="340" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="359">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-07-27<br>
+                    修改日期 2015-07-29
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/8">
+                        <img class="avatar-photo user_photo_8" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/8" class="author user_name_8" data-userid="8"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/359" target="_blank">當時光逝去，你是否依舊愛我如初 (<span class="topic-movie-amount-359">0</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/359" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="359"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">愛爾蘭詩人葉芝(William Butler Yeats)那首《當你老了》曾經感動過無數的人。對於他們來說，這大概是心中愛情的理想狀態。但在現實生活中，當對方的容顏老去，新鮮感也漸漸褪却，或許很難再尋回最初那種怦然心動的激情。剩下的，也就是柴米油鹽的日常瑣碎了。不過也有很多人，他們對彼此的愛情幾十年如一日不曾變過。
+
+一份真摯的愛情總能跨越時間與生死，隨著歲月推移趨於平淡的只是它的形式，而並非本質。你可能也曾想像過，當垂垂老去，接近生命終點的時候，陪在身邊的仍是最初的那個人。你們相視一笑，然後約定來生。
+
+葉芝《當你老了》：
+當你老了，頭髮白了，睡思昏沉。
+爐火旁打盹，請取下這部詩歌 。
+慢慢讀，回想你過去眼神的柔和 。
+回想它們昔日濃重的陰影 。
+
+多少人愛你青春歡暢的時辰 。
+愛慕你的美麗，假意和真心 。
+只有一個人愛你朝聖者的靈魂 。
+愛你衰老了的臉上痛苦的皺紋 。
+
+垂下頭來，在紅火閃耀的爐子旁 。
+淒然地輕輕訴 說那愛情的消逝 。
+在頭頂上的山上它緩緩地踱著步子。 
+在一群星星中間隱藏著臉龐。
+</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="359">
+                        <span class="topic-movie-amount-359">0</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-359">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-359">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-359">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-359">7</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="359" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-359">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/359" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-359">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="359" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-359">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="359" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="19">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2013-01-17<br>
+                    修改日期 2013-01-18
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/9">
+                        <img class="avatar-photo user_photo_9" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/9" class="author user_name_9" data-userid="9"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/19" target="_blank">&quot;最後幹一票&quot;電影 (<span class="topic-movie-amount-19">10</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/19" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="19"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">九把刀的小說《殺手》裡寫道：當殺手的有三大職業道德，可說是內規一，絕不搶生意。殺人沒有這麼好玩，賺錢也不是這種賺法。二，若有親朋好友被殺，即使知道是誰做的，也絕不找同行報復，也不可逼迫同行​​供出雇主的身分。三，保持心情愉快，永遠都別說“這是最後一次”。這可是忌諱中的忌諱，說出這句話的人，幾乎都會在最後一次任務中栽跟斗。
+&#160;
+在電影情節裡也常見這般描述，殺手闖蕩江湖已久，厭倦江湖險惡，年紀也大了，準備幹完最後一票後金盆洗手，退隱江湖，過平靜的生活。但江湖不容易脫離，平靜如此難覓，以往稀鬆平常的任務，放在最後一次上竟變得驚心動魄，困難重重，最後敗在一件漫不經心的小事上，近在眼前、唾手可得的幸福終究不屬於他，真讓人扼腕，雖說瓦罐不離井邊破，將軍難免沙場死，總還是令人惆悵。</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="19">
+                        <span class="topic-movie-amount-19">10</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-19">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-19">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-19">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-19">442</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="19" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-19">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/19" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-19">2</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="19" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-19">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="19" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="167">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2014-08-15<br>
+                    修改日期 2014-08-18
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/173">
+                        <img class="avatar-photo user_photo_173" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/173" class="author user_name_173" data-userid="173"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/167" target="_blank">给孩子们推荐的十部电影 (<span class="topic-movie-amount-167">5</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/167" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="167"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">虽然是给偏远地区的中学生推荐几部电影。但其实哪里的孩子都一样，对于未知的世界、丰富的情感与艺术来说，电影都只是一扇小小窗口。我觉得首先是让小孩子看一些好的东西，他们都可以懂里面讲的什么故事，艺术品味不能差、价值观较为普世的，不要太闷太深沉的，但涉及的年代、地域、艺术门类稍稍多样化一些。所以，我稍微考虑了一下，第一批推荐下面一些片子。</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="167">
+                        <span class="topic-movie-amount-167">5</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-167">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-167">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-167">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-167">12</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="167" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-167">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/167" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-167">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="167" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-167">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="167" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="240">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-01-06<br>
+                    修改日期 2015-08-31
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/8">
+                        <img class="avatar-photo user_photo_8" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/8" class="author user_name_8" data-userid="8"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/240" target="_blank">浪漫戀習曲~音樂電影情書16部 (<span class="topic-movie-amount-240">0</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/240" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="240"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">在這樣的世界裡頭，愛情，應該要有音樂陪伴。歌詞，可以讀出心事，就算生活小清新，也能創造大夢想。甚至直接從音樂裡頭，聽到愛情、生活與分享。也因為音樂，讓原本平凡的生活，變成一顆顆美麗的珍珠。
+
+這裡推薦16部融合了音樂、愛情、勵志類型的「浪漫音樂文藝小清新」電影，希望讓音樂充滿生活，希望這些電影能帶給你的，那種溫暖，當你失落時，迷失方向時，可以重新找到力量的，那種小小感動。。</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="240">
+                        <span class="topic-movie-amount-240">0</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-240">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-240">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-240">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-240">7</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="240" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-240">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/240" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-240">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="240" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-240">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="240" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="249">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-02-09<br>
+                    修改日期 2015-02-10
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/8">
+                        <img class="avatar-photo user_photo_8" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/8" class="author user_name_8" data-userid="8"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/249" target="_blank">改變人生的必要公式~15部關於堅持的電影 (<span class="topic-movie-amount-249">10</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/249" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="249"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">小時候我們都聽過兩個和尚到南海取經的故事，窮和尚只帶著一個碗、一根木杖就動身，經過一年的努力之後，窮和尚從南海取經回來，而富和尚却還在原地裹足不前。
+
+在職場上，有些人愛做夢，但做事只有三、五分鐘的熱度，然而，也有些人就算遇到挫折，仍能不氣餒，堅持到底。長久下來，兩者之間的成就便有了明顯的差距。我認為，造就每個人成功與否，除了先天條件外，最大的差別就在於堅持力。
+
+堅持是一種在對的時間、堅持做對的事，有時也意味取捨，甚至犧牲。堅持其實是一種生活態度：願意挑戰自己、戰勝自己，相對的，它會帶來成就感、滿足感，甚至讓個人的自尊提升，使我們更有自信！
+
+這裡推薦15部關於堅持的電影，這些電影會告訴你一些改變人生的神奇力量，讓自己更有堅持的動力！相信抱持著永不放棄的信念、不斷的練習堅持，我們在生活及工作中都將更為圓滿，能朝自己的目 標勇往直前。
+</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="249">
+                        <span class="topic-movie-amount-249">10</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-249">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-249">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-249">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-249">283</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="249" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-249">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/249" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-249">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="249" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-249">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="249" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="253">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-02-27<br>
+                    修改日期 2015-02-27
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/154">
+                        <img class="avatar-photo user_photo_154" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/154" class="author user_name_154" data-userid="154"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/253" target="_blank">40國40部真實故事改編電影 (<span class="topic-movie-amount-253">13</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/253" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="253"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">有些時候，世界上也會發生一些事件，被我們評為「好像電影一樣」，也許是太不可思議、也許是太激勵人心、也許是太無法接受等等，而這些事件也確實是很好的靈感來源，可能後來就真的會被改編成電影。
+
+一種很常見的題材，就是很駭人聽聞的兇殺案。有些因為非常的振奮人心或是賺人熱淚而被改編。另外也有可能是因為事件比較離奇不尋常而成為電影的題材。真實故事改編的好電影實在太多了，這裡推出40國40部真實故事改編電影，讓你透過電影走入世界各國。</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="253">
+                        <span class="topic-movie-amount-253">13</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-253">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-253">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-253">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-253">239</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="253" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-253">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/253" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-253">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="253" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-253">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="253" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="256">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-03-04<br>
+                    修改日期 2015-03-24
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/248">
+                        <img class="avatar-photo user_photo_248" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/248" class="author user_name_248" data-userid="248"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/256" target="_blank">青春正盛 - 35部年少輕狂的電影 (<span class="topic-movie-amount-256">8</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/256" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="256"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">放肆的、猖狂的、無所畏的青春歲月。
+勇敢的愛，勇敢的衝，只因為我們年輕，只因為身邊有你！
+敬一生一次的瘋狂。</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="256">
+                        <span class="topic-movie-amount-256">8</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-256">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-256">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-256">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-256">276</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="256" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-256">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/256" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-256">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="256" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-256">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="256" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="263">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-03-12<br>
+                    修改日期 2015-03-12
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/8">
+                        <img class="avatar-photo user_photo_8" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/8" class="author user_name_8" data-userid="8"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/263" target="_blank">直擊心靈的十五大環保電影 (<span class="topic-movie-amount-263">7</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/263" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="263"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">曾經的綠地變作了荒漠，曾經清澈的河流發出了惡臭，曾經湛藍的天空落下了煙塵，這是已經發生，正在發生，如果不阻止，將會繼續發生下去的真實。
+
+這裡推出十五大環保電影。環保電影用鏡頭擔起了電影最初的職能，他用鳥瞰的鏡頭告訴我們，生存的星球那驚心動魄的美麗及觸目驚心的毀壞。它們用真相告訴並且震撼我們，重現了這個孕育我們藍色家園的良知和人道。要明白，這不是關於地球的啟示，而是關於我們自身的啟示。</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="263">
+                        <span class="topic-movie-amount-263">7</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-263">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-263">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-263">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-263">217</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="263" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-263">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/263" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-263">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="263" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-263">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="263" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="topic-box css_tr" data-topicid="264">
+            <div class="css_td">
+                <div class="collapsed-text">
+                    創建於 2015-03-12<br>
+                    修改日期 2015-03-13
+                </div>
+                <p class="film-detail-meta rating-green film-detail-with-author" style="margin-left: 5px;">
+                    <a data-original-title="" class="avatar avatar-24 imglink" href="http://moviecaker.com/user/154">
+                        <img class="avatar-photo user_photo_154" src="#" width="40" height="40" />
+                    </a>
+                    <a href="http://moviecaker.com/user/154" class="author user_name_154" data-userid="154"></a>
+                </p>
+            </div>
+            <div class="css_tr">
+
+                <div class="wide-sidebar css_middle">
+                    <section class="list list-stacked">
+                        
+                        <div class="list-link-stacked-1 clear" style="height: auto;position:relative">
+                            <span class="topic-name">
+                                <a href="http://moviecaker.com/topic/264" target="_blank">麻雀變鳳凰~銀幕上的灰姑娘 (<span class="topic-movie-amount-264">39</span>)</a>
+                            </span>
+                            <a href="http://moviecaker.com/topic/264" target="_blank" class="list-link">
+                                <div class="list-link-stacked" style="width: 342px;">
+                                    <ul class="li_poster1 posters posters-70" style="list-style:none" id="264"></ul>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="film-detail-content1">
+                            <p class="p_text">迪士尼1950年拍攝的經典動畫片《仙履奇緣》故事簡單到看過一次也就不會忘記，必也是大部份人的共同回憶之一。而“灰姑娘”的故事被一次又一次搬上大銀幕，女主角們或外貌平平、或生活窘迫、或出身凡庸，可是通過一系列的奇蹟與自身魅力，最終拿到了通往天堂的“金鑰匙”。儘管這些夢幻故事都有“童話”的嫌疑，卻是給現實生活中苦苦等待白馬王子，渴求命運逆襲的女人們注入了一劑強心針。
+
+“灰姑娘”故事在說的是一個人真正的價值，善良與勇氣。用小朋友都能懂的童話故事，說很簡單的道理，且都抱持著一種相信人性美好的態度。這裡推出銀幕上的灰姑娘們，在紅塵中打滾多年的成人觀眾朋友，不妨偶爾來「淨身」一下，懷念一下這種伴隨著我們長大的迪士尼精神，說不定也會看到鼻酸喔。</p>
+                        </div>
+                    </section>
+                    <p class="like-link-target" id="264">
+                        <span class="topic-movie-amount-264">39</span> 部電影中你有
+                        <img src="http://moviecaker.com/images/icon-hasSee.png" height="17" width="22" style="margin-right: 3px;">
+                        <span id="topic-view-264">0</span>
+                        <img src="http://moviecaker.com/images/icon-like.png" height="17" width="22">
+                        <span id="topic-like-264">0</span>
+                        <img src="http://moviecaker.com/images/icon-wantSee.png" height="17" width="22">
+                        <span id="topic-want-264">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="css_td css_td_down topic-info-statistics">
+                <!--瀏覽數-->
+                <img src="http://moviecaker.com/Images/browser1.png" title="瀏覽量" style="width: 28px;margin-top:2px;margin-right: -5px;" /> 
+                <span class="score" id="topic-views-264">210</span>
+                <!--喜歡數-->
+                    <a href="#" class="activating" data-id="264" data-is-mine="false" data-action="Like" data-object="Topic" style="line-height:2px" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action icon-good" style="width: 20px;height:16px;margin-top:2px;margin-left: 3px;" title="讚" />
+                        <span class="action-amount score" id="topic-likes-264">0</span>
+                    </a>
+                <!--留言數-->
+                <span>
+                    <a href="http://moviecaker.com/Topic/TopicMessage/264" title="回應">
+                        <img src="http://moviecaker.com/images/comment1.png" style="width: 22px;margin-left: -3px;" title="回應數">
+                    </a> 
+                    <span class="score" id="topic-comments-264">0</span>
+                </span>
+                <!--分享數-->
+                <span class="dropdown">
+                    <a class="dropdown-toggle activating" data-toggle="dropdown" href="#" title="分享" data-id="264" data-action="Share" data-object="Topic" data-is-mine="False" data-is-on="false">
+                        <img src=/Images/blank.gif class="img-action" style="width: 22px;height:22px" />
+                        <span class="action-amount score" id="topic-shares-264">0</span>
+                    </a>
+                    <span class="dropdown-menu share-menu share-options" data-id="264" data-object="Topic">
+                        <a href="#" class="share-to-other-website" data-website="wb">
+                            <img src="http://moviecaker.com/Images/icons_weibo-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="fb">
+                            <img src="http://moviecaker.com/Images/icons_facebook-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="qq" title="騰訊微博">
+                            <img src="http://moviecaker.com/Images/icons_qq-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                        <a href="#" class="share-to-other-website" data-website="wx">
+                            <img src="http://moviecaker.com/Images/icons_wechat-pc.png" style="width:25px; max-width: none;" />
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+</div>    <div class="navigation">
+        <a href="http://moviecaker.com/Topic/TopicList?sort=Hot&amp;page=1"></a>
+    </div>
+
+    </div>
+    <div class="navbar-fixed-bottom layout-footer">
+        <div class="layout-wrap">
+            <a class="v1" href="###" style="cursor: default;">
+                <img src="http://moviecaker.com/images/down_logo.png" />
+            </a>
+            <a class="v1" id="web_about" href="http://moviecaker.com/Home/About" style="color:#ccc">關於</a>
+            <a id="web_help" href="http://moviecaker.com/Home/Help">協助</a>
+                <a id="feedback" href="http://moviecaker.com/Message/Feedback">問題反饋</a>
+            <a href="###" id="get-app">APP</a>
+            <span>苏ICP备13018111号-1</span>
+        </div>
+    </div>
+    <div id="loading_cover">
+        <img src="http://moviecaker.com/Images/loading.gif" />
+    </div>
+    <div id="fb-root"></div>
+    <div class="app-outer">
+        <div class="app-W">
+            <div class="app-close">×</div>
+            <div class="app-Info">
+                <img src="http://moviecaker.com/Images/ilandy_use/app-03.png" alt="" />
+                <a href="https://itunes.apple.com/pg/app/moviecaker/id901773808?mt=8" target="_blank" class="app"></a>
+                <a href="http://suzhou.funmovie.tv/upgrade/android/MovieCaker.apk" target="_blank" class="app-ad"></a>
+            </div>
+        </div>
+    </div>
+        
+    <!--Reference the SignalR library. -->
+    <script src="http://moviecaker.com/Scripts/jquery.signalR-2.0.3.min.js"></script>
+    <!--Reference the autogenerated SignalR hub script. -->
+    <script src="http://moviecaker.com/signalr/hubs"></script>
+    <script src="http://moviecaker.com/Scripts/pages/layout-hub.min.js"></script>
+    <script>
+        layout_init('不隱藏我看過的電影',
+            '隱藏我看過的電影',
+            '出現我看過的電影',
+            '4036480982',
+            '加入會員正在申請中，請等待管理員批准',
+            '歡迎加入 {0} 社團',
+            '申請加入社團',
+            '已經加入',
+            '電影',
+            '社團',
+            '從朋友名單刪除',
+            '確定',
+            '綁定帳號',
+            '測試',
+            '試試',
+            '刪除邀請',
+            '確認',
+            '交友邀請中',
+            '刪除',
+            '加為朋友',
+            '綁',
+            'true',
+            '/',
+            'Hot',
+            '',
+            'index',
+            'topic',
+            '',
+            'moviecaker_develop',
+            '805159066237146',
+            '',
+            'http://test.moviecaker.com',
+            '4672B90F5025E39EF1DAD8E3024173C32DD65A30C6363602D4377853764DE7E25AC94B9C46EB4215601F88F73B86BFAD4C694EA99876DE264824BD5190DFB83D750D18E1B72C10E00607C8FD2E89BB8BD482697970C1FF04E6725AE4CC44AD1EF5F4DBC62DC4E9BA49207ECD84B04C0D',
+            'vylosn3znsl50lvygxger4ri',
+            'test.moviecaker.com',
+            '處理中...',
+            '你有一個影評尚未完成 ,是否關閉?',
+            '10',
+            '評分失敗!',
+            '影評',
+            '專題',
+            '話題',
+            '確定刪除看過?',
+            '您已看過，可以取消看過選擇想看。',
+            '訊息',
+            '熱門影評',
+            '確認刪除你的的朋友',
+            '加為朋友',
+            '交友邀請中',
+            '台灣',
+            'http://www.funmovie.tv/Content/pictures/files/',
+            'http://www.funmovie.tv/Content/pictures/banners/');
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '805159066237146',
+                channelUrl: '//' + requestUrlHost + '/channel.html',
+                status: true, // check login status
+                cookie: true, // enable cookies to allow the server to access the session
+                xfbml: true
+            });
+            // fb 初始化完畢
+            isFbInitialized = true;
+        };
+        (function (d) {
+            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement('script'); js.id = id; js.async = true;
+            js.src = "/Scripts/fb/all.js";
+            ref.parentNode.insertBefore(js, ref);
+        }(document));
+    </script>
+    <script src="http://moviecaker.com/Scripts/openjs.js#autoboot=no&amp;debug=no"></script>
+
+    
+    <script src="http://moviecaker.com/Scripts/pages/topic-index.min.js"></script>
+    <script>
+        topic_index_init('Hot', 'index');
+    </script>
+
+     
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-68883772-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

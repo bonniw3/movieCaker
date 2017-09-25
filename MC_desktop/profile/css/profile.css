@@ -1,0 +1,1280 @@
+
+/* ------------------profile_all_settings------------------- */
+/* ------------ container_top ----------- */
+#containertop {
+    margin: 0 0 25px 0;
+    font-size: 14px;
+    position: relative;
+}
+
+.main_img {
+	width: 1170px; 
+	height: 400px; 
+	overflow: hidden;
+}
+
+
+/* --------------- 拖曳安排封面 settings------------------- */
+
+.instructionWrap {
+    line-height: 26px;
+    position: absolute;
+    text-align: center;
+    top: 145px;
+    width: 100%;
+    pointer-events: none; /* 滑鼠觸摸到我, 但是對我沒感覺 */
+}
+
+    .instructionWrap .instructions {
+        background: #546185 url(http://static.ak.fbcdn.net/rsrc.php/v2/yl/r/Zi4SfiYNyqJ.png) 9px 8px no-repeat;
+        background-color: rgba(84, 97, 133, .4);
+        border-radius: 2px;
+        box-shadow: inset 0 1px 0 rgba(0, 0, 0, .12);
+        color: #fff;
+        display: inline;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 4px 9px 6px 29px;
+    }
+
+.grab {
+    cursor: move;
+    cursor: -webkit-grab;
+}
+
+
+/* ---- profile page top section (banner, user avatar, menu) ---- */
+#bannerpic {
+    position: relative;
+}
+
+/* 更換頭圖 change_banner */
+#changebanner {
+	display: none; 
+	position: absolute; 
+	top: 25%; 
+	left: 80%; 
+	width: 190px;
+}
+
+#changebannerclick {
+	display: block;
+	text-align: center;
+	padding: 15px 0 10px 0; 
+	background-color: rgba(0, 0, 0, .5);
+	color: rgba(238, 238, 238, .8);
+	font-size: 16px;
+	border-bottom: 3px solid #71CFEE;
+}
+
+#changebannerclick:hover {
+	text-decoration: none;
+}
+
+#changebannerstyle {
+	list-style: none; 
+	display: none; 
+	background-color: rgba(31, 31, 31, .7); 
+	margin: 0px;
+	box-sizing: border-box;
+	padding: 10px 15px;
+}
+
+#changebannerstyle li {
+	padding: 5px 0;
+}
+
+#changebannerstyle li a {
+	font-size: 13px;
+	transition: 0.3s;
+}
+
+#changebannerstyle li a:hover {
+	text-decoration: none;
+	color: #71CFEE;
+	transition: 0.3s;
+}
+
+#changebannerstyle li a i {
+	font-size: 14px;
+}
+
+/* edit bootstrap-modify */
+select, input[type="file"] {
+	height: 20px;
+	line-height: 15px;
+}
+
+/* profile section */
+.profile_menu_base {
+	width: 100%;
+	height: 90px;
+	position: relative;
+	margin-top: -100px;
+	background: transparent; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(top,rgba(12,12,12,0) 0%,rgba(12,12,12,0.75) 50%); /*Safari 5.1-6*/
+	background: -o-linear-gradient(bottom,rgba(12,12,12,0) 0%,rgba(12,12,12,0.75) 50%); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(bottom,rgba(12,12,12,0) 0%,rgba(12,12,12,0.75) 50%); /*Fx 3.6-15*/
+	background: linear-gradient(to bottom, rgba(12,12,12,0) 0%, rgba(12,12,12,0.75) 50%); /*Standard*/
+}
+
+.user_avatar {
+	position: relative;
+    width: 155px;
+    height: 155px;
+    margin: -75px 25px 0 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ccc;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+/* 更換頭圖 change_avatar */
+.avatar-photo:hover + #change-avatar, #change-avatar:hover
+/* (+) : Adjacent Sibling Selector */ { 
+    display: block;
+    text-decoration: none;
+    color: #71CFEE;
+}
+
+#change-avatar{
+    display: none;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    padding-top: 10px;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+/* user's basic info */
+#page_ownername {
+	font-size: 35px;
+	vertical-align: top;
+}
+
+#page_ownername:hover {
+	text-decoration: none;
+	color: #cccccc;
+}
+
+#page_ownername i {
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.3s;
+	font-size: 22px;
+	padding-left: 5px;
+}
+
+#page_ownername:hover i {
+	visibility: visible;
+	opacity: 1;
+	transition: 0.3s;
+}
+
+.user-info {
+	font-size: 16px;
+}
+
+.user-info i {
+	font-size: 20px;
+}
+
+.send_msg {
+	padding-left: 10px;
+	color: #ECA473;
+	transition: 0.3s;
+}
+
+.send_msg:hover {
+	text-decoration: none;
+	color: #AB6A3E;
+	transition: 0.3s;
+}
+
+/* profile_menu_navigation */
+.profile_menu a {
+	display: inline-block;
+	margin: 43px 50px 0 0;
+	height: 30px;
+	font-size: 18px;
+	transition: 0.3s;
+}
+
+.profile_menu a:hover {
+	text-decoration: none;
+	color: #71CFEE;
+	transition: 0.3s;
+}
+
+.profile_menu .curPage {
+	border-bottom: 2px solid #71CFEE;
+	color: #71CFEE;
+}
+
+
+/* --------------------profile_self_settings--------------------- */
+/* -------------------STATS settings------------------ */
+
+.user_stats_group {
+	font-size: 15px; 
+	width: 90%;
+	margin: 40px auto;
+}
+
+.stats_block {
+	margin: 0;
+	padding: 30px 40px 25px 35px;
+	position: relative;
+}
+
+.stats_block_title {
+	position: absolute;
+	margin: -20px 0 0 0;
+	background-color: #0c0c0c;
+	font-size: 18px;
+	padding: 10px 20px;
+	text-align: center;
+	z-index: 5;
+}
+
+.checkin_title {
+	left: 90px;
+	color: rgba(216, 124, 124, 0.8);
+}
+
+.activeness_title {
+	right: 90px;
+	color: rgba(113, 207, 238, 0.8);
+}
+
+.movies_checkin {
+	border: 1px solid rgba(216, 124, 124, 0.5);
+}
+
+.movies_activeness {
+	border: 1px solid rgba(113, 207, 238, 0.5);
+}
+
+.stats_block li {
+    float: left;
+    margin-left: 45px;
+}
+
+.stats_block li:first-child {
+	margin-left: 0;	
+}
+
+.stats_num {
+	text-align: center;
+	margin: 0 0 10px 7px;
+	font-size: 25px;
+	font-weight: 200;
+}
+
+.movies_checkin .stats_num {
+	color: #D87C7C;
+}
+
+.movies_activeness .stats_num {
+	color: #71CFEE
+}
+
+.stats_block li p a {
+	margin: 0;
+	vertical-align: middle;
+	font-weight: 200;
+}
+
+.stats_block li p a:hover {
+	text-decoration: none;
+}
+
+.stats_block li p:nth-child(2) {
+	margin: 0;
+	font-size: 18px;
+}
+
+/* ------------------containerbottom------------------ */
+
+.containerbottom {
+	margin: 30px auto 0 auto;
+	width: 90%;
+}
+
+.containerbottom .baseBar {
+	height: 50px;
+}
+
+.leftCol {
+	width: 30%;
+}
+
+.rightCol {
+	width: 65%;
+}
+
+/* -------------left_col----------------- */
+/* 關於我 */
+.block_title, .padCommon i {
+	font-size: 18px;
+}
+
+.padCommon i:hover {
+	color: #999999;
+} 
+
+.block_more {
+	font-size: 14px;
+}
+.block_more:hover {
+	text-decoration: none;
+	color: #628E9A;
+	transition: 0.3s;
+}
+
+.user_content {
+	padding: 5px 20px 30px 20px;	
+}
+
+.user_bio p {
+	font-size: 16px;
+	color: #579AAD;
+	line-height: 25px;
+	margin: 0;
+}
+
+/* 喜歡的電影類型 */
+.user_selection span {
+	font-size: 16px;
+	color: #579AAD;
+	margin-left: 35px;
+}
+
+.user_selection span:first-child {
+	margin-left: 0;
+}
+
+/* 朋友列表 */
+.user_friendship a {
+	margin-left: 15px;
+	margin-top: 10px;
+}
+
+.user_friendship a:nth-child(4n+1) {
+	margin-left: 0;
+}
+
+.user_friendship a:nth-child(1),
+.user_friendship a:nth-child(2),
+.user_friendship a:nth-child(3),
+.user_friendship a:nth-child(4) {
+	margin-top: 0;
+}
+
+/* 最新專題列表 */
+.user_projectList .project_wrapper {
+	display: block;
+	margin-top: 15px;
+}
+
+.user_projectList .project_wrapper:first-child {
+	margin-top: 0;
+}
+
+.user_projectList .project_wrapper ul {
+	margin: 0;
+}
+
+.user_projectList .project_wrapper ul li {
+	width: 83px;
+	box-shadow: 1px 0 5px #000;
+	transition: 0.2s;
+}
+
+.user_projectList .project_wrapper:hover li {
+	-webkit-transform: scale(1.05);
+		-ms-transform: scale(1.05);
+			transform: scale(1.05);
+	transition: 0.2s;
+}
+
+.profile_movie_name {
+	color: #579AAD;
+	font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.profile_movie_stat {
+	color: #9B9B9B;
+	font-size: 14px;
+	margin-top: 5px;
+	text-align: center;
+	font-weight: 200;
+}
+
+.user_projectList .project_wrapper:hover .profile_movie_name {
+	color: #426A75;
+	transition: 0.3s;
+}
+
+/* 登入時間 */
+.login_info {
+	position: relative;
+	margin-top: 10px;
+}
+
+.login_info:before {
+	content: "";
+	background-color: rgba(100, 100, 100, 0.2);
+	width: 100%;
+	height: 1px;
+	position: absolute;
+	margin-top: -20px;
+}
+
+.login_info p {
+	color: #9B9B9B;
+	font-weight: 200;
+}
+
+/* -------------right_col----------------- */
+/* 喜歡的電影 */
+.user_favMovie_list {
+	width: 100%;
+}
+
+/* 最新影評 */
+.user_comment_list .videoname {
+	font-size: 16px;
+	color: #B4D5F6;
+}
+
+.user_comment_list .edit-review {
+	font-size: 14px;
+	color: #90A5BA;
+	margin-right: 15px;
+	transition: 0.3s;
+}
+
+.user_comment_list .edit-review i {
+	font-size: 16px;
+}
+
+.user_comment_list .edit-review:hover {
+	color: #999999;
+	transition: 0.3s;
+}
+
+.user_comment_list .like_img {
+	width: 22px;
+	margin-top: -10px;
+}
+
+.user_comment_list .review-text {
+	margin: 10px 0 5px 0;
+	color: #579AAD;
+	font-size: 14px;
+	max-width: 515px;
+	height: 65px;
+	overflow: hidden;
+	line-height: 23px;
+}
+
+.noUnderLine {
+	margin: 10px 30px 0 0;
+	position: relative;
+	transition: 0.3s;
+	color: #dddddd;
+}
+
+.noUnderLine:before {
+	content: "";
+	position: absolute;
+	background-color: rgba(204, 204, 204, 0.5);
+	height: 20px;
+	width: 1px;
+	margin-left: -15px;
+	top: -1px;
+	transition: 0.3s;
+}
+
+.noUnderLine:after {
+	content: "";
+	position: absolute;
+	background-color: rgba(204, 204, 204, 0.5);
+	height: 20px;
+	width: 1px;
+	right: -15px;
+	top: -1px;
+	transition: 0.3s;
+}
+
+.noUnderLine:hover {
+	color: #71CFEE;
+	transition: 0.3s;
+}
+
+.noUnderLine:hover:before, .noUnderLine:hover:after {
+	background-color: rgba(113, 207, 238, 0.5);
+	transition: 0.3s;
+}
+
+.function_btn_group {
+	position: absolute;
+	margin: -25px 0 0 -5px;
+	color: #ffffff;
+}
+
+.comment_date {
+	color: #5A6979;
+	font-size: 13px;
+	padding-right: 5px;
+}
+
+/* adjust bootstrap_modify for share dropdown */
+.user_comment_list .dropdown.open .dropdown-toggle {
+	background-color: transparent;
+	color: #71CFEE;
+}
+
+.user_comment_list .share-menu {
+	width: 160px;
+	margin: 5px 0 0 -65px;
+	background-color: #1f1f1f;
+	border-left: 2px solid #71cfee;
+	border-radius: 0;
+	padding: 10px 5px;
+}
+
+.user_comment_list .share-menu:after {
+	border-bottom-color: #1f1f1f;
+	top: -6px;
+	left: 70px;
+}
+
+.user_comment_list .dropdown-menu a {
+	padding: 3px 5px;
+	display: inline-block
+}
+
+
+/* ------------------profile_friends_settings------------------- */
+/* -----------------friends_list------------------- */
+
+/* friends_nav3_title */
+.friends_display {
+	font-size: 18px;
+	font-weight: 100;
+}
+
+/* friends_block starts here */
+.friend_wrapper {
+	padding: 45px 20px;
+}
+
+#mutualfriendlist {
+	list-style: none; 
+	margin: 10px 0 0 0;
+	position: relative;
+	font-size: 14px;
+}
+
+.friend_list {
+	display: inline-block;
+	width: 250px;
+	border-radius: 3px;
+	border: 1px solid rgba(238, 238, 238, 0.7);
+	margin: 0 0 60px 35px;
+	vertical-align: top;
+	box-sizing: border-box;
+	padding: 15px 15px 20px 25px;
+}
+
+.friend_list:nth-child(4n+1)  {
+	margin-left: 0;
+}
+
+.upper_display {
+	width: 100%;
+	position: relative;
+}
+
+.user_img {
+	display: block;
+	border: 2px solid #eeeeee;
+	border-radius: 50%;
+	overflow: hidden;
+	width: 85px;
+	height: 85px;
+	margin-top: -55px;
+	position: relative;
+	transition: 0.3s;
+}
+
+.user_img:hover {
+	box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.5);
+	border-color: #71CFEE;
+	transition: 0.3s;
+}
+
+.online-user {
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	border: 5px solid #0c0c0c;
+	position: absolute;
+	top: 15px;
+	left: 65px;
+}
+
+.friendship {
+	padding: 0 10px;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 35px;
+	font-size: 16px;
+	vertical-align: top;
+}
+
+.friend {
+	border: 1px solid #B4D5F6;
+	color: #B4D5F6;
+	background-color: transparent;
+	transition: 0.3s;
+}
+
+.not_friend {
+	border: 1px solid #B8E986;
+	color: #B8E986;
+	background-color: transparent;
+	transition: 0.3s;
+}
+
+.friend:hover {
+	background-color: rgba(180, 213, 246, 0.7);
+	border: 1px solid #B4D5F6;
+	color: #0c0c0c;
+	transition: 0.3s;
+}
+
+.not_friend:hover {
+	background-color: rgba(184, 233, 134, 0.7);
+	border: 1px solid #B8E986;
+	color: #0c0c0c;
+	transition: 0.3s;
+}
+
+.friendship:focus {
+	outline: none;
+}
+
+.friend_indication i {
+	padding-right: 5px;
+	font-size: 18px;
+}
+
+/* user_detail */
+.user_detail {
+	line-height: 30px;
+	font-size: 14px;
+}
+
+.user_name {
+	color: #71CFEE;
+	font-size: 20px;
+	transition: 0.3s;
+}
+
+.user_name:hover {
+	text-decoration: none;
+	color: #579AAD;
+	transition: 0.3s;
+}
+
+.user_gender i, .location i, .bday i {
+	padding-right: 5px;
+	font-size: 16px;
+}
+
+.user_stats {
+	margin-top: 5px;
+	width: 100%;
+}
+
+.user_stats img {
+	margin-left: -5px;
+}
+
+.user_stats ul {
+	margin: 0;
+}
+
+.user_stats li.statsGroup {
+	display: inline-block;
+	width: 33.33%;
+}
+
+
+
+/* ------------------profile_movie_settings------------------- */
+
+/* for fixed nav3 basebar */
+.nav_fixed {
+	position: fixed;
+	top: 80px;
+	width: 1170px;
+	padding: 5px 0px;
+	margin-bottom: 15px;
+	background-color: #0c0c0c;
+	z-index: 5;
+}
+
+.fixed_space {
+	margin-top: 95px !important; 
+}
+
+.profile_accordion_menu li {
+	float: left;
+	margin-left: 2px;
+}
+
+.profile_accordion_menu li:first-child {
+	margin-left: 0;
+}
+
+.profile_accordion_menu .accordion_tab {
+	display: block;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 20px;
+	background-color: #1F1F1F;
+	height: 60px;
+	color: #9B9B9B;
+	font-size: 16px;
+	transition: 0.3s;
+}
+
+.profile_accordion_menu li:hover .accordion_tab {
+	color: #71CFEE;
+	transition: 0.3s;
+}
+
+.profile_accordion_menu li.active .accordion_tab {
+	border-bottom: 3px solid #71CFEE;
+	color: #71CFEE;
+}
+
+.profile_accordion_menu li.active .accordion_content {
+	display: block;
+}
+
+.accordion_content {
+	height: 60px;
+	display: none;
+	transition: 0.5s;
+}
+
+.nav_inner_dropdown li {
+	margin-left: 0;
+}
+
+.num_display {
+	color: #90A5BA;
+	font-size: 14px;
+	cursor: default;
+}
+
+.profileNavR .nav3Dropdown ul {
+	margin: -1px 0 0 -20px;
+}
+
+.profile_reivewNavR .nav3Dropdown ul {
+	margin: -1px 0 0 -15px;
+}
+
+/* adjust video list container width */
+/* 簽到 settings */
+.profile_video_wrapper {
+	width: 99%; 
+	margin: 0px auto 0 auto;
+}
+
+.profile_video_wrapper .movie-box {
+	margin: 20px 2px 20px 0;
+}
+
+/* 影評 settings */
+
+.profile_review_content {
+	padding: 15px;
+}
+
+/* reset paragraph width to show more */
+.profile_review_content .review-text {
+	max-width: 1010px;
+	color: rgba(98, 142, 154, 0.8);
+}
+
+/* 標籤 settings */
+
+.movie_tag_container {
+	margin: 20px auto 50px auto;
+	width: 98%;
+}
+
+.tag_title {
+	margin: 15px 5px;
+	text-align: center;
+	transition: 0.3s;
+}
+
+.tag_img_wrap {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 2px solid #9B9B9B;
+	overflow: hidden;
+}
+
+.tag_name {
+	color: #71CFEE;
+	font-size: 16px;
+	margin: 10px 0 0 0;
+}
+
+.tag_movie_amt {
+	color: #9B9B9B;
+	font-size: 13px;
+	margin: 5px 0 0 0;
+}
+
+.tag_title:hover .tag_img_wrap {
+	box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.5);
+	border-color: #71CFEE;
+	transition: 0.3s;
+}
+
+.previouspage, .nextpage {
+	font-size: 30px;
+	color: #9B9B9B;
+}
+
+.btnL {
+	margin: 70px 0 0 45px;
+	
+}
+
+.btnR {
+	margin: 70px 45px 0 0;
+}
+
+
+/* .poster-tags {
+    width: 100px;
+} */
+
+/* .vbox {
+    border-radius: 5px 5px 5px 5px;
+} */
+
+.video_showcase {
+    width: 100%;
+}
+
+.video_wrapcontainer {
+    width: 80%;
+    margin-left: 45px;
+    position: relative;
+    text-align: left;
+    height: 180px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.video_showcontainer {
+    height: 160px;
+}
+
+.page_change[data-way="previous"] {
+    float: left;
+    visibility: hidden;
+}
+
+.page_change[data-way="next"] {
+    float: right;
+    visibility: hidden;
+}
+
+hr {
+    border-bottom: 1px solid #2C3641;
+}
+
+.no_more {
+	position: absolute; 
+	display: inline-block; 
+	background-color: yellow;
+}
+
+
+/* ------------------profile_topic_settings------------------- */
+
+#hm-message {
+	display: none;
+}
+
+.progress_bar {
+	background: url(/images/progress_bar.png);
+}
+
+.progress_container {
+	background: url(/images/progress_container.png);
+}
+
+
+/* ------------------profile_other_friend_settings------------------- */
+.other_ownername {
+	font-size: 35px;
+	margin-top: 10px;
+}
+
+.other_online {
+	top: 60px;
+	left: 150px;
+	height: 15px;
+	width: 15px;
+	border: 6px solid #0c0c0c;
+}
+
+.similarity_indication {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding-top: 12px;
+    background-color: rgba(0, 0, 0, .7);
+    color: #cccccc;
+}
+
+.other_friend_wrapper {
+	padding: 45px 20px;
+	position: relative;
+	display: none;
+}
+
+
+.other_friend_wrapper ul {
+	margin: 0;
+}
+
+.other_friend_wrapper.active {
+	display: block;
+}
+
+.other_friend_nav {
+	height: 100%;
+	padding: 21px 10px 21px 25px;
+	box-sizing: border-box;
+	position: relative;
+}	
+
+.other_friend_nav .subnav {
+	font-size: 14px;
+	display: inline-block;
+	padding: 0 5px;
+	margin:  0 10px;
+	height: 200%;
+	color: #5A6979;
+	vertical-align: top;
+	transition: 0.3s;
+	background-color: transparent;
+	background: none;
+	cursor: pointer;
+}
+
+.other_friend_nav .subnav:hover {
+	color: #71CFEE;
+	transition: 0.3s;
+}
+
+.other_friend_nav .subnav.tabactive {
+	color: #71CFEE;
+	font-size: 16px;
+	transition: 0.3s;
+	border-bottom: 2px solid #71CFEE;
+}
+
+
+/* ------------------profile_other_movie_settings------------------- */
+
+.other_movie_fixed {
+	margin-top: 85px !important; 
+}
+
+.playable-film {
+	font-weight: 200;
+}
+
+.playable-film i {
+	font-size: 16px;
+}
+
+.prevBtn, .nextBtn {
+	font-size: 25px;
+}
+
+.prevBtn {
+	margin-left: 25px;
+}
+
+.nextBtn {
+	margin-right: 25px;
+}
+
+#mutualvideocontain {
+	position: relative;
+	display: none;
+}
+
+#mutualvideocontain.active {
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+/* ---------------profile_page common css classes---------------- */
+
+.noWidth {
+	width: initial !important;
+}
+
+.padT15 {
+	padding-top: 15px;
+}
+
+.padR10 {
+	padding-right: 10px;
+}
+
+.padR5 {
+	padding-right: 5px;
+}
+.padR3 {
+	padding-right: 3px;
+}
+
+.padCommon {
+	box-sizing: border-box;
+	padding: 16px 20px;
+}
+
+.pad21x25 {
+	padding: 21px 25px;
+}
+
+.text-blue {
+	color: #71CFEE;
+}
+
+.text-gender-blue {
+	color: #4990E2;
+}
+
+.text-gender-pink {
+	color: #E65883;
+}
+
+.text-blue-grey {
+	color: #90A5BA;
+}
+
+.text-purple {
+	color: #79759D;
+}
+
+.text-profile-content-blue {
+	color: #579AAD;
+}
+
+.text-grey {
+	color: #9b9b9b;
+}
+
+.mar0 {
+	margin: 0;
+}
+
+.marR0 {
+	margin-right: 0;
+}
+
+.marL0 {
+	margin-left: 0;
+}
+.marL15 {
+	margin-left: 15px;
+}
+.marL30 {
+	margin-left: 30px;
+}
+
+.marT10 {
+	margin-top: 10px;
+}
+.marT15 {
+	margin-top: 15px;
+}
+.marT5 {
+	margin-top: 5px;
+}
+.marT6 {
+	margin-top: 6px;
+}
+.marT7 {
+	margin-top: 7px;
+}
+
+.marT30 {
+	margin-top: 30px;
+}
+
+.marR25 {
+	margin-right: 25px;
+}
+.marR5 {
+	margin-right: 5px;
+}
+
+.marB20 {
+	margin-bottom: 20px;
+}
+
+.small_img {
+	width: 53px;
+	height: 53px;
+	margin: 0;
+}
+
+.w20 {
+	width: 20px;
+}
+.movie_width195 {
+	font-size: 185%;
+}
+
+/* .movie_width135 {
+	font-size: 110%;
+} */
+
+.movie_width110 {
+	font-size: 110%;
+}
+
+.movie_width152 {
+	font-size: 152%;
+}
+
+.movie_width125 {
+	font-size: 100%;
+}
+.clearfix {
+	clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------- uploadify.js settings ---------------------- */
+
+/* 由ploadify.js自動產生 - Process Bar */
+.uploadifyQueue {
+    display: none;
+}
+/* 由ploadify.js自動產生 */
+.uploadWrapper object {
+    position: absolute;
+    height: 15px; /* 設定可以被click到的範圍 */
+    width: 52px;
+    cursor: pointer;
+}
+
+.uploadify {
+    display: inline-block;
+    margin-bottom: 0.1em;
+    margin-top: -0.5em;
+    position: relative;
+}
+
+.uploadify-queue {
+    margin-bottom: 0px;
+}
+
+.uploadify-button {
+    background-color: transparent;
+    background-image: none;
+    border: medium none;
+    font-family: 微軟正黑體,sans-serif;
+    text-align: left;
+}
+
+.uploadify:hover .uploadify-button {
+    background-color: transparent;
+    background-image: none;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

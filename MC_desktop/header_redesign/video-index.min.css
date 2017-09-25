@@ -1,0 +1,66 @@
+.lastest_viewer{
+	background: rgba(0,0,0,.84);
+	right: -10px;
+	-ms-transform: rotate(7deg);
+	-moz-transform: rotate(7deg);
+	-o-transform: rotate(7deg);
+	-webkit-transform: rotate(7deg);
+	transform: rotate(7deg);
+	min-width: 120px;
+	position: absolute;
+	top: -13px !important;
+}
+
+.lastest_viewer img {
+	border-radius: 50px;
+	padding-right: 5px;
+	width: 30px;
+	float: left;
+}
+
+.lastest_viewer a {
+	-webkit-text-shadow: 0 0 5px white,0 0 10px white,0 0 15px white,0 0 40px gray,0 0 70px gray;
+	text-shadow: 0 0 5px white,0 0 10px white,0 0 15px white,0 0 40px gray,0 0 70px gray;
+	display: inline-block;
+	margin-top: 6px;
+	width: 80px;
+	overflow: hidden;
+}
+
+.movie-award {
+	position: absolute;
+	background: #000 url(/Images/cup.png) no-repeat left center;
+	padding: 4px 8px 1px 30px;
+	top: -25px;
+	left: -3px;
+	overflow: hidden;
+}
+
+.loading-showcase {
+	position: fixed;
+	margin-bottom: 120px;
+	bottom: -30px;
+	width: 100%;
+	left: 0;
+	display: none;
+}
+
+.loading-layout{
+	background-color: #000;
+	width: 182px;
+	color: #ececec;
+	-webkit-text-shadow: 0 0 8px #fff;
+	text-shadow: 0 0 8px #fff;
+	opacity: .8;
+	border-radius: 4px;
+	height: 125px;
+	width: 120px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+
+
+
+

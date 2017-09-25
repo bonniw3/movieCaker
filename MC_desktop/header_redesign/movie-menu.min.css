@@ -1,0 +1,152 @@
+.movie-menu {
+	z-index: 1;
+	position: relative;
+	font-size: 12px;
+	font-family: Microsoft JhengHei,Arial,Helvetica,sans-serif;
+}
+
+.movie-menu ul {
+	list-style-type: none;
+	margin: -5px 0 0 5px;
+	padding: 0;
+	overflow: auto;
+}
+
+.movie-menu ul li {
+	float: left;
+}
+
+.movie-menu ul li a {
+	display: block;
+	float: left;
+	height: 30px;
+	width: 100px;
+	text-align: center;
+}
+
+.movie-menu ul li .selected-link {
+	height: 44px;
+}
+
+.movie-menu ul li ul {
+	position: absolute;
+	width: 100px;
+	overflow: visible;
+	clear: left;
+	margin: 44px 0 0 0;
+}
+
+.movie-menu ul li:nth-child(n+8) ul {
+	margin-top: -180px;
+}
+
+.movie-menu ul li ul li { 
+	float: none;
+	text-align: center;
+	height: 100%;
+	display: inline-block;
+	width: 100%;
+}
+
+.movie-menu ul li ul li a {
+	float: none;
+	width: 100%;
+}
+
+.movie-menu ul li ul li ul {
+	margin: -30px 0 0 100px;
+	width: 100%;
+}
+
+
+.movie-options .nav3dropdown{
+	margin:  37px 0 0 60px;
+}
+
+
+.movie-menu ul li ul {
+	visibility: hidden;
+}
+
+.movie-menu ul li:hover ul {
+	visibility: visible;
+}
+
+.movie-menu ul li:hover ul li ul {
+	visibility: hidden;
+}
+
+.movie-menu ul li ul li:hover ul {
+	visibility: visible;
+}
+
+.movie-menu ul li ul li:hover ul li ul {
+	visibility: hidden;
+}
+
+.movie-menu ul li ul li ul li:hover ul {
+	visibility: visible;
+}
+
+
+
+.movie-menu ul li a {
+	color: #697d93;
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 30px;
+}
+.movie-menu ul li ul {
+	background: #1F1F1F;
+	border-left: 2px solid #71CFEE;
+	padding: 5px 0;
+	box-shadow: 0 2px 2px #2c2c2c;
+}
+
+.movie-menu ul li ul li a {
+	color: #697d93;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.movie-menu ul li:hover, #movie-menu ul li a:hover {
+	color: #71CFEE;
+}
+
+/* .movie-menu ul li:hover > a {
+	color: #fff;
+} */
+
+.movie-menu ul li ul li:hover, #movie-menu ul li ul li a:hover {
+	height: 100%;
+	display: inline-block;
+	width: 100%;
+	font-size: 16px;
+}
+
+
+.navDropOption ul {
+	margin: 0 0 0 5px;
+}
+
+.minorAdj {
+	margin-top: -7px;
+	padding-right: 20px;
+	/* color: #71CFEE; */
+}
+
+.navDropOption .movie-options a.minorAdj {
+	color: #579AAD;
+}
+
+
+
+
+
+
+
+
+
+
+
+

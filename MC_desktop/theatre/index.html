@@ -1,0 +1,534 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head prefix="">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="http://test.moviecaker.com/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    
+    
+    <title>找影吧</title>
+    <meta name="description" />
+    <meta name="keywords" />
+
+
+    <!-- for Facebook -->
+    <meta property="fb:app_id" content="805159066237146" />
+    <meta property="og:site_name" content="Moviecaker" />
+    <meta property="og:url" content="http://test.moviecaker.com/explore/wetheater" />
+    <meta property="og:title" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" />
+    <meta property="og:image" />
+    
+
+    <!-- 360 6.X 以上可识别 -->
+    <meta name="renderer" content="webkit">
+    
+    <meta property="wb:webmaster" content="60e21d9e85ef425a" /><!-- 微博驗證 -->
+    <meta property="qc:admins" content="246360627615313526375" /><!-- QQ 驗證 -->
+    <link href="http://test.moviecaker.com/Bundles/css?v=hxO14Nb7Nvc8Ha6uemh18ekd-HtUrwFKA8raRCPP6BI1" rel="stylesheet"/>
+
+    
+    
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=4036480982" type="text/javascript" charset="utf-8"></script><!-- 引用新浪微博 JSSDK 文件 -->
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101224571" data-redirecturi="http://test.moviecaker.com" charset="utf-8"></script>
+
+    <script src="http://test.moviecaker.com/bundles/js?v=qc2X4o_7K1JQG9BIL1Bw2RMfFYpCeb3Vulmtl1Dkxoo1"></script>
+
+
+    <script>
+        
+        var trackOutboundLink = function(url) {
+           ga('send', 'event', 'outbound', 'click', url, {
+             'transport': 'beacon',
+           });
+        }
+    </script>
+</head>
+<body>
+    <div id="other-function-sheet" class="other-function" data-videoid="" style="display: none;">
+        <div class="rateit bigstars" data-rateit-starwidth="25" data-rateit-starheight="25" style="cursor: pointer;"></div>
+        <a class="sub-other-function gotoVideo" href="#" target="_blank">到电影页面</a>
+        <a class="sub-other-function addReviews" href="#">写影志</a>
+        <a class="sub-other-function addLabel" href="#">加入标签</a>
+        <a class="sub-other-function addToTopic" href="#">加入专题</a>
+    </div>
+    <div class="header navbar navbar-fixed-top layout-header">
+        <div class="container layout-wrap">
+            <h1 class="logo"><a href="/">MovieCaker</a></h1>
+            <div class="setting-area">
+                
+
+
+<link href="http://test.moviecaker.com/Content/pages/user-login.partial.min.css" rel="stylesheet" />
+    <div class="btn-group myplus">
+        <span id="qqLoginBtn" style="display:none;"></span>
+        <a class="btn" data-toggle="dropdown" href="#" style="background:#D87C7C">
+            <span class="icon-myplus icomoon"></span>
+        </a>
+        <ul id="all-add" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="text-align: left;">
+            <li><a href="/otherFunction/writeAReview" class="nav2group" id="nav2review">
+                <!--<i class="icon-pencil icon-white" style="margin: 2px 2px 0 0;"></i>-->写影志</a>
+            </li>
+            <li>
+                <a href="/topic/create" class="nav2group" id="nav2topic">
+                    <!--<i class="icon-list-alt icon-white"></i>-->
+                    做专题</a>
+            </li>
+        </ul>
+    </div>
+<div class="btn-group">
+    <ul class="logintop" style="list-style: none outside none;">
+            <li class="my-photo btn" style="padding:0px;border:initial">
+                <a href="/user/10" title="ian" id="main_user">
+                    <img class="avatar-photo user-self" src="http://test.moviecaker.com/uploads/userAvatar/user_10.png?1019b653-70e6-48a4-ae0a-7d25f5460c72?width=50&amp;height=50&amp;stretch=fill" onerror="onImgError(this);" />
+                </a>
+            </li>
+
+        <li class="btn">
+            <link href="http://test.moviecaker.com/Content/pages/yougotfriendinviting.min.css" rel="stylesheet" />
+<a id="yougotinvited" href="#inlineFriend" style="text-decoration: none;background: #ADCB80">
+    <span class="icon-users icomoon"></span>
+</a>
+<div style="display: none;" class="ShowFriendBlock" id="parentOfinlineFriend">
+    <div id="inlineFriend" style="white-space: nowrap;">
+        <ul class="logintop inviting_list" style="width: auto;margin: 0 auto;">
+
+        </ul>
+            没有新的交友邀请
+    </div>
+</div>
+
+        </li>
+        <li class="btn">
+
+<link href="http://test.moviecaker.com/Content/pages/messagebox.min.css" rel="stylesheet" />
+<a id="yougotmessage" href="#inlineMessage" style="text-decoration: none;background: #DAC04E">
+    <span class="icon-envelop icomoon"></span>
+</a>
+<div style="display: none;" class="ShowMessageBlock" id="parentOfinlineMessage">
+    <div id="inlineMessage" style="white-space: nowrap;">
+            <span id="see-all-message">最近沒有收到新消息<br /><a href="/Message/MessageInBox">查看全部消息</a></span>
+    </div>
+</div>
+<script src="http://test.moviecaker.com/Scripts/pages/messagebox.min.js"></script>        </li>
+        <li class="btn" id="setting">
+            <div class="btn-group">
+                <a data-toggle="dropdown" href="#">
+                    <span class="icon-cog icomoon"></span>
+                </a>
+                <ul id="all-setting" class="dropdown-menu pull-left" role="menu" aria-labelledby="dropdownMenu" style="text-align: left;width: 110px;">
+                    
+                    <li style="margin-top: 0px;"><a href="/user/edit?returnUrl=%2Fexplore%2Fwetheater"><i class="icon-pencil  icon-white"></i>使用者设定</a></li>
+                    
+                    <li style="margin-top: 0px;">
+                        <a href="/Home/ChangeLang/zh-TW" class="">繁体中文</a>
+                    </li>
+                    <li style="margin-top: 0px;">
+                        <a href="/Home/ChangeLang/zh-CN" class="aOnSelect">简体中文</a>
+                    </li>
+                    <li class="divider" style="margin-top: -1px;"></li>
+                        <li style="margin-top: 0px;"><a href="/admin-moma"><i class="icon-lock  icon-white"></i>後台管理</a></li>
+                    <li style="margin-top: 0px;"><a href="/account/logoff"><i class="icon-off  icon-white"></i>登出</a></li>
+                </ul>
+            </div>
+        </li>
+        <li style="display:none;">
+            <p>online member : <span id="online-member-amount"></span></p>
+            <p>online user : <span id="online-user-amount"></span></p>
+        </li>
+    </ul>
+</div>
+            </div>
+            <!--setting-area-->
+
+<link href="http://test.moviecaker.com/Content/pages/multiple-search.min.css" rel="stylesheet" />
+<script src="http://test.moviecaker.com/Scripts/pages/multiple-search.min.js"></script>
+<div id="mutiple_search_block" style="width:431px">
+    <input type="text" id="search_text" name="search_text" value="" placeholder="电影,影人,专题,朋友..." style="position:absolute;left:0;margin:0" />
+    <div class="styled-select" style="height:33px;position:absolute;right:33px"><select id="searchType" name="searchType"><option selected="selected" value="All">全部</option>
+<option value="Movie">电影</option>
+<option value="Actor">影人</option>
+<option value="Topic">专题</option>
+<option value="User">朋友</option>
+</select></div>
+    <input type="image" src="http://test.moviecaker.com/Images/search-1.png" id="search_submit" style="height: 18px;margin-bottom: 9px;margin-left: -3px;padding: 4px;width: 18px;position:absolute;top:0;right:0;margin:0" />
+</div>
+
+
+        </div>
+        <!--container-->
+        <div class="nav2-container">
+            <div class="layout-wrap" style="vertical-align: super;">
+                    <div class="styled-select" style="margin-bottom: -6px;position:relative">
+                        <select id="category" style="position:absolute;left:0; margin-top: 5px;">
+                            <option value="/">首頁</option>
+                            <option value="/video?sort=Hot1M" >电影</option>
+                            <option value="/topic?sort=Hot" >专题</option>
+                            <option value="/explore/video" selected>发现</option>
+                        </select>
+                    </div>
+<a href="/video?sort=Hot1M" class="is-movie" id="nav2billboard">热门电影</a>
+                    <a href="/video?sort=Global" class="is-movie" id="nav2Global">全球新片</a>
+                    <a href="/video?sort=Award" class="is-movie" id="nav2Award">金奖电影</a>
+                        <a href="/video?sort=MyFriend&amp;order=Sign" class="is-movie" id="nav2MyFriend">朋友在看</a>
+<a href="/topic?sort=All" class="is-topic" id="nav2All">全部</a>
+                        <a href="/topic?sort=Hot" class="is-topic" id="nav2Hot">热门</a>
+                        <a href="/topic?sort=New" class="is-topic" id="nav2New">最新</a>
+                        <a href="/topic?sort=MyFriend" class="is-topic" id="nav2MyFriend">朋友专题</a>
+<a class="is-club" href="/explore/video">找电影</a>
+                    <a class="is-club" href="/explore/wetheater">找影吧</a>
+                        <a href="/explore" class="is-club">找影友</a>
+                    <a href="/explore/master" class="is-club">找達人</a>
+            </div>
+        </div>
+    </div>
+    <div id="website_body" class="container layout-main layout-wrap">
+        <div class="gene-main"></div>
+        
+ <link rel="stylesheet" href="css/wetheater_list.css">
+<script src="http://test.moviecaker.com/Scripts/vue/vue.min.js"></script>
+<script src="http://test.moviecaker.com/Scripts/vue/vue-resource.min.js"></script>
+
+<div id="app">
+    <div class="top_slider">
+        <div class="slider_img">
+                <!-- top banner img 這裡插入-->
+                <img src="img/temp_horizontal2.jpg" alt="">
+        </div>
+        <div class="title">
+            <div class="rect">
+                <h1>推薦<br>店家</h1>
+                <h3>漫 影 故 事</h3>
+            </div>
+            <div class="bottom_tri"></div>
+            <div class="top_tri"></div>
+        </div>
+    </div>
+    <article class="location_content">
+        <div class="location_selection">
+            <div class="location_title location_info">
+                <ul>
+                    <li>
+                        <div class="location_icon">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                    <li><span></span></li>
+                    <li><h2 v-text="getLocationName()">北京</h2></li>
+                    
+                </ul>
+            </div>
+            <div class="location_selector location_info">
+                <!--v-bind:value="selectedLocation"-->
+                <input id="temp_txt" type="text" value="切 換 城 市" placeholder="">
+                <select id="setLocation" v-model="selectedLocation" v-on:change="getWeTheaters">
+                    <option v-for="item in locations" :value="item.Id" v-text="item.Name">
+                    </option>
+                </select>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <section :class="'wid-' + item.UserId" v-for="item in weTheaters">
+            <div class="place_img">
+                <a target="_blank"><img :src="item.BannerUrl"></a>
+            </div>
+            <div class="place_content">
+                <div class="place_info">
+                    <a target="_blank">
+                        <h4 v-text="item.NickName"></h4>
+                    </a>
+                        <br>
+                    <div class="place_address place_info_detail">
+                        <p><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> 长沙市望城县云栖路白鹤家园小区7栋6门2楼</p>
+                    </div>
+                    <div class="place_likes place_info_detail">
+                        <p><i class="fa fa-heart" aria-hidden="true"></i> 10K 喜歡</p>
+                    </div>
+                </div>
+                <button class="place_intro" type="submit"><a href="wetheater_detail.html">店家介紹</a></button>
+                <div class="place_movie">
+                    <!--這邊插入電影-->
+                    <mc-video v-for="video in item.videos" :video="video" :istw="istw()"></mc-video>
+                </div>
+                <a class="list-more" href="#">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i><br>
+                    <small>更多最新</small>
+                </a>
+            </div>
+        </section>
+
+    </article>
+    <div class="clearfix"></div>
+    <!--<pre>{{ weTheaters }}</pre>-->
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="jq/myjquery.js"></script>
+<script>
+
+// $(document).ready(function(){
+
+//     $("#setLocation").on("change",function(){
+//         txt = $(this).find("option:selected").text();
+//     $("#temp_txt").val(txt)
+
+// })
+
+
+    var mixin = {
+        methods: {
+            istw: function () {
+                return getCookie('Language') === 'zh-TW' ? true : false;
+                function getCookie(name) {
+                    var value = "; " + document.cookie;
+                    var parts = value.split("; " + name + "=");
+                    if (parts.length == 2) return parts.pop().split(";").shift();
+                }
+            }
+        }
+    }
+
+    var app = new Vue({
+        el: '#app',
+        mixins: [mixin],
+        data: {
+            weTheaters: null,
+            locations: null,
+            selectedLocation: 11
+        },
+        methods: {
+            getLocations: function () {
+                var vm = this;
+                vm.$http.get('http://test.moviecaker.com/api/location?type=2&parentId=200').then((response) => {
+                    vm.locations = response.body.Data;
+                }, (response) => {
+                    vm.locations = [];
+                });
+            },
+            getLocationName: function(){
+                var vm = this;
+                for (let i in vm.locations) {
+                    if (+vm.locations[i].Id == vm.selectedLocation) {
+                        return vm.locations[i].Name;
+                    }
+                }
+            },
+            getWeTheaters: function () {
+                var vm = this;
+                vm.$http.get('http://test.moviecaker.com/api/user?type=2&locationId=' + vm.selectedLocation).then((response) => {
+                    vm.weTheaters = response.body;
+                    for (let i = 0; i < vm.weTheaters.length; i++) {
+                        vm.$http.get('http://test.moviecaker.com/api/video?type=pos&order=new&limit=5&posId=' + vm.weTheaters[i].PosId).then((response) => {
+                            this.$set(vm.weTheaters[i], 'videos', response.body.Data);
+                            this.$nextTick(function () {
+                                // 使用 jquery 啟動 bootstrap 的 tooltip
+                                // TODO: 改用 vue-strap
+                                $('.wid-' + vm.weTheaters[i].UserId + ' .movie-box').tooltip();
+                            })
+                        });
+                    }
+                }, (response) => {
+                    vm.weTheaters = [];
+                });
+            }
+        },
+        created: function () {
+            // `this` points to the vm instance
+            var vm = this;
+            vm.getLocations();
+            vm.getWeTheaters();
+            //if (!navigator.geolocation) {
+            //    self.message = "瀏覽器不支援使用 GPS 位置";
+            //    return;
+            //}
+
+            //function success(position) {
+            //    var latitude = position.coords.latitude;
+            //    var longitude = position.coords.longitude;
+
+            //    self.$http.get('/api/user?latitude=' + latitude + '&longitude=' + longitude).then((response) => {
+            //        // success callback
+            //        self.message = "";
+            //        self.users = response.body;
+            //    }, (response) => {
+            //        // error callback
+            //        self.users = [];
+            //    });
+            //};
+
+            //function error() {
+            //    self.message = "無法取得 GPS 位置";
+            //};
+
+            //navigator.geolocation.getCurrentPosition(success, error);
+        }
+    });
+
+    Vue.component('mc-video', {
+        props: ['video', 'istw'],
+        template:
+            '<div class="movie-box" :title="istw ? video.Name : video.CNName" :data-id="video.Id" :data-is-released="new Date() > new Date(video.ReleaseDate) ? \'true\': \'false\'">\
+                <img class="movie-poster" :src="video.PosterUrl + \'?width=103&height=150&stretch=fill\'"/>\
+                <div class="sign-sheet cut5" :data-goto="\'/video/\' + video.Id">\
+                    <a href="#" class="cut-part activating" :data-id="video.Id" data-action="Watch" :data-is-on="video.IsViewed ? \'true\': \'false\'" data-object="Movie">\
+                         <img src="/Images/blank.gif" class="img-action" :title="istw ? \'看過\' : \'看过\'"/>\
+                        <br />\
+                        <span class="action-amount" v-text="video.ViewNum"></span>\
+                    </a>\
+                    <a href="#" class="cut-part activating" :data-id="video.Id" data-action="Like" data-object="Movie" :data-is-on="video.IsLiked ? \'true\': \'false\'">\
+                        <img src="/Images/blank.gif" class="img-action" :title="istw ? \'喜歡\' : \'喜欢\'"/>\
+                        <br />\
+                        <span class="action-amount" v-text="video.LikeNum"></span>\
+                    </a>\
+                    <a href="#" class="cut-part activating" :data-id="video.Id" data-action="WannaWatch" data-object="Movie" :data-is-on="video.IsWantView ? \'true\': \'false\'">\
+                        <img src="/Images/blank.gif" class="img-action" title="想看"/>\
+                        <br />\
+                        <span class="action-amount" v-text="video.WantViewNum"></span>\
+                    </a>\
+                    <span class="cut-part rateit-wrapper" v-if="video.AverageRatings">\
+                        <img src="/images/start45x45.png" />\
+                        <span class="average-score" v-text="video.AverageRatings"></span>\
+                    </span>\
+                    <a href="#" class="cut-part other-fn" :data-id="video.Id" title="其他">\
+                        <img src="/images/noother.png" />\
+                    </a>\
+                </div>\
+            </div>'
+    });
+</script>
+
+
+    </div>
+    <div class="navbar-fixed-bottom layout-footer">
+        <div class="layout-wrap">
+            <a class="v1" href="###" style="cursor: default;">
+                <img src="/images/down_logo.png" />
+            </a>
+            <a class="v1" id="web_about" href="/Home/About" style="color:#ccc">关于</a>
+            <a id="web_help" href="/Home/Help">协助</a>
+                <a id="feedback" href="/Message/Feedback">问题反馈</a>
+            <a href="###" id="get-app">APP</a>
+            <span>苏ICP备13018111号-1</span>
+        </div>
+    </div>
+    <div id="loading_cover">
+        <img src="/Images/loading.gif" />
+    </div>
+    <div id="fb-root"></div>
+    <div class="app-outer">
+        <div class="app-W">
+            <div class="app-close">×</div>
+            <div class="app-Info">
+                <img src="/Images/ilandy_use/app-03.png" alt="" />
+                <a href="https://itunes.apple.com/pg/app/moviecaker/id901773808?mt=8" target="_blank" class="app"></a>
+                <a href="http://suzhou.funmovie.tv/upgrade/android/MovieCaker.apk" target="_blank" class="app-ad"></a>
+            </div>
+        </div>
+    </div>
+        
+    <!--Reference the SignalR library. -->
+    <script src="http://test.moviecaker.com/Scripts/jquery.signalR-2.0.3.min.js"></script>
+    <!--Reference the autogenerated SignalR hub script. -->
+    <script src="http://test.moviecaker.com/signalr/hubs"></script>
+    <script src="http://test.moviecaker.com/Scripts/pages/layout-hub.min.js"></script>
+    <script>
+        layout_init('不隐藏我看过的电影',
+            '隐藏我看过的电影',
+            '出现我看过的电影',
+            '4036480982',
+            '加入会员正在申请中，请等待​​管理员批准',
+            '欢迎加入 {0} 群组',
+            '申请加入群组',
+            '已经加入',
+            '电影',
+            '群组',
+            '从朋友名单删除',
+            '確定',
+            '绑定帐号',
+            '测试',
+            '试试',
+            '删除邀请',
+            '确认',
+            '交友邀请中',
+            '删除',
+            '加为朋友',
+            '绑',
+            'true',
+            '/',
+            '',
+            '',
+            'wetheater',
+            'explore',
+            '',
+            'moviecaker_develop',
+            '805159066237146',
+            '',
+            'http://test.moviecaker.com',
+            'BB8CD4EE1DBC752BE59B6D6B19383DA9DC489DC92E25873137E87A3C228CE56080260DAA719B20159774A1BEA2EFD3E9DAB56F98BED4D9477D99D63DE9F8E97938F9B112C8D5D6492260AC54893FE7901C3FAF31EA1BB49D30D98DBD9076A50ED37160947E3500B8CD9AD9B359DBEAE1',
+            'p4l3k1nh03axhn2fb31rcf1h',
+            'test.moviecaker.com',
+            '处理中...',
+            '你有一个影评尚未完成 ,是否关闭?',
+            '10',
+            '评分失败!',
+            '影评',
+            '专题',
+            '话题',
+            '確定删除看过?',
+            '您已看过，可以取消看过选择想看。',
+            '讯息',
+            '热门影评',
+            '确认删除你的的朋友',
+            '加为朋友',
+            '交友邀请中',
+            '中國大陸',
+            'http://www.funmovie.tv/Content/pictures/files/',
+            'http://www.funmovie.tv/Content/pictures/banners/');
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '805159066237146',
+                channelUrl: '//' + requestUrlHost + '/channel.html',
+                status: true, // check login status
+                cookie: true, // enable cookies to allow the server to access the session
+                xfbml: true
+            });
+            // fb 初始化完畢
+            isFbInitialized = true;
+        };
+        (function (d) {
+            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement('script'); js.id = id; js.async = true;
+            js.src = "/Scripts/fb/all.js";
+            ref.parentNode.insertBefore(js, ref);
+        }(document));
+    </script>
+    <script src="/Scripts/openjs.js#autoboot=no&amp;debug=no"></script>
+
+    
+     
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-68883772-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

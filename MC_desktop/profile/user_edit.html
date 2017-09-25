@@ -1,0 +1,1334 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head prefix="">
+    <meta charset="utf-8" />
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    
+    
+    <title>編輯個人資料</title>
+    <meta name="description" />
+    <meta name="keywords" />
+
+
+    <!-- for Facebook -->
+    <meta property="fb:app_id" content="741698679249852" />
+    <meta property="og:site_name" content="Moviecaker" />
+    <meta property="og:url" content="http://moviecaker.com/user/edit?returnUrl=%2Fuser%2Ftopic" />
+    <meta property="og:title" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" />
+    <meta property="og:image" />
+    
+
+    <!-- 360 6.X 以上可识别 -->
+    <meta name="renderer" content="webkit">
+    
+    <meta property="wb:webmaster" content="60e21d9e85ef425a" /><!-- 微博驗證 -->
+    <meta property="qc:admins" content="246360627615313526375" /><!-- QQ 驗證 -->
+    <link href="/Content/jquery-ui.css" rel="stylesheet"/>
+    <!-- <link href="http://moviecaker.com/Content/stylesheets/layout-old.css" rel="stylesheet"/> -->
+    <link href="http://moviecaker.com/Content/rateit.css" rel="stylesheet"/>
+    <!-- <link href="http://moviecaker.com/Content/HM_Front.css" rel="stylesheet"/> -->
+    <link href="http://moviecaker.com/Content/effect.css" rel="stylesheet"/>
+    <link href="http://moviecaker.com/Scripts/uploadify/uploadify.css" rel="stylesheet"/>
+    <link href="http://moviecaker.com/Content/bootstrap-modify.css" rel="stylesheet"/>
+    <link href="http://moviecaker.com/Content/topic-page.css" rel="stylesheet"/>
+    <link href="http://moviecaker.com/Content/topic-yt.css" rel="stylesheet"/>
+    <link href="http://moviecaker.com/Content/imgareaselect/imgareaselect-default.css" rel="stylesheet"/>
+    <link href="http://moviecaker.com/Content/other-function.css" rel="stylesheet"/>
+    <link href="http://moviecaker.com/Scripts/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet"/>
+    <link href="http://moviecaker.com/Scripts/pie/pizza.css" rel="stylesheet"/>
+    <link href="http://moviecaker.com/Images/icomoon/style.css" rel="stylesheet"/>
+    <link href="http://moviecaker.com/Images/logos/style.css" rel="stylesheet"/>
+    <link href="http://moviecaker.com/Content/style.css" rel="stylesheet"/>
+    <!-- <link href="http://moviecaker.com/Content/stylesheets/main.css" rel="stylesheet"/> -->
+
+    <link href="css/layout-old.css" rel="stylesheet"/>
+    <link href="css/HM_Front.css" rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet"/>
+    <link href="css/circle.css" rel="stylesheet"/>
+    <link href="css/detail_nav.css" rel="stylesheet"/>
+    <link href="css/multiple-search.min.css" rel="stylesheet"/>
+    <link href="css/user-login.partial.min.css" rel="stylesheet"/>
+
+    <link href="css/profile.css" rel="stylesheet"/>
+    <link href="css/user_edit.css" rel="stylesheet"/>
+
+    <link href="temp_profile.css" rel="stylesheet"/>
+    
+
+    <link rel="stylesheet" href="http://moviecaker.com/Content/other-function.css">
+
+    
+    
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=4036480982" type="text/javascript" charset="utf-8"></script><!-- 引用新浪微博 JSSDK 文件 -->
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101219875" data-redirecturi="http://www.moviecaker.com" charset="utf-8"></script>
+    <script src="http://moviecaker.com/bundles/jquery?v=dFR3amEsYDF5Wg1JOQaGmjaQUqayJV6iyceqDLbnxsw1"></script>
+
+    <script src="http://moviecaker.com/bundles/js?v=IDd36S4ZmPQgDiQhSEc1Z1Y6EZ0mn2tJ1mHo6h1HWIk1"></script>
+
+    <script type = 'text/javascript' >
+        var appInsights=window.appInsights||function(config)
+        {
+            function r(config){ t[config] = function(){ var i = arguments; t.queue.push(function(){ t[config].apply(t, i)})} }
+            var t = { config:config},u=document,e=window,o='script',s=u.createElement(o),i,f;for(s.src=config.url||'//az416426.vo.msecnd.net/scripts/a/ai.0.js',u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=['Event','Exception','Metric','PageView','Trace','Ajax'];i.length;)r('track'+i.pop());return r('setAuthenticatedUserContext'),r('clearAuthenticatedUserContext'),config.disableExceptionTracking||(i='onerror',r('_'+i),f=e[i],e[i]=function(config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o),s}),t
+        }({
+            instrumentationKey:'53295a54-8e36-4b59-8c2e-f9dee36cbbc6'
+        });
+        
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+</head>
+<body>
+    <div id="other-function-sheet" class="other-function" data-videoid="" style="display: none;">
+        <div class="rateit bigstars" data-rateit-starwidth="25" data-rateit-starheight="25" style="cursor: pointer;"></div>
+        <a class="sub-other-function gotoVideo" href="#" target="_blank">到電影頁面</a>
+        <a class="sub-other-function addReviews" href="#">寫影誌</a>
+        <a class="sub-other-function addLabel" href="#">加入標籤</a>
+        <a class="sub-other-function addToTopic" href="#">加入專題</a>
+    </div>
+
+<!-- HEADER STARTS HERE -->
+
+    <div class="header navbar navbar-fixed-top layout-header">
+        <div class="container layout-wrap">
+            <ul>
+                <h1 class="logo"><a href="/">MovieCaker</a></h1>
+
+                <nav id="main-menu">
+                    <ul class="main_nav_menu">
+                        <li >
+                            <!-- <a href="/"><span class="cur_line line_before "></span>首頁<span class="cur_line line_after cur_active"></span></a> -->
+                            <a href="header_update.html"><span class="cur_line line_before "></span>首頁<span class="cur_line line_after cur_active"></span></a>
+                        </li>
+                        <li >
+                            <!-- <a href="/video?sort=Hot1M"><span class="cur_line line_before cur_active"></span>電影<span class="cur_line line_after cur_active"></span></a> -->
+                            <a href="movies_hot.html"><span class="cur_line line_before cur_active"></span>電影<span class="cur_line line_after cur_active"></span></a>
+                        </li>
+                        <li>
+                            <!-- <a href="/topic?sort=Hot"><span class="cur_line line_before"></span>專題<span class="cur_line line_after"></span></a> -->
+                            <a href="project_hot.html"><span class="cur_line line_before"></span>專題<span class="cur_line line_after"></span></a>
+                        </li>
+                        <li>
+                            <!-- <a href="/explore/video"><span class="cur_line line_before"></span>發現<span class="cur_line line_after"></span></a> -->
+                            <a href="explore_movie.html"><span class="cur_line line_before"></span>發現<span class="cur_line line_after"></span></a>
+                        </li>
+                    </ul>
+                        
+                    <div class="header_dropdown_wrapper">
+                <!-- movies dropdown starts here -->
+                        <div class="header_dropdown clearfix">
+                            <ul class="dropdown_nav">
+                                <li class="active">
+                                    <!-- <a href="/video?sort=Hot1M">熱門電影
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="movies_hot.html">熱門電影
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- <a href="/video/released">院線熱映
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="movies_released.html">院線熱映
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- <a href="/video?sort=Global">全球新片
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="movies_global.html">全球新片
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- <a href="/video?sort=Award">金獎電影
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="movies_award.html">金獎電影
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/video?sort=MyFriend&amp;order=Sign">朋友在看
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="dropdown_nav_detail">
+                                <div class="loading_animation" style="display: none;">
+                                    <div class="loader">
+                                        <div class="loadDot-1 loadDot"></div>
+                                        <div class="loadDot-2 loadDot"></div>
+                                        <div class="loadDot-3 loadDot"></div>
+                                    </div>
+                                </div>
+                                <ul class="dropdown_list movies_list active">
+                                <!-- 這邊插入熱門電影列表 （五部） -->
+                                    <li>
+                                        <a href="#">
+                                            <div class="img_wrapper">
+                                                <img src="img/project1a.jpg">
+                                            </div>
+                                            <p class="movie_name">減法人生1</p>
+                                        </a>
+                                    </li>
+                                </ul> 
+                                <ul class="dropdown_list movies_list">
+                                <!-- 這邊插入院線熱映列表 （五部） -->
+                                    <li>
+                                        <a href="#">
+                                            <div class="img_wrapper">
+                                                <img src="img/project1b.jpg">
+                                            </div>
+                                            <p class="movie_name">減法人生2</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="dropdown_list movies_list">
+                                <!-- 這邊插入新片電影列表 （五部） -->
+                                    <li>
+                                        <a href="#">
+                                            <div class="img_wrapper">
+                                                <img src="img/project1c.jpg">
+                                            </div>
+                                            <p class="movie_name">減法人生3</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="dropdown_list movies_list">
+                                <!-- 這邊插入金獎電影列表 （五部） -->
+                                    <li>
+                                        <a href="#">
+                                            <div class="img_wrapper">
+                                                <img src="img/project2a.jpg">
+                                            </div>
+                                            <p class="movie_name">減法人生4</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="dropdown_list movies_list">
+                                <!-- 這邊插入朋友在看列表 （五部） -->
+                                    <li>
+                                        <a href="#">
+                                            <div class="img_wrapper">
+                                                <img src="img/project2b.jpg">
+                                            </div>
+                                            <p class="movie_name">減法人生5</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> 
+                <!-- project dropdown starts here -->
+                        <div class="header_dropdown clearfix">
+                            <ul class="dropdown_nav">
+                                <li class="active">
+                                    <a href="/topic?sort=All">全部
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- <a href="/topic?sort=Hot">熱門
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="project_hot.html">熱門
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/topic?sort=New">最新
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/topic?sort=MyFriend">朋友專題
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="dropdown_nav_detail">
+                                <div class="loading_animation" style="display: none;">
+                                    <div class="loader">
+                                        <div class="loadDot-1 loadDot"></div>
+                                        <div class="loadDot-2 loadDot"></div>
+                                        <div class="loadDot-3 loadDot"></div>
+                                    </div>
+                                </div>
+                                <ul class="project_list dropdown_list active"> 
+                                <!-- 這邊插入全部專題列表 （三個） -->
+                                    <li class="project_container">
+                                        <a href="#" class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </a>
+                                        <p class="movie_name">在電影中看見的愛情心法13條</p>
+                                    </li>
+                                </ul> 
+                                <ul class="project_list dropdown_list ">
+                                <!-- 這邊插入熱門專題列表 （三個） -->
+                                    <li class="project_container">
+                                        <a href="#" class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </a>
+                                        <p class="movie_name">引爆大銀幕-全球影史票房百強</p>
+                                    </li>
+                                </ul>
+                                <ul class="project_list dropdown_list">
+                                <!-- 這邊插入最新專題列表 （三個） -->
+                                    <li class="project_container">
+                                        <a href="#" class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </a>
+                                        <p class="movie_name">韓國本土十大19禁賣座電影</p>
+                                    </li>
+                                </ul>
+                                <ul class="project_list dropdown_list">
+                                <!-- 這邊插入朋友專輯列表 （三個） -->
+                                    <li class="project_container">
+                                        <a href="#" class="project_wrapper">
+                                            <ul>
+                                                <li>
+                                                    <img src="img/project1a.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1b.jpg">
+                                                </li>
+                                                <li>
+                                                    <img src="img/project1c.jpg">
+                                                </li>
+                                            </ul>
+                                        </a>
+                                        <p class="movie_name">愛情心法16條</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> 
+                <!-- explore dropdown starts here -->
+                        <div class="header_dropdown clearfix">
+                            <ul class="dropdown_nav">
+                                <li >
+                                    <!-- <a href="/explore/video">找電影
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="explore_movie.html">找電影
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <!-- <a href="/explore/master">找影友
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="explore_friend.html">找影友
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- <a href="/explore/master">找達人
+                                        <span class="active_line"></span>
+                                    </a> -->
+                                    <a href="explore_master.html">找達人
+                                        <span class="active_line"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="dropdown_nav_detail">
+                                <div class="loading_animation" style="display: none;">
+                                    <div class="loader">
+                                        <div class="loadDot-1 loadDot"></div>
+                                        <div class="loadDot-2 loadDot"></div>
+                                        <div class="loadDot-3 loadDot"></div>
+                                    </div>
+                                </div>
+                                <ul class="dropdown_list explore_list">
+                                    <li >
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M9400815_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M8004375_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M9700675_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0801740_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">風格</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0703952_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M9301838_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0701235_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M1130299_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">情節</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0300678_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0600880_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0704889_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0507005_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">心情</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0505913_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M1024010_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M1337860_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M1446244_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">格式</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M0203468_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M7200193_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M9604861_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <img src="http://www.funmovie.tv/Content/pictures/files/M9305360_posters.jpg?width=200&amp;height=300&amp;stretch=fill" class="movie-poster" />
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">角色</p>
+                                    </li>
+                                </ul>
+                                <ul class="dropdown_list explore_friends_list active">
+                                <!-- 這邊插入找影友列表（前四名） -->
+                                    <li >
+                                        <div class="explore_friends_wrapper">
+                                            <a href="#">
+                                                <div class="c100 p25">
+                                                    <span>25%</span>
+                                                    <div class="slice">
+                                                        <div class="bar"></div>
+                                                        <div class="fill"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="user_circle">
+                                                    <img src="img/user1.jpg" class="" />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">歡影</p>
+                                    </li>
+                                    <!-- <li>
+                                        <div class="explore_friends_wrapper">
+                                            <a href="#">
+                                                <div class="c100 p38">
+                                                    <span>38%</span>
+                                                    <div class="slice">
+                                                        <div class="bar"></div>
+                                                        <div class="fill"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="user_circle">
+                                                    <img src="img/user2.jpg" class="" />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">蝶ynamite</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_friends_wrapper">
+                                            <a href="#">
+                                                <div class="c100 p67">
+                                                    <span>67%</span>
+                                                    <div class="slice">
+                                                        <div class="bar"></div>
+                                                        <div class="fill"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="user_circle">
+                                                    <img src="img/user3.jpg" class="" />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">享看電影的Angela</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_friends_wrapper">
+                                            <a href="#">
+                                                <div class="c100 p88">
+                                                    <span>88%</span>
+                                                    <div class="slice">
+                                                        <div class="bar"></div>
+                                                        <div class="fill"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="user_circle">
+                                                    <img src="img/user4.jpg" class="" />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">User</p>
+                                    </li> -->
+                                </ul> 
+                                <ul class="dropdown_list explore_expert_list">
+                                <!-- 這邊插入找達人（觀影，影評，專題 各個的前四名） -->
+                                    <li>
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="img/user1.jpg" class="" />
+                                                <img src="img/user2.jpg" class="" />
+                                                <img src="img/user3.jpg" class="" />
+                                                <img src="img/user4.jpg" class="" />
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">觀影達人</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="img/user1.jpg" class="" />
+                                                <img src="img/user2.jpg" class="" />
+                                                <img src="img/user3.jpg" class="" />
+                                                <img src="img/user4.jpg" class="" />
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">影評達人</p>
+                                    </li>
+                                    <li>
+                                        <div class="explore_wrapper">
+                                            <a href="#">
+                                                <img src="img/user1.jpg" class="" />
+                                                <img src="img/user2.jpg" class="" />
+                                                <img src="img/user3.jpg" class="" />
+                                                <img src="img/user4.jpg" class="" />
+                                                <br class="clearBoth" />
+                                            </a>
+                                        </div>
+                                        <p class="explore_name">專題達人</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="setting-area">
+                    
+                    <div id="mutiple_search_block" class="clearfix">
+                        <div class="search_wrapper">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                        <div class="search_detail_wrapper">
+                            <input type="text" id="search_text" name="search_text" value="" placeholder="電影，影人，專題，朋友..."/>
+                            <div class="styled-select">
+                                <div class="menu_display"><p>全部</p><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                                <ul class="search_dropdown" id="searchType" name="searchType">
+                                    <li class="active" value="All">全部<span class="active_line"></span></li>
+                                    <li value="Movie">電影<span class="active_line"></span></li>
+                                    <li value="Actor">影人<span class="active_line"></span></li>
+                                    <li value="Topic">專題<span class="active_line"></span></li>
+                                    <li value="User">朋友<span class="active_line"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>             
+                
+                <!-- 未登入header選項 -->
+                    <!-- <ul class="nav pull-right">
+                        <li>
+                            <div class="btn-group">
+                                <span id="qqLoginBtn" style="display:none;"></span> -->
+                                <!-- loginLink 是用來使用 fancybox 開啟登入視窗的元素 -->
+                                <!-- <span id="loginLink" style="display:none;"></span> -->
+                                <!-- needloginLink 是使用 fancybox 來提示用戶需要登入的元素 -->
+                                <!-- <span id="needLoginLink" style="display:none;"></span>
+
+                                <a class="hmenu3 login_signup" href="/login?returnUrl=http%3A%2F%2Fmoviecaker.com%2F">登入<span class="divider_line"></span></a>
+                                <a class="hmenu3 login_signup" href="/login?returnUrl=http%3A%2F%2Fmoviecaker.com%2F">註冊</a>
+                                <a class="hmenu3 language dropdown-toggle" data-toggle="dropdown" href="#">繁<span class="caret" style="margin-left:5px"></span>
+                                </a>
+                                <ul class="dropdown-menu lang_dropdown" style="margin: 20px 0px 0px 0;background-color: #1F1F1F;border-radius: 0px;border-left: 3px solid #71CFEE;">
+                                    <li><a href="/Home/ChangeLang/zh-TW">繁體中文</a></li>
+                                    <li><a href="/Home/ChangeLang/zh-CN">簡體中文</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul> -->
+
+                <!-- 登入header選項 -->
+                    <div class="btn-group">
+                        <ul class="logintop clearfix">
+                            <li class="btn">
+                                <!-- <span id="qqLoginBtn" style="display:none;"></span> -->
+                                <a id="additionalFunction" href="#">
+                                    <span class="icon-myplus icomoon"></span>
+                                    <!-- <i class="fa fa-plus" aria-hidden="true"></i> -->
+                                </a>
+                                <ul id="all-add" class="login_dropdown">
+                                    <li>
+                                        <a href="/otherFunction/writeAReview" class="nav2group" id="nav2review">寫影誌</a>
+                                        <!--<i class="icon-pencil icon-white" style="margin: 2px 2px 0 0;"></i>-->
+                                    </li>
+                                    <li>
+                                        <a href="/topic/create" class="nav2group" id="nav2topic">做專題</a>
+                                        <!--<i class="icon-list-alt icon-white"></i>-->
+                                     </li>
+                                </ul>
+                            </li>
+                            <li class="btn">
+                                <a id="yougotinvited" href="#inlineFriend">
+                                    <span class="icon-users icomoon"></span>
+                                </a>
+                                <div class="ShowFriendBlock login_dropdown" id="parentOfinlineFriend">
+                                    <div id="inlineFriend">
+                                        <ul class="logintop inviting_list" style="width: auto;margin: 0 auto;"></ul>
+                                        沒有新的交友邀請
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="btn">
+                                <a id="yougotmessage" href="#inlineMessage">
+                                    <span class="icon-envelop icomoon"></span>
+                                    <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
+                                </a>
+                                <div class="ShowMessageBlock login_dropdown" id="parentOfinlineMessage">
+                                    <div id="inlineMessage" style="white-space: nowrap;">
+                                        <span id="see-all-message">最近沒有收到新消息
+                                        <br>
+                                        <br>
+                                        <a href="/Message/MessageInBox">查看全部消息</a></span>
+                                    </div>
+                                </div>
+                                <script src="/Scripts/pages/messagebox.min.js"></script> 
+                            </li>
+                            <li class="btn" id="setting">
+                                <a id="userOption" href="#">
+                                    <img class="avatar-photo user-self" src="http://www.moviecaker.com/images/nobody.jpg" onerror="onImgError(this);" />
+                                </a>
+                                <ul id="all-setting" class="login_dropdown pull-left" role="menu">
+                                    <li>
+                                        <a href="profile_self.html" title="bonnie" id="main_user"><i class="fa fa-user" aria-hidden="true"></i>個人頁面</a>
+                                    </li>
+                                    <li>
+                                        <a href="/user/edit?returnUrl=%2F"><i class="fa fa-cog" aria-hidden="true"></i>用戶設定</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Home/ChangeLang/zh-TW" class="aOnSelect">繁體中文</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Home/ChangeLang/zh-CN" class="">簡體中文</a>
+                                    </li>
+                                    <li>
+                                        <a href="/account/logoff"><i class="fa fa-power-off" aria-hidden="true"></i>登出</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li style="display:none;">
+                                <p>online member : <span id="online-member-amount"></span></p>
+                                <p>online user : <span id="online-user-amount"></span></p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div> <!-- end of setting area -->
+            </ul>
+        </div>  <!-- end of container layout-wrap -->
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="js/new_header_jq.js"></script> <!-- header_accompanied jq -->
+
+<!-- HEADER ENDS HERE -->
+
+
+    <div id="website_body" class="container layout-main layout-wrap">
+        <div class="gene-main"></div>
+
+        <header class="user_setting_title">使用者設定</header>
+
+        <form action="/user/edit" class="edit-personal-form form-horizontal" method="post">
+            <input name="__RequestVerificationToken" type="hidden" value="jv8dVsNi5pp9eEJqtoo8PUJ_1FSQXFGFEKfAFFp3gVQRUSVIMFkB6gQjvd2zsFIq5ybrW13l6-TXU9aPNzKCqD6ZzwJkuNnyOHGhe1NNhzymPEmTMlREve3Y1DtwqYBE0" />
+            <input data-val="true" data-val-number="欄位 UserId 必須是數字。" data-val-required="The UserId field is required." id="UserId" name="UserId" type="hidden" value="8" />
+
+            <fieldset>
+                <legend>編輯個人資料</legend>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <label class="control-label">暱稱</label>
+                        <div class="editor-field">
+                            <input class="text-box single-line" data-val="true" data-val-length="暱稱不能超過 16 個字元" data-val-length-max="16" data-val-remote="該暱稱已經被使用" data-val-remote-additionalfields="*.NickName" data-val-remote-url="/Account/CheckNickName" data-val-required="為必填欄位" id="NickName" name="NickName" type="text" value="歡影 " />
+                            <span class="field-validation-valid" data-valmsg-for="NickName" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <label class="control-label">帳號</label>
+                        <div class="editor-field">
+                            <input data-val="true" data-val-remote="該電子信箱已經被使用" data-val-remote-additionalfields="*.EMail" data-val-remote-url="/Account/CheckEmail" data-val-required="The E-mail field is required." id="EMail" name="EMail" readonly="readonly" type="text" value="kelly_chen@moma-tech.com" />
+                            <input id="EMail" name="EMail" type="hidden" value="kelly_chen@moma-tech.com" />
+                            <span class="field-validation-valid" data-valmsg-for="EMail" data-valmsg-replace="true"></span>
+
+                            &nbsp;
+                                <i class="icon-question-sign icomoon icon-white" title="您尚未認證 Email，可能會喪失您的會員優惠資格，請即刻認證。"></i>
+                                <a id="email-confirm" href="/Account/SendEmailConfirmation">重寄認證信</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span6">
+                        <label class="control-label">密碼</label>
+                        <div class="editor-field" style="position: relative;">
+                            <div class="btn-group">
+                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">更改密碼<span class="caret"></span></a>
+                                <iframe class="dropdown-menu" src="/User/ChangePassword?pageType=edit" style="border-top: #579AAD 2px solid; border-radius: 0;"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <label class="control-label">生日</label>
+                        <div class="editor-field">
+                            <div class="editor-field">
+                                <div id="birthdayPicker" style="display: inline;">
+                                    <fieldset class="birthday-picker">
+                                        <select class="birth-year valid" name="birth[year]" aria-invalid="false">
+                                            <option value="0">Year</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option><option value="1949">1949</option><option value="1948">1948</option><option value="1947">1947</option><option value="1946">1946</option><option value="1945">1945</option><option value="1944">1944</option><option value="1943">1943</option><option value="1942">1942</option><option value="1941">1941</option><option value="1940">1940</option><option value="1939">1939</option><option value="1938">1938</option><option value="1937">1937</option><option value="1936">1936</option><option value="1935">1935</option><option value="1934">1934</option><option value="1933">1933</option><option value="1932">1932</option><option value="1931">1931</option><option value="1930">1930</option><option value="1929">1929</option><option value="1928">1928</option><option value="1927">1927</option><option value="1926">1926</option><option value="1925">1925</option><option value="1924">1924</option><option value="1923">1923</option><option value="1922">1922</option><option value="1921">1921</option><option value="1920">1920</option><option value="1919">1919</option><option value="1918">1918</option><option value="1917">1917</option><option value="1916">1916</option><option value="1915">1915</option><option value="1914">1914</option><option value="1913">1913</option><option value="1912">1912</option><option value="1911">1911</option><option value="1910">1910</option><option value="1909">1909</option><option value="1908">1908</option><option value="1907">1907</option><option value="1906">1906</option><option value="1905">1905</option><option value="1904">1904</option><option value="1903">1903</option><option value="1902">1902</option><option value="1901">1901</option><option value="1900">1900</option><option value="1899">1899</option><option value="1898">1898</option><option value="1897">1897</option></select><select class="birth-month" name="birth[month]"><option value="0">Month</option><option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option></select><select class="birth-day" name="birth[day]"><option value="0">Day</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+                                        </select>
+                                        <input type="hidden" name="tempDate" id="tempDate" value="2008-5-3">
+                                    </fieldset>
+                                </div>
+                                <input value="2008/5/3" data-val="true" data-val-date="欄位 BirthDay 必須是日期。" data-val-required="為必填欄位" id="BirthDay" name="BirthDay" type="hidden">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span6">
+                        <label class="control-label">居住地</label>
+                        <div class="editor-field" style="position: relative;">
+                            <span class="field-validation-valid" data-valmsg-for="Location" data-valmsg-replace="true"></span>
+                            <div id="divProvinces" style="display: inline;">
+                                <select name="Provinces" id="Provinces" style="color: black;">
+                                    <option value="">請選擇</option>
+                                    <option value="200">中國大陸</option>
+                                    <option value="400">其他地區</option>
+                                </select>
+                            </div>
+                            <div id="divCities" style="display: inline;">
+                                <select name="Cities" id="Cities" style="color: black;">
+                                    <option selected value="">請選擇</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <label class="control-label">性別</label>
+                        <div class="editor-field">
+                            <span class="field-validation-valid" data-valmsg-for="IsBoy" data-valmsg-replace="true"></span>
+                            男
+                            <input id="IsBoy" name="IsBoy" type="radio" value="True" />
+                            女
+                            <input checked="checked" id="IsBoy" name="IsBoy" type="radio" value="False" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="row-fluid">
+                    <div class="span12">
+                        <div class="editor-label">
+                            頭像
+                        </div>
+                        <div class="editor-field" style="float:left">
+                            <img id="Avatar" class="avatar-photo" src="/Uploads/UserAvatar/user_8.jpg" style="width: 100px; height: 100px;" />
+                        </div>
+
+                        <iframe src="/User/UploadAvatar" id="upload_iframe" style="width:90%;float:right;border: none;"></iframe>
+                    </div>
+                </div> -->
+            </fieldset>
+
+            <fieldset style="margin-top: 205px;">
+                <legend>喜歡電影類型</legend>
+                <h3>世界上電影這樣多, 但是我就是喜歡</h3>
+                <br />
+                <p>請選取三個</p>
+                <ul id="movie_type_list" class="checking_list">
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M01" name="MyMovieTaste" id="M01" />
+                        <label for="M01" class="category_name">動畫</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M03" name="MyMovieTaste" id="M03" />
+                        <label for="M03" class="category_name">喜劇</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M04" name="MyMovieTaste" id="M04" />
+                        <label for="M04" class="category_name">家庭</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M06" name="MyMovieTaste" id="M06" />
+                        <label for="M06" class="category_name">犯罪</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M07" name="MyMovieTaste" id="M07" checked/>
+                        <label for="M07" class="category_name">劇情</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M10" name="MyMovieTaste" id="M10" checked/>
+                        <label for="M10" class="category_name">愛情</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M31" name="MyMovieTaste" id="M31" />
+                        <label for="M31" class="category_name">動作冒險</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M32" name="MyMovieTaste" id="M32" />
+                        <label for="M32" class="category_name">科幻奇幻</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M33" name="MyMovieTaste" id="M33" checked/>
+                        <label for="M33" class="category_name">恐怖驚悚</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M16" name="MyMovieTaste" id="M16" />
+                        <label for="M16" class="category_name">懸疑推理</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M18" name="MyMovieTaste" id="M18" />
+                        <label for="M18" class="category_name">戰爭</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M21" name="MyMovieTaste" id="M21" />
+                        <label for="M21" class="category_name">音樂歌舞</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M26" name="MyMovieTaste" id="M26" />
+                        <label for="M26" class="category_name">西部</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M30" name="MyMovieTaste" id="M30" />
+                        <label for="M30" class="category_name">紀錄</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M12" name="MyMovieTaste" id="M12" />
+                        <label for="M12" class="category_name">傳記</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M13" name="MyMovieTaste" id="M13" />
+                        <label for="M13" class="category_name">歷史</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M14" name="MyMovieTaste" id="M14" />
+                        <label for="M14" class="category_name">運動</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="btn btn-default moviecategories" value="M37" name="MyMovieTaste" id="M37" />
+                        <label for="M37" class="category_name">短片</label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset style="margin-top: 105px;">
+                <legend>同步設置 <small>(授權後，你在MovieCaker的影評、專題等內容將自動同步到第三方網站的動態消息上。你也可以隨時在這裡取消授權。)</small></legend>
+
+                <div class="row-fluid">
+                    <div class="span12 sync-title">
+                        同步到其他網站
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span3">
+                        <label class="sync-label" for="check_fb">同步到facebook :</label>
+                        <input type="checkbox" id="check_fb" value="fb" name="Web3thParty" onclick="return false"  style="cursor:default;display:none;"/>
+                        <a href="#" id="bind_fb">未綁定</a>
+                        <span id="fbuser"></span>
+                        <br />
+                    </div>
+                    <div class="span3">
+                        <label class="sync-label" for="check_wb">同步到新浪微博 :</label>
+                        <input type="checkbox" id="check_wb" value="wb" name="Web3thParty" onclick="return false" checked style="cursor:default;display:none;"/>
+                        <a href="#" id="bind_wb">已綁定</a>
+                        <span id="wbuser"></span>
+                        <br />
+                    </div>
+                    <div class="span6">
+                        <label class="sync-label" for="check_qq">同步到騰訊微博 :</label>
+                        <input type="checkbox" id="check_qq" value="qq" name="Web3thParty" onclick="return false"  style="cursor:default;display:none;"/>
+                        <a href="#" id="bind_qq">未綁定</a>
+                        <span id="qquser"></span>
+                        <br />
+                        <span id="qqLoginBtn" style="display:none;"></span>
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span12 sync-title">
+                        設置自動同步的內容
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span2">
+                        <label class="sync-label" for="auto1">發佈影評 :</label>
+                        <input type="checkbox" id="auto1" value="Review" name="AutoPost" checked /><br />
+                    </div>
+                    <div class="span2">
+                        <label class="sync-label" for="auto2">發佈專題 :</label>
+                        <input type="checkbox" id="auto2" value="Topic" name="AutoPost" checked /><br />
+                    </div>
+                    <div class="span2">
+                        <label class="sync-label" for="auto3">喜歡的影評 :</label>
+                        <input type="checkbox" id="auto3" value="LikedReview" name="AutoPost" checked /><br />
+                    </div>
+                    <div class="span2">
+                        <label class="sync-label" for="auto4">喜歡的專題 :</label>
+                        <input type="checkbox" id="auto4" value="LikedTopic" name="AutoPost" checked /><br />
+                    </div>
+                    <div class="span4">
+                        <label class="sync-label" for="auto4">訂閱電影基因 :</label>
+                        <input type="checkbox" id="auto5" value="Subscription" name="AutoPost"  /><br />
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span12 align-center">
+                        <input type="submit" value="儲存" />
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+        <footer style="margin-bottom: 100px"></footer>
+
+    </div>
+
+    <div class="navbar-fixed-bottom layout-footer">
+        <div class="layout-wrap">
+            <a class="v1" href="###" style="cursor: default;">
+                <img src="/images/down_logo.png" />
+            </a>
+            <a class="v1" id="web_about" href="/Home/About" style="color:#ccc">關於</a>
+            <a id="web_help" href="/Home/Help">協助</a>
+                <a id="feedback" href="/Message/Feedback">問題反饋</a>
+            <a href="###" id="get-app">APP</a>
+            <span>苏ICP备13018111号-1</span>
+        </div>
+    </div>
+
+    <div id="loading_cover">
+        <img src="/Images/loading.gif" />
+    </div>
+    <div id="fb-root"></div>
+    <div class="app-outer">
+        <div class="app-W">
+            <div class="app-close">×</div>
+            <div class="app-Info">
+                <img src="/Images/ilandy_use/app-03.png" alt="" />
+                <a href="https://itunes.apple.com/pg/app/moviecaker/id901773808?mt=8" target="_blank" class="app"></a>
+                <a href="http://suzhou.funmovie.tv/upgrade/android/MovieCaker.apk" target="_blank" class="app-ad"></a>
+            </div>
+        </div>
+    </div>
+    <!--Reference the SignalR library. -->
+    <script src="/Scripts/jquery.signalR-2.0.3.min.js"></script>
+    <!--Reference the autogenerated SignalR hub script. -->
+    <script src="/signalr/hubs"></script>
+    <script src="/Scripts/pages/layout-hub.min.js"></script>
+    <script>
+        layout_init('不隱藏我看過的電影',
+            '隱藏我看過的電影',
+            '出現我看過的電影',
+            '4036480982',
+            '加入會員正在申請中，請等待管理員批准',
+            '歡迎加入 {0} 社團',
+            '申請加入社團',
+            '已經加入',
+            '電影',
+            '社團',
+            '從朋友名單刪除',
+            '確定',
+            '綁定帳號',
+            '測試',
+            '試試',
+            '刪除邀請',
+            '確認',
+            '交友邀請中',
+            '刪除',
+            '加為朋友',
+            '綁',
+            'true',
+            '/',
+            '',
+            '',
+            'edit',
+            'user',
+            '',
+            'moviecaker_offical',
+            '741698679249852',
+            '',
+            'http://www.moviecaker.com',
+            '107303E92911EDF0D4AD4A7EC05E65852EE2EE719DA3B211C427E82603D8E817DC7DFFEAE009B3624E0EBF93E96290013CE7D464F14D4B182D978F16BBA2303EC980F6EB0116826DF55D0ABA77B7A1E38B5649550A4A8C9BF63963FFBD319C123CFD7824A537096611537E1C9467CE01C22CEA80FA5C675C681397C9E426D7F9',
+            '3n3nbg3qofhvadawob5pueri',
+            'moviecaker.com',
+            '處理中...',
+            '你有一個影評尚未完成 ,是否關閉?',
+            '8',
+            '評分失敗!',
+            '影評',
+            '專題',
+            '話題',
+            '確定刪除看過?',
+            '您已看過，可以取消看過選擇想看。',
+            '訊息',
+            '熱門影評',
+            '確認刪除你的的朋友',
+            '加為朋友',
+            '交友邀請中',
+            '台灣',
+            'http://www.funmovie.tv/Content/pictures/files/',
+            'http://www.funmovie.tv/Content/pictures/banners/');
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '741698679249852',
+                channelUrl: '//' + requestUrlHost + '/channel.html',
+                status: true, // check login status
+                cookie: true, // enable cookies to allow the server to access the session
+                xfbml: true
+            });
+            // fb 初始化完畢
+            isFbInitialized = true;
+        };
+        (function (d) {
+            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement('script'); js.id = id; js.async = true;
+            js.src = "/Scripts/fb/all.js";
+            ref.parentNode.insertBefore(js, ref);
+        }(document));
+    </script>
+    <script src="/Scripts/openjs.js#autoboot=no&amp;debug=no"></script>
+
+    
+<script>
+    // #UsingSession#
+    var successMessage = '';
+    if (successMessage) {
+        alert(successMessage);
+    }
+
+    var intervalForCheckingFb; // 使用 setInterval 檢查 FB 初始狀態
+    $(function () {
+        var isBing_fb = 'false' === 'true' ? true : false;
+        var isBing_wb = 'true' === 'true' ? true : false;
+        var isBing_qq = 'false' === 'true' ? true : false;
+        // 顯示已經綁定帳號的暱稱
+        if (isBing_fb) {
+            if (isFbInitialized) { // isFbInitialized 在 JS.cshtml
+                showFbUserName();
+            } else {
+                intervalForCheckingFb = setInterval(checkFbStatus, 1000); // 每一秒檢查 FB 是否初始完成
+            }
+        }
+        if (isBing_wb) {
+            showWbUserName();
+        }
+        if (isBing_qq) {
+
+        }
+        // 綁定 ( 在 socialnetwork.js 設定的全域變數, 因為 QQ的登入登出沒有像FB一樣的回呼功能, 所以得特別設定給QQ來判斷)
+        isBindingWeb3Party = true;
+        // 確定裁切
+        $(document).on('click', '#finish_crop', function () {
+            var x1 = parseInt($('input[name="x1"]').val(), 10);
+            var x2 = parseInt($('input[name="x2"]').val(), 10);
+            var y1 = parseInt($('input[name="y1"]').val(), 10);
+            var y2 = parseInt($('input[name="y2"]').val(), 10);
+            var width = parseInt($('input[name="width"]').val(), 10);
+            var height = parseInt($('input[name="height"]').val(), 10);
+            console.log(x1); console.log(x2); console.log(y1); console.log(y2); console.log(width); console.log(height);
+            if (x1 === 0 && x2 === 0 && y1 === 0 && y2 === 0) {
+                alert('請選擇裁剪區域');
+                return false;
+            }
+            $.post('/File/CropUserAvatar', { id: '8', x1: x1, x2: x2, y1: y1, y2: y2, width: width, height: height }, function () {
+
+            });
+            return false;
+        });
+
+        // 更改密碼
+        $('#change_pw').click(function () {
+            return false;
+        });
+        // facebook 綁定 , 初始設定在 Js.html, 在 _Layout.cshtml 引用
+        $('#bind_fb').click(function () {
+            var $this = $(this);
+            var $checkBox = $('#check_fb');
+            if (!$checkBox.is(":checked")) {
+                FB.login(function (response) {
+                    //console.log(response);
+                    if (response.authResponse) {
+                        console.log('Welcome!  Fetching your information.... ');
+                        fbAccessToken = response.authResponse.accessToken;
+                        FB.api('/me', function (response) {
+                            console.log('Good to see you, ' + response.name + '.');
+                            // 更新資料庫資料
+                            $.get('/User/UpdateWeb3thParty/fb?isBinding=True');
+                            $checkBox.prop('checked', true);
+                            $this.text('已綁定');
+                            $('#fbuser').text(response.name);
+                        });
+                    } else {
+                        console.log('User cancelled login or did not fully authorize.');
+                    }
+                }, { scope: 'email,user_likes,user_photos,read_stream,publish_actions' });
+            } else {
+                if (FB.getAccessToken() !== null) {
+                    FB.logout(function (response) {
+                        // user is now logged out
+                        $checkBox.prop('checked', false);
+                        $this.text('未綁定');
+                        $('#fbuser').text('');
+                    });
+                } else {
+                    $checkBox.prop('checked', false);
+                    $this.text('未綁定');
+                }
+                $.get('/User/UpdateWeb3thParty/fb?isBinding=False');
+
+            }
+            return false;
+        });
+        // 新浪 sina 綁定
+        $('#bind_wb').click(function () {
+            var $this = $(this);
+            var $checkBox = $('#check_wb');
+            if ($checkBox.is(":checked")) {
+                // 移除綁定
+                WB2.logout(function () {
+                    //callback function
+                    $checkBox.prop('checked', false);
+                    $this.text('未綁定');
+                    $.get('/User/UpdateWeb3thParty/wb?isBinding=False');
+                    console.log('微博退出成功');
+                    $('#wbuser').text('');
+                });
+            } else {
+                // 綁定
+                WB2.login(function () {
+                    $checkBox.prop('checked', true);
+                    $this.text('已綁定');
+                    $.get('/User/UpdateWeb3thParty/wb?isBinding=True');
+                    console.log('微博登录认证成功');
+                    // 取得用戶訊息
+                    showWbUserName();
+                });
+            }
+            return false;
+        });
+        // QQ騰訊 綁定
+        $(document).on('click', '#bind_qq', function () {
+            var $this = $(this);
+            var $checkBox = $('#check_qq');
+            if ($checkBox.is(":checked")) {
+                // 移除綁定
+                QC.Login.signOut(); // qq 登出
+
+            } else {
+                // 綁定
+                QC.Login.showPopup(); // qq 登入
+            }
+            return false;
+        });
+        // 生日
+        
+        var birthday = '2008/5/3';
+        $("div#birthdayPicker").birthdaypicker({
+            dateFormat: 'bigEndian',
+            fieldName: 'tempDate', // 這個功能會自動產生一個 hidden 欄位, 預設命名為 birthday, 如果要改名的話則 fieldName 要給值
+            fieldId: 'tempDate',
+            defaultDate: birthday
+        });
+        // 將 birthdaypicker 選到數值塞到生日的隱藏欄位, 讓 MVC 的 validator 判斷
+        $(document).on('change', '.birth-year, .birth-month, .birth-day', function () {
+            var $year = $('.birth-year'),
+                $month = $('.birth-month'),
+                $day = $('.birth-day'),
+                year = $year.val(),
+                month = $month.val(),
+                day = $day.val(),
+                dateFormated;
+            if (year !== '0' && month !== '0' && day !== '0') {
+                dateFormated = year + '/' + month + '/' + day;
+                $('#tempDate').val(dateFormated);
+                $('#BirthDay').val(dateFormated);
+            } else {
+                $('#tempDate').val();
+                $('#BirthDay').val('');
+            }
+        });
+        // 地區
+        var provinces = '400', city = '100',
+            GetCity = function (p, c) {
+                $('#divCities').load("/Home/GetCityList" + "?p=" + p + "&dc=" + (new Date).getTime(), function () {
+                    $("#Location").val(c);
+                    $('#Cities').val(c);
+                });
+            };
+
+        $('#Provinces').val(provinces);
+        if (provinces != "" && provinces.length > 0) {
+            GetCity(provinces, city);
+        }
+        $('#Provinces').on('change', function () {
+            var $this = $(this),
+                p = $this.val();
+            GetCity(p, city);
+        });
+
+        $('#Cities').live('change', function () {
+            var $this = $(this),
+                p = $this.val();
+            $("#Location").val(p);
+        });
+        // 喜歡的電影類型
+        $('.moviecategories').click(function () {
+            var $this = $(this);
+            if ($('.moviecategories:checked').length > 3) {
+                alert('請勿超過三個喜歡的電影類型');
+                $this.prop('checked', false);
+            }
+        });
+
+        //檢查若是同步設定來的網頁要focus到同步設置的地方
+        if (location.hash == '#syn') {
+            $('html, body').scrollTop(999);
+        }
+        // 暱稱
+        $('#NickName').keyup(function () {
+            var $this = $(this),
+                maxLength = 16, // 設定字數
+                str = $this.val(),
+                c = str.match(/[^ -~]/g), //計算有幾個全型字、中文字...
+                stringLength = str.length + (c ? c.length : 0);
+            if (stringLength > maxLength) {
+                alert('暱稱最多 8 個中文字或 16 個英文字');
+                $this.val(str.substring(0, str.length - 1)); // 截掉超過字數的文字
+            }
+        });
+        // 重寄 Email 認證信
+        $('#email-confirm').click(function () {
+            var $this = $(this);
+            if ($this.is("[disabled]")) {
+                event.preventDefault();
+            }
+            $this.attr("disabled", "disabled");
+            $.get($this.attr('href')).success(function (data) {
+                if (data) {
+                    alert('認證信已寄出');
+                } else {
+                    alert('此信箱已認證完成');
+                }
+                $($this).removeAttr("disabled");
+            });
+            return false;
+        });
+    }); // end of jQuery
+    function showFbUserName() {
+        FB.api('/me', function (response) { // https://developers.facebook.com/docs/graph-api/reference/user/
+            // console.log(response);
+            if (response && !response.error) {
+                console.log('hello fb user : ' + response.name); $('#fbuser').text(response.name);
+            }
+        });
+    }
+    function checkFbStatus() {
+        if (isFbInitialized) { // 初始化完成
+            if (FB.getAccessToken() !== null) { // token 取得完成
+                clearInterval(intervalForCheckingFb);
+                showFbUserName();
+            }
+
+        }
+    }
+    function showWbUserName() {
+        WB2.anyWhere(function (W) {
+            // 根据用户ID获取用户信息
+            W.parseCMD("/users/show.json", function (sResult, bStatus) {
+                if (bStatus == true) {
+                    console.log('hello wb user : ' + sResult.name);
+                    $('#wbuser').text(sResult.name);
+                }
+            }, {
+                uid: WB2.oauthData.uid
+            }, {
+                method: 'get'
+            });
+        });
+    }
+</script>
+
+     
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-68883772-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+/*
+css 荀靊�
+絎ｅ����綺��
+1. Positioning
+2. Box Model
+3. Typographic
+4. Visual
+
+ */
+.carousel-warp {
+    position: relative;
+    z-index: 1;
+    min-width: 1192px;
+    margin-top: 80px;
+}
+
+.carousel-header {
+    position: relative;
+    overflow: hidden;
+    zoom: 1;
+    /* height: 406px; */
+    height: 500px;
+    padding-top: 84px;
+}
+[class="carousel-header"] .active{
+    z-index: 3 !important;
+    opacity: 1 !important;
+}
+
+.carousel-header-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    height: 500px;
+    width: 100%;
+    min-width: 1190px;
+    margin-left: 0;
+}
+
+.carousel-header-bg > li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 500px;
+    background: url() repeat-x center 0;
+    background-repeat: repeat;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.carousel-header-content {
+    position: relative;
+    z-index: 2;
+    width: 1170px;
+    padding: 11px 11px 0;
+    margin: 0 auto;
+    background: url(http://moviecaker.com/Images/ilandy_use/banner/index_shadow.png) no-repeat 0 0;   
+}
+
+.carousel-header-list {
+    position: relative;
+    display: block;
+    zoom: 1;
+    z-index: 2;
+    width: 1170px;
+    height: 360px;
+    margin-top: 0px;
+}
+.carousel-header-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 1170px;
+    margin-left: 0px;
+    transition: opacity .3s;
+    opacity: 0;
+}
+    .carousel-header-item h2 {
+        display: none;
+    }
+    .carousel-header-item img {
+        width: 1170px;
+        height: 360px;
+        opacity: 0;
+    }
+
+.carousel-ctrl {
+    position: absolute;
+    overflow: hidden;
+    z-index: 6;
+    top: 165px;
+    width: 49px;
+    height: 104px;
+    opacity: .5;
+}
+
+.carousel-ctrl:hover {
+    opacity: 1;
+}
+
+#carousel-prev {
+    left: 0;
+}
+
+#carousel-next {
+    right: 0;
+}
+
+.carousel-ctrl > i {
+    display: block;
+    width: 49px;
+    height: 104px;  
+    background: url(http://static1.mtime.cn/channel/20160405102639/images/allicon24.png) no-repeat 0 -290px;
+}
+
+#carousel-next > i {
+    background-position: -49px -290px;
+}
+.carousel-header-count {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    z-index: 9;
+    list-style: none;
+}
+.carousel-header-count li {
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    width: 12px;
+    height: 12px;
+    margin-right: 12px;
+    font-size: 0;
+    line-height: 0;
+    background-color: #fff;
+    cursor: pointer;
+    border: 1px solid #333;
+    border-radius: 12px;
+    opacity: .6;
+    
+}
+.carousel-header-count li.active,
+.carousel-header-count li:hover {
+    opacity: .9;
+}
+.carousel-bottom {
+    position: relative;
+    z-index: 9;
+    width: 1170px;
+    height: 70px;
+    margin: -18px auto 0;
+    padding: 11px;
+    background: url(http://moviecaker.com/Images/ilandy_use/banner/index_shadow.png) no-repeat 0 -50px;
+    
+}
+.layout-main {
+    position: relative;
+    z-index: 9;
+    margin-top: -35px;
+    padding: 30px 11px 0 11px;
+    background: url(http://moviecaker.com/Images/ilandy_use/banner/index_shadow.png) no-repeat 0 -310px ;
+}
+.info {
+    margin-left: 15px;
+    width: 885px;
+}
+#aside_info {
+    width: 240px;
+    margin-right: 15px;
+}

@@ -1,0 +1,150 @@
+/* ---------- 大小與定位 ---------- */
+.movie-menu {
+    z-index: 1;
+    position: relative;
+}
+
+    .movie-menu ul {
+        /* 取消ul樣式符號 */
+        list-style-type: none;
+        /* 重設ul邊界與留白為零 */
+        margin: 0;
+        padding: 0;
+        /* 內有浮動元件時，需設overflow才會自動調整大小 */
+        overflow: auto;
+    }
+
+
+        .movie-menu ul li {
+            /* 利用float讓第一層li水平排列 */
+            float: left;
+        }
+
+            .movie-menu ul li a {
+                /* 將a改為區塊元件，以便指定寬高 */
+                display: block;
+                /* 這邊也要設float，否則IE6會以100%寬度顯示 */
+                float: left;
+                /* 固定高度 */
+                height: 30px;
+                width: 100px;
+                text-align: center;
+            }
+
+            .movie-menu ul li ul {
+                /* 讓第二層ul跳脫文件流以利定位 */
+                position: absolute;
+                /* 固定寬度 */
+                width: 100px;
+                /* 避免出現捲軸 */
+                overflow: visible;
+                /* 讓ul與母階層li相同位置 */
+                clear: left;
+                margin: 30px 0 0 0;
+            }
+                .movie-menu ul li:nth-child(n+8) ul {
+                    margin-top: -180px;
+                }
+
+                .movie-menu ul li ul li {
+                    /* 覆寫繼承自第一層的浮動設定 */
+                    float: none;
+                    text-align: center;
+                    height: 100%;
+                    display: inline-block;
+                    width: 100%;
+                }
+
+                    .movie-menu ul li ul li a {
+                        /* 覆寫繼承自第一層的浮動設定 */
+                        float: none;
+                        width: 100%; /* 註：display、height、padding繼承第一層的設定 */
+                    }
+
+                    .movie-menu ul li ul li ul {
+                        margin: -30px 0 0 100px;
+                        width: 100%;
+                    }
+
+                        .movie-menu ul li ul li ul li {
+                            /* width、float繼承第二層，免設定 */
+                        }
+
+                            .movie-menu ul li ul li ul li a {
+                                /* width、float繼承第二層，免設定 */
+                            }
+            /* ---------- 隱藏與顯示階層 ---------- */
+            .movie-menu ul li ul {
+                /* 預先隱藏第二層 */
+                visibility: hidden;
+            }
+
+            .movie-menu ul li:hover ul {
+                /* 觸動第一層時，顯示第二層 */
+                visibility: visible;
+            }
+
+                .movie-menu ul li:hover ul li ul {
+                    /* 顯示第二層時，隱藏第三層，避免同時彈出 */
+                    visibility: hidden;
+                }
+
+            .movie-menu ul li ul li:hover ul {
+                /* 觸動第二層時，顯示第三層 */
+                visibility: visible;
+            }
+
+                .movie-menu ul li ul li:hover ul li ul {
+                    /* 顯示第三層時，隱藏第四層，避免同時彈出 */
+                    visibility: hidden;
+                }
+
+            .movie-menu ul li ul li ul li:hover ul {
+                /* 觸動第三層時，顯示第四層 */
+                visibility: visible;
+            }
+/* ---------- 美化 ---------- */
+
+/* 預設字體 */
+.movie-menu {
+    font-size: 12px;
+    font-family: Microsoft JhengHei,Arial, Helvetica, sans-serif;
+}
+    /* 第一層ul背景色彩與邊框 */
+    .movie-menu ul {
+        /*background: #6f6f6f;*/
+    }
+        /* 第一層a字型 */
+        .movie-menu ul li a {
+            color: #697D93;
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 30px;
+        }
+        /*第二層ul背景色彩與邊框  */
+        .movie-menu ul li ul {
+            background: #1E1E1E;
+            box-shadow: 0 2px 2px rgb(44, 44, 44);
+            /*background: rgba(30, 30, 30, 0.95);*/
+        }
+            /* 第二層a字型 */
+            .movie-menu ul li ul li a {
+                color: #697D93;
+                text-decoration: none;
+                font-size: 13px;
+            }
+        /* 觸動第一層li時，改變背景色 */
+        .movie-menu ul li:hover, #movie-menu ul li a:hover {
+            background: #3A3A3A;
+        }
+
+            .movie-menu ul li:hover > a {
+                color: #fff;
+            }
+        /* 觸動第二層以上li時改變背景色 */
+        .movie-menu ul li ul li:hover, #movie-menu ul li ul li a:hover {
+            background: #3A3A3A;
+            height: 100%;
+            display: inline-block;
+            width: 100%;
+        }s

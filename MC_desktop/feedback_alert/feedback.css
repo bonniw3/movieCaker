@@ -1,0 +1,242 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-family: 微軟正黑體,sans-serif;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.problem_form {
+	position: absolute;
+	top: -5px;
+	left: 200px;
+	width: 281px;
+	background-color: rgba(34, 34, 34, 0.97);
+	border: 1px solid #445566;
+	border-left: 3px solid #71CFEE;
+	box-shadow: 0 0 2px 0 #4a4a4a;
+	box-sizing: border-box;
+	padding: 15px 25px 20px 25px;
+	z-index: 999;
+	text-align: left;
+	display: none;
+}
+
+.problem_form .fa-caret-left {
+	position: absolute;
+	font-size: 22px;
+	left: -10px;
+	top: 20px;
+	color: #71CFEE;
+}
+
+.problem_form form {
+	margin: 0;
+}
+
+.problem_form input[type=checkbox], .problem_form label {
+	cursor: pointer;
+	text-align: left;
+}
+
+.problem_form label {
+	color: rgba(238, 238, 238, 0.8);
+	font-size: 14px;
+	font-weight: 100;
+	margin-left: 10px;
+	letter-spacing: 1px;
+	line-height: 25px;
+	text-align: left;
+	display: inline;
+}
+
+.problem_form label:hover {
+	color: rgba(113, 207, 238, 0.8);
+}
+
+.problem_form input[type=checkbox]:checked + label {
+	color: rgba(113, 207, 238, 1);
+}
+
+.problem_form textarea {
+	max-width: 195px;
+	width: 195px;
+	height: 50px;
+	margin: 5px 0 0 27px;
+	background-color: transparent;
+	border: 1px solid rgba(238, 238, 238, 0.8);
+	box-sizing: border-box;
+	padding: 5px 7px;
+	color: rgba(238, 238, 238, 0.5);
+	font-size: 13px;
+	font-weight: 100;
+	border-radius: 0;
+    resize: none;
+}
+
+.problem_form textarea:focus {
+	outline: none;
+	border: 1px solid rgba(113, 207, 238, 1);
+}
+
+.problem_form button.cancel, .problem_form button.send {
+	display: inline-block;
+	margin-top: 10px;
+	padding: 4px 30px 4px 35px;
+	font-size: 14px;
+	letter-spacing: 5px;
+	text-align: center;
+	font-weight: 100;
+	cursor: pointer;
+}
+
+.problem_form button.cancel {
+	border: 1px solid rgba(153, 170, 187, 1.0);
+	background-color: transparent;
+	color: rgba(153, 170, 187, 1.0);
+}
+
+.problem_form button.send {
+	margin-left: 10px;
+	border: 1px solid rgba(113, 207, 238, 0.7);
+	background-color: rgba(113, 207, 238, 0.7);
+	color: #000000;
+}
+
+.problem_form button.send:hover {
+	background-color: rgba(59, 112, 129, 0.7);
+	color: #ddd;
+}
+
+.problem_form button.cancel:hover {
+	border: 1px solid rgba(113, 207, 238, 1);
+	color: rgba(113, 207, 238, 1);
+}
+
+.problem_form button:focus {
+	outline: none;
+}
+
+
+/* ------------------------------------------------------- */
+
+.all-broadcast {
+	padding: 0;
+	width: 215px;
+	margin-left: 4px;
+	text-align: center;
+	position: relative;
+	cursor: default;
+}
+
+div.display {
+	display: block;
+}
+
+.all-broadcast p {
+	margin: 0;
+	vertical-align: top;
+	box-sizing: border-box;
+	padding: 13px 0;
+	cursor: pointer;
+}
+
+.all-broadcast p i {
+	padding-right: 10px;
+	font-size: 20px;
+	vertical-align: bottom;
+}
+
+.other-broadcast {
+	width: 215px;
+	left: -1px;
+	text-align: left;
+	margin-top: 0;
+	box-sizing: border-box;
+	padding: 0 13px;
+	display: none;
+}
+
+
+li.other-broadcast-item {
+	padding: 0;
+	position: relative;
+	box-sizing: border-box;
+	padding: 13px 0px;
+	border-top: 1px solid rgba(153, 170, 187, 0.2);
+}
+
+li.other-broadcast-item:first-child {
+	border-top: none;
+}
+
+.other-broadcast-link {
+	float: left;
+	padding: 0;
+	height: 25px;
+	margin-top: 1px;
+	width: 80px;
+	overflow: hidden;
+}
+
+.other-broadcast-link img{
+	width: 100%;
+}
+
+section#left {
+	text-align: left;
+}
+
+li.other-broadcast-item button.btn_option {
+	display: inline-block;
+	float: right;
+	cursor: pointer;
+}
+
+li.other-broadcast-item button.play {
+	border: 1px solid #B8E986;
+	background-color: transparent;
+	margin-left: 5px;
+	padding: 3px 10px;
+	color: #B8E986;
+}
+
+li.other-broadcast-item button.play:hover {
+	background-color: #B8E986;
+	color: #000000;
+}
+
+li.other-broadcast-item button.feedback {
+	border: 1px solid rgba(113, 207, 238, 0.7);
+	background-color: transparent;
+	color: rgba(113, 207, 238, 0.7);
+	margin-left: 5px;
+	padding: 3px 5px;
+}
+
+li.other-broadcast-item button.feedback:hover {
+	background-color: rgba(113, 207, 238, 0.8);
+	color: #000;
+}
+
+li.other-broadcast-item button.active {
+	background-color: rgba(113, 207, 238, 0.7);
+	color: #000;
+}
+.all-broadcast .other-broadcast{
+	display: initial;
+	left: -40000px;
+}
+
+.all-broadcast:hover .other-broadcast{
+	display: initial !important;
+}
+
+
+
+
+
+
