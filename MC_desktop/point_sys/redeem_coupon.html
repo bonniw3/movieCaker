@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head prefix="">
+    <meta charset="utf-8" />
+    <link href="http://moviecaker.com/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <title>電影蛋糕 - 積分中心</title>
+    <meta name="description" />
+    <meta name="keywords" />
+
+    <!-- for Facebook -->
+    <meta property="fb:app_id" content="741698679249852" />
+    <meta property="og:site_name" content="Moviecaker" />
+    <meta property="og:url" content="http://moviecaker.com/user/edit?returnUrl=%2F" />
+    <meta property="og:title" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" />
+    <meta property="og:image" />
+    
+    <!-- 360 6.X 以上可识别 -->
+    <meta name="renderer" content="webkit">
+    <meta property="wb:webmaster" content="60e21d9e85ef425a" /><!-- 微博驗證 -->
+    <meta property="qc:admins" content="246360627615313526375" /><!-- QQ 驗證 -->
+    <link href="http://moviecaker.com/Bundles/css?v=1n0qTWYyxiR48OSWfp1-KzjVqQUz32uIJn9vV6ENGK41" rel="stylesheet"/>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <!-- 加這行 CSS -->
+    <link rel="stylesheet" href="css/point_sys_desktop.css">
+
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=4036480982" type="text/javascript" charset="utf-8"></script><!-- 引用新浪微博 JSSDK 文件 -->
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101219875" data-redirecturi="http://www.moviecaker.com" charset="utf-8"></script>
+    <script src="http://moviecaker.com/bundles/jquery?v=dFR3amEsYDF5Wg1JOQaGmjaQUqayJV6iyceqDLbnxsw1"></script>
+    <script src="http://moviecaker.com/bundles/js?v=IDd36S4ZmPQgDiQhSEc1Z1Y6EZ0mn2tJ1mHo6h1HWIk1"></script>
+    <script type = 'text/javascript' >
+        var appInsights=window.appInsights||function(config)
+        {
+            function r(config){ t[config] = function(){ var i = arguments; t.queue.push(function(){ t[config].apply(t, i)})} }
+            var t = { config:config},u=document,e=window,o='script',s=u.createElement(o),i,f;for(s.src=config.url||'//az416426.vo.msecnd.net/scripts/a/ai.0.js',u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=['Event','Exception','Metric','PageView','Trace','Ajax'];i.length;)r('track'+i.pop());return r('setAuthenticatedUserContext'),r('clearAuthenticatedUserContext'),config.disableExceptionTracking||(i='onerror',r('_'+i),f=e[i],e[i]=function(config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o),s}),t
+        }({
+            instrumentationKey:'53295a54-8e36-4b59-8c2e-f9dee36cbbc6'
+        });
+        
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+</head>
+<body>
+    <div id="other-function-sheet" class="other-function" data-videoid="" style="display: none;">
+        <div class="rateit bigstars" data-rateit-starwidth="25" data-rateit-starheight="25" style="cursor: pointer;"></div>
+        <a class="sub-other-function gotoVideo" href="#" target="_blank">到电影页面</a>
+        <a class="sub-other-function addReviews" href="#">写影志</a>
+        <a class="sub-other-function addLabel" href="#">加入标签</a>
+        <a class="sub-other-function addToTopic" href="#">加入专题</a>
+    </div>
+
+    <!-- 全部 HEADER 開始 -->
+    
+    <div class="header navbar navbar-fixed-top layout-header">
+        <!-- HEADER 上半部 (search, settings)-->
+        <div class="container layout-wrap">
+            <h1 class="logo"><a href="http://moviecaker.com/">MovieCaker</a></h1>
+
+            <!-- SETTINGS -->
+            <div class="setting-area">
+                <link href="http://moviecaker.com/Content/pages/user-login.partial.min.css" rel="stylesheet" />
+                <div class="btn-group myplus">
+                    <span id="qqLoginBtn" style="display:none;"></span>
+                    <a class="btn" data-toggle="dropdown" href="#" style="background:#D87C7C">
+                        <span class="icon-myplus icomoon"></span>
+                    </a>
+                    <ul id="all-add" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="text-align: left;">
+                        <li>
+                            <a href="http://moviecaker.com/otherFunction/writeAReview" class="nav2group" id="nav2review">
+                            <!--<i class="icon-pencil icon-white" style="margin: 2px 2px 0 0;"></i>-->写影志</a>
+                        </li>
+                        <li>
+                            <a href="http://moviecaker.com/topic/create" class="nav2group" id="nav2topic">
+                                <!--<i class="icon-list-alt icon-white"></i>-->
+                                做专题</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <ul class="logintop" style="list-style: none outside none;">
+                        <li class="my-photo btn" style="padding:0px;border:initial">
+                            <a href="http://moviecaker.com/user/10" title="ian" id="main_user">
+                                <img class="avatar-photo user-self" src="http://www.moviecaker.com/uploads/userAvatar/user_10.jpg?width=50&amp;height=50&amp;stretch=fill" onerror="onImgError(this);" />
+                            </a>
+                        </li>
+                        <li class="btn">
+                            <link href="http://moviecaker.com/Content/pages/yougotfriendinviting.min.css" rel="stylesheet" />
+                            <a id="yougotinvited" href="#inlineFriend" style="text-decoration: none;background: #ADCB80">
+                                <span class="icon-users icomoon"></span>
+                            </a>
+                            <div style="display: none;" class="ShowFriendBlock" id="parentOfinlineFriend">
+                                <div id="inlineFriend" style="white-space: nowrap;">
+                                    <ul class="logintop inviting_list" style="width: auto;margin: 0 auto;"></ul>
+                                    没有新的交友邀请
+                                </div>
+                            </div>
+                        </li>
+                        <li class="btn">
+                            <link href="http://moviecaker.com/Content/pages/messagebox.min.css" rel="stylesheet" />
+                            <a id="yougotmessage" href="#inlineMessage" style="text-decoration: none;background: #DAC04E">
+                                <span class="icon-envelop icomoon"></span>
+                            </a>
+                            <div style="display: none;" class="ShowMessageBlock" id="parentOfinlineMessage">
+                                <div id="inlineMessage" style="white-space: nowrap;">
+                                    <span id="see-all-message">最近沒有收到新消息<br /><a href="http://moviecaker.com/Message/MessageInBox">查看全部消息</a></span>
+                                </div>
+                            </div>
+                            <script src="http://moviecaker.com/Scripts/pages/messagebox.min.js"></script>
+                        </li>
+                        <li class="btn" id="setting">
+                            <div class="btn-group">
+                                <a data-toggle="dropdown" href="#">
+                                    <span class="icon-cog icomoon"></span>
+                                </a>
+                                <ul id="all-setting" class="dropdown-menu pull-left" role="menu" aria-labelledby="dropdownMenu" style="text-align: left;width: 110px;">
+                                    <li style="margin-top: 0px;"><a href="http://moviecaker.com/user/edit?returnUrl=%2Fuser%2Fedit"><i class="icon-pencil  icon-white"></i>使用者设定</a></li>
+                                    
+                                    <li style="margin-top: 0px;">
+                                        <a href="http://moviecaker.com/Home/ChangeLang/zh-TW" class="">繁体中文</a>
+                                    </li>
+                                    <li style="margin-top: 0px;">
+                                        <a href="http://moviecaker.com/Home/ChangeLang/zh-CN" class="aOnSelect">简体中文</a>
+                                    </li>
+                                    <li class="divider" style="margin-top: -1px;"></li>
+                                        <li style="margin-top: 0px;"><a href="http://moviecaker.com/admin-moma"><i class="icon-lock  icon-white"></i>後台管理</a></li>
+                                    <li style="margin-top: 0px;"><a href="http://moviecaker.com/account/logoff"><i class="icon-off  icon-white"></i>登出</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li style="display:none;">
+                            <p>online member : <span id="online-member-amount"></span></p>
+                            <p>online user : <span id="online-user-amount"></span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SEARCH AREA -->
+            <link href="http://moviecaker.com/Content/pages/multiple-search.min.css" rel="stylesheet" />
+            <script src="http://moviecaker.com/Scripts/pages/multiple-search.min.js"></script>
+            <div id="mutiple_search_block" style="width:431px">
+                <input type="text" id="search_text" name="search_text" value="" placeholder="电影,影人,专题,朋友..." style="position:absolute;left:0;margin:0" />
+                <div class="styled-select" style="height:33px;position:absolute;right:33px">
+                    <select id="searchType" name="searchType">
+                        <option selected="selected" value="All">全部</option>
+                        <option value="Movie">电影</option>
+                        <option value="Actor">影人</option>
+                        <option value="Topic">专题</option>
+                        <option value="User">朋友</option>
+                    </select>
+                </div>
+                <input type="image" src="http://moviecaker.com/Images/search-1.png" id="search_submit" style="height: 18px;margin-bottom: 9px;margin-left: -3px;padding: 4px;width: 18px;position:absolute;top:0;right:0;margin:0" />
+            </div>
+        </div>
+
+        <!-- HEADER 下半部 (menu navbar)-->
+        <div class="nav2-container">
+            <div class="layout-wrap" style="vertical-align: super;">
+                <nav id="main-menu">
+                    <ul>
+                        <li><a href="http://moviecaker.com/" style="">首页</a></li>
+                        <li>
+                            <a href="http://moviecaker.com/video?sort=Hot1M">电影</a>
+                            <ul>
+                                <li><a href="http://moviecaker.com/video?sort=Hot1M">热门电影</a></li>
+                                <li><a href="http://moviecaker.com/video?sort=Global">全球新片</a></li>
+                                <li><a href="http://moviecaker.com/video?sort=Award">金奖电影</a></li>
+                                <li><a href="http://moviecaker.com/video?sort=MyFriend&amp;order=Sign">朋友在看</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="http://moviecaker.com/topic?sort=Hot">专题</a>
+                            <ul>
+                                <li><a href="http://moviecaker.com/topic?sort=All">全部</a></li>
+                                <li><a href="http://moviecaker.com/topic?sort=Hot">热门</a></li>
+                                <li><a href="http://moviecaker.com/topic?sort=New">最新</a></li>
+                                <li><a href="http://moviecaker.com/topic?sort=MyFriend">朋友专题</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="http://moviecaker.com/explore/video">发现</a>
+                            <ul>
+                                <li><a href="http://moviecaker.com/explore/video">找电影</a></li>
+                                <li><a href="http://moviecaker.com/explore">找影友</a></li>
+                                <li><a href="http://moviecaker.com/explore/master">找達人</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div> 
+    
+    <!-- 全部 HEADER 結束 -->
+
+<!-- 從這裡開始 - 網站 BODY -->
+    <div id="website_body" class="container layout-main layout-wrap">
+        <div class="gene-main"></div>
+
+        <h2 class="title maT5x">積分中心</h2>
+        <div class="current_points maT1x">
+            <span>目前積分<i class="fa fa-product-hunt maL1x" aria-hidden="true"></i><span class="text-pink fz-m maLHalfX">1000</span> 點</span>
+        </div>
+
+        <div class="tab_menu baseBar maT3x">
+            <ul class="clearfix">
+                <li class=""><a href="#">贈送積分</a></li>
+                <li class=""><a href="#">兌換商品</a></li>
+                <li class="active"><a href="#">兌換代金卷</a></li>
+                <li class=""><a href="">我的代金卷</a></li>
+            </ul>
+        </div>
+
+        <section class="clearfix maB4x">
+            <div class="coupon left">
+                <div class="used-label">已使用</div>
+                <div class="coupon-content group-wrap" style="background-image: url('img/coupon_base.png')">
+                    <div class="coupon-side pull-left">
+                        <img src="img/mc_logo_text.png" alt="">
+                    </div>
+                    <div class="coupon-text-base pull-left">
+                        <span class="exchange-date"><span>2017-08-18</span> 兌換</span>
+                        <p class="coupon-title fontW-bold">觀影代金卷</p>
+                        <p class="coupon-description">不限時段 <span>•</span> 一同觀影</p>
+                        <!-- span 裡面的值 要跟上面 input 的 value 同步 -->
+                        <p class="maT3x maL1x fontW-light exchange-amt text-olive fz-15">RMB <span class="exchangeRmb maRHalfX text-pink coupon-fz maL1x fontW-normal">0</span> 元</p>
+                    </div>
+                    <div class="coupon-right-img pull-right">
+                        <img src="img/movie_projector.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="exchange-text left maL5x maT5x">
+                <!-- input 裡的直要跟 上面還有下面的 span 同步 -->
+                <p>本次想要兌換積分</p>
+                <p><input id="user-points-enter" type="tel"/> 點</p>
+                <!-- span 裡面的值 要跟上面 input 的 value 同步 -->
+                <p class="maT4x fontW-light">=&nbsp;&nbsp;&nbsp;RMB <span class="exchangeRmb text-pink fz-lg maLHalfX maRHalfX fontW-normal">0</span> 元</p>
+            </div>
+        </section>
+        <button class="btn btn-cancel">取消</button>
+        <button class="btn btn-confirm maL1x">確定兌換</button>
+        
+
+        <footer style="margin-bottom: 100px"></footer>
+    </div>
+
+    <div class="navbar-fixed-bottom layout-footer">
+        <div class="layout-wrap">
+            <a class="v1" href="###" style="cursor: default;">
+                <img src="http://moviecaker.com/images/down_logo.png" />
+            </a>
+            <a class="v1" id="web_about" href="http://moviecaker.com/Home/About" style="color:#ccc">关于</a>
+            <a id="web_help" href="http://moviecaker.com/Home/Help">协助</a>
+                <a id="feedback" href="http://moviecaker.com/Message/Feedback">问题反馈</a>
+            <a href="###" id="get-app">APP</a>
+            <span>苏ICP备13018111号-1</span>
+        </div>
+    </div>
+    <div id="loading_cover">
+        <img src="http://moviecaker.com/Images/loading.gif" />
+    </div>
+    <div id="fb-root"></div>
+    <div class="app-outer">
+        <div class="app-W">
+            <div class="app-close">×</div>
+            <div class="app-Info">
+                <img src="http://moviecaker.com/Images/ilandy_use/app-03.png" alt="" />
+                <a href="https://itunes.apple.com/pg/app/moviecaker/id901773808?mt=8" target="_blank" class="app"></a>
+                <a href="http://suzhou.funmovie.tv/upgrade/android/MovieCaker.apk" target="_blank" class="app-ad"></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        // 同步 input 裡輸入的積分點數顯示在代金卷上
+        $("#user-points-enter").keyup(function() {
+            var val = $(this).val();
+            $(".exchangeRmb").text(val);
+        });
+    
+    </script>
+
+</body>
+</html>

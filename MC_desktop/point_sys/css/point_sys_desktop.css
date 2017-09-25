@@ -1,0 +1,384 @@
+
+/* ------------- TITLE/POINTS CSS ------------- */
+.title {
+    text-align: center;
+    color: #71cfee;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+.current_points {
+    text-align: center;
+    vertical-align: middle;
+    letter-spacing: 1px;
+}
+.current_points i {
+    color: #579AAD;
+}
+
+
+/* -------------- TAB MENU CSS --------------- */
+.baseBar {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    background-color: #131313;
+    margin-bottom: 3%;
+}
+
+.tab_menu > ul {
+    margin: 0;
+}
+
+.tab_menu li {
+    float: left;
+    width: 25%;
+    height: 60px;
+	box-sizing: border-box;
+    padding: 20px 0;
+    text-align: center;
+	font-size: 1em;
+	transition: 0.5s;
+}
+.tab_menu li a {
+    transition: 0.5s;
+    color: rgba(238,238,238,.8);
+    letter-spacing: 1px;
+}
+
+.tab_menu li:hover {
+    cursor: pointer;
+    background-color: #1F1F1F;
+}
+.tab_menu li:hover a {
+    text-decoration: none;
+    color: #71CFEE;
+}
+
+.tab_menu li.active {
+	border-bottom: 3px solid #71CFEE;
+    color: #71CFEE;
+    background-color: #1F1F1F;
+}
+.tab_menu li.active a {
+    color: #71CFEE;
+}
+
+
+/* -------------- COUPON CSS --------------- */
+.coupon {
+    position: relative;
+    width: 40%;
+    margin-left: 8%;
+}
+.coupon:first-child {
+    margin-top: 0;
+}
+
+.coupon.coupon-used .coupon-content {
+    opacity: .5;
+}
+.coupon-content {
+    position: relative;
+    background-position: 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 275px;
+}
+
+.coupon-base {
+    width: 100%;
+}
+.coupon-base img {
+    width: 102%;
+    margin-left: -3%;
+}
+
+.coupon-side {
+    width: 25%;
+    height: auto;
+    position: relative;
+    line-height: 275px;
+    left: -3%;
+}
+
+.coupon-side img {
+    width: 200%;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+}
+
+.coupon-right-img {
+    width: 24%;
+    margin: 5% 12% 0 0;
+    position: absolute;
+    right: 0;
+}
+.coupon-right-img img {
+    width: 100%;
+}
+
+.coupon-text-base {
+    position: relative;
+    top: 10%;
+    left: -2%;
+}
+
+.coupon-title {
+    color: #62766D;
+    font-size: 1.8em;
+    letter-spacing: 1.5px;
+    margin-top: 55px;
+}
+.coupon-description {
+    color: rgba(235,235,235,1);
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    margin: 15px 0 0 30px;
+    width: 100%;
+}
+.coupon-description span {
+    color: #87A095;
+}
+
+.exchange-date {
+    color: rgba(235,235,235,.9);
+    font-size: .9em;
+    visibility: hidden;
+}
+.exchange-date.showDate {
+    visibility: visible;
+}
+
+.exchange-amt.text-olive {
+    color: #6B8076;
+}
+
+.exchangeRmb.text-pink {
+    color: #C25F63;
+}
+.exchangeRmb.coupon-fz {
+    font-size: 2.5em;
+}
+
+.used-label {
+    position: absolute;
+    top: 10%;
+    right: 25%;
+    padding: 1.5% 3%;
+    border-radius: 3px;
+    color: #ffffff;
+    font-weight: bold;
+    border: 2px solid #E9A1A1;
+    background-color: rgba(216,124,124,.9);
+    z-index: 5;
+    display: none;
+}
+
+
+/* -------------- EXCHANGE-TEXT CSS --------------- */
+.exchange-text {
+    text-align: left; 
+    width: 40%;
+    letter-spacing: 1px;
+}
+.exchange-text > p {
+    color: rgba(235,235,235,.8);
+    letter-spacing: 1px;
+    /* margin: 0; */
+}
+
+.exchange-text p:nth-child(2) input {
+    -webkit-appearance: none;
+    width: 60%;
+    font-size: 1.25em;
+    box-sizing: border-box;
+    padding: 20px 15px;
+    margin: 10px 5px 0 0;
+    letter-spacing: 1px;
+    color: rgba(113,207,238,1);
+    background-color: transparent;
+    border-radius: 0;
+    border: 1px solid rgba(113,207,238,1);
+    transition: border-color .5s ease-in-out,
+                background-color .5s ease-in-out,
+                color .5s ease-in-out;
+                
+}
+
+.exchange-text p:first-child input:focus {
+    -webkit-appearance: none;
+    outline: none;
+    color: rgba(238,238,238,1);
+    background-color: rgba(113,207,238,.3);
+    border: 1px solid rgba(113,207,238,1);
+    transition: border-color .5s ease-in-out,
+                background-color .5s ease-in-out,
+                color .5s ease-in-out;
+}
+
+
+/* ---------------- BTN CSS------------------ */
+.btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-shadow: none;
+    font-size: 1em;
+    letter-spacing: 1px;
+    box-shadow: none;
+    margin: auto;
+}
+.btn-cancel {
+    border: 2px solid #71cfee;
+    background: transparent;
+    color: #71cfee;
+    transition: 0.3s;
+}
+.btn-cancel:hover {
+    background-color: rgba(113,207,238,.3);
+    text-shadow: none;
+    transition: 0.3s;
+}
+
+.btn-confirm {
+    background: #579AAD;
+    border: 2px solid #579AAD;
+    color: #ffffff;
+    transition: 0.3s;
+}
+.btn-confirm:hover {
+    background: rgba(87,154,173,.3);
+    text-shadow: none;
+    transition: 0.3s;
+}
+
+
+
+
+/* -------------- COMMON CSS ---------------- */
+
+.maTHalfX {
+    margin-top: 5px;
+}
+.maT1x {
+    margin-top: 10px;
+}
+.maT2x {
+    margin-top: 20px;
+}
+.maT3x {
+    margin-top: 30px;
+}
+.maT4x {
+    margin-top: 40px;
+}
+.maT5x {
+    margin-top: 50px;
+}
+
+.maBHalfX {
+    margin-bottom: 5px;
+}
+.maB1x {
+    margin-bottom: 10px;
+}
+.maB2x {
+    margin-bottom: 20px;
+}
+.maB3x {
+    margin-bottom: 30px;
+}
+.maB4x {
+    margin-bottom: 40px;
+}
+.maB5x {
+    margin-bottom: 50px;
+}
+
+.maLHalfX {
+    margin-left: 5px;
+}
+.maL1x {
+    margin-left: 10px;
+}
+.maL2x {
+    margin-left: 20px;
+}
+.maL3x {
+    margin-left: 30px;
+}
+.maL4x {
+    margin-left: 40px;
+}
+.maL5x {
+    margin-left: 50px;
+}
+
+.maRHalfX {
+    margin-right: 5px;
+}
+.maR1x {
+    margin-right: 10px;
+}
+.maR2x {
+    margin-right: 20px;
+}
+.maR3x {
+    margin-right: 30px;
+}
+.maR4x {
+    margin-right: 40px;
+}
+.maR5x {
+    margin-right: 50px;
+}
+
+
+.text-main-blue {
+    color: #71cfee;
+}
+.text-pink {
+    color: #D87C7C;
+}
+.text-white {
+    color: #ffffff;
+}
+.text-light-white {
+    color: rgba(238,238,238,.8);
+}
+
+
+.fz-xs { 
+	font-size: .75em !important; /*12px*/
+}
+.fz-13 {
+	font-size: 0.85em !important; /*13px*/
+}
+.fz-s {
+	font-size: .9em !important; /*14px*/
+}
+.fz-15 {
+	font-size: .95em !important; /*15px*/
+}
+.fz-normal {
+  	font-size: 1em !important; /*16px*/
+}
+.fz-subtitle {
+	font-size: 1.125em !important; /*18px*/
+}
+.fz-m {
+  	font-size: 1.25em !important; /*20px*/
+}
+.fz-25 {
+	font-size: 1.5em !important; /*24px*/
+}
+.fz-lg {
+	font-size: 1.875em !important; /*30px*/
+}
+
+.taC {
+    text-align: center;
+}
