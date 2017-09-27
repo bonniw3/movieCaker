@@ -23,7 +23,6 @@
     height: 60px;
     position: relative;
     background-color: #131313;
-    margin-bottom: 3%;
 }
 
 .tab_menu > ul {
@@ -34,8 +33,8 @@
     float: left;
     width: 25%;
     height: 60px;
+    line-height: 60px;
 	box-sizing: border-box;
-    padding: 20px 0;
     text-align: center;
 	font-size: 1em;
 	transition: 0.5s;
@@ -44,6 +43,9 @@
     transition: 0.5s;
     color: rgba(238,238,238,.8);
     letter-spacing: 1px;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .tab_menu li:hover {
@@ -68,11 +70,7 @@
 /* -------------- COUPON CSS --------------- */
 .coupon {
     position: relative;
-    width: 40%;
-    margin-left: 8%;
-}
-.coupon:first-child {
-    margin-top: 0;
+    width: 30%;
 }
 
 .coupon.coupon-used .coupon-content {
@@ -83,7 +81,7 @@
     background-position: 0;
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 275px;
+    height: 200px;
 }
 
 .coupon-base {
@@ -98,7 +96,7 @@
     width: 25%;
     height: auto;
     position: relative;
-    line-height: 275px;
+    line-height: 200px;
     left: -3%;
 }
 
@@ -106,13 +104,14 @@
     width: 200%;
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
 }
 
 .coupon-right-img {
     width: 24%;
-    margin: 5% 12% 0 0;
+    margin: 4% 10% 0 0;
     position: absolute;
     right: 0;
 }
@@ -122,21 +121,21 @@
 
 .coupon-text-base {
     position: relative;
-    top: 10%;
+    top: 9%;
     left: -2%;
 }
 
 .coupon-title {
     color: #62766D;
-    font-size: 1.8em;
+    font-size: 1.6em;
     letter-spacing: 1.5px;
-    margin-top: 55px;
+    margin-top: 32px;
 }
 .coupon-description {
     color: rgba(235,235,235,1);
-    font-size: 1.1em;
+    font-size: .95em;
     letter-spacing: 1px;
-    margin: 15px 0 0 30px;
+    margin: 15px 0 0 20px;
     width: 100%;
 }
 .coupon-description span {
@@ -145,7 +144,7 @@
 
 .exchange-date {
     color: rgba(235,235,235,.9);
-    font-size: .9em;
+    font-size: .8em;
     visibility: hidden;
 }
 .exchange-date.showDate {
@@ -160,21 +159,41 @@
     color: #C25F63;
 }
 .exchangeRmb.coupon-fz {
-    font-size: 2.5em;
+    font-size: 2.2em;
 }
 
 .used-label {
     position: absolute;
     top: 10%;
-    right: 25%;
+    right: 7%;
     padding: 1.5% 3%;
     border-radius: 3px;
     color: #ffffff;
     font-weight: bold;
     border: 2px solid #E9A1A1;
     background-color: rgba(216,124,124,.9);
-    z-index: 5;
+    z-index: 2;
     display: none;
+}
+
+.coupon.coupon-used .used-label{
+    display: block;
+}
+
+.coupon-scale-lg {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    margin: 2% 5% 2.5% 15%;
+}
+
+.coupon:not(.coupon-scale-lg):nth-child(3n+2) {
+    margin-left: 8%;
+}
+.coupon:not(.coupon-scale-lg) {
+    margin: 10px 5px 0 0;
 }
 
 
@@ -187,7 +206,6 @@
 .exchange-text > p {
     color: rgba(235,235,235,.8);
     letter-spacing: 1px;
-    /* margin: 0; */
 }
 
 .exchange-text p:nth-child(2) input {
@@ -219,19 +237,136 @@
                 color .5s ease-in-out;
 }
 
+/* -------------- EMPTY COUPON LIST CSS --------------- */
+.empty {
+    display: none;
+}
+.empty.isEmpty {
+    display: block;
+}
+.empty .img-wrapper {
+    width: 240px;
+    margin: 4% auto 0% auto;
+}
 
-/* ---------------- BTN CSS------------------ */
-.btn {
+
+/* ---------------- MASK/MODAL CSS ------------------ */
+.modal-mask {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(12,12,12,.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 20;
+    margin: 0vh 0 0 -9.5vw;
+    display: none;
+}
+.modal-mask.showReconfirm, .modal-mask.showError {
+    display: block;
+}
+.modal-mask.showReconfirm .modal-reconfirm {
+    display: block;
+}
+.modal-mask.showError .modal-error {
+    display: block;
+}
+
+.point-modal {
+    width: 320px;
+    border-top: 2px solid #71cfee;
+    background: rgba(53,53,53,.95);
+    box-sizing: border-box;
+    padding: 30px 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0 0px 5px 5px;
+    box-shadow: 0px 2px 4px 1px rgba(0,0,0,.5);
+    display: none;
+}
+
+/* ---------------- SIDE NAV CSS ------------------ */
+.side-nav-wrap {
+    position: relative;
+}
+.side-nav-wrap:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 1.5%;
+    width: 1px;
+    height: 250px;
+    background: #71cfee;
+}
+
+.vertical-side-nav {
+    width: 8%;
+    position: absolute;
+    left: -3%;
+    top: 75px;
+    margin: 0;
+    z-index: 2;
+    background: #0c0c0c;
+    padding: 10px 0;
+}
+.vertical-side-nav li {
+    margin: 25px 0;
+    text-align: center;
+    color: #9B9B9B;
+    font-size: 1em;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+.vertical-side-nav li:hover {
+    color: #71cfee;
+}
+.vertical-side-nav li i, .vertical-side-nav li:hover i {
+    color: #0c0c0c;
+}
+
+.vertical-side-nav li.active {
+    color: #71cfee;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transition: .3s ease-in-out;
+}
+.vertical-side-nav li.active i {
+    color: #71cfee;
+}
+
+
+/* ---------------- TAB-CONTENT-WRAP CSS ------------------ */
+.tab-content-wrap {
+    margin-bottom: 10%;
+    display: none;
+}
+.tab-content-wrap.active {
+    display: block;
+}
+
+
+/* ---------------- BTN CSS ------------------ */
+.button {
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px 0;
     text-align: center;
     text-shadow: none;
     font-size: 1em;
     letter-spacing: 1px;
     box-shadow: none;
-    margin: auto;
+    margin: 0 auto;
+    cursor: pointer;
 }
 .btn-cancel {
+    width: 48%;
     border: 2px solid #71cfee;
     background: transparent;
     color: #71cfee;
@@ -243,23 +378,36 @@
     transition: 0.3s;
 }
 
-.btn-confirm {
+.btn-confirm.short {
+    display: block;
+    width: 150px;
+}
+a.short:hover {
+    text-decoration: none;
+}
+
+.btn-confirm, .btn-ok {
+    width: 48%;
     background: #579AAD;
     border: 2px solid #579AAD;
     color: #ffffff;
     transition: 0.3s;
 }
-.btn-confirm:hover {
+.btn-ok {
+    width: 100% !important;
+}
+.btn-confirm:hover, .btn-ok:hover {
     background: rgba(87,154,173,.3);
     text-shadow: none;
     transition: 0.3s;
 }
 
 
-
-
 /* -------------- COMMON CSS ---------------- */
 
+.marLRAuto {
+    margin: 0 auto;
+}
 .maTHalfX {
     margin-top: 5px;
 }
@@ -316,6 +464,12 @@
 .maL5x {
     margin-left: 50px;
 }
+.maL4p {
+    margin-left: 4%;
+}
+.maL8p {
+    margin-left: 8%;
+}
 
 .maRHalfX {
     margin-right: 5px;
@@ -334,6 +488,10 @@
 }
 .maR5x {
     margin-right: 50px;
+}
+
+.padL2x {
+    padding-left: 20px;
 }
 
 
@@ -381,4 +539,32 @@
 
 .taC {
     text-align: center;
+}
+.taL {
+    text-align: left;
+}
+.taR {
+    text-align: right;
+}
+
+.width-30p {
+    width: 30%;
+}
+.width-50p {
+    width: 50%;
+}
+.width-80p {
+    width: 80%;
+}
+
+.letter-spacing-1x {
+    letter-spacing: 1px;
+}
+
+.lh-normal {
+    line-height: 24px;
+}
+
+.pos-rel {
+    position: relative;
 }

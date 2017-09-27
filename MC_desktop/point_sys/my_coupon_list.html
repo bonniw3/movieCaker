@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <link href="http://moviecaker.com/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     
-    <title>電影蛋糕 - 兌換代金卷</title>
+    <title>電影蛋糕 - 我的代金卷</title>
     <meta name="description" />
     <meta name="keywords" />
 
@@ -214,70 +214,87 @@
             <span>目前積分<i class="fa fa-product-hunt maL1x" aria-hidden="true"></i><span class="text-pink fz-m maLHalfX">1000</span> 點</span>
         </div>
 
-        <div class="tab_menu baseBar maT3x maB5x">
+        <div class="tab_menu baseBar maT3x maB2x">
             <ul class="clearfix">
                 <li class=""><a href="#">贈送積分</a></li>
                 <li class=""><a href="#">兌換商品</a></li>
-                <li class="active"><a href="redeem_coupon.html">兌換代金卷</a></li>
-                <li class=""><a href="my_coupon_list.html">我的代金卷</a></li>
+                <li class=""><a href="redeem_coupon.html">兌換代金卷</a></li>
+                <li class="active"><a href="my_coupon_list.html">我的代金卷</a></li>
             </ul>
         </div>
 
-        <section class="clearfix maB5x">
-            <div class="coupon left coupon-scale-lg">
-                <div class="used-label">已使用</div>
-                <div class="coupon-content group-wrap" style="background-image: url('img/coupon_base.png')">
-                    <div class="coupon-side pull-left">
-                        <img src="img/mc_logo_text.png" alt="">
+        <nav class="side-nav-wrap">
+            <ul class="vertical-side-nav">
+                <li class="active"><i class="fa fa-caret-right" aria-hidden="true"></i> 未使用</li>
+                <li class=""><i class="fa fa-caret-right" aria-hidden="true"></i> 已使用</li>
+            </ul>
+        </nav>
+        <article>
+            <section class="tab-content-wrap clearfix active">
+                <!-- div add class "isEmpty" 會出現空狀態 (如果目前都沒有兌換的代金卷，顯示空狀態) -->
+                <div class="empty isEmpty">
+                    <div class="img-wrapper">
+                        <img src="img/ripped_ticket.png" alt="">
                     </div>
-                    <div class="coupon-text-base pull-left">
-                        <span class="exchange-date"><span>2017-08-18</span> 兌換</span>
-                        <p class="coupon-title fontW-bold">觀影代金卷</p>
-                        <p class="coupon-description">不限時段 <span>•</span> 一同觀影</p>
-                        <!-- span 裡面的值 要跟上面 input 的 value 同步 -->
-                        <p class="maT2x maL1x fontW-light exchange-amt text-olive fz-15">RMB <span class="exchangeRmb maRHalfX text-pink coupon-fz maL1x fontW-normal">0</span> 元</p>
-                    </div>
-                    <div class="coupon-right-img pull-right">
-                        <img src="img/movie_projector.png" alt="">
-                    </div>
+                    <p class="text-white80p taC fontW-bold maT3x maB5x letter-spacing-1x padL2x">您目前還沒有代金卷可以使用喔，快去兌換吧！</p>
+                    <!-- a 要連到”兌換代金卷“頁面 -->
+                    <a href="redeem_coupon.html" class="button btn-confirm short" type="submit">立即去兌換</a>
                 </div>
-            </div>
-            <div class="exchange-text left maL3x maT5x">
-                <!-- input 裡的直要跟 上面還有下面的 span 同步 -->
-                <p>本次想要兌換積分</p>
-                <p><input id="user-points-enter" type="tel"/> 點</p>
-                <!-- span 裡面的值 要跟上面 input 的 value 同步 -->
-                <p class="maT4x fontW-light">=&nbsp;&nbsp;&nbsp;RMB <span class="exchangeRmb text-pink fz-lg maLHalfX maRHalfX fontW-normal">0</span> 元</p>
-            </div>
-        </section>
-        <!-- <button class="btn btn-cancel">取消</button> -->
-        <div id="open-modal" class="button btn-confirm short">確定兌換</div>
 
-        <!-- 如果積分夠兌換，下面 .modal-mask 要 add class "showReconfirm" 出現 “再次確定兌換” 的彈跳視窗 -->
-        <!-- 如果積分不足兌換，下面 .modal-mask 要 add class "showError" 出現 “積分不足” 的彈跳視窗 -->
-        <div class="modal-mask">
-            <div class="point-modal modal-reconfirm">
-                <div class="img-wrapper width-50p marLRAuto">
-                    <img src="img/exchange.png" alt="">
+                <!-- 這邊開始 repeat 未使用過的代金卷 -->
+                <div class="coupon left">
+                    <div class="used-label">已使用</div>
+                    <div class="coupon-content group-wrap" style="background-image: url('img/coupon_base.png')">
+                        <div class="coupon-side pull-left">
+                            <img src="img/mc_logo_text.png" alt="">
+                        </div>
+                        <div class="coupon-text-base pull-left">
+                            <!-- 下面 span add class "showDate" 出現兌換日期（兌換完成後的代金卷都要顯示兌換日期）-->
+                            <span class="exchange-date showDate"><span>2017-08-18</span> 兌換</span>
+                            <p class="coupon-title fontW-bold">觀影代金卷</p>
+                            <p class="coupon-description">不限時段 <span>•</span> 一同觀影</p>
+                            <!-- span 裡面的值 要跟上面 input 的 value 同步 -->
+                            <p class="maT2x maL1x fontW-light exchange-amt text-olive fz-15">RMB <span class="exchangeRmb maRHalfX text-pink coupon-fz maL1x fontW-normal">0</span> 元</p>
+                        </div>
+                        <div class="coupon-right-img pull-right">
+                            <img src="img/movie_projector.png" alt="">
+                        </div>
+                    </div>
                 </div>
-                <!-- 下面 span 要顯示上面 input 裡的積分點數 -->
-                <p class="maT2x taC text-light-white letter-spacing-1x">確定兌換積分 <span class="text-pink">300</span> 點？</p>
-                <div class="clearfix maT3x">
-                    <!-- 按取消會關閉彈跳視窗 -->
-                    <button id="cancel-modal" class="button btn-cancel left">取消</button>
-                    <button class="button btn-confirm right" type="submit">確定兌換</button>
+            </section>
+            <section class="tab-content-wrap clearfix">
+                <!-- div add class "isEmpty" 會出現空狀態 (如果目前都沒有兌換的代金卷，顯示空狀態) -->
+                <div class="empty">
+                    <div class="img-wrapper">
+                        <img src="img/ripped_ticket.png" alt="">
+                    </div>
+                    <p class="text-white80p taC fontW-bold maT3x maB5x letter-spacing-1x padL2x">您目前還沒有使用過任何代金卷喔，快去使用一張吧！</p>
                 </div>
-            </div>
-            <div class="point-modal modal-error">
-                <div class="img-wrapper width-30p marLRAuto">
-                    <img src="img/error_alert.png" alt="">
+
+                <!-- 這邊開始 repeat 已使用過的代金卷 -->
+                <!-- .coupon add class "coupon-used" 會出現“已使用過”的代金卷樣式 -->
+                <div class="coupon coupon-used left">
+                    <div class="used-label">已使用</div>
+                    <div class="coupon-content group-wrap" style="background-image: url('img/coupon_base.png')">
+                        <div class="coupon-side pull-left">
+                            <img src="img/mc_logo_text.png" alt="">
+                        </div>
+                        <div class="coupon-text-base pull-left">
+                            <!-- 下面 span add class "showDate" 出現兌換日期（兌換完成後的代金卷都要顯示兌換日期）-->
+                            <span class="exchange-date showDate"><span>2017-08-18</span> 兌換</span>
+                            <p class="coupon-title fontW-bold">觀影代金卷</p>
+                            <p class="coupon-description">不限時段 <span>•</span> 一同觀影</p>
+                            <!-- span 裡面的值 要跟上面 input 的 value 同步 -->
+                            <p class="maT2x maL1x fontW-light exchange-amt text-olive fz-15">RMB <span class="exchangeRmb maRHalfX text-pink coupon-fz maL1x fontW-normal">0</span> 元</p>
+                        </div>
+                        <div class="coupon-right-img pull-right">
+                            <img src="img/movie_projector.png" alt="">
+                        </div>
+                    </div>
                 </div>
-                <p class="maT2x taC text-light-white letter-spacing-1x width-80p marLRAuto lh-normal">您目前的積分還不夠兌換此商品。</p>
-                <!-- 按了解會關閉彈跳視窗 -->
-                <button id="close-modal" class="button btn-ok maT3x">了解</button>
-            </div>
-        </div>
-    </div>
+            </section>
+        </article>
+    </div> <!-- end of 網站 BODY -->
 
     <div class="navbar-fixed-bottom layout-footer">
         <div class="layout-wrap">
@@ -312,28 +329,14 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script>
-        // 同步 input 裡輸入的積分點數顯示在代金卷上
-        $("#user-points-enter").keyup(function() {
-            var val = $(this).val();
-            $(".exchangeRmb").text(val);
-        });
-
-        // 開啟彈跳視窗
-        $('#open-modal').on('click', function(){
-            var mask = $('.modal-mask');
-            mask.addClass('showReconfirm');
-        });
-
-        // 關閉彈跳視窗
-        $('#cancel-modal').on('click', function(){
-            var mask = $('.modal-mask');
-            mask.removeClass('showReconfirm');
-        });
-        $('#close-modal').on('click', function(){
-            var mask = $('.modal-mask');
-            mask.removeClass('showError');
-        });
     
+        // 點擊旁邊 vertical side nav 會 add class
+        $('.vertical-side-nav li').on('click', function(){
+            var curIndex = $(this).index();
+            $(this).addClass('active').siblings().removeClass('active');
+            $(this).parents('nav').siblings('article').children('section').eq(curIndex).addClass('active').siblings().removeClass('active');
+        });
+
     </script>
 
 </body>
