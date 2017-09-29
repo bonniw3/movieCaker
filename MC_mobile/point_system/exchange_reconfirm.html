@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>電影蛋糕 - 兌換代金卷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="由于哥哥乔（凯勒·钱德勒）过世，看门人李·钱德勒（凯西·阿弗莱克）成为他16岁的侄子帕特里克（卢卡斯·赫奇斯）的法定监护人，李的生活从此发生彻底的改变，他不得不回到家乡的小城市（曼彻斯特），面对与前妻..." />
+    <link rel="canonical" href="http://test.moviecaker.com/video/M00000000158105">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="../entire_css/common.css" rel="stylesheet" />
+     <link href="css/point_system.css" rel="stylesheet" /> 
+    <link href="../entire_css/min-search.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!--<div ng-hide="main.appReady">
+        <div class="loader">Loading...</div>
+    </div>-->
+    <div ng-show="main.appReady">
+        <!-- search area -->
+        <div class="search-area group-wrap">
+            <form> 
+                <button class="btn-close group-wrap" type="reset">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </button>
+                <div class="search-keyword ui">
+                    <i class="fa fa-search fa-lg pull-left" aria-hidden="true"></i>
+                    <input id="search-input" class="pull-left" type="search" name="" value="" placeholder="尋找電影..." ng-model="main.searchText" ng-bind="main.searchText" multi-search/>
+                </div>
+            </form>
+            <div id="search-autocomplete"></div>
+            <a href="#" class="more pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>更多搜尋結果</a>
+        </div>
+
+        <!-- header -->
+        <div class="header" ng-class="{ blur: main.screenStatus() }">
+            <ul class="group-wrap header-items" ng-show="!main.isSearchMode">
+                <li class="pull-left">
+                    <a href="/mobile">
+                        <i class="fa fa-bars padTBHalfX" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li id="user-icon" class="pull-right">
+                     <a href="/login" ng-click="main.MenuLogin()">
+                        <div class="login-icon padTBHalfX maLHalfx">
+                            <img src="img/login_icon.png"alt="">
+                        </div>
+                    </a> 
+                    <!-- 登入後顯示 -->
+                    <a href="#" style="display:none;">
+                        <div class="circle-mask circle1x">
+                            <img src="img/default_avatar.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li id="search-icon" class="pull-right maR1x">
+                    <i class="fa fa-search padTBHalfX" aria-hidden="true"></i>
+                </li>
+                <li id="logo-text">
+                    <a href="/mobile"><img src="img/mc_logo_text.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- content -->
+        <div ng-class="{ blur: main.screenStatus() }">
+            <div ng-controller="">
+                <!-- fixed background -->
+                <!-- 只有 “院線熱映，朋友在看，電影專題，電影影評，想看清單，積分頁面” 要 add class "listPages" -->
+                <div class="bkgd-img listsPages">
+                    <img src="img/lists_bkgd.png" alt="">
+                </div>
+
+                <!-- main content -->
+                <!-- 只有 “院線熱映，朋友在看，電影專題，電影影評，想看清單，積分頁面” 要 add class "listPages" -->
+                <div class="content-wrap listsPages">
+                    <section class="rel-pos">
+                        <div class="section-title fz-subtitle text-blue">兌換代金卷</div>
+                        <div class="points">
+                            <p class="points-icon">p</p>
+                            <p class="maLHalfx text-white fz-normal"><span class="text-light-pink fz-m maRHalfx">120</span>點</p>
+                        </div>
+                        <article class="maT2x">
+                            <section class="maT2x">
+                                <p class="taC fz-normal text-white80p maB1x letter-space-1x">是否確定要兌換以下積分點數？</p>
+                                <div class="coupon">
+                                    <div class="used-label">已使用</div>
+                                    <div class="coupon-content group-wrap" style="background-image: url('img/coupon_base.png')">
+                                        <div class="coupon-side pull-left">
+                                            <img src="img/mc_logo_text.png" alt="">
+                                        </div>
+                                        <div class="coupon-text-base pull-left">
+                                            <span class="exchange-date"><span>2017-08-18</span> 兌換</span>
+                                            <p class="coupon-title fontW-bold">觀影代金卷</p>
+                                            <p class="coupon-description">不限時段 <span>•</span> 一同觀影</p>
+                                            <!-- span 裡面的值 要跟上面 input 的 value 同步 -->
+                                            <p class="maT15 maL1x fontW-light exchange-amt text-olive fz-15">RMB <span class="exchangeRmb text-pink coupon-fz maL1x maRHalfx fontW-normal">0</span> 元</p>
+                                        </div>
+                                        <div class="coupon-right-img pull-right">
+                                            <img src="img/movie_projector.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="taC fz-s text-light-pink letter-space-1x "> *兌換成現金後，將不可換回原本積分點數。</p>
+
+                                <button class="btn-confirm fz-subtitle maT3x" type="submit">確定兌換</button>
+                                <a href="#" class="disp-block taC maT2x text-color text-white80p">取消</a>
+                                <a href="my_coupon.html" class="disp-block taR maT3x maB3x text-color text-white80p">我的代金卷<i class="fa fa-angle-right padL1x" aria-hidden="true"></i></a>
+                            </section> 
+                        </article>
+                    </section>
+                </div>
+            </div> <!--end of ng controller -->
+
+            <!-- 如果點數不夠，選擇電影海報，就會出現 alert -->
+            <!-- add class "showAlert" 出現 alert -->
+            <div class="points-alert">
+                <div class="alert-content">
+                    <p><i class="fa fa-exclamation-circle padRHalfX" aria-hidden="true"></i>您目前的積分還不夠兌換此商品。</p>
+                    <div class="btn-ok maT2x">了解</div>
+                </div>
+            </div>
+
+            <div class="top circle40">
+                <i class="fa fa-angle-up" aria-hidden="true"></i>
+            </div> 
+        </div> <!--end of ng class -->
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- 週票房榜需要 owl.carousel.min.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+
+<script defer src='http://test.moviecaker.com/scripts/angular/angular.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/cssPreload/cssPreload.factory.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/cssPreload/cssPreload.directive.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/ngTouch/ng-touch.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/sortable/ng-sortable.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/infiniteScroll/ng-infinite-scroll.min.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/app.mobile.module.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/services/filter.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/services/service.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/multi-search.directive.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/topic-video-search.directive.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/star-rating.directive.js'></script>
+<script defer src='http://test.moviecaker.com/scripts/angular/components/all.directive.js'></script>
+
+<script defer src="http://test.moviecaker.com/scripts/angular/controllers/mobile/layout.ctrl.js?v=20161209"></script>
+<script defer src="http://test.moviecaker.com/Scripts/angular/controllers/mobile/video-intro.ctrl.js"></script>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script>
+    wx.config({
+        debug: false, 
+        appId: 'wx3069e676ab7765a2', 
+        timestamp: '1497234030', 
+        nonceStr: 'C4B31CE7D95C75CA70D50C19AEF08BF1', 
+        signature: '1c078c6e4b2efdf1cdba40fde2498118b5ec634b', 
+        jsApiList: [
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+        ] 
+    });
+
+    wx.error(function (res) {
+        console.log(res);
+        console.log('验证失败');
+    });
+</script>
+
+<script>
+    wx.ready(function () {
+        wx.onMenuShareTimeline({
+            title: '《海邊的曼徹斯特》電影來自 MovieCaker', // 分享标题
+            link: 'http://test.moviecaker.com/mobile/video/M00000000158105', // 分享链接
+            imgUrl: 'http://121.41.34.59/Content/pictures/files/M1660937_posters.jpg?width=300', // 分享图标
+            //success: function () {
+            //    // 用户确认分享后执行的回调函数
+            //},
+            //cancel: function () {
+            //    // 用户取消分享后执行的回调函数
+            //}
+        });
+
+        wx.onMenuShareAppMessage({
+            title: '《海邊的曼徹斯特》電影來自 MovieCaker', // 分享标题
+            desc: '由于哥哥乔（凯勒&#183;钱德勒）过世，看门人李&#183;钱德勒（凯西&#183;阿弗莱克）成为他16岁的侄子帕特里克（卢卡斯&#183;赫奇斯）的法定监护人，李的生活从此发生彻底的改变，他不得不回到家乡的小城市（曼彻斯特），面对与前妻Randi（米歇尔&#183;威廉姆斯）之间的痛苦问题。', // 分享描述
+            link: 'http://test.moviecaker.com/mobile/video/M00000000158105', // 分享链接
+            imgUrl: 'http://121.41.34.59/Content/pictures/files/M1660937_posters.jpg?width=300', // 分享图标
+            type: '', 
+            dataUrl: '', 
+            //success: function () {
+            //    // 用户确认分享后执行的回调函数
+            //},
+            //cancel: function () {
+            //    // 用户取消分享后执行的回调函数
+            //}
+        });
+    });
+</script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-68883772-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script>
+    $(document).ready(function(){
+        // 測試搜尋樣式，不是真的搜尋功能
+        $( function() {
+            var availableTags = [
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)","醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)"
+            ];
+            $( "#search-input" ).autocomplete({
+                source: availableTags,
+                appendTo: "#search-autocomplete",
+                open: function(){
+                    $('.more').addClass("searching"); // 有搜尋結果再出現”更多搜尋“按鈕
+                },
+                close: function(){
+                    $('.more').removeClass("searching"); // 沒有搜尋結果不出現”更多搜尋“按鈕
+                }
+            });
+        });
+
+        // 首頁點擊搜尋的動態效果
+        $('#search-icon').on("click", function(){
+            window.scrollBy(0, 1); // 讓鍵盤出現時頁面不會被推上去
+            $('.search-area').addClass("searching");
+            $('.btn-close').addClass("searching");
+            $('.search-keyword').addClass("searching");
+        });
+        // 點擊叉按鈕關閉搜尋
+        $('.btn-close').on("click", function(){
+            $('.search-area').removeClass("searching");
+            $('.btn-close').removeClass("searching");
+            $('.search-keyword').removeClass("searching");
+        });
+
+        // 點擊線上看按鈕會出現下拉選單
+        $('.btn-playMovie').on('click',function(){
+            if ($('.play-movie-selection').hasClass('show')) {
+                $('.play-movie-selection').removeClass('show');
+            } else {
+                $('.play-movie-selection').addClass('show');
+            }
+        });
+
+        // 滑動畫面 會出現黑色底
+        $(window).scroll(function() {
+            var windowpos = $(window).scrollTop();
+            var header = $('.header');
+            var content = $('.content-wrap')
+            if ( windowpos > 0 ) {
+                header.addClass('scroll');
+                content.addClass('scroll');
+            } else {
+                header.removeClass('scroll');
+                content.removeClass('scroll');
+            }
+        });
+
+        // 電影列表顯示的下拉
+        $('.dropdown-clickable').on('click', function() {
+            var dropdown = $(this).parent().siblings('.display-ver-dropdown');
+            if ( dropdown.hasClass('show') ) {
+                dropdown.removeClass('show');
+            } else {
+                dropdown.addClass('show');
+            }
+        });
+
+        $('.display-ver-dropdown > li').on('click', function(){
+            $('.display-ver-dropdown > li').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        // 電影列表的排序nav bar
+        $('.nav-type-scroll > li').on('click', function(){
+            $('.nav-type-scroll > li').removeClass('active');
+            $(this).addClass('active');
+            var index = $(this).index();
+            $(this).parent().siblings('section').children().removeClass('active').eq(index).addClass('active');
+        });
+
+        // 電影列表的顯示 nav bar
+        $('.nav-type-box > li').on('click', function(){
+            $('.nav-type-box > li').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        // 點擊電影海報 會出現 alert
+        $('#movie-product').on('click',function(){
+            $('.points-alert').addClass('showAlert');
+        });
+        $('.btn-ok').on('click',function(){
+            $('.points-alert').removeClass('showAlert');
+        });
+
+        // 同步 input 裡輸入的積分點數顯示在代金卷上
+        $("#user-points-enter").keyup(function() {
+            var val = $(this).val();
+            $(".exchangeRmb").text(val);
+        });
+    });
+
+</script>
+
+</body>
+</html>
