@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>請求授權 - 電影蛋糕</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link href="css/newLogin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="login" id="login" style="opacity:1;">
+        <p><a href="/" class="under-line"><i class="fa fa-angle-left padR1x" aria-hidden="true"></i> 回首頁</a></p>
+        <fieldset class="toLogin maT2x maB2x padLR">
+            <div class="login-title" data-loginTitle="login">
+                <span class="simpleLogin">登入</span>
+            </div>
+            <form action="/account/" method="POST">
+                <fieldset class="login-content slideDown">
+                    <p class="sms-subtitle maT2x"><span class="textblue">test123@gmail.com</span> 您好，<br/>是否允许应用程序进行以下操作：</p>
+                    <ul class="authorize-list maT20">
+                        <li class="textwhite"><i class="fa fa-user padR1x" aria-hidden="true"></i> 存取您的<span class="textblue">个人讯息</span></li>
+                    </ul>
+                    <span class=""></span>
+                    <button type="submit" name="submit.Grant" class="btn">允许</button>
+                    <button type="submit" name="submit.Login" class="btn-resend maT2x">使用不同身份登入</button>
+                </fieldset>
+            </form>
+        </fieldset>
+    </div>
+
+    <script src="/Scripts/jquery-1.8.3.min.js"></script>
+    <script src="/Scripts/jquery.validate.min.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.ilandy-edit.js"></script>
+    <script src="/Scripts/materialize/materialize.min.js"></script>
+    <script src="/Scripts/pages/login-index.js?v=20161207"></script>
+
+</body>
+</html>

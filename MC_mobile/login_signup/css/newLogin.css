@@ -246,6 +246,7 @@ table {
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    letter-spacing: 1px;
 }
 .login-title {
 	display: none;
@@ -414,6 +415,19 @@ input {
 	color: rgba(77,208,225,.5);
     transition: 0.3s;
 }
+
+
+/* AUTHORIZE CSS */
+.authorize-list {
+    box-sizing: border-box;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(155,155,155,.3);
+}
+.authorize-list li {
+    text-align: center;
+}
+
+
 
 /* ----------------------------- BUTTONS --------------------------- */
 .btn {
