@@ -1288,6 +1288,52 @@ div.dropdown-wrapper {
 	padding: 3% 0;
 }
 
+/* ----------- GENRE SELECTION CSS ------------- */
+.genre-selection-wrap {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 3.5% 3.8%;
+	background: rgba(12,12,12,.2);
+	border-right: 1px solid #71cfee;
+	border-radius: 5px 0 0 5px;
+}
+.genre-selection-wrap p {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+.genre-selection-wrap p:after {
+	content: '';
+	position: absolute;
+	top: 11px;
+	width: 80%;
+	height: 1px;
+	background: rgba(155,155,155,.2);
+}
+p.location-title:after {
+	right: -20px;
+}
+p.type-title:after {
+	right: -30px;
+}
+
+.genre-list li {
+	float: left;
+	font-size: .95em;
+	color: #eeeeee;
+	border: 1px solid transparent;
+	box-sizing: border-box;
+	padding: 0 1.5vw;
+	margin: .3vh .4vw;
+	transition: .3s ease-in-out;
+	border-radius: 3px;
+}
+.genre-list li.active {
+	border: 1px solid #B2EEFF;
+	color: #B2EEFF;
+	transition: .3s ease-in-out;
+}
+
 
 
 
