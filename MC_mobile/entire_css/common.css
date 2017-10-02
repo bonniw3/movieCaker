@@ -796,6 +796,9 @@ table {
 	margin: 15% 0;
 	padding: 3% 4% 3% 4.5%;
 }
+.single-col.marTAdjust {
+	margin: 20px 0 !important;
+}
 .container {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -906,7 +909,7 @@ table {
 	font-size: 0.85em;
 }
 
-.review-info .movie-name {
+.single-col .movie-name {
 	color: #B2EEFF;
 	font-size: 1.125em;
 	letter-spacing: 1px;
@@ -1147,6 +1150,42 @@ div.dropdown-wrapper {
 }
 .viewMore:after	{
 	right: 22%;
+}
+
+
+/* -------------- 專題列表 電影排序 CSS ------------------ */
+.project-movies {
+	position: relative;
+}
+.poster-wrap li {
+	float: left;
+    margin-left: -18.76%;
+    width: 35%;
+    height: 24.5vh;
+    vertical-align: top;
+    overflow: hidden; 
+    box-shadow: -4px 0 5px 0px rgba(12, 12, 12, .5);
+}
+.poster-wrap li:first-child {
+	margin-left: 0;
+	box-shadow: none;
+}
+.poster-wrap li img {
+	width: 100% !important;
+	margin-left: 0 !important;
+}
+
+.total-movies-stats {
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	background: rgba(12,12,12,.8);
+	box-sizing: border-box;
+	padding: 3% 0;
+	text-align: center;
+	color: #ffffff;
+	box-shadow: 0 -2px 3px 0px rgba(0,0,0,0.5);
+	font-size: .95em;
 }
 
 
