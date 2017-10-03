@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>专题：在電影中看見的愛情心法13條</title>
+    <meta name="description" content="你最嚮往什麼樣的愛情？什麼樣的愛情最迷人？有人嚮往青梅竹馬的愛情。有人嚮往一見鍾情的心悸。有人貪戀絕處逢生的逆轉……每一次的選擇都要看邱比特從什麼角度射出他的箭。愛情，通常不愛說話，它只是悄悄地溢滿你..." />
+    <link rel="canonical" href="http://test.moviecaker.com/topic/160">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="../entire_css/common.css" rel="stylesheet" />
+    <link href="css/cast.css" rel="stylesheet" />
+    <link href="../entire_css/min-search.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="http://test.moviecaker.com/Content/mobile/icomoon/style.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <!-- search area -->
+        <div class="search-area group-wrap">
+            <form> 
+                <button class="btn-close group-wrap" type="reset">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </button>
+                <div class="search-keyword ui">
+                    <i class="fa fa-search fa-lg pull-left" aria-hidden="true"></i>
+                    <input id="search-input" class="pull-left" type="search" name="" value="" placeholder="尋找電影..." ng-model="main.searchText" ng-bind="main.searchText" multi-search/>
+                </div>
+            </form>
+            <div id="search-autocomplete"></div>
+            <a href="#" class="more pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>更多搜尋結果</a>
+        </div>
+        
+        <!-- header -->
+        <div class="header" ng-class="{ blur: main.screenStatus() }">
+            <ul class="group-wrap header-items" ng-show="!main.isSearchMode">
+                <li class="pull-left">
+                    <a href="/mobile">
+                        <i class="fa fa-bars padTBHalfX" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li id="user-icon" class="pull-right">
+                     <a href="/login" ng-click="main.MenuLogin()">
+                        <div class="login-icon padTBHalfX maLHalfx">
+                            <img src="img/login_icon.png"alt="">
+                        </div>
+                    </a> 
+                    <!-- 登入後顯示 -->
+                    <a href="#" style="display:none;">
+                        <div class="circle-mask circle1x">
+                            <img src="img/default_avatar.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li id="search-icon" class="pull-right maR1x">
+                    <i class="fa fa-search padTBHalfX" aria-hidden="true"></i>
+                </li>
+                <li id="logo-text">
+                    <a href="/mobile"><img src="img/mc_logo_text.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
+
+        <div ng-class="{ blur: main.screenStatus() }">
+            <div ng-controller="TopicDetailsCtrl as vm" ng-init="vm.init('160')">
+                <!-- fixed background -->
+                <div class="bkgd-img">
+                    <div class="white-mask"></div>
+                    <img src="img/oneday.jpg" alt="">
+                </div>
+
+                <!-- MAIN CONTENT -->
+                <div class="content-wrap">
+                    <section class="movieInfo">
+                        <article class="padLR10 maT2x">
+                            <div class="cast-avatar avatar-pos-center">
+                                <img src="img/anne.jpg" alt="">
+                            </div>
+
+                            <section class="maT2x reviewContent">
+                                <h2 class="fz-m text-white taC">安海瑟薇</h2>
+                                <h3 class="fz-subtitle text-white taC">Anne Hathaway</h3>
+                                <!-- li 裡 addClass active 變色 -->
+                                <ul class="reaction-stats taC maTHalf1x">
+                                    <li class="review-heart" ng-show="vm.isAuthenticated" ng-class="{'active':vm.topic.IsLiked}">
+                                        <i class="fa fa-heart" aria-hidden="true"></i> <span ng-bind="vm.topic.LikeNum">4</span>
+                                    </li>
+                                    <li class="review-share" ng-class="{'active':vm.topic.IsShared}">
+                                        <i class="fa fa-share-alt" aria-hidden="true"></i> <span ng-bind="vm.topic.ShareNum">2</span>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <div class="btn-wrap maT2x group-wrap like-share-wrap">
+                                <!-- btn-like addClass active 會換色 -->
+                                <div class="btn-like-share pull-left bkgd-white fz-15 btn-like">
+                                    <i class="fa fa-heart" ng-class="{'active':vm.topic.IsLiked}"></i> 喜歡
+                                </div>
+                                <div id="btn-share-review" class="btn-like-share pull-right bkgd-white fz-15 btn-sharing">
+                                    <i class="fa fa-share-alt" ng-class="{'active':vm.topic.IsShared}"></i> 分享
+                                </div>
+                            </div>
+
+                            <!-- 四個分享的按鈕 -->
+                            <div id="shareTo" class="share-wrap short fixed" ng-show="main.showShareWindow" ng-class="{ blur: main.screenStatus() }" style="display: none;">
+                                <ul class="share-btn short group-wrap pad0">
+                                    <li>
+                                        <a href="#" class="btn-social-share circle40 btn-wechat" name="provider" value="WeChat" title="使用 微信 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'WX')">
+                                            <i class="fa fa-weixin" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-social-share circle40 btn-fb" name="provider" value="Facebook" title="使用 Facebook 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'FB')">
+                                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-social-share circle40 btn-weibo" name="provider" value="Weibo" title="使用 新浪微博 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'WB')">
+                                            <i class="fa fa-weibo" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-social-share circle40 btn-qq" name="provider" value="QQ" title="使用 QQ 帳戶登入" ng-click="main.shareToThirdParty(main.shareId,main.shareType,'QQ')">
+                                            <i class="fa fa-qq" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="text-white60p fz-m" ng-click="main.showShareWindow=false"><i class="fa fa-times" aria-hidden="true"></i></li>
+                                </ul>
+                                <!-- 分享按鈕點了 ”微信“ 才會出現，加上 class showAlert 會出現 -->
+                                <div class="weixin-alert align-bottom group-wrap top-alert short-alert showAlert">
+                                    <p class="text-blue fz-normal"><i class="fa fa-weixin" aria-hidden="true"></i> 微信分享小叮嚀</p>
+                                    <p class="maT4 text-white80p fz-s">目前暫時還沒有直接分享到微信朋友圈的功能，請點選您手機<span class="text-blue">右上角三個點</span>選項中的分享功能就可以分享到微信。</p>
+                                    <button class="btn-weixinAlert pull-right bkgd-pink maL1x maT1x">不用再提醒</button>
+                                    <button class="btn-weixinAlert pull-right bkgd-blue maT1x">下次再提醒</button>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+
+                    <!-- 這塊只有 登入後才會出現 -->
+                    <section class="maT13p">
+                        <div class="section-title fz-subtitle text-blue">我的刷片度</div>
+                        <article class="padLR10 maT2x rel-pos">
+                            <div>
+                                <div class="group-wrap">
+                                    <p class="pull-left text-gray fz-15" ng-bind="'我已經看過 ' + (vm.user.ViewedNum) + ' 部'">我已經看過 <span class="text-blue">2</span> 部</p>
+                                    <p class="pull-right text-light-blue fz-m" ng-bind="(vm.user.ViewedPercent) + '%'">7%</p>
+                                </div>
+                                <div class="completeness maTHalf1x">
+                                    <div class="completed" ng-show="vm.user.ViewedNum&&vm.user.VideoNum" ng-style="{'width':vm.user.ViewedPercent+'%'}"></div>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+
+                    <section class="maT13p">
+                        <div class="section-title fz-subtitle text-blue">電影列表（<span>18</span> 部）</div>
+                        <article class="maT2x">
+                            <ul class="nav-horizontal nav-type-scroll optionNum-3">
+                                <li class="active" value="hot">最熱門</li>
+                                <li value="releasedate">最新</li>
+                                <li value="avg_score">最好評</li>
+                            </ul>
+                            <ul class="nav-horizontal nav-type-box group-wrap">
+                                <li>顯示</li>
+                                <li class="active">全部</li>
+                                <li>可在線看</li>
+                                <!-- “我沒看過” 只有在登入才會出現  -->
+                                <li>我沒看過</li>
+                            </ul>
+                            <section class="maT2x">
+                                <div class="movie-list group-wrap">
+                                    <!-- 從這裡開始 repeat div -->
+                                    <div class="movie-item">
+                                        <div class="movie-order">1</div> <!-- add class "showOrderNum" 會出現數字排序-->
+                                        <div class="movie-img">
+                                            <a href="#"> <!-- 連到這部電影的電影介紹頁 -->
+                                                <img class="box-office-movie" src="img/movie1.jpg" alt="">
+                                            </a>
+                                            <div class="movie-info-wrap"> <!-- add class "hasContent" 會出現黑色底（裡面如果有東西要顯示就要有黑色底）(專題介紹頁 不用) -->
+                                                <p class="date-released">2017-07-13</p><!-- add class active 出現首映日期 (“專題介紹頁” 不用)-->
+                                                <div class="friends-seen group-wrap"> <!-- add class active 出現朋友暱稱（“專題介紹頁” 不用）-->
+                                                    <div class="circle-mask circle-xs">
+                                                        <img src="img/default_avatar.png" alt="">
+                                                    </div>
+                                                    <div class="">
+                                                        <a class="user-name fz-xs" href="#">想看電影</a> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="lineh20 maTHalf1x">
+                                            <p class="fz-13 text-white line-clamp clamp-1">知無涯者</p> <!-- 電影名稱 -->
+                                            <span class="fz-13 text-blue">
+                                                <i class="fa fa-star" aria-hidden="true"></i> 
+                                                <span class="" ng-bind="item.Ratings_Douban">7.4</span> <!-- 評分是 豆瓣＋IMDB的平均分數 -->
+                                            </span>
+                                            <span class="fz-13 text-orange maLHalfx noOnline"> <!-- remove class "noOnline" 會出現 "在線看" -->
+                                                <i class="fa fa-play-circle-o" aria-hidden="true"></i> 在線看
+                                            </span>
+                                            <ul class="movie-checkin-btns group-wrap">
+                                                <!-- i add class "active" 變色 -->
+                                                <li><i class="fa fa-bookmark" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-eye" aria-hidden="true"></i></li>
+                                                <li class="viewComment noComment"><i class="fa fa-commenting-o" aria-hidden="true"></i></li>
+                                                <li class="movie-comment-text noComment" ng-bind="item.VideoDesc"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- end repeat div -->
+                                </div>
+                            </section>
+                        </article>
+                    </section>
+                </div>
+
+            </div><!-- end of ng-controller-->
+
+            <!--<div class="loading-ajax" ng-show="main.loadingStatus()">
+                <i class="fa fa-spinner fa-pulse fa-4x green"></i>
+            </div>-->
+
+            <div class="top circle40">
+                <i class="fa fa-angle-up" aria-hidden="true"></i>
+            </div> 
+        </div> <!-- end of ng-class -->
+    </div> <!-- end of ng-show="main.appReady" -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!--<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>-->
+
+    <!--<script defer src='http://test.moviecaker.com/Scripts/jquery-1.8.3.min.js'></script>-->
+    <!--<script defer src='http://test.moviecaker.com/Scripts/jquery-ui-1.10.3.min.js'></script>-->
+    <script defer src='http://test.moviecaker.com/Scripts/jquery/jquery.ui.touch-punch.min.js'></script>
+    <script defer src='http://test.moviecaker.com/Scripts/jquery/jquery.lazyload.min.js'></script>
+    <script defer src='http://test.moviecaker.com/Scripts/jquery/jquery.cookie.js'></script>
+    <script defer src='http://test.moviecaker.com/Scripts/moment/moment.min.js'></script>
+    <script defer src='http://test.moviecaker.com/Scripts/mobile/main.js'></script>
+
+    <script defer src='http://test.moviecaker.com/scripts/angular/angular.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/cssPreload/cssPreload.factory.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/cssPreload/cssPreload.directive.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/ngTouch/ng-touch.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/sortable/ng-sortable.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/infiniteScroll/ng-infinite-scroll.min.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/app.mobile.module.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/services/filter.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/services/service.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/multi-search.directive.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/topic-video-search.directive.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/star-rating.directive.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/all.directive.js'></script>
+
+    <script defer src="http://test.moviecaker.com/scripts/angular/controllers/mobile/layout.ctrl.js?v=20161209"></script>
+    <script defer src="http://test.moviecaker.com/Scripts/angular/controllers/mobile/topic-details.ctrl.js"></script>
+        
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+    <script>
+        wx.config({
+            debug: false, 
+            appId: 'wx3069e676ab7765a2', 
+            timestamp: '1498547700', 
+            nonceStr: 'FCCB60FB512D13DF5083790D64C4D5DD', 
+            signature: 'e5e387d1611410edb7a40b79b7dfcefee3ff982b', 
+            jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+            ] 
+        });
+
+        wx.error(function (res) {
+            console.log(res);
+            console.log('验证失败');
+        });
+    </script>
+
+    <script>
+        wx.ready(function () {
+            wx.onMenuShareTimeline({
+                title: '《在電影中看見的愛情心法13條》專題來自 MovieCaker 的' + '歡影 ', // 分享标题
+                link: 'http://test.moviecaker.com/mobile/topic/160', // 分享链接
+                imgUrl: 'http://121.41.34.59/Content/pictures/files/M0601467_posters.jpg?width=300', // 分享图标
+                //success: function () {
+                //    // 用户确认分享后执行的回调函数
+                //},
+                //cancel: function () {
+                //    // 用户取消分享后执行的回调函数
+                //}
+            });
+
+            wx.onMenuShareAppMessage({
+                title: '《在電影中看見的愛情心法13條》專題來自 MovieCaker 的' + '歡影 ', // 分享标题
+                desc: '你最嚮往什麼樣的愛情？什麼樣的愛情最迷人？有人嚮往青梅竹馬的愛情。有人嚮往一見鍾情的心悸。有人貪戀絕處逢生的逆轉……每一次的選擇都要看邱比特從什麼角度射出他的箭。愛情，通常不愛說話，它只是悄悄地溢滿你的心胸，一股勁地旋轉、奔騰，停不了，也不想停下來的…。&#160;我在電影中看見的愛情心法13條送給天下癡情男女，只有堅持信念，持之以恆，才能讓幽微的愛情慢慢孵化成巨大的氣流，讓自己和他人都能興會淋漓地見證一個愛情盛宴。', // 分享描述
+                link: 'http://test.moviecaker.com/mobile/topic/160', // 分享链接
+                imgUrl: 'http://121.41.34.59/Content/pictures/files/M0601467_posters.jpg?width=300', // 分享图标
+                type: '', 
+                dataUrl: '', 
+                //success: function () {
+                //    // 用户确认分享后执行的回调函数
+                //},
+                //cancel: function () {
+                //    // 用户取消分享后执行的回调函数
+                //}
+            });
+        });
+    </script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-68883772-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            // 測試搜尋樣式，不是真的搜尋功能
+            $( function() {
+                var availableTags = [
+                    "美女與野獸 Beauty and the Beast (2017)",
+                    "小太陽的願望 Little Miss Sunshine (2006)",
+                    "醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                    "醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "美女與野獸 Beauty and the Beast (2017)",
+                    "小太陽的願望 Little Miss Sunshine (2006)",
+                    "醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                    "醜女大翻身 200 Pounds Beauty (2006)","醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "美女與野獸 Beauty and the Beast (2017)",
+                    "小太陽的願望 Little Miss Sunshine (2006)",
+                    "醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                    "醜女大翻身 200 Pounds Beauty (2006)"
+                ];
+                $( "#search-input" ).autocomplete({
+                    source: availableTags,
+                    appendTo: "#search-autocomplete",
+                    open: function(){
+                        $('.more').addClass("searching"); // 有搜尋結果再出現”更多搜尋“按鈕
+                    },
+                    close: function(){
+                        $('.more').removeClass("searching"); // 沒有搜尋結果不出現”更多搜尋“按鈕
+                    }
+                });
+            });
+
+            // 首頁點擊搜尋的動態效果
+            $('#search-icon').on("click", function(){
+                window.scrollBy(0, 1); // 讓鍵盤出現時頁面不會被推上去
+                $('.search-area').addClass("searching");
+                $('.btn-close').addClass("searching");
+                $('.search-keyword').addClass("searching");
+            });
+            // 點擊叉按鈕關閉搜尋
+            $('.btn-close').on("click", function(){
+                $('.search-area').removeClass("searching");
+                $('.btn-close').removeClass("searching");
+                $('.search-keyword').removeClass("searching");
+            });
+
+            // 點擊線上看按鈕會出現下拉選單
+            $('.btn-playMovie').on('click',function(){
+                if ($('.play-movie-selection').hasClass('show')) {
+                    $('.play-movie-selection').removeClass('show');
+                } else {
+                    $('.play-movie-selection').addClass('show');
+                }
+            });
+
+            // 滑動畫面 會出現黑色底
+            $(window).scroll(function() {
+                var windowpos = $(window).scrollTop();
+                var header = $('.header');
+                var likeShare = $('.like-share-wrap');
+                var nextSect = $('.nextSection');
+                var content = $('.content-wrap');
+                var shareToBtns = $('.share-wrap');
+                // var bkgd_img = $('.bkgd-img img')
+
+                if ( windowpos > 0 ) {
+                    header.addClass('scroll');
+                    content.addClass('scroll');
+                    // bkgd_img.addClass('scroll');
+                } else {
+                    header.removeClass('scroll');
+                    content.removeClass('scroll');
+                    // bkgd_img.removeClass('scroll');
+                }
+                
+                // 讓喜歡分享按鈕可以 fixed 住 (專題頁是 300)
+                if (windowpos > 380 ) {
+                    likeShare.addClass('fixed');
+                    header.addClass('hide');
+                    nextSect.removeClass('maT13p').addClass('maT30p');
+                    shareToBtns.addClass('fixed');
+                } else {
+                    likeShare.removeClass('fixed');
+                    header.removeClass('hide');
+                    nextSect.addClass('maT13p').removeClass('maT30p');
+                    shareToBtns.removeClass('fixed');
+                }
+            });
+
+            $('#btn-share-review').on('click', function() {
+                $('.share-wrap').css('display','block');
+            });
+
+            // 電影列表顯示的下拉
+            $('#display-btn').on('click', function() {
+                if ($('.display-ver-dropdown').hasClass('show')) {
+                    $('.display-ver-dropdown').removeClass('show');
+                } else {
+                    $('.display-ver-dropdown').addClass('show');
+                }
+            });
+
+            $('.display-ver-dropdown > li').on('click', function(){
+                $('.display-ver-dropdown > li').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            // 電影列表的排序nav bar
+            $('.nav-type-scroll > li').on('click', function(){
+                $('.nav-type-scroll > li').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            // 電影列表的顯示 nav bar
+            $('.nav-type-box > li').on('click', function(){
+                $('.nav-type-box > li').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            
+            $('.movie-checkin-btns > li > i').on('click', function(){
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                } else {
+                    $(this).addClass('active');
+                }
+            });
+
+            $('.viewComment').on('click', function(){
+                if ( $(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    $(this).next('li.movie-comment-text').removeClass('showMovieComment');
+                } else {
+                    $(this).addClass('active');
+                    $(this).next('li.movie-comment-text').addClass('showMovieComment');
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
+<!--<link css-preload ng-href='/Content/jquery-ui.css' rel='stylesheet' />
+<link css-preload ng-href='/Content/mobile/screen.css' rel='stylesheet' />
+<link css-preload ng-href='/Content/mobile/custom.css' rel='stylesheet' />
+
+<link css-preload ng-href="/Content/mobile/font-awesome.min.css" rel="stylesheet" />
+<link css-preload ng-href="/Content/mobile/icomoon/style.min.css" rel="stylesheet" />-->

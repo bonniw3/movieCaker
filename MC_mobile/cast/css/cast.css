@@ -1,0 +1,40 @@
+.content-wrap {
+    padding: 20% 5% 70% 5%;
+}
+
+
+/* -------------- cast avatar CSS -------------- */
+.cast-avatar {
+    width: 35vw;
+    height: 29vh;
+    margin-top: 7vh;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    overflow: hidden;
+}
+
+.cast-avatar img {
+    width: 100%;
+}
+
+
+/* -------------- completeness bar -------------- */
+.completeness {
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: rgba(90,90,90,.65);
+}
+.completeness .completed {
+    width: 22%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #B2EEFF;
+}
+
+
+/* --------------- adjust like/share amt li --------------- */
+.reaction-stats li {
+    margin-left: 10px;
+}
+
