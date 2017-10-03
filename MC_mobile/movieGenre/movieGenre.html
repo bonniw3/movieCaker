@@ -91,7 +91,7 @@
                                     <li>亞洲</li>
                                 </ul>
                                 <p class="type-title text-gray fz-xs maT1x">類型（可複選）</p>
-                                <!-- 裡面的 li 可以複選 -->
+                                <!-- 裡面的 li 可以複選 (如果選了其他的類型，第一個 “全部” 就不能是 active) -->
                                 <ul class="genre-type-list genre-list group-wrap">
                                     <li class="active">全部</li>
                                     <li>喜劇</li>
@@ -141,8 +141,8 @@
                                     </ul>
                                 </div> 
                             </div>
-                            <p class="text-white fz-15 maTHalf1x maLHalfx"><i class="fa fa-search maRHalfx" aria-hidden="true"></i> 搜尋結果約有 <span class="text-light-pink">230</span> 部電影</p>
-                            <section class="maT2x">
+                            <p class="text-white fz-15 maT1x"><i class="fa fa-search maRHalfx" aria-hidden="true"></i> 搜尋結果約有 <span class="text-light-pink">230</span> 部電影</p>
+                            <section class="maT1x">
                                 <div class="movie-list group-wrap">
                                     <!-- 從這裡開始 repeat div -->
                                     <div class="movie-item">
@@ -187,9 +187,12 @@
                                 <!-- addClass "showLoading" 出現 loading -->
                                 <div class="smallLoading"></div>
                             </section> 
+                            <div class="footer"></div>
                         </article>
                     </section>
+                    
                 </div>
+                
 
             </div> <!--end of ng controller -->
 
