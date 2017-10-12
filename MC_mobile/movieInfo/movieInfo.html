@@ -68,18 +68,38 @@
         </div>
 
         <!-- SHARE_marketing -->
-        <!-- 當 scroll 的時候，window position > 80 .share-marketing 要 add class "hidden"; 小於就要 remove class "hidden"  -->
-        <div class="share-marketing">
-            <div class="share-img">
-                <!-- <img src="img/share-marketing-card.png" alt=""> -->
-                <!-- <img src="img/share-marketing-card-s.png" alt=""> --> <!-- 簡體 --> 
-                <img src="img/share-marketing-text.png" alt="">
-                <!-- <img src="img/share-marketing-text-s.png" alt=""> --> <!-- 簡體 --> 
+        <section>
+            <!-- 當 scroll 的時候，window position > 80 ".share-marketing" 要 add class "hidden"; 小於就要 remove class "hidden" -->
+            <!-- 要出現 “分享圖” ".share-marketing" 要 add class "show" -->
+            <div class="share-marketing slideable">
+                <div class="img-wrapper">
+                    <!-- <img src="img/share-marketing-card.png" alt=""> -->
+                    <!-- <img src="img/share-marketing-card-s.png" alt=""> --> <!-- 簡體 --> 
+                    <img src="img/share-marketing-text.png" alt="">
+                    <!-- <img src="img/share-marketing-text-s.png" alt=""> --> <!-- 簡體 --> 
+                </div>
+                <label for="noShow"><input id="noShow" type="checkbox"> 下次不再顯示</label>
+                <!-- 按下 “我知道了” .share-marketing 要 addclass "hidden" 就不會出現 -->
+                <button class="btn-ok maT1x">我知道了</button>
             </div>
-            <label for="noShow"><input id="noShow" type="checkbox"> 下次不再顯示</label>
-            <!-- 按下 “我知道了” .share-marketing 要 addclass "hidden" 就不會出現 -->
-            <button class="btn-ok maT1x">我知道了</button>
-        </div>
+            <!-- 要出現 “拉新圖” ".signup-prompt" 要 add class "show" -->
+            <div class="signup-prompt slideable show">
+                <div class="rel-pos">
+                    <div class="img-wrapper">
+                        <!-- <img src="img/gift-simplified.png" alt=""> --> <!-- 簡體 -->
+                        <img src="img/gift-traditional.png" alt="">
+                    </div>
+                    <a href="#" class="btn-receive">立即註冊領取</a>
+                </div>
+                <a href="#" class="is-member">我已是會員了</a>
+                <!-- 按下 “我知道了” .signup-prompt 要 remove class "show" 就不會出現 -->
+                <button class="btn-close group-wrap adjust-location" type="reset">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </button>
+            </div>
+        </section>
+        
 
         <!-- content -->
         <div ng-class="{ blur: main.screenStatus() }">
@@ -728,6 +748,7 @@
             var header = $('.header');
             var content = $('.content-wrap');
             var shareImg = $('.share-marketing');
+            var signupImg = $('.signup-prompt');
             if ( windowpos > 0 ) {
                 header.addClass('scroll');
                 content.addClass('scroll');
@@ -737,8 +758,10 @@
             }
 
             if (windowpos > 80 ) {
+                // signupImg.addClass('hidden');
                 shareImg.addClass('hidden');
             } else {
+                // signupImg.removeClass('hidden');
                 shareImg.removeClass('hidden');
             }
         });

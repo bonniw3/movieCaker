@@ -711,6 +711,7 @@ table {
 	display: block;
 }
 
+
 /* ------- reaction-stats (heart, comment, share, view-amt icon) ------- */
 .reaction-stats li {
   display: inline-block;
@@ -1238,34 +1239,48 @@ div.dropdown-wrapper {
 
 
 /* ----------- share-marketing CSS ------------- */
-.share-marketing {
+.slideable {
 	width: 100vw;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 20;
 	background-color: rgba(12,12,12,.8);
-	box-shadow: 0px 2px 4px 1px rgba(12,12,12,.5);
-	display: block;
 	visibility: visible;
 	opacity: 1;
 	transition: opacity .5s ease-in-out;
 }
-.share-marketing.hidden {
+.slideable.hidden {
 	opacity: 0;
 	visibility: hidden;
 	z-index: -1;
 	transition: opacity .5s ease-in-out;
 }
 
-.share-img {
+.share-marketing {
+	box-shadow: 0px 2px 4px 1px rgba(12,12,12,.5);
+	display: none;
+}
+.share-marketing .img-wrapper {
 	width: 90%;
 	margin: 20px auto 0 auto;
 }
-.share-img img {
+.img-wrapper img {
 	width: 100%;
 }
 
+.signup-prompt {
+	height: 100vh;
+	display: none;
+}
+.signup-prompt .img-wrapper {
+	width: 86%;
+	margin: 5vh auto 5vh auto;
+}
+	
+.share-marketing.show, .signup-prompt.show {
+	display: block;
+}
 .share-marketing label {
 	color: #ffffff;
 	font-size: .9em;
@@ -1279,7 +1294,6 @@ div.dropdown-wrapper {
 .share-marketing input:focus {
 	outline: none;
 }
-
 .share-marketing button.btn-ok {
 	width: 100%;
 	border-radius: 0;
@@ -1287,6 +1301,68 @@ div.dropdown-wrapper {
 	letter-spacing: 1px;
 	padding: 3% 0;
 }
+
+.btn-close.adjust-location {
+	position: relative;
+	top: initial;
+	border-width: 2px;
+	padding-left: 10px !important;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0); 
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-receive {
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 6.5vh;
+	margin: auto;
+	width: 45%;
+	height: 6vh;
+	line-height: 6.2vh;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0px 2px 0px 1px rgba(139,88,42,1);
+	background-color: #EBD961;
+	color: #E05433;
+	font-size: 1.05em;
+	letter-spacing: 1px;
+}
+
+.is-member {
+	display: block;
+	text-align: center;
+	letter-spacing: 1px;
+	color: #B2EEFF;
+	width: 35%;
+	margin: 0 auto 5vh auto;
+	position: relative;
+}
+
+.is-member:before, .is-member:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	width: 25px;
+	height: 1px;
+	background: #71cfee;
+}
+.is-member:before {
+	left: -17%;
+}
+.is-member:after {
+	right: -14%;
+}
+
 
 /* ----------- GENRE SELECTION CSS ------------- */
 .genre-selection-wrap {
