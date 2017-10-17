@@ -142,6 +142,9 @@ li.ui-menu-item {
     box-sizing: border-box;
     border-bottom: 1px solid rgba(238,238,238,.2);
 }
+li.ui-menu-item a {
+    color: #B2EEFF;
+}
 div.ui-state-active {
     background-color: transparent !important;
     border: 1px solid transparent !important;

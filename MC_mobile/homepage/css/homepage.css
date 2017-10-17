@@ -109,12 +109,17 @@ div.ui-state-active {
     overflow: scroll;
     margin-top: 25%;
     padding-top: 3%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .page-btn-group {
     margin: 0px 1% 10% 1%;
     width: 31%;
     text-align: center;
+}
+.page-btn-group:active {
+    background: rgba(12,12,12,.3);
 }
 .page-btn {
     border-radius: 50%;

@@ -200,7 +200,7 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i><span class="maLHalfx" ng-bind="'(' + vm.movie.LikedNum + ')'">10</span>
                             </span>
                             <span class="maL2x c-fire" ng-class="{'active':vm.userData.IsWantView}">
-                                <i class="icon-fire"></i><span class="maLHalfx" ng-bind="'(' + vm.movie.WantViewNum + ')'">4</span>
+                                <i class="fa fa-bookmark"></i><span class="maLHalfx" ng-bind="'(' + vm.movie.WantViewNum + ')'">4</span>
                             </span>
                         </p>
                     </section>
@@ -276,9 +276,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="project-content maT15">
-                                                <p class="fz-normal fontW-bold text-white">PROJECT TITLE GOES HERE</p>
-                                                <p class="text-white maTHalf1x" ng-bind="characters:50 :true">2016年对电影行业来说是标志性的一年，全球票房总收入超过111亿美元，远远超过去年刚刚突破的球票房总收入超过111亿美元，远远超过去年刚刚突破的</p>
+                                            <div class="project-content maT3x">
+                                                <p class="fontW-bold text-white">2017上半年北美票房排行TOP30~你看了幾部？</p>
+                                                <p class="text-white line-clamp clamp-1">2016年对电影行业来说是标志性的一年，全球票房总收入超过111亿美元，远远超过去年刚刚突破的球票房总收入超过111亿美元，远远超过去年刚刚突破的</p>
                                             </div>
                                         </a>
                                     </li>
@@ -292,9 +292,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="project-content maT15">
-                                                <p class="fz-normal fontW-bold text-white">PROJECT TITLE GOES HERE</p>
-                                                <p class="text-white maTHalf1x" ng-bind="characters:50 :true">2016年对电影行业来说是标志性的一年，全球票房总收入超过111亿美元，远远超过去年刚刚突破的球票房总收入超过111亿美元，远远超过去年刚刚突破的</p>
+                                            <div class="project-content maT3x">
+                                                <p class="fontW-bold text-white">2017上半年北美票房排行TOP30</p>
+                                                <p class="text-white line-clamp clamp-1">2016年对电影行业来说是标志性的一年，全球票房总收入超过</p>
                                             </div>
                                         </a>
                                     </li>
@@ -308,20 +308,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="project-content maT15">
-                                                <p class="fz-normal fontW-bold text-white">PROJECT TITLE GOES HERE</p>
-                                                <p class="text-white maTHalf1x" ng-bind="characters:50 :true">2016年对电影行业来说是标志性的一年，全球票房总收入超过111亿美元，远远超过去年刚刚突破的球票房总收入超过111亿美元，远远超过去年刚刚突破的</p>
+                                            <div class="project-content maT3x">
+                                                <p class="fontW-bold text-white">PROJECT TITLE GOES HERE</p>
+                                                <p class="text-white line-clamp clamp-1">2016年对电影行业来说是标志性</p>
                                             </div>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
-                            
-                            <!--<nav class="project-dot">
-                                <span></span>
-                                <span class="active"></span>
-                                <span></span>
-                            </nav>-->
                         </article>
                     </section>
 
@@ -426,12 +420,10 @@
                 </div>
 
 
-
-
             <!-- 彈出視窗 -->
                 <!-- 寫影評 - 電影介紹頁裡面的-->
-                <div id="writeCom" class="popTo write-edit-review ng-hide" ng-show="vm.showReviewWindow" >
-                    <ul class="pop-nav group-wrap">
+                <div id="writeCom" class="popTo write-edit-review ng-hide" ng-show="vm.showReviewWindow" style="overflow:scroll;">
+                    <ul class="pop-nav group-wrap" style="z-index:2;">
                         <li class="pull-left" ng-click="vm.showReviewWindow=false">
                             <button class="btn-cancel fz-s" type="button">取消</button>
                         </li>
@@ -476,111 +468,11 @@
                                 </div>
                             </div>
                             <div class="maT3x">
-                                <textarea class="reviewContent" name="comment" id="comment" required ng-model="vm.makeReview.review" ng-bind="vm.makeReview.review" placeholder="請寫下你的觀影心得..."></textarea>
+                                <textarea class="reviewContent" name="comment" id="comment" required ng-model="vm.makeReview.review" ng-bind="vm.makeReview.review" placeholder="請寫下你的觀影心得..." style="height: 63vh;"></textarea>
                             </div>
                         </fieldset>
                     </div>
                 </div>
-
-                <!-- 其他按鈕 -->
-                <!--<div id="ortherBtn" class="popTo ng-hide" ng-show="vm.showOtherWindow">
-                    <div class="popwrap">
-                        <div class="popclose" ng-click="vm.showOtherWindow=false"><i class="icon-close"></i></div>
-                        <ul class="popMenu">
-                            <li ng-click="vm.showReviewWindow=true;vm.showOtherWindow=false"><a href="#"><i class="icon-pencil2"></i>寫影誌</a></li>
-                            <li ng-click="vm.showAddTagWindow=true;vm.showOtherWindow=false"><a href="#"><i class="icon-tags"></i>加入標簽</a></li>
-                            <li ng-click="vm.showAddTopicWindow=true;vm.showOtherWindow=false"><a href="#"><i class="icon-notebook"></i>加入專題</a></li>
-                            <li ng-click="vm.shareMovie('M00000000158105')"><a href="#"><i class="icon-share"></i>分享</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="ortherBtn" class="popTo ng-hide" ng-show="vm.showPlayWindow">
-                    <div class="popwrap">
-                        <div class="popclose" ng-click="vm.showPlayWindow=false"><i class="icon-close"></i></div>
-                        <ul class="popMenu" style="width:75%">
-                            <li ng-repeat="item in vm.films"><a ng-bind="item.Name" ng-href="{{item.Url}}" target="_blank"></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="stars" class="popTo ng-hide" ng-show="vm.showRateWindow">
-                    <div class="popwrap">
-                        <div class="popclose" ng-click="vm.showRateWindow=false"><i class="icon-close"></i></div>
-                        <div class="starW">
-                            <div class="starAll">
-                                <raty score="ratyScore" ng-click="vm.rateVideo()"></raty>
-                            </div>
-                            <div class="starNum" ng-bind="(vm.ratyScore * 2)"><span>分</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div id="addTag" class="popTo" ng-show="vm.showAddTopicWindow">
-                    <div class="popwrap">
-                        <div class="popclose" ng-click="vm.showAddTopicWindow=false"><i class="icon-close"></i></div>
-                        <form action="">
-                            <fieldset class="fieldset">
-                                <div class="formInput">
-                                    <h2 class="gray-w fz-m">{{vm.movie.Name}}</h2>
-                                </div>
-                                <div class="formInput">
-                                    <h4 class="gray-a fz-xs">點選加入到我的專題，再點選即可取消加入</h4>
-                                </div>
-                                <ul class="popMenu club-select pT10 w100">
-                                    <li ng-repeat="item in vm.userTopic" ng-class="{'active':item.IsExisted=='1'}" ng-click="vm.toggleToUserTopic(item)">
-                                        <a href="###">
-                                            {{item.TopicName}}
-                                            <span ng-show="!item.IsPublish">(未發佈)</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <br />
-                                <br />
-                                <h3 class="">開始一個新專題</h3>
-                                <div class="addTag">
-                                    <input ng-model="vm.newTopicName" class="fLeft" type="text"><button ng-click="vm.addNewTopic()" class="btn-s-default">新增</button>
-                                </div>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>-->
-
-                <!-- 加標簽 -->
-                <!--<div id="addTag" class="popTo ng-hide" ng-show="vm.showAddTagWindow">
-                    <div class="popwrap">
-                        <div class="popclose" ng-click="vm.showAddTagWindow=false">
-                            <i class="icon-close"></i>
-                        </div>
-                        <fieldset class="fieldset" style="max-height:75vh;overflow:auto">
-                            <div class="formInput">
-                                <h2 class="gray-w fz-m">{{vm.movie.Name}}</h2><br />
-                                <h3 class="">標記的電影標籤</h3>
-                                <div class="tab-Content active">
-                                    <a ng-repeat="item in vm.myTagsInVideo">
-                                        {{item.Tag}}&nbsp;
-                                        <i class="fa fa-times fire" ng-click="vm.removeTagByName($index)"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="formInput">
-                                <h3 class="green">新增標簽</h3>
-                                <div class="addTag">
-                                    <input class="fLeft" type="text" ng-model="vm.newTag"><button class="btn-s-default" type="button" ng-click="vm.addNewTag()" >確認</button>
-                                </div>
-                            </div>
-                            <div class="formInput">
-                                <h3 class="green maB1x paB1x borderBG">我的標簽</h3>
-                                <div class="tab-Content active">
-                                    <a ng-repeat="item in vm.myTags" ng-click="vm.addTagByName(item.Tag)">{{item.Tag}}</a>
-                                </div>
-                            </div>
-                            <div class="formInput">
-                                <h3 class="green maB1x paB1x borderBG">常用標簽</h3>
-                                <div class="tab-Content active">
-                                    <a ng-repeat="item in vm.hotTags" ng-click="vm.addTagByName(item.Tag)">{{item.Tag}}</a>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                </div>-->
 
             </div> <!--end of ng controller -->
 
