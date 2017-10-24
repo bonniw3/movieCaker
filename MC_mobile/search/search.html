@@ -17,8 +17,10 @@
 <body>
     <div ng-controller="SearchIndexCtrl as search">
         <div class="search-wrap">
+            <!-- 當 window 被 scroll 的時候，下面的 “search-control” 要 add class "scroll" -->
             <section class="search-control">
                 <div class="search-area group-wrap">
+                    <!-- 按叉叉回首頁 -->
                     <a href="/" class="btn-close group-wrap">
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -30,80 +32,102 @@
                 </div>
                 <div class="filter-menu">
                     <ul class="underline-tab five-tab">
-                        <li class="tab-item active" ng-class="{'active':search.searchType=='all'}"><a href="/mobile/search?text=devil&amp;type=all">全部</a></li>
-                        <li class="tab-item" ng-class="{'active':search.searchType=='movie'}"><a href="/mobile/search?text=devil&amp;type=movie">電影</a></li>
-                        <li class="tab-item" ng-class="{'active':search.searchType=='actor'}"><a href="/mobile/search?text=devil&amp;type=actor">影人</a></li>
-                        <li class="tab-item" ng-class="{'active':search.searchType=='topic'}"><a href="/mobile/search?text=devil&amp;type=topic">專題</a></li>
-                        <li class="tab-item" ng-class="{'active':search.searchType=='user'}"><a href="/mobile/search?text=devil&amp;type=user">朋友</a></li>
+                        <!-- 點擊 “全部” 會顯示下面所有的搜尋結果，
+                             點擊 “電影，影人，專題，朋友” 只顯示他們自己的搜尋結果 -->
+                        <li class="tab-item active"><a href="">全部</a></li>
+                        <li class="tab-item"><a href="">電影</a></li>
+                        <li class="tab-item"><a href="">影人</a></li>
+                        <li class="tab-item"><a href="">專題</a></li>
+                        <li class="tab-item"><a href="">朋友</a></li>
                     </ul>
                 </div>
             </section>
-            <div class="search-result">    
-                <div ng-init="search.init('devil','blur','all')">
-                    <div class="hasTitle group-wrap">
-                        <div class="section-title">
-                            <span class="fz-m text-blue">電影 </span>
-                            <span class="fz-normal text-gray"> 搜尋結果 {{ search.searchMovieCount }} 筆電影資料</span>
-                        </div>
-                        <ul class="maT1x result-list">
-                            <li class="padTB1x" ng-repeat="item in search.movies">
-                                <a ng-href="/mobile/video/intro/{{ item.Id }}">
-                                <!-- 電影中文名 電影英文名 電影年份-->
-                                    <h3 class="text-white">{{ item.Name }} {{ item.ENName }} </h3>
-                                </a>
-                            </li>    
-                        </ul>
-                        <a href="/mobile/search?text=devil&amp;type=movie" ng-show="search.searchMovieCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多電影</a>
+            <!-- 如果上面 “全部” 這個tab 是 active，下面 “search-result” 要 add class "showAllResult”，
+                 其他的tab 如果是 active 下面 “search-result” 要 remove class "showAllResult" -->
+            <div class="search-result">
+                <!-- 上面 “電影” tab 如果 "active"，下面 "category-movie" 要 add class “active”，
+                     其他的 tab 如果 "active"，下面 “category-movie” 要 remove class "active" -->
+                <section class="maT50 search-category category-movie group-wrap active">
+                    <div class="section-title">
+                        <span class="fz-m text-blue">電影 </span>
+                        <span class="fz-s text-gray">搜尋結果 0 筆電影資料</span>
                     </div>
+                    <ul class="maT1x result-list">
+                        <!-- 這裡開始 repeat 電影搜尋結果 -->
+                        <li class="padTB1x" ng-repeat="item in search.movies">
+                            <a href=""> <!-- 連到該電影頁面 -->
+                                <p class="text-white fz-normal">電影中文名 電影英文名（電影年份）</p>
+                            </a>
+                        </li>
+                        <!-- end repeat here -->
+                    </ul>
+                    <!-- 電影搜尋結果 > 5筆 會顯示 ”載入更多電影“，
+                         點擊 ”載入更多電影“，上面 “電影” tab 會 active，並且顯示 “電影” 的全部搜尋結果 -->
+                    <a href="" ng-show="search.searchMovieCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多電影</a>
+                </section>
 
-                    <div class="maT50 hasTitle group-wrap">
-                        <div class="section-title">
-                            <span class="fz-m text-blue">專題 </span>
-                            <span class="fz-normal text-gray"> 搜尋結果 {{ search.searchTopicCount }} 筆專題資料</span>
-                        </div>
-                        <ul class="maT1x result-list">
-                            <li class="padTB1x" ng-repeat="item in search.topics">
-                                <a ng-href="/mobile/topic/{{ item.Id }}">
-                                <!-- 專題中文名稱-->
-                                    <h3 class="text-white">{{ item.Title }} ({{ item.VideoCount }})</h3>
-                                </a>
-                            </li>
-                        </ul>
-                        <a href="/mobile/search?text=devil&amp;type=topic" ng-show="search.searchTopicCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多專題</a>
+                <!-- 上面 “專題” tab 如果 "active"，下面 "category-project" 要 add class “active”，
+                     其他的 tab 如果 "active"，下面 “category-project” 要 remove class "active"-->
+                <section class="maT50 search-category category-project group-wrap">
+                    <div class="section-title">
+                        <span class="fz-m text-blue">專題 </span>
+                        <span class="fz-s text-gray">搜尋結果 0 筆專題資料</span>
                     </div>
+                    <ul class="maT1x result-list">
+                        <!-- 這裡開始 repeat 專題搜尋結果 -->
+                        <li class="padTB1x" ng-repeat="item in search.topics">
+                            <a href=""> <!-- 連到該專題頁面 -->
+                                <p class="text-white fz-normal">專題中文名稱</p>
+                            </a>
+                        </li>
+                        <!-- end repeat here -->
+                    </ul>
+                    <!-- 專題搜尋結果 > 5筆 會顯示 ”載入更多專題“，
+                         點擊 ”載入更多專題“，上面 “專題” tab 會 active，並且顯示 “專題” 的全部搜尋結果 -->
+                    <a href="" ng-show="search.searchTopicCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多專題</a>
+                </section>
 
-                    <div class="maT50 hasTitle group-wrap">
-                        <div class="section-title">
-                            <span class="fz-m text-blue">影人 </span>
-                            <span class="fz-normal text-gray"> 搜尋導演及演員結果 {{ search.searchActorCount }} 筆人名資料</span>
-                        </div>
-                        <ul class="maT1x result-list">
-                            <li class="padTB1x" ng-repeat="item in search.actors">
-                                <a ng-href="/mobile/actor/details/{{ item.ActorId }}">
-                                <!-- 影人中文名 影人英文名-->
-                                    <h3 class="text-white">{{ item.Name }} {{ item.ENName }}</h3>
-                                </a>
-                            </li>
-                        </ul>
-                        <a href="/mobile/search?text=devil&amp;type=actor" ng-show="search.searchActorCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多朋友</a>
+                <!-- 上面 “影人” tab 如果 "active"，下面 "category-cast" 要 add class “active”，
+                     其他的 tab 如果 "active"，下面 “category-cast” 要 remove class "active"-->
+                <section class="maT50 search-category category-cast group-wrap">
+                    <div class="section-title">
+                        <span class="fz-m text-blue">影人 </span>
+                        <span class="fz-s text-gray">搜尋導演及演員結果 0 筆人名資料</span>
                     </div>
+                    <ul class="maT1x result-list">
+                        <!-- 這裡開始 repeat 影人搜尋結果 -->
+                        <li class="padTB1x" ng-repeat="item in search.actors">
+                            <a href=""> <!-- 連到該影人頁面 -->
+                                <p class="text-white fz-normal">影人中文名 影人英文名</p>
+                            </a>
+                        </li>
+                        <!-- end repeat here -->
+                    </ul>
+                    <!-- 影人搜尋結果 > 5筆 會顯示 ”載入更多影人“，
+                         點擊 ”載入更多影人“，上面 “影人” tab 會 active，並且顯示 “影人” 的全部搜尋結果 -->
+                    <a href="" ng-show="search.searchActorCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多影人</a>
+                </section>
 
-                    <div class="maT50 hasTitle group-wrap">
-                        <div class="section-title">
-                            <span class="fz-m text-blue">朋友 </span>
-                            <span class="fz-normal text-gray"> 搜尋結果 {{ search.searchUserCount }} 筆朋友資料</span>
-                        </div>
-                        <ul class="maT1x result-list">
-                            <li class="padTB1x" ng-repeat="item in search.users">
-                                <a ng-href=" ">
-                                <!-- 朋友暱稱 -->
-                                    <h3 class="text-white">{{ item.NickName }}</h3>
-                                </a>
-                            </li>
-                        </ul>
-                        <a href="/mobile/search?text=devil&amp;type=user" ng-show="search.searchUserCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多影人</a>
+                <!-- 上面 “朋友” tab 如果 "active"，下面 "category-user" 要 add class “active”，
+                     其他的 tab 如果 "active"，下面 “category-user” 要 remove class "active"-->
+                <section class="maT50 search-category category-user group-wrap">
+                    <div class="section-title">
+                        <span class="fz-m text-blue">朋友 </span>
+                        <span class="fz-s text-gray">搜尋結果 0 筆朋友資料</span>
                     </div>
-                </div>
+                    <ul class="maT1x result-list">
+                        <!-- 這裡開始 repeat 朋友搜尋結果 -->
+                        <li class="padTB1x" ng-repeat="item in search.users">
+                            <a href=""> <!-- 連到朋友的個人頁面 -->
+                                <p class="text-white fz-normal">朋友暱稱</p>
+                            </a>
+                        </li>
+                        <!-- end repeat here -->
+                    </ul>
+                    <!-- 朋友搜尋結果 > 5筆 會顯示 ”載入更多朋友“，
+                         點擊 ”載入更多朋友“，上面 “朋友” tab 會 active，並且顯示 “朋友” 的全部搜尋結果 -->
+                    <a href="" ng-show="search.searchUserCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多朋友</a>
+                </section>
             </div>
         </div>
     </div>

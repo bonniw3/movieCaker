@@ -13,7 +13,6 @@
     width: auto;
     padding: 30px 30px 0 30px;
     background-color: rgba(12,12,12,.95);
-    /*box-shadow: 0px 0px 2px 4px rgba(0,0,0,0.5);*/
     z-index: 5;
 }
 .search-control.scroll {
@@ -103,6 +102,7 @@
   vertical-align: middle;
   font-size: 1em;
   margin-left: -4px;
+  letter-spacing: 1px;
 }
 
 .underline-tab .tab-item.active a {
@@ -131,7 +131,7 @@
 .section-title:before {
     content: '';
     position: absolute;
-    top: 1px;
+    top: 3px;
     left: -20px;
     width: 5px;
     height: 20px;
@@ -141,6 +141,18 @@
 .result-list li {
     border-bottom: 1px solid rgba(238,238,238,.2);
     font-size: 1em;
+}
+
+.search-category {
+    letter-spacing: 1px;
+    display: none;
+}
+.search-result.showAllResult > section {
+    display: block;
+}
+.category-movie.active, .category-project.active,
+.category-cast.active, .category-user.active {
+    display: block;
 }
 
 
