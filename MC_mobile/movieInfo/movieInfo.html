@@ -226,10 +226,8 @@
                         <div class="section-title fz-subtitle text-blue">電影介紹</div>
                         <article class="padLR10 maT2x">
                             <div class="moviePlot active" ng-class="{'active':vm.seeAllContent}">
-                                <div ng-hide="vm.seeAllContent" ng-bind="(vm.movie.Story | characters:50 :true)">
-                                    <!--劇情描述，為了逃避苦澀過往，李錢德勒（凱西艾佛列克 飾演）離鄉背井，在波士頓某個小鎮當水電工。哥哥的意外逝世，讓他不得不回到位在麻州的「曼徹斯特海邊」，並成為姪子派屈克（盧卡斯海吉斯 飾演）的法定監護人。除了兩代之間的溝通隔閡，李一方面要撫平派屈克的喪父傷痛，同時還得要面對擁有新家庭的前妻蘭蒂（蜜雪兒威廉絲 飾演）。這趟旅程，也讓李破碎的心，有了重新拾起的機會…。-->
-                                </div>
-                                <div class="content-preline" ng-show="vm.seeAllContent" ng-bind="vm.movie.Story">劇情描述，為了逃避苦澀過往，李錢德勒（凱西艾佛列克 飾演）離鄉背井，在波士頓某個小鎮當水電工。哥哥的意外逝世，讓他不得不回到位在麻州的「曼徹斯特海邊」，並成為姪子派屈克（盧卡斯海吉斯 飾演）的法定監護人。除了兩代之間的溝通隔閡，李一方面要撫平派屈克的喪父傷痛，同時還得要面對擁有新家庭的前妻蘭蒂（蜜雪兒威廉絲 飾演）。這趟旅程，也讓李破碎的心，有了重新拾起的機會…。
+                                <!-- 點擊 “顯示全部” 時要 add class "clamp-3"，點擊 “隱藏部分” 時要 remove class "clamp-3" -->
+                                <div class="content-preline line-clamp clamp-3 letter-space-1x" ng-show="vm.seeAllContent" ng-bind="vm.movie.Story">劇情描述，為了逃避苦澀過往，李錢德勒（凱西艾佛列克 飾演）離鄉背井，在波士頓某個小鎮當水電工。哥哥的意外逝世，讓他不得不回到位在麻州的「曼徹斯特海邊」，並成為姪子派屈克（盧卡斯海吉斯 飾演）的法定監護人。除了兩代之間的溝通隔閡，李一方面要撫平派屈克的喪父傷痛，同時還得要面對擁有新家庭的前妻蘭蒂（蜜雪兒威廉絲 飾演）。這趟旅程，也讓李破碎的心，有了重新拾起的機會…。
                                 </div>
                             </div>
                             <div class="movieTag maT2x">
@@ -314,7 +312,7 @@
                                                 </div>
                                             </div>
                                             <div class="project-content maT3x">
-                                                <p class="fontW-bold text-white">PROJECT TITLE GOES HERE</p>
+                                                <p class="fontW-bold text-white line-clamp clamp-1">PROJECT TITLE GOES HERE</p>
                                                 <p class="text-white line-clamp clamp-1">2016年对电影行业来说是标志性</p>
                                             </div>
                                         </a>
@@ -356,7 +354,7 @@
                                             </div>
                                         </div>
                                         <div class="review-content maT1x maBHalf1x">
-                                            <p class="line-clamp clamp-5" ng-bind="(review.Review | characters:89 :true)">
+                                            <p class="line-clamp clamp-5 letter-space-1x">
                                                 我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶懦弱神經質的感覺。凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶
                                             </p>
                                             <div class="group-wrap maT1x">
@@ -398,7 +396,7 @@
                                             </div>
                                         </div>
                                         <div class="review-content maT1x maBHalf1x">
-                                            <p ng-bind="(review.Review | characters:89 :true)">
+                                            <p class="line-clamp clamp-5 letter-space-1x">
                                                 我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶懦弱神經質的感覺。凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶
                                             </p>
                                             <div class="group-wrap maT1x">
