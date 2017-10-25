@@ -52,10 +52,10 @@
 .owl-carousel .movie-item {
     float: none;
     width: initial;
-	padding: 7%;
+	/* padding: 7%; */
 }   
 .owl-carousel .movie-item > .movie-img {
-	height: auto;
+	/* height: auto; */
 }
 
 
