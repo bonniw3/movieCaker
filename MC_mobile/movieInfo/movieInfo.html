@@ -38,15 +38,19 @@
         </div>
 
         <!-- header -->
-        <div class="header" ng-class="{ blur: main.screenStatus() }">
-            <ul class="group-wrap header-items" ng-show="!main.isSearchMode">
+        <div class="header">
+            <ul class="group-wrap header-items">
                 <li class="pull-left">
                     <a href="/mobile">
                         <i class="fa fa-bars padTBHalfX" aria-hidden="true"></i>
                     </a>
                 </li>
+                <!-- 版本 -->
+                <li class="pull-left">
+                    <p class="app-version" style="font-size: 10px; width: 70px; line-height: 15px; margin-left: 10px;">alpha v2.6.20171022</p>
+                </li>
                 <li id="user-icon" class="pull-right">
-                     <a href="/login" ng-click="main.MenuLogin()">
+                     <a href="/login">
                         <div class="login-icon padTBHalfX maLHalfx">
                             <img src="img/login_icon.png"alt="">
                         </div>
@@ -83,7 +87,7 @@
                 <button class="btn-ok maT1x">我知道了</button>
             </div>
             <!-- 要出現 “拉新圖” ".signup-prompt" 要 add class "show" -->
-            <div class="signup-prompt slideable show">
+            <div class="signup-prompt slideable hidden">
                 <div class="rel-pos">
                     <div class="img-wrapper">
                         <!-- <img src="img/gift-simplified.png" alt=""> --> <!-- 簡體 -->
@@ -182,6 +186,7 @@
             </div>-->
                 
             <!-- main content -->
+                <!-- 當 window scrollTop != 0 的時候，下面這個 “content-wrap” 要 add class "scroll" -->
                 <div class="content-wrap top35vh">
                     <section class="movieInfo">
                         <h2 class="fz-m">海邊的曼徹斯特</h2>
@@ -277,7 +282,7 @@
                                                 </div>
                                             </div>
                                             <div class="project-content maT3x">
-                                                <p class="fontW-bold text-white">2017上半年北美票房排行TOP30~你看了幾部？</p>
+                                                <p class="fontW-bold text-white line-clamp clamp-1">2017上半年北美票房排行TOP30~你看了幾部？</p>
                                                 <p class="text-white line-clamp clamp-1">2016年对电影行业来说是标志性的一年，全球票房总收入超过111亿美元，远远超过去年刚刚突破的球票房总收入超过111亿美元，远远超过去年刚刚突破的</p>
                                             </div>
                                         </a>
@@ -293,7 +298,7 @@
                                                 </div>
                                             </div>
                                             <div class="project-content maT3x">
-                                                <p class="fontW-bold text-white">2017上半年北美票房排行TOP30</p>
+                                                <p class="fontW-bold text-white line-clamp clamp-1">2017上半年北美票房排行TOP30</p>
                                                 <p class="text-white line-clamp clamp-1">2016年对电影行业来说是标志性的一年，全球票房总收入超过</p>
                                             </div>
                                         </a>
@@ -321,13 +326,11 @@
 
                     <section class="movieReviews maT13p">
                         <div class="section-title fz-subtitle text-blue">影評</div>
-                        <article class="padLR10">
+                        <article class="padLR10 maT2x">
                             <div class="review-wrap">
                                 <ul class="review-nav">
-                                    <li class="active" ng-click="vm.getComments('hot')" ng-class="{'active':vm.reviewSelected=='hot'}">熱門</li>
-                                    <li ng-click="vm.getComments('createOn')" ng-class="{'active':vm.reviewSelected=='createOn'}">最新</li>
-                                    <!--<li ng-show="vm.isAuthenticated" ng-click="vm.getComments('myFriend')" ng-class="{'active':vm.reviewSelected=='myFriend'}">我的朋友</li>-->
-                                    <!--<li ng-show="vm.isAuthenticated" ng-click="vm.getComments('mine')" ng-class="{'active':vm.reviewSelected=='mine'}">我的</li>-->
+                                    <li class="active">熱門</li>
+                                    <li >最新</li>
                                 </ul>
                                 <div class="review-list active" ng-class="{'active':vm.reviewSelected=='hot'}">
                                     <!-- 這邊開始repeat -->
@@ -371,7 +374,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                
                                 <div class="review-list" ng-class="{'active':vm.reviewSelected=='creatOn'}">
                                     <!-- 這邊開始repeat -->
                                     <div class="review-item maT2x" ng-repeat="review in vm.reviews">

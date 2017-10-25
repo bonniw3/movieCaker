@@ -355,13 +355,14 @@ table {
 }
 .reaction-btn li i {
   	position: relative;
-	top: -2px;
-	font-size: 1.25em;
+	top: -3px;
+	font-size: 1.2em;
 }
 .reaction-btn li span {
 	display: block;
-	margin-top: -7px;
-	font-size: 11px;
+	margin-top: -8px;
+	font-size: .73em;
+	letter-spacing: 1px;
 }
 
 .active[class*="-eye"] {
@@ -834,7 +835,7 @@ table {
 	-webkit-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
-	margin-left: 4%;
+	/* margin-left: 4%; */
 }
 .review-author {
 	position: absolute;
