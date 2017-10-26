@@ -118,8 +118,15 @@ div.ui-state-active {
     width: 31%;
     text-align: center;
 }
-.page-btn-group:active {
+/* .page-btn-group:active {
     background: rgba(12,12,12,.3);
+} */
+
+.page-btn-group:active .page-btn i {
+    color: #E9A1A1;
+}
+.page-btn-group:active .page-title {
+    color: rgba(200,200,200,.7);
 }
 .page-btn {
     border-radius: 50%;
