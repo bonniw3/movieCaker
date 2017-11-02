@@ -10,49 +10,102 @@
     <!--<link rel="stylesheet" href="css/custom.css">-->
     <!--<link rel="stylesheet" href="css/screen.css">-->
     <link href="../entire_css/common.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/search.css">
+    <link href="css/search.css" rel="stylesheet" >
+    <link href="../entire_css/min-search.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <div ng-controller="SearchIndexCtrl as search">
+
+        <!-- search area -->
+        <div class="search-area group-wrap">
+            <form> 
+                <button class="btn-close group-wrap" type="reset">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </button>
+                <div class="search-keyword ui">
+                    <i class="fa fa-search fa-lg pull-left" aria-hidden="true"></i>
+                    <input id="search-input" class="pull-left" type="search" name="" value="" placeholder="尋找電影..." ng-model="main.searchText" ng-bind="main.searchText" multi-search/>
+                </div>
+            </form>
+            <div id="search-autocomplete"></div>
+            <a href="#" class="more pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>更多搜尋結果</a>
+        </div>
+    
+        <!-- header -->
+        <div class="header">
+            <ul class="group-wrap header-items">
+                <li class="pull-left">
+                    <a href="/mobile">
+                        <i class="fa fa-bars padTBHalfX" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <!-- 版本 -->
+                <li class="pull-left">
+                    <p class="app-version" style="font-size: 10px; width: 70px; line-height: 15px; margin-left: 10px;">alpha v2.6.20171022</p>
+                </li>
+                <li id="user-icon" class="pull-right">
+                        <a href="/login">
+                        <div class="login-icon padTBHalfX maLHalfx">
+                            <img src="img/login_icon.png"alt="">
+                        </div>
+                    </a> 
+                    <!-- 登入後顯示 -->
+                    <a href="#" style="display:none;">
+                        <div class="circle-mask circle1x">
+                            <img src="img/default_avatar.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li id="search-icon" class="pull-right maR1x">
+                    <i class="fa fa-search padTBHalfX" aria-hidden="true"></i>
+                </li>
+                <li id="logo-text">
+                    <a href="/mobile"><img src="img/mc_logo_text.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- content -->
         <div class="search-wrap">
             <!-- 當 window 被 scroll 的時候，下面的 “search-control” 要 add class "scroll" -->
             <section class="search-control">
-                <div class="search-area group-wrap">
-                    <!-- 按叉叉回首頁 -->
-                    <a href="/" class="btn-close group-wrap">
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                        <i class="fa fa-angle-left" aria-hidden="true"></i>
-                    </a>
-                    <div class="search-keyword">
+                <div class="page-title fz-subtitle text-blue">熱門搜尋</div>
+                <div class="search-result-area group-wrap">
+                    <div class="search-result-keyword maT2x">
                         <i class="fa fa-search pull-left" aria-hidden="true"></i>
-                        <input id="search-input" class="pull-left" type="text" name="" value="" placeholder="尋找電影..." />
+                        <!-- 這邊的 input 搜尋的時候不會有搜尋提示 -->
+                        <form class="pull-left" action=".">
+                            <input type="search" placeholder="尋找電影..." />
+                        </form>
                     </div>
                 </div>
-                <div class="filter-menu">
-                    <ul class="underline-tab five-tab">
+                <div class="filter-menu maT15">
+                    <ul class="nav-horizontal nav-type-scroll optionNum-5">
                         <!-- 點擊 “全部” 會顯示下面所有的搜尋結果，
-                             點擊 “電影，影人，專題，朋友” 只顯示他們自己的搜尋結果 -->
-                        <li class="tab-item active"><a href="">全部</a></li>
-                        <li class="tab-item"><a href="">電影</a></li>
-                        <li class="tab-item"><a href="">影人</a></li>
-                        <li class="tab-item"><a href="">專題</a></li>
-                        <li class="tab-item"><a href="">朋友</a></li>
+                                點擊 “電影，影人，專題，朋友” 只顯示他們自己的搜尋結果 -->
+                        <li class="active"><a href=""></a>全部</a></li>
+                        <li class=""><a href="">電影</a></li>
+                        <li class=""><a href="">影人</a></li>
+                        <li class=""><a href="">專題</a></li>
+                        <li class=""><a href="">朋友</a></li>
                     </ul>
                 </div>
             </section>
+
             <!-- 如果上面 “全部” 這個tab 是 active，下面 “search-result” 要 add class "showAllResult”，
-                 其他的tab 如果是 active 下面 “search-result” 要 remove class "showAllResult" -->
-            <div class="search-result">
+                    其他的tab 如果是 active 下面 “search-result” 要 remove class "showAllResult" -->
+            <div class="search-result showAllResult maB3x">
                 <!-- 上面 “電影” tab 如果 "active"，下面 "category-movie" 要 add class “active”，
-                     其他的 tab 如果 "active"，下面 “category-movie” 要 remove class "active" -->
-                <section class="maT50 search-category category-movie group-wrap active">
+                        其他的 tab 如果 "active"，下面 “category-movie” 要 remove class "active" -->
+                <section class="maT50 search-category category-movie group-wrap">
                     <div class="section-title">
-                        <span class="fz-m text-blue">電影 </span>
-                        <span class="fz-s text-gray">搜尋結果 0 筆電影資料</span>
+                        <span class="fz-normal text-blue">電影 </span>
+                        <span class="fz-s text-gray fontW-normal">搜尋結果 0 筆電影資料</span>
                     </div>
-                    <ul class="maT1x result-list">
+                    <ul class="result-list">
                         <!-- 這裡開始 repeat 電影搜尋結果 -->
                         <li class="padTB1x" ng-repeat="item in search.movies">
                             <a href=""> <!-- 連到該電影頁面 -->
@@ -62,18 +115,18 @@
                         <!-- end repeat here -->
                     </ul>
                     <!-- 電影搜尋結果 > 5筆 會顯示 ”載入更多電影“，
-                         點擊 ”載入更多電影“，上面 “電影” tab 會 active，並且顯示 “電影” 的全部搜尋結果 -->
-                    <a href="" ng-show="search.searchMovieCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多電影</a>
+                            點擊 ”載入更多電影“，上面 “電影” tab 會 active，並且顯示 “電影” 的全部搜尋結果 -->
+                    <a href="" ng-show="search.searchMovieCount > 5" class="maT1x pull-right text-light-blue"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多電影</a>
                 </section>
 
                 <!-- 上面 “專題” tab 如果 "active"，下面 "category-project" 要 add class “active”，
-                     其他的 tab 如果 "active"，下面 “category-project” 要 remove class "active"-->
+                        其他的 tab 如果 "active"，下面 “category-project” 要 remove class "active"-->
                 <section class="maT50 search-category category-project group-wrap">
                     <div class="section-title">
-                        <span class="fz-m text-blue">專題 </span>
-                        <span class="fz-s text-gray">搜尋結果 0 筆專題資料</span>
+                        <span class="fz-normal text-blue">專題 </span>
+                        <span class="fz-s text-gray fontW-normal">搜尋結果 0 筆專題資料</span>
                     </div>
-                    <ul class="maT1x result-list">
+                    <ul class="result-list">
                         <!-- 這裡開始 repeat 專題搜尋結果 -->
                         <li class="padTB1x" ng-repeat="item in search.topics">
                             <a href=""> <!-- 連到該專題頁面 -->
@@ -83,18 +136,18 @@
                         <!-- end repeat here -->
                     </ul>
                     <!-- 專題搜尋結果 > 5筆 會顯示 ”載入更多專題“，
-                         點擊 ”載入更多專題“，上面 “專題” tab 會 active，並且顯示 “專題” 的全部搜尋結果 -->
-                    <a href="" ng-show="search.searchTopicCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多專題</a>
+                            點擊 ”載入更多專題“，上面 “專題” tab 會 active，並且顯示 “專題” 的全部搜尋結果 -->
+                    <a href="" ng-show="search.searchTopicCount > 5" class="maT1x pull-right text-light-blue"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多專題</a>
                 </section>
 
                 <!-- 上面 “影人” tab 如果 "active"，下面 "category-cast" 要 add class “active”，
-                     其他的 tab 如果 "active"，下面 “category-cast” 要 remove class "active"-->
+                        其他的 tab 如果 "active"，下面 “category-cast” 要 remove class "active"-->
                 <section class="maT50 search-category category-cast group-wrap">
                     <div class="section-title">
-                        <span class="fz-m text-blue">影人 </span>
-                        <span class="fz-s text-gray">搜尋導演及演員結果 0 筆人名資料</span>
+                        <span class="fz-normal text-blue">影人 </span>
+                        <span class="fz-s text-gray fontW-normal">搜尋導演及演員結果 0 筆人名資料</span>
                     </div>
-                    <ul class="maT1x result-list">
+                    <ul class="result-list">
                         <!-- 這裡開始 repeat 影人搜尋結果 -->
                         <li class="padTB1x" ng-repeat="item in search.actors">
                             <a href=""> <!-- 連到該影人頁面 -->
@@ -104,18 +157,18 @@
                         <!-- end repeat here -->
                     </ul>
                     <!-- 影人搜尋結果 > 5筆 會顯示 ”載入更多影人“，
-                         點擊 ”載入更多影人“，上面 “影人” tab 會 active，並且顯示 “影人” 的全部搜尋結果 -->
-                    <a href="" ng-show="search.searchActorCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多影人</a>
+                            點擊 ”載入更多影人“，上面 “影人” tab 會 active，並且顯示 “影人” 的全部搜尋結果 -->
+                    <a href="" ng-show="search.searchActorCount > 5" class="maT1x pull-right text-light-blue"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多影人</a>
                 </section>
 
                 <!-- 上面 “朋友” tab 如果 "active"，下面 "category-user" 要 add class “active”，
-                     其他的 tab 如果 "active"，下面 “category-user” 要 remove class "active"-->
+                        其他的 tab 如果 "active"，下面 “category-user” 要 remove class "active"-->
                 <section class="maT50 search-category category-user group-wrap">
                     <div class="section-title">
-                        <span class="fz-m text-blue">朋友 </span>
-                        <span class="fz-s text-gray">搜尋結果 0 筆朋友資料</span>
+                        <span class="fz-normal text-blue">朋友 </span>
+                        <span class="fz-s text-gray fontW-normal">搜尋結果 0 筆朋友資料</span>
                     </div>
-                    <ul class="maT1x result-list">
+                    <ul class="result-list">
                         <!-- 這裡開始 repeat 朋友搜尋結果 -->
                         <li class="padTB1x" ng-repeat="item in search.users">
                             <a href=""> <!-- 連到朋友的個人頁面 -->
@@ -125,73 +178,93 @@
                         <!-- end repeat here -->
                     </ul>
                     <!-- 朋友搜尋結果 > 5筆 會顯示 ”載入更多朋友“，
-                         點擊 ”載入更多朋友“，上面 “朋友” tab 會 active，並且顯示 “朋友” 的全部搜尋結果 -->
-                    <a href="" ng-show="search.searchUserCount > 5" class="maT1x pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多朋友</a>
+                            點擊 ”載入更多朋友“，上面 “朋友” tab 會 active，並且顯示 “朋友” 的全部搜尋結果 -->
+                    <a href="" ng-show="search.searchUserCount > 5" class="maT1x pull-right text-light-blue"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>載入更多朋友</a>
                 </section>
             </div>
         </div>
     </div>
 
 
-
-
-    <script defer src='http://test.moviecaker.com/Scripts/jquery-1.8.3.min.js'></script>
-    <script defer src='http://test.moviecaker.com/Scripts/jquery-ui-1.10.3.min.js'></script>
-    <script defer src='http://test.moviecaker.com/Scripts/jquery/jquery.ui.touch-punch.min.js'></script>
-    <script defer src='http://test.moviecaker.com/Scripts/jquery/jquery.lazyload.min.js'></script>
-    <script defer src='http://test.moviecaker.com/Scripts/jquery/jquery.cookie.js'></script>
-    <script defer src='http://test.moviecaker.com/Scripts/moment/moment.min.js'></script>
-    <script defer src='http://test.moviecaker.com/Scripts/mobile/main.js'></script>
-
-    <script defer src='http://test.moviecaker.com/scripts/angular/angular.js'></script>
-    <script defer src='http://test.moviecaker.com/scripts/angular/components/cssPreload/cssPreload.factory.js'></script>
-    <script defer src='http://test.moviecaker.com/scripts/angular/components/cssPreload/cssPreload.directive.js'></script>
-    <script defer src='http://test.moviecaker.com/scripts/angular/components/ngTouch/ng-touch.js'></script>
-    <script defer src='http://test.moviecaker.com/scripts/angular/components/sortable/ng-sortable.js'></script>
-    <script defer src='http://test.moviecaker.com/scripts/angular/components/infiniteScroll/ng-infinite-scroll.min.js'></script>
-    <script defer src='http://test.moviecaker.com/scripts/angular/app.mobile.module.js'></script>
-    <script defer src='http://test.moviecaker.com/scripts/angular/services/filter.js'></script>
-    <script defer src='http://test.moviecaker.com/scripts/angular/services/service.js'></script>
-    <script defer src='http://test.moviecaker.com/scripts/angular/components/multi-search.directive.js'></script>
-    <script defer src='http://test.moviecaker.com/scripts/angular/components/topic-video-search.directive.js'></script>
-    <script defer src='http://test.moviecaker.com/scripts/angular/components/star-rating.directive.js'></script>
-    <script defer src='http://test.moviecaker.com/scripts/angular/components/all.directive.js'></script>
-
-    <script defer src="http://test.moviecaker.com/scripts/angular/controllers/mobile/layout.ctrl.js?v=20161209"></script>
-    <script defer src="http://test.moviecaker.com/scripts/angular/controllers/mobile/home-index.ctrl.js"></script>
-
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-68883772-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
     <script>
-
         $(document).ready(function(){
+            // 測試搜尋樣式，不是真的搜尋功能
+            $( function() {
+                var availableTags = [
+                    "美女與野獸 Beauty and the Beast (2017)",
+                    "小太陽的願望 Little Miss Sunshine (2006)",
+                    "醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                    "醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "美女與野獸 Beauty and the Beast (2017)",
+                    "小太陽的願望 Little Miss Sunshine (2006)",
+                    "醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                    "醜女大翻身 200 Pounds Beauty (2006)","醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "美女與野獸 Beauty and the Beast (2017)",
+                    "小太陽的願望 Little Miss Sunshine (2006)",
+                    "醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                    "醜女大翻身 200 Pounds Beauty (2006)"
+                ];
+                $( "#search-input" ).autocomplete({
+                    source: availableTags,
+                    appendTo: "#search-autocomplete",
+                    open: function(){
+                        $('.more').addClass("searching"); // 有搜尋結果再出現”更多搜尋“按鈕
+                    },
+                    close: function(){
+                        $('.more').removeClass("searching"); // 沒有搜尋結果不出現”更多搜尋“按鈕
+                    }
+                });
+            });
+
+            // 首頁點擊搜尋的動態效果
+            $('#search-icon').on("click", function(){
+                window.scrollBy(0, 1); // 讓鍵盤出現時頁面不會被推上去
+                $('.search-area').addClass("searching");
+                $('.btn-close').addClass("searching");
+                $('.search-keyword').addClass("searching");
+            });
+            // 點擊叉按鈕關閉搜尋
+            $('.btn-close').on("click", function(){
+                $('.search-area').removeClass("searching");
+                $('.btn-close').removeClass("searching");
+                $('.search-keyword').removeClass("searching");
+            });
+
+            // 滑動畫面 會出現黑色底
             $(window).scroll(function() {
-                if( $(window).scrollTop() != 0 ) {
-                    $('.search-control').addClass('scroll');
+                var windowpos = $(window).scrollTop();
+                var header = $('.header');
+                var content = $('.content-wrap');
+                var searchControl = $('.search-control');
+                if ( windowpos > 0 ) {
+                    header.addClass('scroll');
+                    content.addClass('scroll');
+                    searchControl.addClass('scroll');
                 } else {
-                    $('.search-control').removeClass('scroll');
+                    header.removeClass('scroll');
+                    content.removeClass('scroll');
+                    searchControl.removeClass('scroll');
                 }
             });
         });
     </script>
-
-    <link css-preload ng-href='http://test.moviecaker.com/Content/jquery-ui.css' rel='stylesheet' />
-    <!--<link css-preload ng-href='www.test.moviecaker.com/Content/mobile/screen.css' rel='stylesheet' />-->
-    <!--<link css-preload ng-href='www.test.moviecaker.com/Content/mobile/custom.css' rel='stylesheet' />-->
-
-    <!--<link css-preload ng-href="www.test.moviecaker.com/Content/mobile/font-awesome.min.css" rel="stylesheet" />-->
-    <!--<link css-preload ng-href="www.test.moviecaker.com/Content/mobile/icomoon/style.min.css" rel="stylesheet" />-->
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 
 .search-wrap {
-    padding: 30px;
+    padding: 7%;
     box-sizing: border-box;
     background-color: #0c0c0c;
 }
@@ -11,7 +11,7 @@
     left: 0;
     right: 0;
     width: auto;
-    padding: 30px 30px 0 30px;
+    padding: 4em 5% 1em 5%;
     background-color: rgba(12,12,12,.95);
     z-index: 5;
 }
@@ -21,121 +21,101 @@
 
 
 /* ---------- SEARCH section ---------- */
-.search-area {
+.search-control .search-result-area {
     position: relative;
 }
-.btn-close {
-    width: 40px;
-    height: 40px;
-    margin: auto;
-    border-radius: 50%;
-    border: 1px solid rgba(238,238,238,.7);
-    line-height: 40px;
-    text-align: center;
-    box-sizing: border-box;
-    padding: 6px 0 0 12px;
-    display: block;
-    cursor: pointer;
-}
-.btn-close:focus {
-    outline: none;
-}
-
-.btn-close i {
-    font-size: 25px;
-    color: #eeeeee;
-    float: left;
-}
-.btn-close i.fa-angle-right {
-    margin-right: -3px;
-}
-
-.search-keyword {
+.search-control .search-result-keyword {
     position: relative;
-    margin-top: 15px;
     width: 100%;
     overflow: hidden;
     font-size: 1.2em;
 }
 
-#search-input::-webkit-search-cancel-button {
+.search-control .search-result-keyword form {
+    width: 100%;
+}
+
+.search-control .search-result-keyword input::-webkit-search-cancel-button {
     position: relative;
     right: -500px;
 }
-.search-keyword input {
-    width: 86%;
-    background: transparent;
-    border-bottom: 1px solid rgba(113,207,238,.4);
-    padding: 10px 5px 10px 45px;
-    font-size: 1em;
+.search-control .search-result-keyword input {
+    width: 100%;
+    background: #222222;
+    padding: 3% 0 3% 45px;
+    font-size: .9em;
     color: #eeeeee;
-    letter-spacing: 1px;
-    border-radius: 0;
-    -webkit-border-radius:0px;
+    border-right: 2px solid transparent;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
     -webkit-appearance: none;
     cursor: text;
-    transition: border-color .5s;
+    transition: background-color .5s,
+                border-color .5s,
+                color .5s;
 }
-.search-keyword input:focus {
+.search-control .search-result-keyword input:focus {
     outline: none;
-    border-bottom: 1px solid rgba(113,207,238,1);
+    color: #71cfee;
+    background: #2d2d2d;
+    border-right: 2px solid #71cfee;
+    border-radius: 5px 0 0 5px;
 }
 
-.search-keyword i {
+.search-control .search-result-keyword i {
     position: absolute;
-    top: 9px;
+    top: 50%;
+    transform: translateY(-50%);
     left: 15px;
     color: #71cfee;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
-.underline-tab {
-  box-sizing: border-box;
+.filter-menu ul.nav-type-scroll {
+    border-bottom: 1px solid rgba(200,200,200,.05);
+}
+.filter-menu ul.nav-type-scroll > li {
+    padding-bottom: 5px;
 }
 
-.underline-tab .tab-item {
-  box-sizing: border-box;
-  padding: 20px 0;
-  color: #9B9B9B;
-  text-align: center;
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 1em;
-  margin-left: -4px;
-  letter-spacing: 1px;
+.optionNum-5 > li {
+	width: 20%;
 }
-
-.underline-tab .tab-item.active a {
-  color: #71cfee;
+.optionNum-5 > li.active a {
+    color: #71cfee;
 }
-
-.underline-tab.five-tab > .tab-item {
-  width: 20%;
-}
-
-.tab-item a {
-    color: #9b9b9b;
+.optionNum-5 > li > a {
+    color: rgba(238,238,238,.6);
 }
 
 
 /* ---------- SEARCH-RESULT section ---------- */
 .search-result {
-    margin-top: 12em;
+    margin-top: 13em;
 }
 
-.section-title {
+.section-title, .page-title {
 	cursor: default;
     position: relative;
-    left: -10px;
+    font-weight: bold;
+	letter-spacing: 1px;
 }
-.section-title:before {
-    content: '';
+.page-title:before {
+    content:'';
     position: absolute;
-    top: 3px;
-    left: -20px;
-    width: 5px;
+    top: 2px;
+    left: -5.5%;
     height: 20px;
-    background-color:#71cfee;
+    width: 5px;
+    vertical-align: middle;
+    background-color: #71cfee;
+}
+
+.section-title:not(.page-title) {
+    margin-left: -1%;
+}
+.section-title:not(.page-title):before {
+    content: none;
 }
 
 .result-list li {
