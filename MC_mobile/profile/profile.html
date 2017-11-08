@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>電影：海邊的曼徹斯特</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="由于哥哥乔（凯勒·钱德勒）过世，看门人李·钱德勒（凯西·阿弗莱克）成为他16岁的侄子帕特里克（卢卡斯·赫奇斯）的法定监护人，李的生活从此发生彻底的改变，他不得不回到家乡的小城市（曼彻斯特），面对与前妻..." />
+    <link rel="canonical" href="http://test.moviecaker.com/video/M00000000158105">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="../entire_css/common.css" rel="stylesheet" />
+    <link href="css/profile.css" rel="stylesheet" />
+    <link href="../entire_css/min-search.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div ng-show="main.appReady">
+        <!-- search area -->
+        <div class="search-area group-wrap">
+            <form> 
+                <button class="btn-close group-wrap" type="reset">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </button>
+                <div class="search-keyword ui">
+                    <i class="fa fa-search fa-lg pull-left" aria-hidden="true"></i>
+                    <input id="search-input" class="pull-left" type="search" name="" value="" placeholder="尋找電影..." ng-model="main.searchText" ng-bind="main.searchText" multi-search/>
+                </div>
+            </form>
+            <div id="search-autocomplete"></div>
+            <a href="#" class="more pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>更多搜尋結果</a>
+        </div>
+
+        <!-- header -->
+        <div class="header">
+            <ul class="group-wrap header-items">
+                <li class="pull-left">
+                    <a href="/mobile">
+                        <i class="fa fa-bars padTBHalfX" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <!-- 版本 -->
+                <li class="pull-left">
+                    <p class="app-version" style="font-size: 10px; width: 70px; line-height: 15px; margin-left: 10px;">alpha v2.6.20171022</p>
+                </li>
+                <li id="user-icon" class="pull-right">
+                     <a href="/login">
+                        <div class="login-icon padTBHalfX maLHalfx">
+                            <img src="img/login_icon.png"alt="">
+                        </div>
+                    </a> 
+                    <!-- 登入後顯示 -->
+                    <a href="#" style="display:none;">
+                        <div class="circle-mask circle1x">
+                            <img src="img/default_avatar.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li id="search-icon" class="pull-right maR1x">
+                    <i class="fa fa-search padTBHalfX" aria-hidden="true"></i>
+                </li>
+                <li id="logo-text">
+                    <a href="/mobile"><img src="img/mc_logo_text.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- content -->
+        <div ng-class="{ blur: main.screenStatus() }">
+            <div>
+                <!-- fixed background -->
+                <div class="bkgd-img">
+                    <img src="img/interstellar-h.jpg" alt="">
+                </div>
+                
+                <!-- main content -->
+                <div class="content-wrap">
+                    <section class="taC">
+                        <div class="circle-mask circle2x">
+                            <img src="img/default_avatar.png" alt="">
+                        </div>
+                        <h3 class="user-nickname maT1x">使用者1號</h3>
+                        <p class="text-white80p">
+                            <span class="fz-s">
+                                <!-- 女生 -->
+                                <i class="fa fa-venus text-light-pink" aria-hidden="true"></i> 
+                                <!-- 男生 -->
+                                <!-- <i class="fa fa-mars text-blue" aria-hidden="true"></i> -->
+                            </span>
+                            <span class="fz-s maLHalfx"><i class="fa fa-map-marker" aria-hidden="true"></i> <span class="fz-15 letter-space-1x">台灣地區</span></span>
+                        </p>
+                    </section>
+
+                    <div class="btn-signout maT2x">
+                        <a href="#" class="text-white fz-subtitle letter-space-1x">登出</a>
+                    </div>
+                </div>
+
+
+            <div class="top circle40">
+                <i class="fa fa-angle-up" aria-hidden="true"></i>
+            </div> 
+        </div> <!--end of ng class -->
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+        // 測試搜尋樣式，不是真的搜尋功能
+        $( function() {
+            var availableTags = [
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)","醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)"
+            ];
+            $( "#search-input" ).autocomplete({
+                source: availableTags,
+                appendTo: "#search-autocomplete",
+                open: function(){
+                    $('.more').addClass("searching"); // 有搜尋結果再出現”更多搜尋“按鈕
+                },
+                close: function(){
+                    $('.more').removeClass("searching"); // 沒有搜尋結果不出現”更多搜尋“按鈕
+                }
+            });
+        });
+
+        // 首頁點擊搜尋的動態效果
+        $('#search-icon').on("click", function(){
+            window.scrollBy(0, 1); // 讓鍵盤出現時頁面不會被推上去
+            $('.search-area').addClass("searching");
+            $('.btn-close').addClass("searching");
+            $('.search-keyword').addClass("searching");
+        });
+        // 點擊叉按鈕關閉搜尋
+        $('.btn-close').on("click", function(){
+            $('.search-area').removeClass("searching");
+            $('.btn-close').removeClass("searching");
+            $('.search-keyword').removeClass("searching");
+        });
+
+        // 滑動畫面 會出現黑色底
+        $(window).scroll(function() {
+            var windowpos = $(window).scrollTop();
+            var header = $('.header');
+            var content = $('.content-wrap');
+            var shareImg = $('.share-marketing');
+            var signupImg = $('.signup-prompt');
+            if ( windowpos > 0 ) {
+                header.addClass('scroll');
+                content.addClass('scroll');
+            } else {
+                header.removeClass('scroll');
+                content.removeClass('scroll');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

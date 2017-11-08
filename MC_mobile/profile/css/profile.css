@@ -1,0 +1,33 @@
+
+.bkgd-img img {
+    width: 125%;
+    margin-left: -20%;
+}
+.bkgd-img:after {
+    height: 105%;
+}
+
+.content-wrap {
+    top: 3vh;
+}
+
+.user-nickname {
+    font-size: 1em;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 0px 2px 4px rgba(0,0,0,.5);
+    margin-bottom: 3px;
+}
+
+[class*="-signout"] {
+	height: 45px;
+	width: 95%;
+	padding: 11px 0 !important;
+	background-color: rgba(68,85,102,.7);
+    border-radius: 5px;
+    margin: 20px auto 0 auto;
+}
+
+
+
+
