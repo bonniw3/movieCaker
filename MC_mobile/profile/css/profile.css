@@ -9,6 +9,8 @@
 
 .content-wrap {
     top: 3vh;
+    padding: 20% 5% 5% 5%;
+    height: auto;
 }
 
 .user-nickname {
@@ -29,5 +31,114 @@
 }
 
 
+.user-points-membership li {
+    letter-spacing: 1px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+.user-points-membership li > a {
+    color: #ffffff;
+    font-size: .95em;
+}
+.user-points-membership li > a > span{
+    letter-spacing: 0px;
+}
+
+/* ---------------- menu-btns ----------------- */
+.profile-menu-btns {
+    background: rgba(68,85,102,.5);
+    box-sizing: border-box;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+.profile-menu-btns:active {
+    background: rgba(68,85,102,.8);
+}
+
+.profile-menu-btns ul > li {
+    text-align: center;
+}
+
+.movie-reaction-btn {
+    height: 105px;
+}
+.movie-reaction-btn ul > li {
+    padding: 0 5%;
+}
+.movie-reaction-btn ul > li:nth-child(3) {
+    margin: auto;
+}
+
+.project-btn {
+    width: 30%;
+    height: 200px;
+}
+
+.review-btn {
+    height: 115px;
+}
+
+.friend-btn {
+    height: 75px;
+}
+.friend-btn ul > li {
+    display: inline-block;
+    vertical-align: middle;
+}
+.friend-btn ul > li:nth-child(2) {
+    text-align: left !important;
+}
+
+.notification-btn, .more-btn {
+    height: 95px;
+}
+
+.new-notification {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #D87C7C;
+    color: #ffffff;
+    font-size: 0.78em;
+    line-height: 20px;
+    text-align: center;
+    display: none;
+}
+.new-notification.show {
+    display: block;
+}
+
+.mid-col {
+    width: 43%;
+    height: 200px;
+    margin-left: 3.5%;
+}
+.right-col {
+    width: 20%;
+    height: 200px;
+    margin-left: 3.5%;
+}
 
 
+
+
+
+
+
+
+
+/* -------- COMMON MISC ------ */
+.fz-xlg {
+    font-size: 2.1875em !important; /*35px*/ 
+}
+.fz-xxlg {
+    font-size: 2.75em !important; /*45px*/ 
+}

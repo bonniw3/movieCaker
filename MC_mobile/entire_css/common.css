@@ -1789,6 +1789,9 @@ textarea.reviewContent:focus {
 .text-yellow {
 	color: #EBD961;
 }
+.text-beige-yellow {
+	color: #F7E899;
+}
 
 .bkgd-blue {
     background-color: rgba(113,207,238,.5);
@@ -1828,7 +1831,7 @@ textarea.reviewContent:focus {
   	font-size: 1.25em !important; /*20px*/
 }
 .fz-25 {
-	font-size: 1.5em !important; /*24px*/
+	font-size: 1.5em !important; /*25px*/
 }
 .fz-lg {
 	font-size: 1.875em !important; /*30px*/
