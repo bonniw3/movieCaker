@@ -91,7 +91,20 @@
                                 <!-- “我沒看過” 只有在登入材會出現  -->
                                 <li ng-show="vm.currentUser.isAuthenticated" ng-click="vm.isViewed=!vm.isViewed" ng-class="{'active':vm.isViewed}">我沒看過</li>
                             </ul>
-                            <section class="maT2x">
+
+                            <!-- 空狀態 add class "active" 出現-->
+                            <section class="friends-empty-state active">
+                                <!-- 連到影評列表頁面 -->
+                                <a href="#">
+                                    <div class="right-bubble comment-bubble">目前還沒有朋友，<br>去逛逛大家的影評，<br>尋找電影同好吧！</div>
+                                    <div class="left-bubble comment-bubble">立即前往 !</div>
+                                    <div class="comment-img-wrap">
+                                        <img src="img/friends-empty.png" alt="">
+                                    </div>
+                                </a>
+                            </section>
+
+                            <section class="maT2x" style="display:none;">
                                 <div class="movie-list group-wrap">
                                     <!-- 從這裡開始 repeat div -->
                                     <div class="movie-item">

@@ -777,7 +777,7 @@ table {
 }
 .movie-list .movie-item > .movie-img {
 	width: 100%;
-	height: 30.5vh; 
+	/* height: 30.5vh;  */
 	overflow: hidden;
 	position: relative;
 }
@@ -789,8 +789,10 @@ table {
 	margin-top: 15px;
 }
 .movie-list .movie-item img {
-	width: 110%;
-	margin-left: -5%;
+	width: 100%;
+	min-height: 31.2vh;
+
+	/* margin-left: -5%; */
 }
 
 .movie-list .movie-item.single-col {
@@ -875,9 +877,9 @@ table {
 
 .movie-info-wrap {
 	position: absolute;
-	bottom: 0;
+	bottom: 6px;
 	left: 0;
-	height: 18%;
+	height: 15%;
 	width: 100%;
 	background-color: rgba(12,12,12,.7);
 	display: none;
@@ -914,10 +916,11 @@ table {
 
 .single-col .movie-name {
 	color: #B2EEFF;
-	font-size: 1.125em;
-	letter-spacing: 1px;
-	margin-top: 10px;
-	height: 23px;
+	font-size: 1.05em;
+	letter-spacing: .5px;
+	margin-top: 15px;
+	height: 20px;
+	font-weight: bold;
 }
 
 .readMore {
@@ -1561,6 +1564,88 @@ textarea.reviewContent:focus {
 }
 
 
+/* ---------------- 朋友在看 空狀態 CSS ------------------- */
+.friends-empty-state {
+	position: relative;
+	margin-top: 50%;
+	display: none;
+}
+.friends-empty-state.active {
+	display: block;
+}
+
+.comment-bubble {
+	border-radius: 100px;
+	border: 2px solid #ffffff;
+	text-align: center;
+	box-sizing: border-box;
+	position: relative;
+	color: #ffffff;
+	position: absolute;
+	font-size: 0.95em;
+}
+.right-bubble {
+	min-height: 85px;
+	padding: 2% 6% 2% 8%;
+	right: 5px;
+	margin-top: -100px;
+	-webkit-transform: rotateZ(5deg);
+	-moz-transform: rotateZ(5deg);
+	-ms-transform: rotateZ(5deg);
+	-o-transform: rotateZ(5deg);
+	transform: rotateZ(5deg);
+}
+.right-bubble:after {
+	content: '';
+	position: absolute;
+	right: 50px;
+	bottom: -18px;
+	height: 20px;
+    width: 12px;
+    border-bottom: 0px solid #ffffff;
+    border-right: 15px solid #ffffff;
+    border-radius: 0 0 95% 0;
+    transform: scale(.75);
+}
+.left-bubble {
+	min-height: 40px;
+	padding: 2% 5%;
+	left: 10px;
+	margin-top: -30px;
+	-webkit-transform: rotateZ(-7deg);
+	-moz-transform: rotateZ(-7deg);
+	-ms-transform: rotateZ(-7deg);
+	-o-transform: rotateZ(-7deg);
+	transform: rotateZ(-7deg);
+}
+.left-bubble:after {
+	content: '';
+	position: absolute;
+	left: 30px;
+	bottom: -16px;
+	height: 20px;
+    width: 12px;
+    border-bottom: 0px solid #ffffff;
+    border-right: 15px solid #ffffff;
+    border-radius: 0 0 95% 0;
+    transform: scale(.55) scaleX(-1);
+}
+
+.comment-img-wrap {
+	width: 65%;
+	margin: auto;
+	-webkit-tap-highlight-color: rgba(0,0,0,0); 
+    -webkit-tap-highlight-color: transparent;
+}
+.comment-img-wrap img {
+	width: 100%;
+}
+
+
+
+
+
+
 /* ------------ 影評列表 nav 調整 CSS ------------ */
 .optionNum-3.member-sensitive > li:last-child {
 	display: none;
@@ -1706,6 +1791,9 @@ textarea.reviewContent:focus {
 }
 .padTB1x {
     padding: 10px 0;
+}
+.padT50 {
+	padding-top: 50px;
 }
 .padTB15 {
     padding: 15px 0;
