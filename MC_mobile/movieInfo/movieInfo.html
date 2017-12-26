@@ -637,6 +637,7 @@
         // 滑動畫面 會出現黑色底
         $(window).scroll(function() {
             var windowpos = $(window).scrollTop();
+            var top = $('.top');
             var header = $('.header');
             var content = $('.content-wrap');
             var shareImg = $('.share-marketing');
@@ -656,7 +657,15 @@
                 // signupImg.removeClass('hidden');
                 shareImg.removeClass('hidden');
             }
+
+            if ( windowpos > 300 ) {
+                top.addClass('active')
+            } else {
+                top.removeClass('active');
+            }
         });
+
+        
     });
 </script>
 

@@ -637,21 +637,30 @@ table {
 }
 
 .top {
-	background-color: #71CFEE;
+	display: block;
+	background-color: #7FC0CA;
 	box-shadow: 0 0 3px 1px rgba(126,126,126,.5);
 	border-radius: 50%;
 	text-align: center;
 	line-height: 45px;
 	position: fixed;
-	bottom: 80px;
+	bottom: 10%;
+	right: -5%;
+	opacity: 0;
+	z-index: 15;
+	transition: opacity .3s,
+				right .3s .3s;
+  }
+  .top.active {
 	right: 5%;
-	display: none;
-	z-index: 9;
-}
-.top i {
-	font-size: 1.875em;
-	color: #ffffff;
-}
+	opacity: 1;
+	transition: right .1s,
+				opacity .15s .3s;
+  }
+  .top i {
+	  font-size: 1.875em;
+	  color: #ffffff;
+  }
 
 .seeMore {
     color: #B2EEFF;
