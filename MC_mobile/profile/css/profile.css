@@ -131,11 +131,10 @@
 
 
 
-
-
-
-
 /* -------- COMMON MISC ------ */
+.fz-xxs {
+    font-size: .65em; /*10px*/
+}
 .fz-xlg {
     font-size: 2.1875em !important; /*35px*/ 
 }
