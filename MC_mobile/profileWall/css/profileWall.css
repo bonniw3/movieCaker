@@ -1,0 +1,195 @@
+.bkgd-img {
+    position: relative;
+    overflow: hidden;
+}
+.bkgd-img img {
+    width: 200%;
+    margin-left: -50%;
+}
+.bkgd-img:after {
+    height: 96%;
+    top: 0%;
+}
+
+.content-wrap {
+    padding: 5% 2.5%;
+    border-radius: 0px;
+    top: -8vh;
+    width: 100%;
+    height: auto;
+}
+.content-wrap.scroll:before {
+    background-color: rgba(12,12,12,0);
+}
+
+.profile-block {
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    /* background-color: rgba(68,85,102,.5); */
+    background-color: rgba(55,55,55,.5);
+}
+
+
+/* ---------- USER INFO ---------- */
+.user-info {
+    padding-bottom: 0;
+}
+.user-info .avatar-pos-right {
+    top: -2%;
+    right: 10%;
+}
+.user-info .user-nickname {
+    font-size: 1.125em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-right: 10px;
+}
+.user-info .user-location {
+    margin-left: 4px;
+}
+
+.user-info .user-stats > li {
+    display: inline-block;
+    margin-left: -4px;
+    width: 16.5%;
+    padding: 20px 0 15px 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+.user-info .user-stats > li:first-child {
+    margin-left: 0px;
+}
+.user-info .user-stats > li > p:first-child {
+    font-size: 1em;
+    letter-spacing: 1.15px;
+    color: #B2EEFF;
+    transition: color .3s;
+}
+.user-info .user-stats > li > p:nth-child(2) {
+    font-size: 0.85em;
+    letter-spacing: .9px;
+    color: #FFFFFF;
+    transition: color .3s
+}
+
+.user-info .user-stats > li.active {
+    border-bottom: 4px solid #F7E899;
+}
+.user-info .user-stats > li.active p {
+    color: #F7E899;
+    font-weight: bold;
+}
+
+
+/* ---------- DETAILS SECTION ---------- */
+.profile-block .section-title:before {
+    left: -6.5%;
+}
+
+.nav-type-scroll > li {
+    color: #ffffff;
+    padding-bottom: 5px;
+}
+.nav-horizontal > li {
+    letter-spacing: 1px;
+}
+
+.nav-type-box {
+    display: none;
+}
+.nav-type-box.active {
+    display: block;
+}
+.nav-type-box > li {
+    font-size: .9em;
+    padding: 0px 5px 0px 6px;
+}
+.nav-type-box > li.active {
+    color: #F7E899;
+    border: 1px solid #F7E899;
+}
+.nav-type-scroll > li.active {
+    color: #F7E899;
+    border-bottom: 3px solid #F7E899;
+}
+
+
+/* ---------- DETAILS SECTION (friend) ---------- */
+.movie-list .friend-item {
+    position: relative;
+    width: 100%;
+    padding: 5%;
+    background-color: rgba(12,12,12,.5);
+    box-sizing: border-box;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #71cfee;
+}
+
+.is-friend .friendship {
+    min-width: 80px;
+    border: 1px solid #B2EEFF;
+    color: #B2EEFF;
+    box-sizing: border-box;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-size: 0.85em;
+    text-align: center;
+    display: none;
+}
+
+.friendship.add-friend {
+    color: #F7E899;
+    border: 1px solid #F7E899;
+}
+.friendship.requested {
+    color: #888888;
+    border: 1px solid #888888;
+}
+.friendship.accept {
+    color: #B3CC68;
+    border: 1px solid #B3CC68;
+}
+
+.friendship.active {
+    display: block;
+}
+
+.optionNum-2.self > li:first-child.active {
+    border: none;
+    color: #ffffff;
+}
+.optionNum-2.self > li:nth-child(2) {
+    display: none;
+}
+
+
+
+/* -------- COMMON MISC ------ */
+.fz-xxs {
+    font-size: .65em; /*10px*/
+}
+.fz-xlg {
+    font-size: 2.1875em !important; /*35px*/ 
+}
+.fz-xxlg {
+    font-size: 2.75em !important; /*45px*/ 
+}
+
+.padB1x {
+    padding-bottom: 10px;
+}
+.padB15 {
+    padding-bottom: 15px;
+}
+.padB2x {
+    padding-bottom: 20px;
+}
+
+.circle50 {
+    width: 50px;
+    height: 50px;
+}

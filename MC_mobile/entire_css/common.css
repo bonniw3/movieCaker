@@ -769,10 +769,12 @@ table {
 
 
 /* -------------- MOVIE-LIST CSS --------------- */
+
 .movie-list {
 	width: 100%;
 	position: relative;
-	margin-bottom: 50px;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
 }
 .movie-list .movie-item {
 	float: left;
@@ -782,11 +784,11 @@ table {
 	box-sizing: border-box;
 	padding: 3.5% 3.5% 3% 3.5%;
 	border-radius: 5px 5px 0 0;
-	border-bottom: 1px solid #71cfee;
+  border-bottom: 1px solid #71cfee;
 }
 .movie-list .movie-item > .movie-img {
 	width: 100%;
-	/* height: 30.5vh;  */
+	/* height: 30.5vh; */
 	overflow: hidden;
 	position: relative;
 }
@@ -798,21 +800,24 @@ table {
 	margin-top: 15px;
 }
 .movie-list .movie-item img {
-	width: 100%;
-	min-height: 31.2vh;
-
-	/* margin-left: -5%; */
+  width: 100%;
+}
+.movie-item > .movie-img > a > img {
+  min-height: 31.2vh;
 }
 
 .movie-list .movie-item.single-col {
 	float: none;
 	width: 100%;
-	margin: 15% 0;
-	padding: 3% 4% 3% 4.5%;
+	margin: 10% 0;
+	padding: 3% 4%;
 }
-.single-col.marTAdjust {
-	margin: 20px 0 !important;
+
+.movie-list .spinner::before {
+  left: 50%;
+  bottom: -25px;
 }
+
 .container {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -823,21 +828,26 @@ table {
 	-webkit-justify-content: flex-start;
 	justify-content: flex-start;
 }
+.single-col.marTAdjust {
+	margin: 20px 0 !important;
+}
+
 .flex-item:nth-child(2) {
-	-webkit-align-self: flex-end;
-	align-self: flex-end;
+	-webkit-align-self: flex-start;
+	align-self: flex-start;
 }
 
 .movie-item.single-col .review-movie-img {
-	width: 32%;
+  width: 75px;
 	overflow: hidden;
 	position: relative;
-	border-radius: 5px;
-	margin-top: -6vh;
+	margin-top: -4vh;
 }
 .movie-item.single-col .review-movie-img img {
-	width: 100%;
-	margin-left: 0;
+  width: 100%;
+  min-height: initial;
+  margin-left: 0;
+  border-radius: 5px;
 }
 
 .review-info {
@@ -853,6 +863,9 @@ table {
 	position: absolute;
 	right: 4%;
 	top: 3%
+}
+.invisible-line {
+	border: .5px solid rgba(120,120,120,.2);
 }
 
 
@@ -927,22 +940,18 @@ table {
 	color: #B2EEFF;
 	font-size: 1.05em;
 	letter-spacing: .5px;
-	margin-top: 15px;
+	margin-top: 10px;
 	height: 20px;
 	font-weight: bold;
 }
 
 .readMore {
     position: relative;
-    width: 20%;
-    height: 15px;
     line-height: 15px;
-    margin-top: 6px;
-    border-left: 1px solid #B2EEFF;
-    border-right: 1px solid #B2EEFF;
+    margin-top: 4px;
     color: #B2EEFF;
-    text-align: center;
-    font-size: .9em;
+    font-size: .92em;
+    letter-spacing: 1px;
 }
 
 /* -------------- large avatar CSS--------------- */
@@ -1792,21 +1801,24 @@ textarea.reviewContent:focus {
 .padT4 {
 	padding-top: 4px;
 }
-.padTBHalfX {
-    padding: 5px 0;
-}
 .padT1x {
     padding-top: 10px;
-}
-.padTB1x {
-    padding: 10px 0;
 }
 .padT50 {
 	padding-top: 50px;
 }
+.padTBHalfX {
+    padding: 5px 0;
+}
+.padTB1x {
+    padding: 10px 0;
+}
 .padTB15 {
     padding: 15px 0;
 }
+
+
+
 .padRHalfX {
     padding-right: 5px;
 }
@@ -1837,6 +1849,9 @@ textarea.reviewContent:focus {
 
 .text-white {
     color: #ffffff;
+}
+.text-near-white {
+	color: rgba(235,235,235,1);
 }
 .text-white80p {
 	color: rgba(235,235,235,.8);
@@ -1879,6 +1894,9 @@ textarea.reviewContent:focus {
 }
 .text-blue-friend {
 	color: #3F8295;
+}
+.text-light-green {
+  color: #B8E986;
 }
 .text-green {
 	color: #417505;
@@ -2064,6 +2082,7 @@ textarea.reviewContent:focus {
 .overflow-h {
 	overflow: hidden;
 }
+
 
 
 

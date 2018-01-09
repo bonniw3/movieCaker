@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>電影：海邊的曼徹斯特</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="由于哥哥乔（凯勒·钱德勒）过世，看门人李·钱德勒（凯西·阿弗莱克）成为他16岁的侄子帕特里克（卢卡斯·赫奇斯）的法定监护人，李的生活从此发生彻底的改变，他不得不回到家乡的小城市（曼彻斯特），面对与前妻..." />
+    <link rel="canonical" href="http://test.moviecaker.com/video/M00000000158105">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="../entire_css/common.css" rel="stylesheet" />
+    <link href="css/profileWall.css" rel="stylesheet" />
+    <link href="../entire_css/min-search.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet"> -->
+</head>
+<body>
+
+    <!-- search area -->
+    <div class="search-area group-wrap">
+        <form> 
+            <button class="btn-close group-wrap" type="reset">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </button>
+            <div class="search-keyword ui">
+                <i class="fa fa-search fa-lg pull-left" aria-hidden="true"></i>
+                <input id="search-input" class="pull-left" type="search" name="" value="" placeholder="尋找電影..." ng-model="main.searchText" ng-bind="main.searchText" multi-search/>
+            </div>
+        </form>
+        <div id="search-autocomplete"></div>
+        <a href="#" class="more pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>更多搜尋結果</a>
+    </div>
+
+    <!-- header -->
+    <div class="header">
+        <ul class="group-wrap header-items">
+            <li class="pull-left">
+                <a href="/mobile">
+                    <i class="fa fa-bars padTBHalfX" aria-hidden="true"></i>
+                </a>
+            </li>
+            <!-- 版本 -->
+            <li class="pull-left">
+                <p class="app-version" style="font-size: 10px; width: 70px; line-height: 15px; margin-left: 10px;">alpha v2.6.20171022</p>
+            </li>
+            <li id="user-icon" class="pull-right">
+                    <a href="/login">
+                    <div class="login-icon padTBHalfX maLHalfx">
+                        <img src="img/login_icon.png"alt="">
+                    </div>
+                </a> 
+                <!-- 登入後顯示 -->
+                <a href="#" style="display:none;">
+                    <div class="circle-mask circle1x">
+                        <img src="img/default_avatar.png" alt="">
+                    </div>
+                </a>
+            </li>
+            <li id="search-icon" class="pull-right maR1x">
+                <i class="fa fa-search padTBHalfX" aria-hidden="true"></i>
+            </li>
+            <li id="logo-text">
+                <a href="/mobile"><img src="img/mc_logo_text.png" alt=""></a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- content -->
+    <div>
+        <!-- fixed background -->
+        <div class="bkgd-img">
+            <img src="img/temp_banner.png" alt="">
+        </div>
+            
+        <!-- main content -->
+        <div class="content-wrap">
+            <section class="user-info profile-block">
+                <a href="#" class="avatar-large avatar-pos-right circle4x">
+                    <div class="circle-mask circle100 rel-pos">
+                        <!-- 這邊插入 使用者頭圖 -->
+                        <img src="img/default_avatar.png" alt="">    
+                        <!-- 是不是朋友 - 登入後才會顯示 (如果是到自己的個人頁面就不會顯示) -->
+                        <div>
+                            <div class="text-blue-friend btn-friendOption bkgd-light-grey"><i class="fa fa-check" aria-hidden="true"></i> 朋友</div>
+                        </div> 
+                    </div>
+                </a>
+                <div class="padLR10 maT1x divider-line">
+                    <h3>
+                        <span class="user-nickname">使用者1號</span>
+                        <span class="fz-15">
+                            <!-- 女生 -->
+                            <i class="fa fa-venus text-light-pink" aria-hidden="true"></i> 
+                            <!-- 男生 -->
+                            <!-- <i class="fa fa-mars text-blue" aria-hidden="true"></i> -->
+                        </span>
+                    </h3>
+                    <p class="maT2x padL1x padB1x">
+                        <span class="user-location fz-normal text-light-blue">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span class="fz-13 letter-space-1x text-white80p maL1x">台灣地區</span>
+                        </span><br/>
+                        <span class="user-birthday fz-15 text-light-blue">
+                            <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                            <span class="fz-13 letter-space-1x text-white80p maL1x">1990年01月01日</span>
+                        </span>
+                    </p>
+                </div>
+                <ul class="user-stats maT1x">
+                    <li class="">
+                        <p>1009</p>
+                        <p>看過</p>
+                    </li>
+                    <li class="">
+                        <p>986</p>
+                        <p>喜歡</p>
+                    </li>
+                    <li class="">
+                        <p>122</p>
+                        <p>想看</p>
+                    </li>
+                    <li class="active">
+                        <p>3201</p>
+                        <p>影評</p>
+                    </li>
+                    <li class="">
+                        <p>25</p>
+                        <p>專題</p>
+                    </li>
+                    <li class="">
+                        <p>322</p>
+                        <p>朋友</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="movie-seen profile-block">
+                <div class="section-title fz-subtitle fontW-normal text-blue maTHalf1x maLHalfx">電影影評</div>
+                <article class="maT2x">
+                    <ul class="nav-horizontal nav-type-scroll optionNum-2">
+                        <li class="">
+                            <span class="fontW-bold">最新影評</span>
+                            <span class="fz-13 text-white80p maLHalfx">3201則</span>
+                        </li>
+                    </ul>
+                    <section class="maT2x">
+                        <div class="movie-list group-wrap">
+                            <!-- 影評列表 從這裡開始 repeat div (＊這邊版跟 影評列表 的版一樣) -->
+                            <div class="movie-item single-col">
+                                <div class="container">
+                                    <div class="review-movie-img flex-item">
+                                        <a href="#"> <!-- 連到這部電影的電影介紹頁 -->
+                                            <img src="img/movie1.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="review-info flex-item maL1x">
+                                        <a href="#" class="movie-name line-clamp clamp-1">美女與野獸 (2017)</a>
+                                        <div class="group-wrap hasColor maT4">
+                                            <span class="stars pull-left">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </span>
+                                            <i class="fa fa-heart maL5p maTHalf1x pull-left"></i>
+                                        </div>
+                                        <div class="group-wrap maT4">
+                                            <!-- 連到作者的個人頁面 -->
+                                            <div class="circle-mask width-xss pull-left">
+                                                <img src="img/default_avatar.png" alt="">
+                                            </div>
+                                            <span class="maLHalfx pull-left fz-xs text-light-blue letter-space-1x">想看電影</span>
+                                            <p *ngIf="review.User.ViewedOn" i18n="@@viewMovieOn" class="fz-xs text-gray pull-left maL1x">觀影於 2017/12/28</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-content maT1x maBHalf1x">
+                                    <p class="line-clamp clamp-3 fz-15 letter-space-1x text-near-white maB15">
+                                        我心目中的奧斯卡最佳男主角，凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶懦弱神經質的感覺。凱西艾佛列克，他本身陰鬱又略帶懦弱神經質的感覺，完美的詮釋一個心碎絕，他本身陰鬱又略帶
+                                    </p>
+                                    <hr class="invisible-line">
+                                    <div class="group-wrap maT1x">
+                                        <ul class="review-num-stats pull-left group-wrap">
+                                            <!-- 第一個li拿掉 showLikeNum 就不會出現 (如果有沒人喜歡影評就不要出現第一個li) -->
+                                            <li class="text-white50p fz-s pull-left maR15 showLikeNum">
+                                                <span ng-bind="review.LikedNum">3</span>
+                                                <ng-container i18n="@@likeCount">人喜歡</ng-container>
+                                            </li>
+                                            <li class="text-white50p fz-s pull-left">
+                                                <span ng-bind="review.PageViews">20</span>
+                                                <ng-container i18n="@@browseCount">次瀏覽</ng-container>
+                                            </li>
+                                        </ul>
+                                        <a i18n="@@allComment" [routerLink]="['/review', review.Id]" class="pull-right readMore">全文<i class="fa fa-angle-right maL1x" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end repeat div -->
+                        </div>  
+                        <!-- addClass "showLoading" 出現 loading -->
+                        <div class="smallLoading"></div>
+                    </section> 
+                </article>
+            </section>
+
+        </div> <!-- end of main content -->
+        
+        <div class="top circle40">
+            <i class="fa fa-angle-up" aria-hidden="true"></i>
+        </div> 
+    </div> 
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+        // 測試搜尋樣式，不是真的搜尋功能
+        $( function() {
+            var availableTags = [
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)","醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "美女與野獸 Beauty and the Beast (2017)",
+                "小太陽的願望 Little Miss Sunshine (2006)",
+                "醜女大翻身 200 Pounds Beauty (2006)",
+                "野獸情人 Beastly (2011)",
+                "玩美女人 Volver (2006)",
+                "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                "醜女大翻身 200 Pounds Beauty (2006)"
+            ];
+            $( "#search-input" ).autocomplete({
+                source: availableTags,
+                appendTo: "#search-autocomplete",
+                open: function(){
+                    $('.more').addClass("searching"); // 有搜尋結果再出現”更多搜尋“按鈕
+                },
+                close: function(){
+                    $('.more').removeClass("searching"); // 沒有搜尋結果不出現”更多搜尋“按鈕
+                }
+            });
+        });
+
+        // 首頁點擊搜尋的動態效果
+        $('#search-icon').on("click", function(){
+            window.scrollBy(0, 1); // 讓鍵盤出現時頁面不會被推上去
+            $('.search-area').addClass("searching");
+            $('.btn-close').addClass("searching");
+            $('.search-keyword').addClass("searching");
+        });
+        // 點擊叉按鈕關閉搜尋
+        $('.btn-close').on("click", function(){
+            $('.search-area').removeClass("searching");
+            $('.btn-close').removeClass("searching");
+            $('.search-keyword').removeClass("searching");
+        });
+
+        // 滑動畫面 會出現黑色底
+        $(window).scroll(function() {
+            var windowpos = $(window).scrollTop();
+            var header = $('.header');
+            var content = $('.content-wrap');
+            var shareImg = $('.share-marketing');
+            var signupImg = $('.signup-prompt');
+            if ( windowpos > 0 ) {
+                header.addClass('scroll');
+                content.addClass('scroll');
+            } else {
+                header.removeClass('scroll');
+                content.removeClass('scroll');
+            }
+        });
+
+        $('.user-stats > li').on("click", function(){
+            $('.user-stats > li').removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+</script>
+
+</body>
+</html>
